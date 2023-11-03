@@ -3,9 +3,25 @@ import { useCourseStore } from "@/lib/store";
 import { sliceAddress } from "@/lib/utils";
 import { Button, cn } from "@nextui-org/react";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
-import { ChevronUpIcon, GraduationCapIcon } from "lucide-react";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  GraduationCapIcon,
+  LockIcon,
+  UnlockIcon,
+} from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
+
+const sections: string[] = [
+  "Section 1: Rookie",
+  "Section 2: Explorer",
+  "Section 3: Builder",
+  "Section 4: God",
+];
+
+const lockedSections: number[] = [2, 3];
 
 export default function TopBar() {
   const course = useCourseStore((state) => state.course);
@@ -14,16 +30,30 @@ export default function TopBar() {
   const pathname = usePathname();
   const router = useRouter();
   const { open } = useWeb3Modal();
+  const [viewSections, setViewSections] = useState<boolean>(false);
+  const [currentSection, setCurrentSection] = useState<number>(0);
+
+  useEffect(() => {
+    if (!address && !isConnected) {
+      setCourse(undefined);
+      router.push("/learn");
+    } else if (address && isConnected) {
+      router.push("/learn");
+    }
+  }, [address, isConnected]);
+
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 w-full bg-background border-b-2 border-default flex flex-col space-y-4 px-4 py-2 z-50",
+        "fixed top-0 left-0 w-full bg-background border-b-2 border-default flex flex-col space-y-4 px-4 py-2 z-50 transition-height",
         course && "h-auto",
         !course && "h-16"
       )}
     >
       <div className="flex flex-row items-center justify-between">
-        {!course ? (
+        {!address ? (
+          <div />
+        ) : !course ? (
           <Button
             color="primary"
             variant="ghost"
@@ -74,12 +104,79 @@ export default function TopBar() {
         pathname !== "/learn" &&
         pathname !== "/learn/leaderboard" &&
         !pathname.includes("/learn/profile") && (
-          <div className="flex items-center justify-center relative py-4">
-            <ChevronUpIcon className="absolute top-4 left-2"></ChevronUpIcon>
-            <p className="text-center font-bold tracking-widest">
-              Section 1: Rookie
-            </p>
-          </div>
+          <>
+            <div className="flex items-center justify-center relative py-4">
+              {!viewSections && (
+                <ChevronUpIcon
+                  className="absolute top-4 left-2"
+                  onClick={() => setViewSections(true)}
+                />
+              )}
+              {viewSections && (
+                <ChevronDownIcon
+                  className="absolute top-4 left-2"
+                  onClick={() => setViewSections(false)}
+                />
+              )}
+              <p className="text-center font-bold tracking-widest">
+                {sections[currentSection]}
+              </p>
+            </div>
+            {viewSections && (
+              <div className="flex flex-col space-y-2">
+                {viewSections &&
+                  sections.map((section, index) => {
+                    const isCurrent = index === currentSection;
+                    const isLocked = lockedSections.includes(index);
+
+                    if (isCurrent) {
+                      return (
+                        <div
+                          key={section}
+                          onClick={() => {
+                            setViewSections(false);
+                            setCurrentSection(index);
+                          }}
+                          className="border-2 border-b-3 bg-emerald-500 border-emerald-700 text-white rounded-xl p-4 w-full h-20 flex space-x-2 items-center justify-between"
+                        >
+                          <h2 className="font-bold tracking-widest">
+                            {section}
+                          </h2>
+                        </div>
+                      );
+                    }
+
+                    if (isLocked) {
+                      return (
+                        <div
+                          key={section}
+                          className="border-2 border-b-3 bg-gray-400 border-gray-600 text-white rounded-xl p-4 w-full h-20 flex space-x-2 items-center justify-between"
+                        >
+                          <h2 className="font-bold tracking-widest">
+                            {section}
+                          </h2>
+                          <LockIcon />
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <div
+                        key={section}
+                        onClick={() => {
+                          setViewSections(false);
+                          setCurrentSection(index);
+                        }}
+                        className="border-2 border-b-3 border-gray-300 rounded-xl p-4 w-full h-20 flex space-x-2 items-center justify-between"
+                      >
+                        <h2 className="font-bold tracking-widest">{section}</h2>
+                        <UnlockIcon />
+                      </div>
+                    );
+                  })}
+              </div>
+            )}
+          </>
         )}
     </div>
   );
