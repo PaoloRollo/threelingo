@@ -103,7 +103,8 @@ export default function TopBar() {
       {course &&
         pathname !== "/learn" &&
         pathname !== "/learn/leaderboard" &&
-        !pathname.includes("/learn/profile") && (
+        !pathname.includes("/learn/profile") &&
+        !pathname.includes("enroll") && (
           <>
             <div className="flex items-center justify-center relative py-4">
               {!viewSections && (
