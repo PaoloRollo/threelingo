@@ -40,7 +40,7 @@ export default function Home() {
           color="primary"
           className="font-bold uppercase tracking-widest"
           as={Link}
-          href="/start"
+          href="/login"
         >
           Start now
         </Button>
@@ -68,7 +68,7 @@ export default function Home() {
               color="primary"
               className="font-bold uppercase tracking-widest w-full"
               as={Link}
-              href="/start"
+              href="/login"
             >
               Start now
             </Button>
@@ -77,9 +77,9 @@ export default function Home() {
               color="primary"
               className="font-bold uppercase tracking-widest w-full"
               as={Link}
-              href="/login"
+              href="/more"
             >
-              Already registered?
+              Learn more
             </Button>
           </div>
         </div>
@@ -152,6 +152,27 @@ export default function Home() {
           </p>
         </motion.div>
       </motion.section>
+      <div className="py-4 px-4 w-full border-2 bg-background z-10 text-center text-sm">
+        <p>
+          Developed at{" "}
+          <Link href="https://ethlisbon.org/" className="text-sm">
+            ETHLisbon2023
+          </Link>{" "}
+          by{" "}
+          <Link href="https://twitter.com/frankc_eth" className="text-sm">
+            @frankc_eth
+          </Link>
+          ,{" "}
+          <Link href="https://twitter.com/limone_eth" className="text-sm">
+            @limone_eth
+          </Link>{" "}
+          and{" "}
+          <Link href="https://twitter.com/orbuloeth" className="text-sm">
+            @orbuloeth
+          </Link>
+          .
+        </p>
+      </div>
     </main>
   );
 }

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function SelectCoursePage() {
   const router = useRouter();
   const courses = useUserCoursesStore((state) => state.courses);
-  console.log(courses);
+
   return (
     <section
       id="select-course-page"

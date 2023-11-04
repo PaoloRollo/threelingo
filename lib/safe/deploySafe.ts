@@ -1,11 +1,20 @@
-import {useUserStore} from "@/lib/store/user-store";
-import {ethers} from "ethers";
-import Safe, {AddOwnerTxParams, EthersAdapter, getSafeContract, SafeFactory,} from "@safe-global/protocol-kit";
-import {toEthersWeb3ProviderWithSigner} from "./providers-wtf";
-import {getWalletClient} from "wagmi/actions";
-import {MetaTransactionData, OperationType, RelayTransaction,} from "@safe-global/safe-core-sdk-types";
+import { useUserStore } from "@/lib/store/user-store";
+import { ethers } from "ethers";
+import Safe, {
+  AddOwnerTxParams,
+  EthersAdapter,
+  getSafeContract,
+  SafeFactory,
+} from "@safe-global/protocol-kit";
+import { toEthersWeb3ProviderWithSigner } from "./providers-wtf";
+import { getWalletClient } from "wagmi/actions";
+import {
+  MetaTransactionData,
+  OperationType,
+  RelayTransaction,
+} from "@safe-global/safe-core-sdk-types";
 import SafeApiKit from "@safe-global/api-kit";
-import {GelatoRelayPack} from "@safe-global/relay-kit";
+import { GelatoRelayPack } from "@safe-global/relay-kit";
 import { useAccount } from "wagmi";
 
 
@@ -16,19 +25,19 @@ export async function deploySafeAndReturnAddress(): Promise<boolean> {
             process.env.NEXT_PUBLIC_POLYGON_ZKEVM_RPC_URL
         );
 
-        const signerOrProvider = new ethers.Wallet(
-            process.env.WALLET_PRIVATE_KEY as string,
-            provider
-        );
+    const signerOrProvider = new ethers.Wallet(
+      process.env.WALLET_PRIVATE_KEY as string,
+      provider
+    );
 
-        const ethAdapterOwner1 = new EthersAdapter({
-            ethers,
-            signerOrProvider,
-        });
+    const ethAdapterOwner1 = new EthersAdapter({
+      ethers,
+      signerOrProvider,
+    });
 
-        const safeFactory = await SafeFactory.create({
-            ethAdapter: ethAdapterOwner1,
-        });
+    const safeFactory = await SafeFactory.create({
+      ethAdapter: ethAdapterOwner1,
+    });
 
         const userAccount = useUserStore.getState()
 
@@ -37,8 +46,8 @@ export async function deploySafeAndReturnAddress(): Promise<boolean> {
             threshold: 1,
         };
 
-        const safe = await safeFactory.deploySafe({safeAccountConfig});
-        const safeAddress = await safe.getAddress();
+    const safe = await safeFactory.deploySafe({ safeAccountConfig });
+    const safeAddress = await safe.getAddress();
 
         // Transfer 0.1 ETH to the Safe address
         const transferAmount = ethers.utils.parseEther("0.1");

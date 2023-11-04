@@ -1,4 +1,4 @@
-import {Course} from "../interfaces";
+import { Course } from "../interfaces";
 
 export const availableCourses: Course[] = [
   {
@@ -2985,174 +2985,190 @@ export const availableCourses: Course[] = [
     ],
   },
   {
-    id: "scaling-ethereum",
+    id: "3",
     name: "Scaling Ethereum",
-    description: "lorem ipsum",
-    image: "/polygon-zkevm.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis urna dignissim, pulvinar quam quis, cursus orci. Pellentesque blandit tellus a neque tincidunt placerat. Sed lacinia eleifend neque vitae interdum. Nullam at leo justo. Pellentesque sollicitudin tortor velit, vitae imperdiet lectus malesuada sit amet. Ut ligula ligula, volutpat et tortor ut, aliquet efficitur eros. Sed condimentum fermentum vulputate. Donec eu eros maximus, scelerisque tellus sit amet, vulputate turpis. Fusce mattis odio id blandit maximus. Morbi quis ultricies lacus. Nam ullamcorper nunc erat, in rhoncus lectus scelerisque quis.",
+    image: "/polygon.png",
     nftImage: "/course-3-nft.png",
     sections: [
       {
         name: "Scaling L1",
         units: [
           {
-            "name": "Ethereum Scalability",
-            "steps": [
+            name: "Ethereum Scalability",
+            steps: [
               {
-                "name": "Layer 1s and blockchain trilemma",
-                "questions": [
+                name: "Layer 1s and blockchain trilemma",
+                questions: [
                   {
-                    "type": "true-false",
-                    "question": "Layer 1 blockchains, such as Ethereum and Bitcoin, serve as the base blockchains for various layer 2 networks.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question:
+                      "Layer 1 blockchains, such as Ethereum and Bitcoin, serve as the base blockchains for various layer 2 networks.",
+                    correctAnswer: true,
                   },
                   {
-                    "type": "multiple-choice",
-                    "question": "What desirable properties does the blockchain trilemma address, and how does it relate to the concept of layer 2 networks?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What desirable properties does the blockchain trilemma address, and how does it relate to the concept of layer 2 networks?",
+                    answers: [
                       "A) Scalability, security, and decentralization; the blockchain trilemma suggests that a blockchain can achieve all three properties without trade-offs.",
                       "B) Decentralization, security, and scalability; the blockchain trilemma suggests that a simple blockchain architecture can only achieve two out of these three properties, and layer 2 networks aim to improve scalability without sacrificing security or decentralization.",
                       "C) Speed, centralization, and accessibility; the blockchain trilemma emphasizes the need for increased speed and accessibility at the cost of decentralization.",
-                      "D) Efficiency, simplicity, and complexity; layer 2 networks aim to add complexity to blockchain systems."
+                      "D) Efficiency, simplicity, and complexity; layer 2 networks aim to add complexity to blockchain systems.",
                     ],
-                    "correctAnswer": 1
+                    correctAnswer: 1,
                   },
                   {
-                    "type": "multiple-choice",
-                    "question": "What is the primary goal of layer 2 solutions in the context of Ethereum scalability?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What is the primary goal of layer 2 solutions in the context of Ethereum scalability?",
+                    answers: [
                       "A) To replace layer 1 blockchains like Ethereum.",
                       "B) To make the blockchain more complex.",
                       "C) To reduce transaction throughput.",
-                      "D) To increase transaction throughput (higher transactions per second) without sacrificing decentralization or security."
+                      "D) To increase transaction throughput (higher transactions per second) without sacrificing decentralization or security.",
                     ],
-                    "correctAnswer": 3
-                  }
-                ]
+                    correctAnswer: 3,
+                  },
+                ],
               },
               {
-                "name": "Layer 2 Networks",
-                "questions": [
+                name: "Layer 2 Networks",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What is Layer 1 (L1) in the context of Ethereum, and what role does it play in the Ethereum ecosystem?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What is Layer 1 (L1) in the context of Ethereum, and what role does it play in the Ethereum ecosystem?",
+                    answers: [
                       "A) Layer 1 is a layer of smart contracts built on top of Ethereum.",
                       "B) Layer 1 is the base blockchain and the foundation for Layer 2 solutions.",
                       "C) Layer 1 refers to off-chain scaling solutions for Ethereum.",
-                      "D) Layer 1 is a separate blockchain entirely unrelated to Ethereum."
+                      "D) Layer 1 is a separate blockchain entirely unrelated to Ethereum.",
                     ],
-                    "correctAnswer": 1
+                    correctAnswer: 1,
                   },
                   {
-                    "type": "true-false",
-                    "question": "True or False: The blockchain trilemma suggests that a blockchain can simultaneously achieve decentralization, security, and scalability without trade-offs.",
-                    "correctAnswer": false
+                    type: "true-false",
+                    question:
+                      "True or False: The blockchain trilemma suggests that a blockchain can simultaneously achieve decentralization, security, and scalability without trade-offs.",
+                    correctAnswer: false,
                   },
                   {
-                    "type": "multiple-choice",
-                    "question": "How many transactions per second (TPS) can Ethereum Mainnet (Layer 1) process, and why can this limitation lead to congestion and higher transaction fees?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "How many transactions per second (TPS) can Ethereum Mainnet (Layer 1) process, and why can this limitation lead to congestion and higher transaction fees?",
+                    answers: [
                       "A) Ethereum Mainnet can process thousands of TPS, preventing congestion.",
                       "B) Ethereum Mainnet can process hundreds of TPS, leading to lower transaction fees.",
                       "C) Ethereum Mainnet can process less than hundreds TPS, which can cause congestion and high fees.",
-                      "D) Ethereum Mainnet can process an unlimited number of TPS, ensuring low fees at all times."
+                      "D) Ethereum Mainnet can process an unlimited number of TPS, ensuring low fees at all times.",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "true-false",
-                    "question": "True or False: The primary goal of Layer 2 (L2) solutions is to increase transaction throughput without compromising decentralization or security.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question:
+                      "True or False: The primary goal of Layer 2 (L2) solutions is to increase transaction throughput without compromising decentralization or security.",
+                    correctAnswer: true,
                   },
                   {
-                    "type": "multiple-choice",
-                    "question": "How do Layer 2 projects rely on Ethereum for data availability?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "How do Layer 2 projects rely on Ethereum for data availability?",
+                    answers: [
                       "A) Layer 2 projects store the transaction data on Layer 1.",
                       "B) Layer 2 projects operate entirely independently of Ethereum.",
-                      "C) Layer 2 projects ignore data availability, focusing on speed."
+                      "C) Layer 2 projects ignore data availability, focusing on speed.",
                     ],
-                    "correctAnswer": 0
+                    correctAnswer: 0,
                   },
                   {
-                    "type": "multiple-choice",
-                    "question": "Can you explain the difference between Layer 1 and Layer 2 in the context of Ethereum, and provide examples of Layer 2 solutions?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "Can you explain the difference between Layer 1 and Layer 2 in the context of Ethereum, and provide examples of Layer 2 solutions?",
+                    answers: [
                       "A) Layer 1 is a faster version of Ethereum, and Layer 2 includes all Ethereum smart contracts.",
                       "B) Layer 1 is a term used in Ethereum but doesn't have real-world applications, while Layer 2 is where all transactions occur.",
                       "C) Layer 1 is the foundational Ethereum blockchain, and Layer 2 is a separate blockchain extending Ethereum. Examples of Layer 2 include 'rollups.'",
-                      "D) Layer 1 and Layer 2 are interchangeable terms in the Ethereum ecosystem, describing the same concept."
+                      "D) Layer 1 and Layer 2 are interchangeable terms in the Ethereum ecosystem, describing the same concept.",
                     ],
-                    "correctAnswer": 2
-                  }
-                ]
-              }
-            ]
+                    correctAnswer: 2,
+                  },
+                ],
+              },
+            ],
           },
           {
-            "name": "How to scale Ethereum",
-            "steps": [
+            name: "How to scale Ethereum",
+            steps: [
               {
-                "name": "Understanding Layer 2 Scaling",
-                "questions": [
+                name: "Understanding Layer 2 Scaling",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What is Layer 2 (L2) scaling in the context of Ethereum, and how does it contribute to improving scalability?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What is Layer 2 (L2) scaling in the context of Ethereum, and how does it contribute to improving scalability?",
+                    answers: [
                       "A) Layer 2 scaling enhances the base blockchain's security.",
                       "B) Layer 2 scaling introduces a new layer of blockchain, completely separate from Ethereum.",
                       "C) Layer 2 scaling solutions handle transactions off Ethereum Layer 1, increasing transaction throughput while maintaining Ethereum's security.",
-                      "D) Layer 2 scaling primarily focuses on reducing transaction fees."
+                      "D) Layer 2 scaling primarily focuses on reducing transaction fees.",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "true-false",
-                    "question": "True or False: Layer 2 solutions process transactions exclusively on Ethereum Layer 1.",
-                    "correctAnswer": false
+                    type: "true-false",
+                    question:
+                      "True or False: Layer 2 solutions process transactions exclusively on Ethereum Layer 1.",
+                    correctAnswer: false,
                   },
                   {
-                    "type": "multiple-choice",
-                    "question": "What does the 'blockchain trilemma' state, and how does it relate to Ethereum's scalability?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What does the 'blockchain trilemma' state, and how does it relate to Ethereum's scalability?",
+                    answers: [
                       "A) The blockchain trilemma suggests that Ethereum can achieve all three aspects: decentralization, security, and scalability without any trade-offs.",
                       "B) The blockchain trilemma is unrelated to Ethereum's scalability.",
                       "C) The blockchain trilemma states that a blockchain can achieve two out of three aspects, and achieving all three is challenging. Scalability often requires sacrificing decentralization or security.",
-                      "D) The blockchain trilemma emphasizes the need for specialized hardware to enhance Ethereum's scalability."
+                      "D) The blockchain trilemma emphasizes the need for specialized hardware to enhance Ethereum's scalability.",
                     ],
-                    "correctAnswer": 2
-                  }
-                ]
+                    correctAnswer: 2,
+                  },
+                ],
               },
               {
-                "name": "Understanding Layer 2 Solutions and Rollups",
-                "questions": [
+                name: "Understanding Layer 2 Solutions and Rollups",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "How do Layer 2 solutions, such as rollups, contribute to Ethereum's scalability, and what are the key types of rollups?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "How do Layer 2 solutions, such as rollups, contribute to Ethereum's scalability, and what are the key types of rollups?",
+                    answers: [
                       "A) Layer 2 solutions introduce parallel blockchains that function independently, reducing congestion on Ethereum.",
                       "B) Layer 2 solutions ignore Ethereum's Layer 1, creating a separate ecosystem.",
                       "C) Layer 2 solutions bundle multiple transactions into a single Layer 1 transaction, reducing fees and relying on Ethereum's security. The main types of rollups are optimistic and zero-knowledge.",
-                      "D) Layer 2 solutions process all transactions on Ethereum Layer 1 without making any changes to the network."
+                      "D) Layer 2 solutions process all transactions on Ethereum Layer 1 without making any changes to the network.",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Layer 2 scaling solutions, such as rollups, bundle multiple transactions into a single transaction on Ethereum Layer 1. This helps distribute transaction fees, making it ________________ for each user.",
-                    "correctAnswer": "cheaper"
+                    type: "fill-in-the-blank",
+                    question:
+                      "Layer 2 scaling solutions, such as rollups, bundle multiple transactions into a single transaction on Ethereum Layer 1. This helps distribute transaction fees, making it ________________ for each user.",
+                    correctAnswer: "cheaper",
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Ethereum's Layer 2 solutions inherit the security of Ethereum Layer 1 by submitting transaction data onto Layer 1. If an invalid transaction is suspected, a ________________ is conducted to confirm its validity.",
-                    "correctAnswer": "fault-proof verification"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "Ethereum's Layer 2 solutions inherit the security of Ethereum Layer 1 by submitting transaction data onto Layer 1. If an invalid transaction is suspected, a ________________ is conducted to confirm its validity.",
+                    correctAnswer: "fault-proof verification",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         name: "L2 Rollups",
@@ -3161,174 +3177,192 @@ export const availableCourses: Course[] = [
             name: "Type of L2 Rollups",
             steps: [
               {
-                "name": "Exploring Layer 2 Rollup Types",
-                "questions": [
+                name: "Exploring Layer 2 Rollup Types",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What are the two primary types of Layer 2 rollups for Ethereum?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What are the two primary types of Layer 2 rollups for Ethereum?",
+                    answers: [
                       "A) Generalized and specialized rollups",
                       "B) zk and zk-Rollups",
                       "C) Optimistic and zk-Rollups",
-                      "D) Plasma and state channels"
+                      "D) Plasma and state channels",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "true-false",
-                    "question": "In optimistic rollups, transactions are always considered valid without the need for verification.",
-                    "correctAnswer": false
+                    type: "true-false",
+                    question:
+                      "In optimistic rollups, transactions are always considered valid without the need for verification.",
+                    correctAnswer: false,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Zero-knowledge rollups use __________ proofs where transactions are computed off-chain and then compressed data is supplied to Ethereum Mainnet as a proof of their validity.",
-                    "correctAnswer": "zero-knowledge"
-                  }
-                ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "Zero-knowledge rollups use __________ proofs where transactions are computed off-chain and then compressed data is supplied to Ethereum Mainnet as a proof of their validity.",
+                    correctAnswer: "zero-knowledge",
+                  },
+                ],
               },
               {
-                "name": "Comparing Optimistic and Zero-Knowledge Rollups",
-                "questions": [
+                name: "Comparing Optimistic and Zero-Knowledge Rollups",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What is the primary difference between optimistic and zero-knowledge rollups?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What is the primary difference between optimistic and zero-knowledge rollups?",
+                    answers: [
                       "A) Optimistic rollups always require zero-knowledge proofs for transactions.",
                       "B) Zero-knowledge rollups assume transactions are valid without verification.",
                       "C) Optimistic rollups use validity proofs and allow for challenges if transactions are suspected to be invalid",
-                      "D) Zero-knowledge rollups rely on central authorities to validate transactions."
+                      "D) Zero-knowledge rollups rely on central authorities to validate transactions.",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "true-false",
-                    "question": "Fault proofs are used in both optimistic and zero-knowledge rollups to confirm transaction validity.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question:
+                      "Fault proofs are used in both optimistic and zero-knowledge rollups to confirm transaction validity.",
+                    correctAnswer: true,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Optimistic rollups are called 'optimistic' because transactions are __________ to be valid and can be challenged if necessary.",
-                    "correctAnswer": "assumed"
-                  }
-                ]
-              }
-            ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "Optimistic rollups are called 'optimistic' because transactions are __________ to be valid and can be challenged if necessary.",
+                    correctAnswer: "assumed",
+                  },
+                ],
+              },
+            ],
           },
           {
             name: "Optimistic Rollups",
             steps: [
               {
-                "name": "Comparing Optimistic and Zero-Knowledge Rollups",
-                "questions": [
+                name: "Comparing Optimistic and Zero-Knowledge Rollups",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What is the primary difference between optimistic and zero-knowledge rollups?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What is the primary difference between optimistic and zero-knowledge rollups?",
+                    answers: [
                       "A) Optimistic rollups always require zero-knowledge proofs for transactions.",
                       "B) Zero-knowledge rollups assume transactions are valid without verification.",
                       "C) Optimistic rollups use validity proofs and allow for challenges if transactions are suspected to be invalid",
-                      "D) Zero-knowledge rollups rely on central authorities to validate transactions."
+                      "D) Zero-knowledge rollups rely on central authorities to validate transactions.",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "true-false",
-                    "question": "Fault proofs are used in both optimistic and zero-knowledge rollups to confirm transaction validity.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question:
+                      "Fault proofs are used in both optimistic and zero-knowledge rollups to confirm transaction validity.",
+                    correctAnswer: true,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Optimistic rollups are called 'optimistic' because transactions are __________ to be valid and can be challenged if necessary.",
-                    "correctAnswer": "assumed"
-                  }
-                ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "Optimistic rollups are called 'optimistic' because transactions are __________ to be valid and can be challenged if necessary.",
+                    correctAnswer: "assumed",
+                  },
+                ],
               },
               {
-                "name": "Advantages of Optimistic Rollups",
-                "questions": [
+                name: "Advantages of Optimistic Rollups",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What is the primary advantage of optimistic rollups?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What is the primary advantage of optimistic rollups?",
+                    answers: [
                       "A) Reduced transaction fees",
                       "B) Enhanced security through cryptographic proofs",
                       "C) High scalability",
-                      "D) Efficiently processing a large number of transactions while allowing challenges to ensure validity"
+                      "D) Efficiently processing a large number of transactions while allowing challenges to ensure validity",
                     ],
-                    "correctAnswer": 3
+                    correctAnswer: 3,
                   },
                   {
-                    "type": "true-false",
-                    "question": "Fault proofs are used in optimistic rollups to confirm the validity of transactions.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question:
+                      "Fault proofs are used in optimistic rollups to confirm the validity of transactions.",
+                    correctAnswer: true,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Optimistic rollups rely on a __________ system to dispute transactions that may be invalid.",
-                    "correctAnswer": "challenge-based"
-                  }
-                ]
-              }
-            ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "Optimistic rollups rely on a __________ system to dispute transactions that may be invalid.",
+                    correctAnswer: "challenge-based",
+                  },
+                ],
+              },
+            ],
           },
           {
             name: "ZK Rollups",
             steps: [
               {
-                "name": "Distinguishing zk-Rollups from Optimistic Rollups",
-                "questions": [
+                name: "Distinguishing zk-Rollups from Optimistic Rollups",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What distinguishes zk-rollups from optimistic rollups?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What distinguishes zk-rollups from optimistic rollups?",
+                    answers: [
                       "A) zk-rollups assume transaction validity.",
                       "B) zk-rollups require on-chain execution.",
                       "C) zk-rollups rely on cryptographic proofs to validate transactions✅.",
-                      "D) zk-rollups process transactions off-chain."
+                      "D) zk-rollups process transactions off-chain.",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "true-false",
-                    "question": "True or False: In zk-rollups, transactions are assumed to be valid, and cryptographic proofs are used to validate them.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question:
+                      "True or False: In zk-rollups, transactions are assumed to be valid, and cryptographic proofs are used to validate them.",
+                    correctAnswer: true,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "ZK-rollups leverage __________ for transaction verification.",
-                    "correctAnswer": "Zero-knowledge proofs✅"
-                  }
-                ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "ZK-rollups leverage __________ for transaction verification.",
+                    correctAnswer: "Zero-knowledge proofs✅",
+                  },
+                ],
               },
               {
-                "name": "Benefits and Characteristics of zk-Rollups",
-                "questions": [
+                name: "Benefits and Characteristics of zk-Rollups",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What is the primary benefit of zk-rollups?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question: "What is the primary benefit of zk-rollups?",
+                    answers: [
                       "A) Reduced transaction fees",
                       "B) Speedy on-chain execution",
                       "C) High scalability",
-                      "D) Enhanced privacy and security through cryptographic proofs✅"
+                      "D) Enhanced privacy and security through cryptographic proofs✅",
                     ],
-                    "correctAnswer": 3
+                    correctAnswer: 3,
                   },
                   {
-                    "type": "true-false",
-                    "question": "In zk-rollups, transactions are processed on layer 1.",
-                    "correctAnswer": false
+                    type: "true-false",
+                    question:
+                      "In zk-rollups, transactions are processed on layer 1.",
+                    correctAnswer: false,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "ZK-rollups are characterized by their ability to provide __________ while ensuring the validity of transactions.",
-                    "correctAnswer": "Privacy and security through cryptographic proofs✅"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "ZK-rollups are characterized by their ability to provide __________ while ensuring the validity of transactions.",
+                    correctAnswer:
+                      "Privacy and security through cryptographic proofs✅",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         name: "Polygon zkEVM",
@@ -3337,129 +3371,140 @@ export const availableCourses: Course[] = [
             name: "EVM equivalence",
             steps: [
               {
-                "name": "EVM Equivalence 1/2",
-                "questions": [
+                name: "EVM Equivalence 1/2",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What role does Polygon zkEVM play in the context of Ethereum scalability?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What role does Polygon zkEVM play in the context of Ethereum scalability?",
+                    answers: [
                       "A) Enforcing centralized computing solutions",
                       "B) Offering enhanced data storage for Ethereum",
                       "C) Leveraging cryptographic zero-knowledge proofs for off-chain transactions' validity",
-                      "D) Expanding Ethereum's decentralized network"
+                      "D) Expanding Ethereum's decentralized network",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Polygon zkEVM offers scalability without compromising ________________.",
-                    "correctAnswer": "Security"
+                    type: "fill-in-the-blank",
+                    question:
+                      "Polygon zkEVM offers scalability without compromising ________________.",
+                    correctAnswer: "Security",
                   },
                   {
-                    "type": "multiple-choice",
-                    "question": "What is one of the benefits of using Polygon zkEVM for developers?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What is one of the benefits of using Polygon zkEVM for developers?",
+                    answers: [
                       "A) Reduced security compared to Ethereum",
                       "B) Reduced compatibility with existing smart contracts",
                       "C) EVM-equivalence, allowing the deployment of existing smart contracts",
-                      "D) Complete control over user funds"
+                      "D) Complete control over user funds",
                     ],
-                    "correctAnswer": 2
-                  }
-                ]
+                    correctAnswer: 2,
+                  },
+                ],
               },
               {
-                "name": "EVM Equivalence 2/2",
-                "questions": [
+                name: "EVM Equivalence 2/2",
+                questions: [
                   {
-                    "type": "true-false",
-                    "question": "Polygon zkEVM aims to maintain opcode compatibility with the Ethereum Virtual Machine (EVM).",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question:
+                      "Polygon zkEVM aims to maintain opcode compatibility with the Ethereum Virtual Machine (EVM).",
+                    correctAnswer: true,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Polygon zkEVM ensures the correctness of off-chain computations by employing _____________ as validity proofs.",
-                    "correctAnswer": "Zero-knowledge proofs"
+                    type: "fill-in-the-blank",
+                    question:
+                      "Polygon zkEVM ensures the correctness of off-chain computations by employing _____________ as validity proofs.",
+                    correctAnswer: "Zero-knowledge proofs",
                   },
                   {
-                    "type": "true-false",
-                    "question": "Polygon zkEVM transactions do not require zero-knowledge proofs for validity.",
-                    "correctAnswer": false
+                    type: "true-false",
+                    question:
+                      "Polygon zkEVM transactions do not require zero-knowledge proofs for validity.",
+                    correctAnswer: false,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Polygon zkEVM offers scalability without compromising ________________.",
-                    "correctAnswer": "Security"
-                  }
-                ]
-              }
-
-
-            ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "Polygon zkEVM offers scalability without compromising ________________.",
+                    correctAnswer: "Security",
+                  },
+                ],
+              },
+            ],
           },
           {
             name: "zkEVM",
             steps: [
               {
-                "name": "Polygon zkEVM Overview",
-                "questions": [
+                name: "Polygon zkEVM Overview",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What does zkEVM stand for in the context of Polygon's Layer 2 solution?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What does zkEVM stand for in the context of Polygon's Layer 2 solution?",
+                    answers: [
                       "A) Zero-Knowledge Encryption Validation Model",
                       "B) Zipped Kernel Execution Virtual Machine",
                       "C) Zero-Knowledge Ethereum Virtual Machine",
-                      "D) Zigzag Kite-Edge Velocity Model"
+                      "D) Zigzag Kite-Edge Velocity Model",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "true-false",
-                    "question": "Polygon zkEVM emulates the Ethereum Virtual Machine (EVM) while recreating all existing EVM opcodes.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question:
+                      "Polygon zkEVM emulates the Ethereum Virtual Machine (EVM) while recreating all existing EVM opcodes.",
+                    correctAnswer: true,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "Polygon zkEVM is designed to offer EVM ________________ for deploying existing Ethereum smart contracts.",
-                    "correctAnswer": "Equivalence"
-                  }
-                ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "Polygon zkEVM is designed to offer EVM ________________ for deploying existing Ethereum smart contracts.",
+                    correctAnswer: "Equivalence",
+                  },
+                ],
               },
               {
-                "name": "EVM Equivalence & ZK-Rollups",
-                "questions": [
+                name: "EVM Equivalence & ZK-Rollups",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "What is the main goal of Zero-Knowledge Rollups (ZK-Rollups) in the context of Polygon zkEVM?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question:
+                      "What is the main goal of Zero-Knowledge Rollups (ZK-Rollups) in the context of Polygon zkEVM?",
+                    answers: [
                       "A) To replace Ethereum's base layer",
                       "B) To achieve zero-fee transactions",
                       "C) To improve the scalability and transactions per second (TPS) of Ethereum",
-                      "D) To implement a centralized security model"
+                      "D) To implement a centralized security model",
                     ],
-                    "correctAnswer": 2
+                    correctAnswer: 2,
                   },
                   {
-                    "type": "true-false",
-                    "question": "Polygon zkEVM uses verifiable zero-knowledge proofs to validate the correctness of off-chain computations.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question:
+                      "Polygon zkEVM uses verifiable zero-knowledge proofs to validate the correctness of off-chain computations.",
+                    correctAnswer: true,
                   },
                   {
-                    "type": "fill-in-the-blank",
-                    "question": "With Polygon zkEVM, users can deposit assets from Ethereum and transact off-chain while ensuring the operators of zkEVM can't steal user funds, thus inheriting the ________________ of Ethereum.",
-                    "correctAnswer": "Security"
-                  }
-                ]
-              }
-            ]
+                    type: "fill-in-the-blank",
+                    question:
+                      "With Polygon zkEVM, users can deposit assets from Ethereum and transact off-chain while ensuring the operators of zkEVM can't steal user funds, thus inheriting the ________________ of Ethereum.",
+                    correctAnswer: "Security",
+                  },
+                ],
+              },
+            ],
           },
           {
             name: "Interact with Polygon zkEVM",
-            steps: []
+            steps: [],
           },
-        ]
-      }
-    ]
-  }
+        ],
+      },
+    ],
+  },
 ];
