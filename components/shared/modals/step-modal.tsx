@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import {
   Button,
   cn,
@@ -11,10 +11,12 @@ import {
   Progress,
 } from "@nextui-org/react";
 
-import {useCourseStore, useStepModalStore} from "@/lib/store";
-import {Question} from "@/lib/interfaces";
-import {useUserStore} from "@/lib/store/user-store";
-import InteractiveButton, {stepToSafeFunction} from "@/components/safe-interaction-components/interactive-button";
+import { useCourseStore, useStepModalStore } from "@/lib/store";
+import { Question } from "@/lib/interfaces";
+import { useUserStore } from "@/lib/store/user-store";
+import InteractiveButton, {
+  stepToSafeFunction,
+} from "@/components/safe-interaction-components/interactive-button";
 
 interface StepModalProps {
   isOpen: boolean;
@@ -22,7 +24,7 @@ interface StepModalProps {
   onOpenChange: () => void;
 }
 
-export const StepModal = ({isOpen, onOpen, onOpenChange}: StepModalProps) => {
+export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
   const address = useUserStore((state) => state.address);
   const course = useCourseStore((state) => state.course);
   const currentStep = useCourseStore((state) => state.currentStep);
@@ -403,12 +405,38 @@ export const StepModal = ({isOpen, onOpen, onOpenChange}: StepModalProps) => {
                             Check
                           </Button>
                         </div>
+                      )}
+                      {step.questions[currentQuestion].type.includes(
+                        "interaction-safe"
+                      ) && (
+                        <InteractiveButton
+                          func={stepToSafeFunction(
+                            step.questions[currentQuestion].type
                           )}
-                      {
-                          step.questions[currentQuestion].type.includes("interaction-safe") && (
-                            <InteractiveButton func={stepToSafeFunction(step.questions[currentQuestion].type)} onSuccess={() => console.log("success")} onFailure={() => "ERROR"}></InteractiveButton>
-                          )
-                      }
+                          onSuccess={() => {
+                            setCorrectResponses(correctResponses + 1);
+                            setTimeout(() => {
+                              if (
+                                currentQuestion + 1 ===
+                                step.questions.length
+                              ) {
+                                setStepFinished(true);
+                                onFinish().then(() => {
+                                  reset();
+                                  toggleStepModal();
+                                });
+                              } else {
+                                setCurrentQuestion(currentQuestion + 1);
+                              }
+                              setGapFill("");
+                              setLatestCorrect(null);
+                              setLatestAnswer(null);
+                              setLoading(false);
+                            }, 2000);
+                          }}
+                          onFailure={() => "ERROR"}
+                        ></InteractiveButton>
+                      )}
                     </>
                   )}
                   {stepFinished &&
