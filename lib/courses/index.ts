@@ -2620,7 +2620,7 @@ export const availableCourses: Course[] = [
                   {
                     type: "interaction-safe",
                     question:
-                      "Do you want to deploy your firs Safe Smart Account?",
+                      "Do you want to deploy your first Safe Smart Account?",
                     answers: [],
                     correctAnswer: 1,
                   },

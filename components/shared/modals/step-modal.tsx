@@ -1,6 +1,7 @@
-import { useState } from "react";
+import {useState} from "react";
 import {
   Button,
+  cn,
   Input,
   Modal,
   ModalBody,
@@ -8,12 +9,12 @@ import {
   ModalFooter,
   ModalHeader,
   Progress,
-  cn,
 } from "@nextui-org/react";
 
-import { useCourseStore, useStepModalStore } from "@/lib/store";
-import { Question } from "@/lib/interfaces";
-import { useUserStore } from "@/lib/store/user-store";
+import {useCourseStore, useStepModalStore} from "@/lib/store";
+import {Question} from "@/lib/interfaces";
+import {useUserStore} from "@/lib/store/user-store";
+import InteractiveButton, {stepToSafeFunction} from "@/components/safe-interaction-components/interactive-button";
 
 interface StepModalProps {
   isOpen: boolean;
@@ -21,7 +22,7 @@ interface StepModalProps {
   onOpenChange: () => void;
 }
 
-export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
+export const StepModal = ({isOpen, onOpen, onOpenChange}: StepModalProps) => {
   const address = useUserStore((state) => state.address);
   const course = useCourseStore((state) => state.course);
   const currentStep = useCourseStore((state) => state.currentStep);
@@ -114,7 +115,6 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
       </>
     );
   }
-
   return (
     <>
       <Modal
@@ -403,7 +403,12 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                             Check
                           </Button>
                         </div>
-                      )}
+                          )}
+                      {
+                          step.questions[currentQuestion].type.includes("interaction-safe") && (
+                            <InteractiveButton func={stepToSafeFunction(step.questions[currentQuestion].type)} onSuccess={() => console.log("success")} onFailure={() => "ERROR"}></InteractiveButton>
+                          )
+                      }
                     </>
                   )}
                   {stepFinished &&
