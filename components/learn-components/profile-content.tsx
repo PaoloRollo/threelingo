@@ -52,7 +52,6 @@ export default function ProfileContent({
     console.log(provider);
     try {
       const signer = provider.getSigner();
-      console.log(await signer.signMessage("test"));
       await register((message) => signer.signMessage(message));
     } catch (registerIdentityError) {}
   }, [register, address, provider]);
