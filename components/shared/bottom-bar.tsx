@@ -1,9 +1,8 @@
 "use client";
-
+import { useUserStore } from "@/lib/store/user-store";
 import { cn } from "@nextui-org/react";
 import { HomeIcon, TrophyIcon, UserIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { useAccount } from "wagmi";
 
 interface MenuItem {
   name: string;
@@ -32,7 +31,7 @@ const menuItems: MenuItem[] = [
 export default function BottomBar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { address } = useAccount();
+  const address = useUserStore((state) => state.address);
   return (
     <div className="fixed bottom-0 left-0 w-full bg-primary h-20 flex flex-row items-center justify-around z-50">
       {menuItems.map((menuItem) => (

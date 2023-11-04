@@ -1,5 +1,6 @@
 "use client";
 import { availableCourses } from "@/lib/courses";
+import { useUserStore } from "@/lib/store/user-store";
 import { sliceAddress } from "@/lib/utils";
 import { Divider, Image } from "@nextui-org/react";
 import {
@@ -11,7 +12,6 @@ import {
   ZapIcon,
 } from "lucide-react";
 import { checksumAddress } from "viem";
-import { useAccount } from "wagmi";
 
 export default function ProfileContent({
   params,
@@ -19,7 +19,8 @@ export default function ProfileContent({
   params: { address: string };
 }) {
   const { address } = params;
-  const { address: loggedAddress } = useAccount();
+
+  const loggedAddress = useUserStore((state) => state.address);
   // const { data: ensAddress } = useEnsName({ address });
 
   // console.log(ensAddress);

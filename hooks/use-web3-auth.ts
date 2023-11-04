@@ -10,12 +10,16 @@ import {
   WALLET_ADAPTERS,
 } from "@web3auth/base";
 import { useRouter } from "next/navigation";
+import { useUserStore } from "@/lib/store/user-store";
 
-export const useWeb3Auth = () => {
+export const useWeb3Auth = (automaticSignIn: boolean = false) => {
   const [web3Auth, setWeb3Auth] = useState<Web3AuthModalPack | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
-  const [user, setUser] = useState<any>(null);
+  const user = useUserStore((state) => state.user);
+  const setUser = useUserStore((state) => state.setUser);
+  const setAddress = useUserStore((state) => state.setAddress);
+  const setSafes = useUserStore((state) => state.setSafes);
   const router = useRouter();
 
   useEffect(() => {
@@ -23,16 +27,30 @@ export const useWeb3Auth = () => {
   }, []);
 
   useEffect(() => {
+    if (user) {
+      router.push("/learn");
+    }
+  }, [user]);
+
+  useEffect(() => {
     if (web3Auth) {
       web3Auth.subscribe(ADAPTER_EVENTS.CONNECTED, async (u) => {
+        const eoa = await web3Auth.getAddress();
+        const safes = await web3Auth.getSafes(
+          "https://safe-transaction-goerli.safe.global"
+        );
+        setAddress(eoa);
+        setSafes(safes || []);
         const userInfo = await web3Auth.getUserInfo();
-        console.log(userInfo);
         setUser(userInfo);
         router.push("/learn");
+        console.log(eoa, safes, userInfo);
       });
 
       web3Auth.subscribe(ADAPTER_EVENTS.DISCONNECTED, () => {
         setUser(null);
+        setAddress("");
+        setSafes([]);
       });
     }
   }, [web3Auth]);
@@ -89,6 +107,13 @@ export const useWeb3Auth = () => {
         modalConfig,
       });
       setWeb3Auth(web3AuthModalPack);
+      if (automaticSignIn) {
+        const { eoa, safes } = await web3AuthModalPack.signIn();
+        setAddress(eoa);
+        setSafes(safes || []);
+        const userInfo = await web3AuthModalPack.getUserInfo();
+        setUser(userInfo);
+      }
     } catch (e) {
       console.error(e);
       setError(true);
@@ -97,5 +122,22 @@ export const useWeb3Auth = () => {
     }
   };
 
-  return { web3Auth, loading, user, error };
+  const signIn = async (w3auth = undefined) => {
+    if (!web3Auth) throw new Error("web3auth not initialized");
+    const { eoa, safes } = await web3Auth.signIn();
+    setAddress(eoa);
+    setSafes(safes || []);
+    const userInfo = await web3Auth.getUserInfo();
+    setUser(userInfo);
+    console.log("hereeeee");
+    return { eoa, safes };
+  };
+
+  const signOut = async () => {
+    if (!web3Auth) throw new Error("web3auth not initialized");
+    setUser(null);
+    return await web3Auth.signOut();
+  };
+
+  return { web3Auth, loading, error, signIn, signOut };
 };

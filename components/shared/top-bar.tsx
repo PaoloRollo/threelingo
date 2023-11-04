@@ -1,8 +1,8 @@
 "use client";
 import { useCourseStore } from "@/lib/store";
+import { useUserStore } from "@/lib/store/user-store";
 import { sliceAddress } from "@/lib/utils";
 import { Button, cn } from "@nextui-org/react";
-import { useWeb3Modal } from "@web3modal/wagmi/react";
 import {
   ChevronDownIcon,
   ChevronUpIcon,
@@ -11,8 +11,7 @@ import {
   UnlockIcon,
 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useAccount } from "wagmi";
+import { useState } from "react";
 
 const sections: string[] = [
   "Section 1: Rookie",
@@ -26,21 +25,21 @@ const lockedSections: number[] = [2, 3];
 export default function TopBar() {
   const course = useCourseStore((state) => state.course);
   const setCourse = useCourseStore((state) => state.setCourse);
-  const { address, isConnected } = useAccount();
+
+  const address = useUserStore((state) => state.address);
   const pathname = usePathname();
   const router = useRouter();
-  const { open } = useWeb3Modal();
   const [viewSections, setViewSections] = useState<boolean>(false);
   const [currentSection, setCurrentSection] = useState<number>(0);
 
-  useEffect(() => {
-    if (!address && !isConnected) {
-      setCourse(undefined);
-      router.push("/learn");
-    } else if (address && isConnected) {
-      router.push("/learn");
-    }
-  }, [address, isConnected]);
+  // useEffect(() => {
+  //   if (!address) {
+  //     setCourse(undefined);
+  //     router.push("/learn");
+  //   } else if (address) {
+  //     router.push("/learn");
+  //   }
+  // }, [address,]);
 
   return (
     <div
@@ -82,11 +81,11 @@ export default function TopBar() {
             <span className="font-bold tracking-widest">{course.name}</span>
           </Button>
         )}
-        {address && isConnected ? (
+        {address ? (
           <Button
             color="primary"
             className="font-bold uppercase tracking-widest"
-            onClick={() => open({ view: "Account" })}
+            // onClick={() => open({ view: "Account" })}
           >
             <span>{sliceAddress(address)}</span>
           </Button>
@@ -94,7 +93,7 @@ export default function TopBar() {
           <Button
             color="primary"
             className="font-bold uppercase tracking-widest"
-            onClick={() => open()}
+            // onClick={() => open()}
           >
             <span>Connect wallet</span>
           </Button>

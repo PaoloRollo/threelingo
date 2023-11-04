@@ -1,38 +1,22 @@
 "use client";
 
 import { useWeb3Auth } from "@/hooks/use-web3-auth";
+import { useUserStore } from "@/lib/store/user-store";
 import { Button } from "@nextui-org/react";
 import { ArrowLeftIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function LoginPage() {
-  const [userEmail, setUserEmail] = useState<string>("");
   const router = useRouter();
-  const { web3Auth, loading, user } = useWeb3Auth();
-  console.log(web3Auth, user);
-
-  const loginUser = async () => {
-    try {
-      //   await supabaseBrowser.auth.signInWithOtp({
-      //     email: userEmail,
-      //     options: { emailRedirectTo: `${window.origin}/api/auth/callback` },
-      //   });
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { web3Auth, loading, signIn } = useWeb3Auth();
+  const user = useUserStore((state) => state.user);
 
   useEffect(() => {
-    if (web3Auth) {
-      web3Auth.getAddress().then((address) => {
-        console.log("ADDRESS", address);
-        if (address) {
-          router.push("/learn");
-        }
-      });
+    if (user) {
+      router.push("/learn");
     }
-  }, [web3Auth]);
+  }, [user]);
 
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center relative">
@@ -50,7 +34,7 @@ export default function LoginPage() {
           isDisabled={!web3Auth}
           isLoading={loading}
           fullWidth
-          onClick={() => web3Auth?.signIn()}
+          onClick={() => signIn()}
         >
           Login
         </Button>
