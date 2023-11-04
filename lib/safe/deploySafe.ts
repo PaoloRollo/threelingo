@@ -14,50 +14,27 @@ import {
 import SafeApiKit from "@safe-global/api-kit";
 
 export async function deploySafeAndReturnAddress(): Promise<boolean> {
-  try {
-    // polygon zkevm
-    const provider = new ethers.providers.JsonRpcProvider(
-      process.env.NEXT_PUBLIC_POLYGON_ZKEVM_RPC_URL
-    );
+    try {
 
-    const signerOrProvider = new ethers.Wallet(
-      process.env.WALLET_PRIVATE_KEY as string,
-      provider
-    );
 
-    const ethAdapterOwner1 = new EthersAdapter({
-      ethers,
-      signerOrProvider,
-    });
 
-    const safeFactory = await SafeFactory.create({
-      ethAdapter: ethAdapterOwner1,
-    });
 
-    const userAccount = useUserStore.getState();
 
-    const safeAccountConfig = {
-      owners: [userAccount.address],
-      threshold: 1,
-    };
+        // Transfer 0.1 ETH to the Safe address
+        /*const transferAmount = ethers.utils.parseEther("0.1");
+        const tx = await signerOrProvider.sendTransaction({
+            to: safeAddress,
+            value: transferAmount,
+        });
+        const receipt = await tx.wait();
+        if(receipt){
+        }*/
+        return true
 
-    const safe = await safeFactory.deploySafe({ safeAccountConfig });
-    const safeAddress = await safe.getAddress();
-
-    // Transfer 0.1 ETH to the Safe address
-    const transferAmount = ethers.utils.parseEther("0.1");
-    const tx = await signerOrProvider.sendTransaction({
-      to: safeAddress,
-      value: transferAmount,
-    });
-    const receipt = await tx.wait();
-    if (receipt) {
+    } catch (error) {
+        console.error("Error deploying Safe:", error);
+        throw error;
     }
-    return true;
-  } catch (error) {
-    console.error("Error deploying Safe:", error);
-    throw error;
-  }
 }
 
 export async function makeSafeTransferSingleSign(): Promise<boolean> {
