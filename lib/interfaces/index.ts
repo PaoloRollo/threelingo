@@ -3,6 +3,7 @@ export interface Course {
   name: string;
   description: string;
   image: string;
+  nftImage: string;
   sections: Section[];
 }
 
