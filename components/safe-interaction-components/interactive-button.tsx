@@ -1,6 +1,6 @@
 import {Button} from "@nextui-org/react";
 import {useState} from "react";
-import {deploySafeAndReturnAddress} from "@/lib/safe/deploySafe";
+import {deploySafeAndReturnAddress, makeSafeTransferSingleSign, addSignAndChangeThreshold} from "@/lib/safe/deploySafe";
 
 export default function InteractiveButton({
                                               func,
@@ -31,14 +31,17 @@ export default function InteractiveButton({
     </div>
 }
 
-export const stepToSafeFunction = (stepName: string): () => Promise<boolean> => {
+export const stepToSafeFunction = (stepName: string): (() => Promise<boolean>) => {
     let prefix = "interaction-safe";
     switch (stepName) {
         case `${prefix}-deploy`:
-            return deploySafeAndReturnAddress
+            return deploySafeAndReturnAddress;
         case `${prefix}-transfer`:
-            break;
+            return makeSafeTransferSingleSign;
         case `${prefix}-addSigner`:
-            break;
+            return addSignAndChangeThreshold;
+        default:
+            return () => deploySafeAndReturnAddress();
     }
 }
+
