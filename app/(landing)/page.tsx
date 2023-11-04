@@ -112,7 +112,7 @@ export default function Home() {
             <h3 className="font-extrabold text-3xl md:text-5xl mt-2">
               free. fun. effective.
             </h3>
-            <p className="opacity-70">
+            <p className="opacity-70 px-4">
               Learning with <span className="font-bold">threelingo</span> is
               free, fun and effective, since we copied pretty much everything
               from Duolingo.
@@ -129,7 +129,7 @@ export default function Home() {
             <h3 className="font-extrabold text-3xl md:text-5xl mt-2">
               backed by AI.
             </h3>
-            <p className="opacity-70">
+            <p className="opacity-70 px-4">
               All the courses, units and steps are AI-generated, allowing us to
               keep producing new content fast. Cool right?
             </p>
@@ -146,7 +146,7 @@ export default function Home() {
           <h3 className="font-extrabold text-3xl md:text-5xl mt-2">
             never stop learning.
           </h3>
-          <p className="opacity-70">
+          <p className="opacity-70 px-4">
             We are mobile first, so you can learn web3 from your sofa or the
             toilet. Never stop learning!
           </p>
