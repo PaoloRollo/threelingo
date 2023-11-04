@@ -55,7 +55,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-8xl font-extrabold text-center text-primary">
             threelingo
           </h1>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-center mt-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-center mt-4 mx-4">
             The free, fun, and effective way to enter web3!
           </h2>
           <div className="flex flex-col md:flex-row space-x-0 space-y-4 md:space-y-0 md:space-x-4 mx-auto w-full items-center justify-center mt-4 px-4">
