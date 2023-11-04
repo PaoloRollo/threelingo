@@ -3501,10 +3501,46 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Interact with Polygon zkEVM",
-            steps: [],
+            steps: [
+              {
+                name: "Playing around on Polygon zkEVM",
+                questions: [
+                  {
+                    type: "interaction-p-zkevm-receive",
+                    question: "Receive some money on your account on Polygon zkEVM",
+                    answers: [],
+                    correctAnswer: 1,
+                  },
+                  {
+                    type: "interaction-p-zkevm-deploy",
+                    question: "Deploy your first smart contract on Polygon zkEVM",
+                    answers: [],
+                    correctAnswer: 1,
+                  },
+                  {
+                    type: "interaction-p-zkevm-read",
+                    question: "Read your smart contract Polygon zkEVM",
+                    answers: [],
+                    correctAnswer: 1,
+                  },
+                  {
+                    type: "interaction-p-zkevm-write",
+                    question: "Update the state of your smart contract Polygon zkEVM",
+                    answers: [],
+                    correctAnswer: 1,
+                  },
+                  {
+                    type: "interaction-p-zkevm-view",
+                    question: "Check your transaction on Polygon zkEVM block explorer",
+                    answers: [],
+                    correctAnswer: 1,
+                  },
+                ]
+              }
+            ]
           },
-        ],
-      },
-    ],
-  },
+        ]
+      }
+    ]
+  }
 ];
