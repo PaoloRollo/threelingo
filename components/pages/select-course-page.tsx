@@ -12,21 +12,18 @@ export default function SelectCoursePage() {
     >
       <h1 className="font-bold text-2xl tracking-wide">Web3 Courses</h1>
       <motion.div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-        {availableCourses
-          .concat(availableCourses)
-          .concat(availableCourses)
-          .map((course, index) => (
-            <motion.div
-              key={course.id}
-              onClick={() => router.push(`/learn/enroll/${course.id}`)}
-              className="rounded-xl border-x-2 border-t-2 border-b-4 border-gray-300 dark:border-default aspect-square flex flex-col items-center justify-center space-y-2 hover:bg-gray-200 dark:hover:bg-content1 cursor-pointer"
-            >
-              <Image src={course.image} className="h-20" alt={course.name} />
-              <p className="opacity-60 font-semibold tracking-wide text-sm">
-                {course.name}
-              </p>
-            </motion.div>
-          ))}
+        {availableCourses.map((course, index) => (
+          <motion.div
+            key={course.id}
+            onClick={() => router.push(`/learn/enroll/${course.id}`)}
+            className="rounded-xl border-x-2 border-t-2 border-b-4 border-gray-300 dark:border-default aspect-square flex flex-col items-center justify-center space-y-2 hover:bg-gray-200 dark:hover:bg-content1 cursor-pointer"
+          >
+            <Image src={course.image} className="h-20" alt={course.name} />
+            <p className="opacity-60 font-semibold tracking-wide text-sm">
+              {course.name}
+            </p>
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   );

@@ -1,5 +1,4 @@
 "use client";
-
 import SelectCoursePage from "@/components/pages/select-course-page";
 import NoWalletComponent from "@/components/shared/no-wallet-component";
 import { useUserCoursesStore } from "@/lib/store";

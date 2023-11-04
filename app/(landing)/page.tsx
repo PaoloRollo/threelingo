@@ -73,7 +73,7 @@ export default function Home() {
               color="primary"
               className="font-bold uppercase tracking-widest w-full"
               as={Link}
-              href="/learn"
+              href="/login"
             >
               Already registered?
             </Button>

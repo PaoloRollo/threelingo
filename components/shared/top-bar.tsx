@@ -120,20 +120,20 @@ export default function TopBar() {
                 />
               )}
               <p className="text-center font-bold tracking-widest">
-                {sections[currentSection]}
+                {course.sections[currentSection].name}
               </p>
             </div>
             {viewSections && (
               <div className="flex flex-col space-y-2">
                 {viewSections &&
-                  sections.map((section, index) => {
+                  course.sections.map((section, index) => {
                     const isCurrent = index === currentSection;
                     const isLocked = lockedSections.includes(index);
 
                     if (isCurrent) {
                       return (
                         <div
-                          key={section}
+                          key={section.name}
                           onClick={() => {
                             setViewSections(false);
                             setCurrentSection(index);
@@ -141,7 +141,7 @@ export default function TopBar() {
                           className="border-2 border-b-3 bg-emerald-500 border-emerald-700 text-white rounded-xl p-4 w-full h-20 flex space-x-2 items-center justify-between"
                         >
                           <h2 className="font-bold tracking-widest">
-                            {section}
+                            {section.name}
                           </h2>
                         </div>
                       );
@@ -150,11 +150,11 @@ export default function TopBar() {
                     if (isLocked) {
                       return (
                         <div
-                          key={section}
+                          key={section.name}
                           className="border-2 border-b-3 bg-gray-400 border-gray-600 text-white rounded-xl p-4 w-full h-20 flex space-x-2 items-center justify-between"
                         >
                           <h2 className="font-bold tracking-widest">
-                            {section}
+                            {section.name}
                           </h2>
                           <LockIcon />
                         </div>
@@ -163,14 +163,16 @@ export default function TopBar() {
 
                     return (
                       <div
-                        key={section}
+                        key={section.name}
                         onClick={() => {
                           setViewSections(false);
                           setCurrentSection(index);
                         }}
                         className="border-2 border-b-3 border-gray-300 rounded-xl p-4 w-full h-20 flex space-x-2 items-center justify-between"
                       >
-                        <h2 className="font-bold tracking-widest">{section}</h2>
+                        <h2 className="font-bold tracking-widest">
+                          {section.name}
+                        </h2>
                         <UnlockIcon />
                       </div>
                     );

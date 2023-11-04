@@ -31,7 +31,12 @@ export const GuidebookModal = ({
   if (!target) {
     return (
       <>
-        <Modal size="full" isOpen={isOpen} onOpenChange={onOpenChange}>
+        <Modal
+          size="full"
+          // scrollBehavior="inside"
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+        >
           <ModalContent className="text-foreground">
             {(onClose) => (
               <>
@@ -62,9 +67,7 @@ export const GuidebookModal = ({
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         size="full"
-        placement="center"
-        backdrop="blur"
-        scrollBehavior="inside"
+        // scrollBehavior="inside"
       >
         <ModalContent className="text-foreground">
           {(onClose) => (
