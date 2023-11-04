@@ -1,18 +1,38 @@
 "use client";
 import SelectCoursePage from "@/components/pages/select-course-page";
 import NoWalletComponent from "@/components/shared/no-wallet-component";
-import { useWeb3Auth } from "@/hooks/use-web3-auth";
 import { useUserCoursesStore } from "@/lib/store";
 import { useUserStore } from "@/lib/store/user-store";
 import { Skeleton } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function LearnPage() {
   // const { address } = useAccount();
-  const { web3Auth, loading, signIn } = useWeb3Auth(true);
+  const [loading, setLoading] = useState(true);
   const address = useUserStore((state) => state.address);
   console.log(address);
   const courses = useUserCoursesStore((state) => state.courses);
+  const setCourses = useUserCoursesStore((state) => state.setCourses);
+
+  useEffect(() => {
+    if (address) {
+      fetchCourses();
+    }
+  }, [address]);
+
+  const fetchCourses = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/courses`);
+      const data = await res.json();
+      setCourses(data.result);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (loading) {
     return (

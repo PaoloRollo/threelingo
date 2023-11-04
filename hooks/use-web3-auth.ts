@@ -15,7 +15,7 @@ import { ethers } from "ethers";
 
 export const useWeb3Auth = (automaticSignIn: boolean = false) => {
   const [web3Auth, setWeb3Auth] = useState<Web3AuthModalPack | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [provider, setProvider] = useState<any>(null);
   const user = useUserStore((state) => state.user);
@@ -58,6 +58,7 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
   }, [web3Auth]);
 
   const initializeWeb3Auth = async () => {
+    setLoading(true);
     try {
       const options: Web3AuthOptions = {
         clientId: process.env.NEXT_PUBLIC_WEB3AUTH_CLIENT_ID as string,

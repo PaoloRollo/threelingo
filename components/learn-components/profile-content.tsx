@@ -26,9 +26,6 @@ export default function ProfileContent({
     // The project ID and domain you setup in the Domain Setup section
     projectId: "62066586b5adc509f3304c9312077975",
     domain: "threelingo.vercel.app",
-
-    // Allow localhost development with "unlimited" mode.
-    // This authorizes this dapp to control notification subscriptions for all domains (including `app.example.com`), not just `window.location.host`
     isLimited: false,
   });
   const { web3Auth, provider } = useWeb3Auth();
@@ -49,7 +46,6 @@ export default function ProfileContent({
   const performRegistration = useCallback(async () => {
     if (!address) return;
     if (!provider) return;
-    console.log(provider);
     try {
       const signer = provider.getSigner();
       await register((message) => signer.signMessage(message));
