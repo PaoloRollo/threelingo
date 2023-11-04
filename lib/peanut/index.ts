@@ -4,8 +4,9 @@ import peanut from "@squirrel-labs/peanut-sdk";
 const CHAINID = 1442; // Polygon zkEVM Testnet
 
 export enum CourseTokenID {
-  WEB3_INTRODUCTION = 1,
-  EOA_SMART_ACCOUNTS = 2,
+  WEB3_INTRODUCTION = 0,
+  EOA_SMART_ACCOUNTS = 1,
+  SCALING_ETHEREUM = 2
 }
 
 /**
