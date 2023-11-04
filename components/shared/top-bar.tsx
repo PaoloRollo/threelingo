@@ -1,5 +1,6 @@
 "use client";
-import { useCourseStore } from "@/lib/store";
+import { useWeb3Auth } from "@/hooks/use-web3-auth";
+import { useCourseStore, useUserCoursesStore } from "@/lib/store";
 import { useUserStore } from "@/lib/store/user-store";
 import { sliceAddress } from "@/lib/utils";
 import { Button, cn } from "@nextui-org/react";
@@ -11,7 +12,7 @@ import {
   UnlockIcon,
 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const sections: string[] = [
   "Section 1: Rookie",
@@ -25,10 +26,13 @@ const lockedSections: number[] = [2, 3];
 export default function TopBar() {
   const course = useCourseStore((state) => state.course);
   const setCourse = useCourseStore((state) => state.setCourse);
+  const courses = useUserCoursesStore((state) => state.courses);
+  const setCourses = useUserCoursesStore((state) => state.setCourses);
 
   const address = useUserStore((state) => state.address);
   const pathname = usePathname();
   const router = useRouter();
+  const { web3Auth, signIn } = useWeb3Auth();
   const [viewSections, setViewSections] = useState<boolean>(false);
   const [currentSection, setCurrentSection] = useState<number>(0);
 
@@ -40,6 +44,22 @@ export default function TopBar() {
   //     router.push("/learn");
   //   }
   // }, [address,]);
+
+  useEffect(() => {
+    if (!courses || courses.length === 0) {
+      fetchCourses();
+    }
+  }, [courses]);
+
+  const fetchCourses = async () => {
+    try {
+      const res = await fetch(`/api/courses`);
+      const data = await res.json();
+      setCourses(data.result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div
@@ -93,7 +113,8 @@ export default function TopBar() {
           <Button
             color="primary"
             className="font-bold uppercase tracking-widest"
-            // onClick={() => open()}
+            onClick={() => signIn()}
+            isLoading={!web3Auth}
           >
             <span>Connect wallet</span>
           </Button>

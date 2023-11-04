@@ -3,6 +3,7 @@ import Marquee from "@/components/landing-components/marquee";
 import { availableCourses } from "@/lib/courses";
 import { Button, Link, cn } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import { Image } from "@nextui-org/react";
 import { BotIcon, GraduationCapIcon, TabletSmartphoneIcon } from "lucide-react";
 
 const IntegrationCard = ({ img, name }: { img: string; name: string }) => {
@@ -52,10 +53,15 @@ export default function Home() {
       >
         {/* <Globe className="mt-auto -mb-40 md:-mb-72" /> */}
         <div className="flex flex-col z-10 select-none">
+          <Image
+            src="/threelingo-animated.gif"
+            className="mx-auto h-20 items-center text-center justify-center"
+            alt="animated-logo"
+          ></Image>
           <h1 className="text-5xl md:text-8xl font-extrabold text-center text-primary">
             threelingo
           </h1>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-center mt-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-center mt-4 mx-4">
             The free, fun, and effective way to enter web3!
           </h2>
           <div className="flex flex-col md:flex-row space-x-0 space-y-4 md:space-y-0 md:space-x-4 mx-auto w-full items-center justify-center mt-4 px-4">
@@ -81,8 +87,8 @@ export default function Home() {
         </div>
         <div className="absolute bottom-0 py-4 w-full flex justify-around border-2 bg-background z-10">
           {/* <div className="flex space-x-8 overflow-hidden w-full"> */}
-          <Marquee pauseOnHover className="[--duration:10s] w-full">
-            {availableCourses.concat(availableCourses).map((course, index) => (
+          <Marquee pauseOnHover className="[--duration:4s] w-full mx-auto">
+            {availableCourses.map((course, index) => (
               <IntegrationCard
                 name={course.name}
                 img={course.image}

@@ -36,6 +36,47 @@ export interface Database {
         }
         Relationships: []
       }
+      progresses: {
+        Row: {
+          address: string
+          completed: boolean | null
+          course_id: number | null
+          created_at: string
+          current_section: number | null
+          current_step: number | null
+          current_unit: number | null
+          id: number
+        }
+        Insert: {
+          address: string
+          completed?: boolean | null
+          course_id?: number | null
+          created_at?: string
+          current_section?: number | null
+          current_step?: number | null
+          current_unit?: number | null
+          id?: number
+        }
+        Update: {
+          address?: string
+          completed?: boolean | null
+          course_id?: number | null
+          created_at?: string
+          current_section?: number | null
+          current_step?: number | null
+          current_unit?: number | null
+          id?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "progresses_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
     }
     Views: {
       [_ in never]: never
