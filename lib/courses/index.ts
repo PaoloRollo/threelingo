@@ -2779,6 +2779,41 @@ export const availableCourses: Course[] = [
                   },
                 ],
               },
+              {
+                name: "Develop with Safe",
+                questions: [
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "In the context of the ProtocolKit, which is the correct option?",
+                    answers: [
+                      "const response = await safeSdkOwner2.signTransactionHash(safeTxHash) const signature = await safeService.confirmTransaction(safeTxHash, response.data)",
+                      "const signature = await safeService.confirmTransaction(safeTxHash, response.data) const response = await safeSdkOwner2.signTransactionHash(safeTxHash)",
+                    ],
+                    correctAnswer: 0,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "In the context of the Auth Kit, which option is correct?",
+                    answers:[
+                      "const authKitSignData = await web3AuthModalPack.signIn()",
+                      "const authKitSignData = web3AuthModalPack.signIn()"
+                    ],
+                    correctAnswer: 0,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "In the context of the Relay Kit, is 'const propose = await relayKit.proposeRelayedTransaction(signedSafeTransaction, safeSDK)' correct?",
+                      answers:[
+                        "yes",
+                        "no"
+                      ],
+                    correctAnswer: 1,
+                  },
+                ],
+              }
             ],
           },
           {
