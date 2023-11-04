@@ -11,11 +11,13 @@ import {
 } from "@web3auth/base";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/lib/store/user-store";
+import { ethers } from "ethers";
 
 export const useWeb3Auth = (automaticSignIn: boolean = false) => {
   const [web3Auth, setWeb3Auth] = useState<Web3AuthModalPack | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
+  const [provider, setProvider] = useState<any>(null);
   const user = useUserStore((state) => state.user);
   const setUser = useUserStore((state) => state.setUser);
   const setAddress = useUserStore((state) => state.setAddress);
@@ -107,6 +109,9 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
         modalConfig,
       });
       setWeb3Auth(web3AuthModalPack);
+      setProvider(
+        new ethers.providers.Web3Provider(web3AuthModalPack.getProvider()!)
+      );
       if (automaticSignIn) {
         const { eoa, safes } = await web3AuthModalPack.signIn();
         setAddress(eoa);
@@ -139,5 +144,5 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
     return await web3Auth.signOut();
   };
 
-  return { web3Auth, loading, error, signIn, signOut };
+  return { web3Auth, loading, error, signIn, signOut, provider };
 };
