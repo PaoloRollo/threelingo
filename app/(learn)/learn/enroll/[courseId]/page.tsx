@@ -20,6 +20,12 @@ export default function Page({ params }: { params: { courseId: string } }) {
   const setCurrentSection = useCourseStore((state) => state.setCurrentSection);
   const setCurrentUnit = useCourseStore((state) => state.setCurrentUnit);
   const setCurrentStep = useCourseStore((state) => state.setCurrentStep);
+  const dbSection = useCourseStore((state) => state.dbSection);
+  const dbUnit = useCourseStore((state) => state.dbUnit);
+  const dbStep = useCourseStore((state) => state.dbStep);
+  const setDbStep = useCourseStore((state) => state.setDbStep);
+  const setDbUnit = useCourseStore((state) => state.setDbUnit);
+  const setDbSection = useCourseStore((state) => state.setDbSection);
   console.log(currentSection, currentUnit, currentStep);
   const notEnrolled =
     currentSection === 0 && currentUnit === 0 && currentStep === 0;
@@ -44,6 +50,9 @@ export default function Page({ params }: { params: { courseId: string } }) {
       setCurrentSection(result.current_section);
       setCurrentUnit(result.current_unit);
       setCurrentStep(result.current_step);
+      setDbSection(result.current_section);
+      setDbUnit(result.current_unit);
+      setDbStep(result.current_step);
     } catch (error) {
       console.error(error);
     } finally {
