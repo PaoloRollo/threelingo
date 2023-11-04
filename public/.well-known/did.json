@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "id": "did:web:threelingo.vercel.app",
+  "verificationMethod": [
+    {
+      "id": "did:web:threelingo.vercel.app#wc-notify-subscribe-key",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:threelingo.vercel.app",
+      "publicKeyJwk": {
+        "kty": "OKP",
+        "crv": "X25519",
+        "x": "EPSBpn1G5nTJ_vXo2NmidFb0ZFjueT7kvakSSlT38is"
+      }
+    },
+    {
+      "id": "did:web:threelingo.vercel.app#wc-notify-authentication-key",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:threelingo.vercel.app",
+      "publicKeyJwk": {
+        "kty": "OKP",
+        "crv": "Ed25519",
+        "x": "txZS3TguP3reOqBQux3U4s2u9DwLASAVs-Bg067vV5s"
+      }
+    }
+  ],
+  "keyAgreement": ["did:web:threelingo.vercel.app#wc-notify-subscribe-key"],
+  "authentication": [
+    "did:web:threelingo.vercel.app#wc-notify-authentication-key"
+  ]
+}
