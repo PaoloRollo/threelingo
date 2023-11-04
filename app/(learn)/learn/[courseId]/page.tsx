@@ -1,6 +1,6 @@
 "use client";
 import { availableCourses } from "@/lib/courses";
-import { useCourseStore } from "@/lib/store";
+import { useCourseStore, useStepModalStore } from "@/lib/store";
 import { useGuidebookModalStore } from "@/lib/store/guidebook-modal-store";
 import { cn } from "@nextui-org/react";
 import {
@@ -9,113 +9,29 @@ import {
   FastForwardIcon,
   FileQuestion,
   LockIcon,
-  StarIcon,
-  TerminalIcon,
-  TrophyIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
-const units = [
-  {
-    description: "Learn about Safe",
-    background: "bg-emerald-500",
-    darkBorder: "border-emerald-800",
-    steps: [
-      {
-        type: "q&a",
-      },
-      {
-        type: "q&a",
-      },
-      {
-        type: "action",
-      },
-      {
-        type: "q&a",
-      },
-      {
-        type: "reward",
-      },
-      {
-        type: "q&a",
-      },
-      {
-        type: "trophy",
-      },
-    ],
-  },
-  {
-    description: "Learn about Safe 2",
-    background: "bg-red-500",
-    darkBorder: "border-red-800",
-    steps: [
-      {
-        type: "q&a",
-      },
-      {
-        type: "q&a",
-      },
-      {
-        type: "action",
-      },
-      {
-        type: "q&a",
-      },
-      {
-        type: "reward",
-      },
-      {
-        type: "q&a",
-      },
-      {
-        type: "trophy",
-      },
-    ],
-  },
-  {
-    description: "Learn about Safe 3",
-    background: "bg-amber-500",
-    darkBorder: "border-amber-800",
-    steps: [
-      {
-        type: "q&a",
-      },
-      {
-        type: "q&a",
-      },
-      {
-        type: "action",
-      },
-      {
-        type: "q&a",
-      },
-      {
-        type: "reward",
-      },
-      {
-        type: "q&a",
-      },
-      {
-        type: "trophy",
-      },
-    ],
-  },
-];
 
 export default function Page({ params }: { params: { courseId: string } }) {
   const course = availableCourses.find(
     (course) => course.id === params.courseId
   );
+  const currentSection = useCourseStore((state) => state.currentSection);
+  const currentUnit = useCourseStore((state) => state.currentUnit);
+  const setCurrentUnit = useCourseStore((state) => state.setCurrentUnit);
   const router = useRouter();
   const setGuidebookTarget = useGuidebookModalStore((state) => state.setTarget);
   const toggleGuidebook = useGuidebookModalStore(
     (state) => state.toggleGuidebookModal
   );
   const setCourse = useCourseStore((state) => state.setCourse);
-  const [currentUnit, setCurrentUnit] = useState<number>(0);
+  const step = useStepModalStore((state) => state.step);
+  const setStep = useStepModalStore((state) => state.setStep);
+  const toggleStepModal = useStepModalStore((state) => state.toggleStepModal);
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [completedSteps, setCompletedSteps] = useState<string[]>([]);
+
   useEffect(() => {
     if (course) {
       setCourse(course);
@@ -128,23 +44,27 @@ export default function Page({ params }: { params: { courseId: string } }) {
 
   return (
     <section id="learn-course-page" className="pt-32 pb-24">
-      {units.map((unit, index) => {
+      {course.sections[currentSection].units.map((unit, index) => {
         return (
           <div className="flex flex-col" key={`unit-${index}`}>
             <div
               className={cn(
                 "py-6 px-4 text-white flex items-center justify-between",
-                unit.background
+                "bg-emerald-500"
               )}
             >
               <div className="flex flex-col">
                 <h3 className="font-bold text-2xl">Unit {index + 1}</h3>
-                <p>{unit.description}</p>
+                <p>{unit.name}</p>
               </div>
               <BookIcon
                 size={32}
                 onClick={() => {
-                  setGuidebookTarget({ ...course, units, currentUnit: index });
+                  setGuidebookTarget({
+                    ...course,
+                    currentSection,
+                    currentUnit: index,
+                  });
                   toggleGuidebook();
                 }}
               />
@@ -159,23 +79,11 @@ export default function Page({ params }: { params: { courseId: string } }) {
                 const isSkipTo = currentUnit < index && stepIndex === 0;
                 const bgClassname =
                   isCompleted || isSkipTo || isActive
-                    ? `${unit.background} text-white`
+                    ? `bg-emerald-500 text-white`
                     : "bg-gray-400 text-gray-200";
                 return (
                   <div
                     key={`step-${index}-${stepIndex}`}
-                    onClick={() => {
-                      setCompletedSteps([
-                        ...completedSteps,
-                        `${index}-${stepIndex}`,
-                      ]);
-                      if (stepIndex === unit.steps.length - 1) {
-                        setCurrentUnit(currentUnit + 1);
-                        setCurrentStep(0);
-                      } else {
-                        setCurrentStep(currentStep + 1);
-                      }
-                    }}
                     className={cn(
                       "rounded-full h-16 w-16 my-4 border-b-4 flex items-center justify-center border-black",
                       bgClassname,
@@ -184,6 +92,12 @@ export default function Page({ params }: { params: { courseId: string } }) {
                       stepIndex === 3 && "-translate-x-10",
                       stepIndex === 5 && "translate-x-8"
                     )}
+                    onClick={() => {
+                      if (isActive) {
+                        setStep(step);
+                        toggleStepModal();
+                      }
+                    }}
                   >
                     {isCompleted ? (
                       <CheckIcon size={32} />
@@ -191,14 +105,8 @@ export default function Page({ params }: { params: { courseId: string } }) {
                       <FastForwardIcon size={32} />
                     ) : !isActive ? (
                       <LockIcon size={32} />
-                    ) : step.type === "q&a" ? (
-                      <FileQuestion size={32} />
-                    ) : step.type === "reward" ? (
-                      <StarIcon size={32} />
-                    ) : step.type === "trophy" ? (
-                      <TrophyIcon size={32} />
                     ) : (
-                      <TerminalIcon size={32} />
+                      <FileQuestion size={32} />
                     )}
                   </div>
                 );
