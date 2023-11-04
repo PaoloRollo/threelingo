@@ -1,15 +1,12 @@
 "use client";
 import { Button, Link } from "@nextui-org/react";
-import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useAccount } from "wagmi";
 
 export default function StartPage() {
   const [step, setStep] = useState(0);
   const [userExperience, setUserExperience] = useState<string>("");
-  const { open } = useWeb3Modal();
-  const { address } = useAccount();
+  const address = "";
 
   const getStep = () => {
     switch (step) {
@@ -21,7 +18,6 @@ export default function StartPage() {
                 <h2 className="text-4xl font-bold text-white">
                   You&apos;re all set up!
                 </h2>
-                <w3m-account-button balance="hide" />
                 <Button
                   variant="light"
                   color="default"
@@ -42,7 +38,7 @@ export default function StartPage() {
               <Button
                 variant="light"
                 color="default"
-                onClick={() => open()}
+                // onClick={() => open()}
                 className="font-bold uppercase tracking-widest text-white"
               >
                 Connect your wallet
