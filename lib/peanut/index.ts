@@ -1,12 +1,16 @@
 import { Signer } from "ethers";
-import peanut from "@squirrel-labs/peanut-sdk";
+import {
+  createLink,
+  claimLinkGasless,
+  //@ts-ignore
+} from "@squirrel-labs/peanut-sdk/dist/peanut-sdk.node";
 
 const CHAINID = 1442; // Polygon zkEVM Testnet
 
 export enum CourseTokenID {
   WEB3_INTRODUCTION = 0,
   EOA_SMART_ACCOUNTS = 1,
-  SCALING_ETHEREUM = 2
+  SCALING_ETHEREUM = 2,
 }
 
 /**
@@ -16,7 +20,7 @@ export enum CourseTokenID {
  * @param tokenId - id of the token (0 = Web3 Introduction, 1 = EOA and Smart Accounts)
  */
 export const getPeanutLink = async (signer: Signer, tokenId: CourseTokenID) => {
-  return await peanut.createLink({
+  return await createLink({
     structSigner: {
       signer,
     },
@@ -39,7 +43,7 @@ export const claimPeanutLinkGasless = async (
   link: string,
   recipientAddress: string
 ) => {
-  return await peanut.claimLinkGasless({
+  return await claimLinkGasless({
     link,
     recipientAddress,
     APIKey: process.env.NEXT_PUBLIC_PEANUT_API_KEY as string,

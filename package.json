@@ -31,6 +31,7 @@
     "lucide-react": "^0.292.0",
     "next": "14.0.1",
     "next-themes": "^0.2.1",
+    "providers-wtf": "^1.0.5",
     "react": "^18",
     "react-dom": "^18",
     "react-spring": "^9.7.3",
