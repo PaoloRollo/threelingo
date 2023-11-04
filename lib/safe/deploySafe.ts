@@ -5,7 +5,7 @@ import Safe, {
   EthersAdapter,
   SafeFactory,
 } from "@safe-global/protocol-kit";
-import { toEthersWeb3ProviderWithSigner } from "providers-wtf";
+//import { toEthersWeb3ProviderWithSigner } from "./providers-wtf";
 import { getWalletClient } from "wagmi/actions";
 import {
   MetaTransactionData,
@@ -14,52 +14,28 @@ import {
 import SafeApiKit from "@safe-global/api-kit";
 
 export async function deploySafeAndReturnAddress(): Promise<boolean> {
-  try {
-    // polygon zkevm
-    const provider = new ethers.providers.JsonRpcProvider(
-      process.env.NEXT_PUBLIC_POLYGON_ZKEVM_RPC_URL
-    );
 
-    const signerOrProvider = new ethers.Wallet(
-      process.env.WALLET_PRIVATE_KEY as string,
-      provider
-    );
+    try {
+      const userAccount = useUserStore.getState();
 
-    const ethAdapterOwner1 = new EthersAdapter({
-      ethers,
-      signerOrProvider,
-    });
+      console.log("here")
 
-    const safeFactory = await SafeFactory.create({
-      ethAdapter: ethAdapterOwner1,
-    });
+      const response = await fetch("/api/deploy-safe", {
+        method: "POST",
+        body: JSON.stringify({
+          address: userAccount.address,
+          gasLimit: 100000,
+        }),
+      })
+      console.log("here")
+      return true
 
-    const userAccount = useUserStore.getState();
-
-    const safeAccountConfig = {
-      owners: [userAccount.address],
-      threshold: 1,
-    };
-
-    const safe = await safeFactory.deploySafe({ safeAccountConfig });
-    const safeAddress = await safe.getAddress();
-
-    // Transfer 0.1 ETH to the Safe address
-    const transferAmount = ethers.utils.parseEther("0.1");
-    const tx = await signerOrProvider.sendTransaction({
-      to: safeAddress,
-      value: transferAmount,
-    });
-    const receipt = await tx.wait();
-    if (receipt) {
+    } catch (error) {
+        console.error("Error deploying Safe:", error);
+        throw error;
     }
-    return true;
-  } catch (error) {
-    console.error("Error deploying Safe:", error);
-    throw error;
-  }
 }
-
+/*
 export async function makeSafeTransferSingleSign(): Promise<boolean> {
   try {
     const amount = ethers.utils.parseUnits("0.001", "ether").toString();
@@ -186,7 +162,7 @@ export async function addSignAndChangeThreshold(): Promise<boolean> {
     throw error;
   }
 }
-
+*/
 /*
 if (relayer) {
                         const safeSingletonContract = await getSafeContract({
