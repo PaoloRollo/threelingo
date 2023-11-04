@@ -3,9 +3,18 @@ import { availableCourses } from "@/lib/courses";
 import { useUserStore } from "@/lib/store/user-store";
 import { sliceAddress } from "@/lib/utils";
 import { Divider, Image } from "@nextui-org/react";
-import { ClockIcon, CogIcon } from "lucide-react";
+import { BellIcon, BellOffIcon, ClockIcon } from "lucide-react";
 import { checksumAddress } from "viem";
 import useContractBalance from "@/hooks/use-contract-balance";
+import {
+  useManageSubscription,
+  useSubscription,
+  useW3iAccount,
+  useInitWeb3InboxClient,
+  useMessages,
+} from "@web3inbox/widget-react";
+import { useCallback, useEffect } from "react";
+import { useWeb3Auth } from "@/hooks/use-web3-auth";
 
 export default function ProfileContent({
   params,
@@ -13,11 +22,59 @@ export default function ProfileContent({
   params: { address: string };
 }) {
   const { address } = params;
+  const isReady = useInitWeb3InboxClient({
+    // The project ID and domain you setup in the Domain Setup section
+    projectId: "62066586b5adc509f3304c9312077975",
+    domain: "threelingo.vercel.app",
+
+    // Allow localhost development with "unlimited" mode.
+    // This authorizes this dapp to control notification subscriptions for all domains (including `app.example.com`), not just `window.location.host`
+    isLimited: false,
+  });
+  const { web3Auth, provider } = useWeb3Auth();
+  const { account, setAccount, isRegistered, isRegistering, register } =
+    useW3iAccount();
 
   const loggedAddress = useUserStore((state) => state.address);
   const balance = useContractBalance(
     process.env.NEXT_PUBLIC_COURSE_TOKEN_ADDRESS as string
   );
+
+  useEffect(() => {
+    if (!address) return;
+    // Convert the address into a CAIP-10 blockchain-agnostic account ID and update the Web3Inbox SDK with it
+    setAccount(`eip155:1:${address}`);
+  }, [address, setAccount]);
+
+  const performRegistration = useCallback(async () => {
+    if (!address) return;
+    if (!provider) return;
+    console.log(provider);
+    try {
+      const signer = provider.getSigner();
+      console.log(await signer.signMessage("test"));
+      await register((message) => signer.signMessage(message));
+    } catch (registerIdentityError) {}
+  }, [register, address, provider]);
+
+  useEffect(() => {
+    // Register even if an identity key exists, to account for stale keys
+    if (web3Auth && address && provider) performRegistration();
+  }, [performRegistration, web3Auth, address, provider]);
+
+  const { isSubscribed, isSubscribing, subscribe, unsubscribe } =
+    useManageSubscription();
+
+  console.log(isSubscribed);
+
+  const performSubscribe = useCallback(async () => {
+    // Register again just in case
+    await performRegistration();
+    await subscribe();
+  }, [subscribe, isRegistered]);
+
+  const { subscription } = useSubscription();
+  const { messages } = useMessages();
 
   return (
     <section
@@ -30,9 +87,26 @@ export default function ProfileContent({
             {address && sliceAddress(checksumAddress(address as `0x${string}`))}
           </h1>
         </div>
-        {address.toLowerCase() === loggedAddress?.toLowerCase() && (
-          <CogIcon size={24} className="text-black/40" />
-        )}
+        {address.toLowerCase() === loggedAddress?.toLowerCase() &&
+          !isSubscribed && (
+            <BellIcon
+              size={24}
+              className="text-black/40"
+              onClick={() => {
+                performSubscribe();
+              }}
+            />
+          )}
+        {address.toLowerCase() === loggedAddress?.toLowerCase() &&
+          isSubscribed && (
+            <BellOffIcon
+              size={24}
+              className="text-black/40"
+              onClick={() => {
+                unsubscribe();
+              }}
+            />
+          )}
       </div>
       <div className="flex space-x-2 mt-4 text-black/40">
         <ClockIcon size={24} />
