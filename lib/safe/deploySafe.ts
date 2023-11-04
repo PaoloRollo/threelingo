@@ -5,7 +5,7 @@ import Safe, {
   EthersAdapter,
   SafeFactory,
 } from "@safe-global/protocol-kit";
-//import { toEthersWeb3ProviderWithSigner } from "./providers-wtf";
+import { toEthersWeb3ProviderWithSigner } from "./providers-wtf";
 import { getWalletClient } from "wagmi/actions";
 import {
   MetaTransactionData,
@@ -18,8 +18,6 @@ export async function deploySafeAndReturnAddress(): Promise<boolean> {
     try {
       const userAccount = useUserStore.getState();
 
-      console.log("here")
-
       const response = await fetch("/api/deploy-safe", {
         method: "POST",
         body: JSON.stringify({
@@ -27,7 +25,8 @@ export async function deploySafeAndReturnAddress(): Promise<boolean> {
           gasLimit: 100000,
         }),
       })
-      console.log("here")
+      const { safeAddress } = await response.json()
+      userAccount.setSafes([safeAddress])
       return true
 
     } catch (error) {
@@ -35,7 +34,7 @@ export async function deploySafeAndReturnAddress(): Promise<boolean> {
         throw error;
     }
 }
-/*
+
 export async function makeSafeTransferSingleSign(): Promise<boolean> {
   try {
     const amount = ethers.utils.parseUnits("0.001", "ether").toString();
@@ -49,7 +48,7 @@ export async function makeSafeTransferSingleSign(): Promise<boolean> {
 
     if (safe) {
       if (walletClient !== null) {
-        const ethersProvider = toEthersWeb3ProviderWithSigner(walletClient);
+        const ethersProvider = new ethers.providers.JsonRpcProvider(process.env.NEXT_PUBLIC_POLYGON_ZKEVM_RPC_URL as string);
 
         if (ethersProvider) {
           const newSigner = ethersProvider.getSigner();
@@ -59,10 +58,12 @@ export async function makeSafeTransferSingleSign(): Promise<boolean> {
             signerOrProvider: newSigner,
           });
 
-          const safeSDK = await Safe.create({
-            ethAdapter,
-            safeAddress: safe,
-          });
+          const safeSdkOwner2 = await Safe.create({
+            ethAdapter: ethAdapter,
+            safeAddress: safe
+          })
+
+          const safeSdk = await safeSdkOwner2.connect({ ethAdapter, safeAddress: safe })
 
           // for relayer purpose
           const safeTransactionData: MetaTransactionData[] = [];
@@ -74,11 +75,11 @@ export async function makeSafeTransferSingleSign(): Promise<boolean> {
           });
 
           // Create a Safe transaction with the provided parameters
-          const safeTransaction = await safeSDK.createTransaction({
+          const safeTransaction = await safeSdk.createTransaction({
             safeTransactionData,
           });
 
-          const signedSafeTx = await safeSDK.signTransaction(safeTransaction);
+          const signedSafeTx = await safeSdk.signTransaction(safeTransaction);
 
           const txServiceUrl =
             "https://safe-transaction-gnosis-chain.safe.global/";
@@ -87,8 +88,8 @@ export async function makeSafeTransferSingleSign(): Promise<boolean> {
             ethAdapter: ethAdapter,
           });
 
-          const safeTxHash = await safeSDK.getTransactionHash(safeTransaction);
-          const executeTxResponse = await safeSDK.executeTransaction(
+          const safeTxHash = await safeSdk.getTransactionHash(safeTransaction);
+          const executeTxResponse = await safeSdk.executeTransaction(
             safeTransaction
           );
           const receipt = await executeTxResponse.transactionResponse?.wait();
@@ -101,7 +102,7 @@ export async function makeSafeTransferSingleSign(): Promise<boolean> {
     throw error;
   }
 }
-
+/*
 export async function addSignAndChangeThreshold(): Promise<boolean> {
   try {
     const chainId = 1442;

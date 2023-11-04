@@ -26,10 +26,24 @@ export async function POST(
         owners: [address],
         threshold: 1,
     };
+    function getRandomInt(min: number, max: number): number {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+    // Example: Generate a random integer between 1 and 100
+    const customNonce = getRandomInt(1, 100).toString();
 
-    const safe = await safeFactory.deploySafe({ safeAccountConfig });
+    const safe = await safeFactory.deploySafe({ safeAccountConfig, saltNonce: customNonce });
     console.log("deploy")
     const safeAddress = await safe.getAddress();
+    const transferAmount = ethers.utils.parseEther("0.0002");
+    const tx = await signerOrProvider.sendTransaction({
+        to: safeAddress,
+        value: transferAmount,
+    });
+    await tx.wait();
     return new Response(
         JSON.stringify({
             safeAddress
