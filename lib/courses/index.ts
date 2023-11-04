@@ -891,14 +891,13 @@ export const availableCourses: Course[] = [
       },
     ],
   },
-
   {
     id: "Smart Account",
     name: "EOAs and Smart Accounts",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis urna dignissim, pulvinar quam quis, cursus orci. Pellentesque blandit tellus a neque tincidunt placerat. Sed lacinia eleifend neque vitae interdum. Nullam at leo justo. Pellentesque sollicitudin tortor velit, vitae imperdiet lectus malesuada sit amet. Ut ligula ligula, volutpat et tortor ut, aliquet efficitur eros. Sed condimentum fermentum vulputate. Donec eu eros maximus, scelerisque tellus sit amet, vulputate turpis. Fusce mattis odio id blandit maximus. Morbi quis ultricies lacus. Nam ullamcorper nunc erat, in rhoncus lectus scelerisque quis.",
-    image: "/metamask.png",
-    nftImage: "/course-1-nft.png",
+    image: "/safe.png",
+    nftImage: "/course-2-nft.png",
     sections: [
       {
         name: "Cryptography in Blockchain: Understanding Public and Private Keys",
@@ -958,7 +957,8 @@ export const availableCourses: Course[] = [
                   },
                   {
                     type: "multiple-choice",
-                    question: "Authentication in cryptography is primarily concerned with:",
+                    question:
+                      "Authentication in cryptography is primarily concerned with:",
                     answers: [
                       "Ensuring data confidentiality",
                       "Confirming the identity of communicating parties",
@@ -969,7 +969,8 @@ export const availableCourses: Course[] = [
                   },
                   {
                     type: "multiple-choice",
-                    question: "What is the main function of encryption in cryptography?",
+                    question:
+                      "What is the main function of encryption in cryptography?",
                     answers: [
                       "Data compression",
                       "Data destruction",
@@ -980,7 +981,8 @@ export const availableCourses: Course[] = [
                   },
                   {
                     type: "multiple-choice",
-                    question: "What role does a Public Key Infrastructure (PKI) play in cryptography?",
+                    question:
+                      "What role does a Public Key Infrastructure (PKI) play in cryptography?",
                     answers: [
                       "It ensures high-speed data transmission.",
                       "It provides a secure place for storing encryption keys.",
@@ -1053,7 +1055,7 @@ export const availableCourses: Course[] = [
                       "Increasing the speed of block creation.",
                     ],
                     correctAnswer: 3,
-                  }
+                  },
                 ],
               },
               {
@@ -1373,7 +1375,7 @@ export const availableCourses: Course[] = [
                 name: "The Role of Keys in Blockchain",
                 questions: [
                   {
-                    type: "fill",
+                    type: "fill-in-the-gap",
                     question:
                       "Fill the gaps: In blockchain, a _______ key is used to encrypt data, while a _______ key is used to decrypt it.",
                     correctAnswer: true,
@@ -1545,10 +1547,10 @@ export const availableCourses: Course[] = [
               {
                 name: "Key Security Best Practices",
                 questions: [
-                
                   {
                     type: "true-false",
-                    question:"True or False: Writing down your private key on paper and storing it in a secure location is a bad security practice.",
+                    question:
+                      "True or False: Writing down your private key on paper and storing it in a secure location is a bad security practice.",
                     correctAnswer: false,
                   },
                   {
@@ -1606,7 +1608,7 @@ export const availableCourses: Course[] = [
                     answers: [
                       "To make private keys more easily accessible.",
                       "To encrypt private keys for added protection.",
-                      "To keep private keys offline and secure from online threats. ✅",
+                      "To keep private keys offline and secure from online threats.",
                       "To generate new private keys automatically.",
                     ],
                     correctAnswer: 3,
@@ -1758,147 +1760,165 @@ export const availableCourses: Course[] = [
               {
                 name: "Introduction to EOAs",
                 questions: [
-                    {
-                        type: "multiple-choice",
-                        question: "What is the primary characteristic of an Externally Owned Account (EOA)?",
-                        answers: [
-                            "A) It is controlled by a private key",
-                            "B) It is controlled by a public key",
-                            "C) It requires multiple signatures for transactions",
-                            "D) It is managed by a centralized authority",
-                        ],
-                        correctAnswer: 0,
-                    },
-                    {
-                        type: "true-false",
-                        question: "EOAs are typically managed by a centralized authority for increased security.",
-                        correctAnswer: false,
-                    },
-                    {
-                        type: "multiple-choice",
-                        question: "What is the primary role of the private key associated with an EOA?",
-                        answers: [
-                            "A) Verifying the balance of the account",
-                            "B) Encrypting transaction data",
-                            "C) Controlling the account and signing transactions",
-                            "D) Acting as the public address of the account",
-                        ],
-                        correctAnswer: 2,
-                    },
-                    {
-                        type: "true-false",
-                        question: "The public key associated with an EOA is used for verifying the digital signatures on transactions.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "fill-in-the-gap",
-                        question: "In the context of EOAs, transactions require the digital signature of the ___________ key.",
-                        correctAnswer: "Private",
-                    },
-                    {
-                        type: "multiple-choice",
-                        question: "What is the primary benefit of using an EOA for managing cryptocurrency funds?",
-                        answers: [
-                            "A) Reduced control over account security",
-                            "B) Increased reliance on centralized authorities",
-                            "C) Enhanced control and security through private key ownership",
-                            "D) Faster transaction processing",
-                        ],
-                        correctAnswer: 2,
-                    },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "What is the primary characteristic of an Externally Owned Account (EOA)?",
+                    answers: [
+                      "A) It is controlled by a private key",
+                      "B) It is controlled by a public key",
+                      "C) It requires multiple signatures for transactions",
+                      "D) It is managed by a centralized authority",
+                    ],
+                    correctAnswer: 0,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "EOAs are typically managed by a centralized authority for increased security.",
+                    correctAnswer: false,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "What is the primary role of the private key associated with an EOA?",
+                    answers: [
+                      "A) Verifying the balance of the account",
+                      "B) Encrypting transaction data",
+                      "C) Controlling the account and signing transactions",
+                      "D) Acting as the public address of the account",
+                    ],
+                    correctAnswer: 2,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "The public key associated with an EOA is used for verifying the digital signatures on transactions.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "In the context of EOAs, transactions require the digital signature of the ___________ key.",
+                    correctAnswer: "Private",
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "What is the primary benefit of using an EOA for managing cryptocurrency funds?",
+                    answers: [
+                      "A) Reduced control over account security",
+                      "B) Increased reliance on centralized authorities",
+                      "C) Enhanced control and security through private key ownership",
+                      "D) Faster transaction processing",
+                    ],
+                    correctAnswer: 2,
+                  },
                 ],
               },
               {
                 name: "EOA Transactions",
                 questions: [
-                    {
-                        type: "fill-in-the-gap",
-                        question: "EOAs are commonly used for transferring cryptocurrency between users and for signing transactions. They are controlled by the account holder's ___________.",
-                        correctAnswer: "private key",
-                    },
-                    {
-                        type: "multiple-choice",
-                        question: "When an EOA initiates a cryptocurrency transfer, which key is used to sign the transaction for verification?",
-                        answers: [
-                            "A) Public key",
-                            "B) Password",
-                            "C) Private key",
-                            "D) Assets",
-                        ],
-                        correctAnswer: 2,
-                    },
-                    {
-                        type: "fill-in-the-gap",
-                        question: "To initiate a transaction from an EOA, the account holder must use their ___________ to sign the transaction.",
-                        correctAnswer: "private key",
-                    },
-                    {
-                        type: "true-false",
-                        question: "EOAs can initiate transactions by signing them with their public keys.",
-                        correctAnswer: false,
-                    },
-                    {
-                        type: "multiple-choice",
-                        question: "What role does the public key associated with an EOA play in transactions?",
-                        answers: [
-                            "A) It serves as the recipient's address for cryptocurrency transfers.",
-                            "B) It verifies the transaction by checking the balance.",
-                            "C) It encrypts the transaction data for security.",
-                            "D) It signs the transaction for verification.",
-                        ],
-                        correctAnswer: 0,
-                    },
-                    {
-                        type: "true-false",
-                        question: "The assets associated with an EOA are used to sign transactions for security.",
-                        correctAnswer: false,
-                    },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "EOAs are commonly used for transferring cryptocurrency between users and for signing transactions. They are controlled by the account holder's ___________.",
+                    correctAnswer: "private key",
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "When an EOA initiates a cryptocurrency transfer, which key is used to sign the transaction for verification?",
+                    answers: [
+                      "A) Public key",
+                      "B) Password",
+                      "C) Private key",
+                      "D) Assets",
+                    ],
+                    correctAnswer: 2,
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "To initiate a transaction from an EOA, the account holder must use their ___________ to sign the transaction.",
+                    correctAnswer: "private key",
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "EOAs can initiate transactions by signing them with their public keys.",
+                    correctAnswer: false,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "What role does the public key associated with an EOA play in transactions?",
+                    answers: [
+                      "A) It serves as the recipient's address for cryptocurrency transfers.",
+                      "B) It verifies the transaction by checking the balance.",
+                      "C) It encrypts the transaction data for security.",
+                      "D) It signs the transaction for verification.",
+                    ],
+                    correctAnswer: 0,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "The assets associated with an EOA are used to sign transactions for security.",
+                    correctAnswer: false,
+                  },
                 ],
               },
               {
                 name: "EOA Use Cases",
                 questions: [
-                    {
-                        type: "true-false",
-                        question: "True or False: If you lose the private key, you lose access to your account.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: If somebody gets your private key, they gain control of your account.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: If you lose the private key associated with your EOA, you lose access to your account.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: If somebody gains access to your private key, they gain control of your EOA account.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "fill-in-the-gap",
-                        question: "EOAs provide users with control over their accounts through the use of their private keys, which must be kept ___________ to prevent unauthorized access.",
-                        correctAnswer: "secure",
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: EOAs are commonly used for executing smart contracts in blockchain networks.",
-                        correctAnswer: false,
-                    },
-                    {
-                        type: "multiple-choice",
-                        question: "In which scenario is an EOA primarily used?",
-                        answers: [
-                            "A) For executing smart contracts",
-                            "B) For generating public keys",
-                            "C) For recording transactions and managing account balances",
-                            "D) For managing centralized databases",
-                        ],
-                        correctAnswer: 2,
-                    },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: If you lose the private key, you lose access to your account.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: If somebody gets your private key, they gain control of your account.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: If you lose the private key associated with your EOA, you lose access to your account.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: If somebody gains access to your private key, they gain control of your EOA account.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "EOAs provide users with control over their accounts through the use of their private keys, which must be kept ___________ to prevent unauthorized access.",
+                    correctAnswer: "secure",
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: EOAs are commonly used for executing smart contracts in blockchain networks.",
+                    correctAnswer: false,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "In which scenario is an EOA primarily used?",
+                    answers: [
+                      "A) For executing smart contracts",
+                      "B) For generating public keys",
+                      "C) For recording transactions and managing account balances",
+                      "D) For managing centralized databases",
+                    ],
+                    correctAnswer: 2,
+                  },
                 ],
               },
             ],
@@ -1914,120 +1934,135 @@ export const availableCourses: Course[] = [
               {
                 name: "Smart Accounts",
                 questions: [
-                    {
-                        type: "multiple-choice",
-                        question: "Smart Accounts enhance the capabilities of traditional EOAs by:",
-                        answers: [
-                            "A) Allowing only cryptocurrency transactions.",
-                            "B) Enabling custom logic and programmability.",
-                            "C) Reducing transaction speeds.",
-                            "D) Limiting the types of transactions.",
-                        ],
-                        correctAnswer: 1,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: Smart Accounts can implement a social recovery mechanism. You could get back your assets even if you lose your private key.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "fill-in-the-gap",
-                        question: "Smart Accounts enhance the capabilities of traditional EOAs by enabling ___________ and programmability, which means they can execute a wide range of _______________.",
-                        correctAnswer: "custom logic, transactions",
-                    },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "Smart Accounts enhance the capabilities of traditional EOAs by:",
+                    answers: [
+                      "A) Allowing only cryptocurrency transactions.",
+                      "B) Enabling custom logic and programmability.",
+                      "C) Reducing transaction speeds.",
+                      "D) Limiting the types of transactions.",
+                    ],
+                    correctAnswer: 1,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: Smart Accounts can implement a social recovery mechanism. You could get back your assets even if you lose your private key.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "Smart Accounts enhance the capabilities of traditional EOAs by enabling ___________ and programmability, which means they can execute a wide range of _______________.",
+                    correctAnswer: "custom logic, transactions",
+                  },
                 ],
               },
               {
                 name: "EOA Transactions",
                 questions: [
-                    {
-                        type: "fill-in-the-gap",
-                        question: "EOAs are commonly used for transferring cryptocurrency between users and for signing transactions. They are controlled by the account holder's ___________.",
-                        correctAnswer: "private key",
-                    },
-                    {
-                        type: "multiple-choice",
-                        question: "When an EOA initiates a cryptocurrency transfer, which key is used to sign the transaction for verification?",
-                        answers: [
-                            "A) Public key",
-                            "B) Password",
-                            "C) Private key",
-                            "D) Assets",
-                        ],
-                        correctAnswer: 2,
-                    },
-                    {
-                        type: "fill-in-the-gap",
-                        question: "To initiate a transaction from an EOA, the account holder must use their ___________ to sign the transaction.",
-                        correctAnswer: "private key",
-                    },
-                    {
-                        type: "true-false",
-                        question: "EOAs can initiate transactions by signing them with their public keys.",
-                        correctAnswer: false,
-                    },
-                    {
-                        type: "multiple-choice",
-                        question: "What role does the public key associated with an EOA play in transactions?",
-                        answers: [
-                            "A) It serves as the recipient's address for cryptocurrency transfers.",
-                            "B) It verifies the transaction by checking the balance.",
-                            "C) It encrypts the transaction data for security.",
-                            "D) It signs the transaction for verification.",
-                        ],
-                        correctAnswer: 0,
-                    },
-                    {
-                        type: "true-false",
-                        question: "The assets associated with an EOA are used to sign transactions for security.",
-                        correctAnswer: false,
-                    },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "EOAs are commonly used for transferring cryptocurrency between users and for signing transactions. They are controlled by the account holder's ___________.",
+                    correctAnswer: "private key",
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "When an EOA initiates a cryptocurrency transfer, which key is used to sign the transaction for verification?",
+                    answers: [
+                      "A) Public key",
+                      "B) Password",
+                      "C) Private key",
+                      "D) Assets",
+                    ],
+                    correctAnswer: 2,
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "To initiate a transaction from an EOA, the account holder must use their ___________ to sign the transaction.",
+                    correctAnswer: "private key",
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "EOAs can initiate transactions by signing them with their public keys.",
+                    correctAnswer: false,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "What role does the public key associated with an EOA play in transactions?",
+                    answers: [
+                      "A) It serves as the recipient's address for cryptocurrency transfers.",
+                      "B) It verifies the transaction by checking the balance.",
+                      "C) It encrypts the transaction data for security.",
+                      "D) It signs the transaction for verification.",
+                    ],
+                    correctAnswer: 0,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "The assets associated with an EOA are used to sign transactions for security.",
+                    correctAnswer: false,
+                  },
                 ],
               },
               {
                 name: "EOA Use Cases",
                 questions: [
-                    {
-                        type: "true-false",
-                        question: "True or False: If you lose the private key, you lose access to your account.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: If somebody gets your private key, they gain control of your account.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: If you lose the private key associated with your EOA, you lose access to your account.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: If somebody gains access to your private key, they gain control of your EOA account.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "fill-in-the-gap",
-                        question: "EOAs provide users with control over their accounts through the use of their private keys, which must be kept ___________ to prevent unauthorized access.",
-                        correctAnswer: "secure",
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: EOAs are commonly used for executing smart contracts in blockchain networks.",
-                        correctAnswer: false,
-                    },
-                    {
-                        type: "multiple-choice",
-                        question: "In which scenario is an EOA primarily used?",
-                        answers: [
-                            "A) For executing smart contracts",
-                            "B) For generating public keys",
-                            "C) For recording transactions and managing account balances",
-                            "D) For managing centralized databases",
-                        ],
-                        correctAnswer: 2,
-                    },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: If you lose the private key, you lose access to your account.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: If somebody gets your private key, they gain control of your account.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: If you lose the private key associated with your EOA, you lose access to your account.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: If somebody gains access to your private key, they gain control of your EOA account.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "EOAs provide users with control over their accounts through the use of their private keys, which must be kept ___________ to prevent unauthorized access.",
+                    correctAnswer: "secure",
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: EOAs are commonly used for executing smart contracts in blockchain networks.",
+                    correctAnswer: false,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "In which scenario is an EOA primarily used?",
+                    answers: [
+                      "A) For executing smart contracts",
+                      "B) For generating public keys",
+                      "C) For recording transactions and managing account balances",
+                      "D) For managing centralized databases",
+                    ],
+                    correctAnswer: 2,
+                  },
                 ],
               },
             ],
@@ -2038,22 +2073,30 @@ export const availableCourses: Course[] = [
               {
                 name: "Step 1: Introduction to ERC-4337",
                 questions: [
-                    {
-                        type: "true-false",
-                        question: "True or False: ERC-4337 is a standard that enables account abstraction and smart contract accounts.",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "multiple-choice",
-                        question: "Account abstraction simplifies the user experience by allowing users to interact with the blockchain using familiar authentication methods like _________ or Email addresses.",
-                        answers: ["Usernames", "Private keys", "Biometric authentication", "Decentralized Identities"],
-                        correctAnswer: 0,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: ERC-4337 requires an infrastructure-level change to be implemented on Ethereum.",
-                        correctAnswer: false,
-                    },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: ERC-4337 is a standard that enables account abstraction and smart contract accounts.",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "Account abstraction simplifies the user experience by allowing users to interact with the blockchain using familiar authentication methods like _________ or Email addresses.",
+                    answers: [
+                      "Usernames",
+                      "Private keys",
+                      "Biometric authentication",
+                      "Decentralized Identities",
+                    ],
+                    correctAnswer: 0,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: ERC-4337 requires an infrastructure-level change to be implemented on Ethereum.",
+                    correctAnswer: false,
+                  },
                 ],
               },
             ],
@@ -2064,47 +2107,59 @@ export const availableCourses: Course[] = [
               {
                 name: "Enhancing User Experience with Smart Accounts 1/2",
                 questions: [
-                    {
-                        type: "multiple-choice",
-                        question: "Which feature of Smart Accounts could significantly improve user experience and drive Web3 adoption?",
-                        answers: ["A) Fixed gas prices", "B) Mandatory private key management", "C) Simplified transaction processes", "D) Increased complexity of operations"],
-                        correctAnswer: 2,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: Smart Accounts promote mandatory private key management, making it a requirement for users.",
-                        correctAnswer: false,
-                    },
-                    {
-                        type: "fill-in-the-gap",
-                        question: "There are 2 main kinds of 'accounts' ____ and Smart Contract Accounts. And smart contract wallets, specially enhanced after ERC4337 & account abstraction, are 100X better.",
-                        correctAnswer: "EOA",
-                    },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "Which feature of Smart Accounts could significantly improve user experience and drive Web3 adoption?",
+                    answers: [
+                      "A) Fixed gas prices",
+                      "B) Mandatory private key management",
+                      "C) Simplified transaction processes",
+                      "D) Increased complexity of operations",
+                    ],
+                    correctAnswer: 2,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: Smart Accounts promote mandatory private key management, making it a requirement for users.",
+                    correctAnswer: false,
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "There are 2 main kinds of 'accounts' ____ and Smart Contract Accounts. And smart contract wallets, specially enhanced after ERC4337 & account abstraction, are 100X better.",
+                    correctAnswer: "EOA",
+                  },
                 ],
               },
               {
                 name: "Enhancing User Experience with Smart Accounts 2/2",
                 questions: [
-                    {
-                        type: "true-false",
-                        question: "True or False: Smart Accounts can only be used for financial transactions on the blockchain.",
-                        correctAnswer: false,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: Thanks to Smart Accounts, users could make Gasless transactions and Pay gas in any token",
-                        correctAnswer: true,
-                    },
-                    {
-                        type: "fill-in-the-gap",
-                        question: "Thanks to Smart Account, users can set up ________________ to facilitate account recovery in case of a lost seed phrase",
-                        correctAnswer: "Social Recovery Mechanism",
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: Using Smart Account users can set custom spending limits",
-                        correctAnswer: true,
-                    },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: Smart Accounts can only be used for financial transactions on the blockchain.",
+                    correctAnswer: false,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: Thanks to Smart Accounts, users could make Gasless transactions and Pay gas in any token",
+                    correctAnswer: true,
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "Thanks to Smart Account, users can set up ________________ to facilitate account recovery in case of a lost seed phrase",
+                    correctAnswer: "Social Recovery Mechanism",
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: Using Smart Account users can set custom spending limits",
+                    correctAnswer: true,
+                  },
                 ],
               },
             ],
@@ -2115,27 +2170,30 @@ export const availableCourses: Course[] = [
               {
                 name: "Smart Accounts Infrastructure Requirements",
                 questions: [
-                    {
-                        type: "multiple-choice",
-                        question: "What is a key infrastructure requirement for implementing Smart Accounts?",
-                        answers: [
-                            "Traditional banking systems",
-                            "Centralized servers",
-                            "Blockchain relayers and bundlers",
-                            "Physical hardware modules",
-                        ],
-                        correctAnswer: 2,
-                    },
-                    {
-                        type: "true-false",
-                        question: "True or False: Smart Accounts primarily rely on traditional banking systems for their operation.",
-                        correctAnswer: false,
-                    },
-                    {
-                        type: "fill-in-the-gap",
-                        question: "One of the key infrastructure requirements for implementing Smart Accounts is the use of blockchain ________________ and bundlers.",
-                        correctAnswer: "relayers",
-                    },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "What is a key infrastructure requirement for implementing Smart Accounts?",
+                    answers: [
+                      "Traditional banking systems",
+                      "Centralized servers",
+                      "Blockchain relayers and bundlers",
+                      "Physical hardware modules",
+                    ],
+                    correctAnswer: 2,
+                  },
+                  {
+                    type: "true-false",
+                    question:
+                      "True or False: Smart Accounts primarily rely on traditional banking systems for their operation.",
+                    correctAnswer: false,
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question:
+                      "One of the key infrastructure requirements for implementing Smart Accounts is the use of blockchain ________________ and bundlers.",
+                    correctAnswer: "relayers",
+                  },
                 ],
               },
               {
@@ -2143,75 +2201,108 @@ export const availableCourses: Course[] = [
                 questions: [
                   {
                     type: "true-false",
-                    question: "ERC-4337 is a standard that enables account abstraction and smart contract accounts.",
+                    question:
+                      "ERC-4337 is a standard that enables account abstraction and smart contract accounts.",
                     correctAnswer: true,
                   },
                   {
                     type: "multiple-choice",
-                    question: "Account abstraction simplifies the user experience by allowing users to interact with the blockchain using familiar authentication methods like _________ or Email addresses.",
-                    answers: ["Usernames", "Private keys", "Biometric authentication", "Decentralized Identities"],
+                    question:
+                      "Account abstraction simplifies the user experience by allowing users to interact with the blockchain using familiar authentication methods like _________ or Email addresses.",
+                    answers: [
+                      "Usernames",
+                      "Private keys",
+                      "Biometric authentication",
+                      "Decentralized Identities",
+                    ],
                     correctAnswer: 1,
                   },
                   {
                     type: "true-false",
-                    question: "ERC-4337 requires an infrastructure-level change to be implemented on Ethereum.",
+                    question:
+                      "ERC-4337 requires an infrastructure-level change to be implemented on Ethereum.",
                     correctAnswer: false,
                   },
                   {
                     type: "multiple-choice",
-                    question: "Which feature of Smart Accounts could significantly improve user experience and drive Web3 adoption?",
-                    answers: ["Fixed gas prices", "Mandatory private key management", "Simplified transaction processes", "Increased complexity of operations"],
+                    question:
+                      "Which feature of Smart Accounts could significantly improve user experience and drive Web3 adoption?",
+                    answers: [
+                      "Fixed gas prices",
+                      "Mandatory private key management",
+                      "Simplified transaction processes",
+                      "Increased complexity of operations",
+                    ],
                     correctAnswer: 3,
                   },
                   {
                     type: "true-false",
-                    question: "Smart Accounts promote mandatory private key management, making it a requirement for users.",
+                    question:
+                      "Smart Accounts promote mandatory private key management, making it a requirement for users.",
                     correctAnswer: false,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "There are 2 main kinds of 'accounts' ____ and Smart Contract Accounts. And smart contract wallets, specially enhanced after ERC4337 & account abstraction, are 100X better.",
+                    question:
+                      "There are 2 main kinds of 'accounts' ____ and Smart Contract Accounts. And smart contract wallets, specially enhanced after ERC4337 & account abstraction, are 100X better.",
                     correctAnswer: "EOA",
                   },
                   {
                     type: "true-false",
-                    question: "Smart Accounts can only be used for financial transactions on the blockchain.",
+                    question:
+                      "Smart Accounts can only be used for financial transactions on the blockchain.",
                     correctAnswer: false,
                   },
                   {
                     type: "true-false",
-                    question: "Thanks to Smart Accounts, users could make Gasless transactions and Pay gas in any token.",
+                    question:
+                      "Thanks to Smart Accounts, users could make Gasless transactions and Pay gas in any token.",
                     correctAnswer: true,
                   },
                   {
                     type: "multiple-choice",
-                    question: "Thanks to Smart Account, users can set up ________________ to facilitate account recovery in case of a lost seed phrase.",
-                    answers: ["Biometric authentication", "A secondary seed phrase", "A new wallet address", "Social Recovery Mechanism"],
+                    question:
+                      "Thanks to Smart Account, users can set up ________________ to facilitate account recovery in case of a lost seed phrase.",
+                    answers: [
+                      "Biometric authentication",
+                      "A secondary seed phrase",
+                      "A new wallet address",
+                      "Social Recovery Mechanism",
+                    ],
                     correctAnswer: 4,
                   },
                   {
                     type: "true-false",
-                    question: "Using Smart Accounts, users can set custom spending limits.",
+                    question:
+                      "Using Smart Accounts, users can set custom spending limits.",
                     correctAnswer: true,
                   },
                   {
                     type: "multiple-choice",
-                    question: "What is a key infrastructure requirement for implementing Smart Accounts?",
-                    answers: ["Traditional banking systems", "Centralized servers", "Blockchain relayers and bundlers", "Physical hardware modules"],
+                    question:
+                      "What is a key infrastructure requirement for implementing Smart Accounts?",
+                    answers: [
+                      "Traditional banking systems",
+                      "Centralized servers",
+                      "Blockchain relayers and bundlers",
+                      "Physical hardware modules",
+                    ],
                     correctAnswer: 3,
                   },
                   {
                     type: "true-false",
-                    question: "Smart Accounts primarily rely on traditional banking systems for their operation.",
+                    question:
+                      "Smart Accounts primarily rely on traditional banking systems for their operation.",
                     correctAnswer: false,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "One of the key infrastructure requirements for implementing Smart Accounts is the use of blockchain ________________ and bundlers.",
+                    question:
+                      "One of the key infrastructure requirements for implementing Smart Accounts is the use of blockchain ________________ and bundlers.",
                     correctAnswer: "Blockchain relayers",
                   },
                 ],
-              }
+              },
             ],
           },
           {
@@ -2222,79 +2313,89 @@ export const availableCourses: Course[] = [
                 questions: [
                   {
                     type: "true-false",
-                    question: "Smart Accounts inherently eliminate all security risks associated with blockchain transactions.",
+                    question:
+                      "Smart Accounts inherently eliminate all security risks associated with blockchain transactions.",
                     correctAnswer: false,
                   },
                   {
                     type: "true-false",
-                    question: "Smart Accounts are immune to all potential security risks associated with blockchain transactions.",
+                    question:
+                      "Smart Accounts are immune to all potential security risks associated with blockchain transactions.",
                     correctAnswer: false,
                   },
                   {
                     type: "true-false",
-                    question: "Smart Accounts are by design more secure than EOA.",
+                    question:
+                      "Smart Accounts are by design more secure than EOA.",
                     correctAnswer: false,
                   },
                   {
                     type: "multiple-choice",
-                    question: "What are some of the security advantages of Smart Accounts compared to traditional blockchain transactions?",
+                    question:
+                      "What are some of the security advantages of Smart Accounts compared to traditional blockchain transactions?",
                     answers: [
                       "They eliminate all security risks.",
                       "They provide enhanced control.",
                       "They are not customizable.",
-                      "They can have social security mechanism."
+                      "They can have social security mechanism.",
                     ],
                     correctAnswer: 4,
                   },
                   {
                     type: "true-false",
-                    question: "Smart Accounts are immune to all potential security risks associated with blockchain transactions.",
+                    question:
+                      "Smart Accounts are immune to all potential security risks associated with blockchain transactions.",
                     correctAnswer: false,
                   },
-                ]
+                ],
               },
               {
                 name: "Addressing Security Challenges",
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "What is a potential security challenge when using Smart Accounts?",
+                    question:
+                      "What is a potential security challenge when using Smart Accounts?",
                     answers: [
                       "The immutable nature of smart contracts",
                       "The need for physical security tokens",
                       "The reliance on centralized authentication methods",
-                      "The complexity of social recovery mechanisms"
+                      "The complexity of social recovery mechanisms",
                     ],
                     correctAnswer: 3,
                   },
                   {
                     type: "multiple-choice",
-                    question: "How can the reliance on centralized authentication methods pose a security challenge for Smart Accounts?",
+                    question:
+                      "How can the reliance on centralized authentication methods pose a security challenge for Smart Accounts?",
                     answers: [
                       "It enhances decentralization.",
                       "It simplifies user authentication.",
                       "It may create single points of failure and potential vulnerabilities.",
-                      "It makes social recovery mechanisms more robust."
+                      "It makes social recovery mechanisms more robust.",
                     ],
                     correctAnswer: 3,
                   },
                   {
                     type: "true-false",
-                    question: "True or False: If someone steals your private key, it can for sure access your assets on your Smart Account",
+                    question:
+                      "True or False: If someone steals your private key, it can for sure access your assets on your Smart Account",
                     correctAnswer: false,
                   },
                   {
                     type: "true-false",
-                    question: "True or False: Executing the same transaction from a Smart Account is more secure than using an EOA",
+                    question:
+                      "True or False: Executing the same transaction from a Smart Account is more secure than using an EOA",
                     correctAnswer: false,
                   },
                   {
                     type: "true-false",
-                    question: "True or False: If your Smart Account is audited, it should be more 'secure'",
+                    question:
+                      "True or False: If your Smart Account is audited, it should be more 'secure'",
                     correctAnswer: true,
                   },
-                ]
-              }
+                ],
+              },
             ],
           },
         ],
@@ -2310,78 +2411,88 @@ export const availableCourses: Course[] = [
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "What is the difference between an Externally Owned Account (EOA) and a Smart Account?",
+                    question:
+                      "What is the difference between an Externally Owned Account (EOA) and a Smart Account?",
                     answers: [
-                      "A) EOAs are always controlled by private keys, while Smart Contracts can be controlled by the logic within the contract itself. ✅",
+                      "A) EOAs are always controlled by private keys, while Smart Contracts can be controlled by the logic within the contract itself.",
                       "B) Smart Contracts can hold and execute complex logic, while EOAs cannot.",
                       "C) EOAs can directly initiate transactions, while Smart Contracts require a triggering transaction from an EOA or another smart contract.",
-                      "D) Smart Contracts can interact with other contracts and execute complex operations, while EOAs are limited to sending transactions and managing balances."
+                      "D) Smart Contracts can interact with other contracts and execute complex operations, while EOAs are limited to sending transactions and managing balances.",
                     ],
                     correctAnswer: 1,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "Externally Owned Accounts (EOAs) are always controlled by ________________, while Smart Contracts can be controlled by the logic within the contract itself.",
-                    correctAnswer: "Public keys ✅",
+                    question:
+                      "Externally Owned Accounts (EOAs) are always controlled by ________________, while Smart Contracts can be controlled by the logic within the contract itself.",
+                    correctAnswer: "Public keys",
                   },
                   {
                     type: "true-false",
-                    question: "True or False: EOAs can directly initiate transactions on the blockchain, while Smart Contracts require a triggering transaction from an EOA or another smart contract.",
+                    question:
+                      "True or False: EOAs can directly initiate transactions on the blockchain, while Smart Contracts require a triggering transaction from an EOA or another smart contract.",
                     correctAnswer: true,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "Smart Contracts can hold and execute _______________ logic, while EOAs cannot.",
-                    correctAnswer: "Arbitrary ✅",
+                    question:
+                      "Smart Contracts can hold and execute _______________ logic, while EOAs cannot.",
+                    correctAnswer: "arbitrary",
                   },
-                ]
+                ],
               },
               {
                 name: "When to Use EOAs",
                 questions: [
                   {
                     type: "fill-in-the-gap",
-                    question: "EOAs are typically used for individual account management and transactions, where user control and ________________________________ are essential.",
-                    correctAnswer: "direct interaction with the blockchain ✅",
+                    question:
+                      "EOAs are typically used for individual account management and transactions, where user control and ________________________________ are essential.",
+                    correctAnswer: "direct interaction with the blockchain",
                   },
                   {
                     type: "true-false",
-                    question: "True or False: EOAs' private key can be stored in a hardware wallet.",
+                    question:
+                      "True or False: EOAs' private key can be stored in a hardware wallet.",
                     correctAnswer: true,
                   },
                   {
                     type: "true-false",
-                    question: "True or False: EOAs can be controlled by more than 1 private key.",
+                    question:
+                      "True or False: EOAs can be controlled by more than 1 private key.",
                     correctAnswer: false,
                   },
-                ]
+                ],
               },
               {
                 name: "When to Use Smart Contracts",
                 questions: [
                   {
                     type: "fill-in-the-gap",
-                    question: "Smart contracts are suitable for scenarios where you need automated and trustless execution of actions based on predefined rules. They are particularly useful in cases involving multiple parties and where ______________________________ are required.",
-                    correctAnswer: "programmable logic or complex conditions ✅",
+                    question:
+                      "Smart contracts are suitable for scenarios where you need automated and trustless execution of actions based on predefined rules. They are particularly useful in cases involving multiple parties and where ______________________________ are required.",
+                    correctAnswer: "programmable logic or complex conditions",
                   },
                   {
                     type: "true-false",
-                    question: "True or False: Smart contracts can be used for securing assets with custom logic.",
+                    question:
+                      "True or False: Smart contracts can be used for securing assets with custom logic.",
                     correctAnswer: true,
                   },
                   {
                     type: "multiple-choice",
-                    question: "In what scenarios are Smart Contracts particularly useful?",
+                    question:
+                      "In what scenarios are Smart Contracts particularly useful?",
                     answers: [
                       "When the outcome needs to be randomized",
                       "When centralized control is required",
                       "When minimal security is a priority",
-                      "When programmable logic is required ✅"
+                      "When programmable logic is required",
                     ],
                     correctAnswer: 3,
                   },
-                ]
-              }
+                ],
+              },
             ],
           },
         ],
@@ -2402,7 +2513,7 @@ export const availableCourses: Course[] = [
                       "Safe Smart Account is a regular Ethereum account that can only store Ether and cannot execute smart contracts.",
                       "Safe Smart Account is a type of hardware wallet specifically designed for secure storage of digital assets.",
                       "Safe Smart Account is an account type that allows anonymous transactions without any trace on the blockchain.",
-                      "Safe Smart Account is a blockchain account with enhanced security and features, often used for managing digital assets and executing smart contracts in a secure and customizable manner."
+                      "Safe Smart Account is a blockchain account with enhanced security and features, often used for managing digital assets and executing smart contracts in a secure and customizable manner.",
                     ],
                     correctAnswer: 3,
                   },
@@ -2413,7 +2524,7 @@ export const availableCourses: Course[] = [
                       "A multi-sig Wallet",
                       "A Modular Account Abstraction stack for developers",
                       "An EOA account",
-                      "A Smart Wallet"
+                      "A Smart Wallet",
                     ],
                     correctAnswer: 1,
                   },
@@ -2427,30 +2538,32 @@ export const availableCourses: Course[] = [
                     question: "Is Safe just a multi-sig Wallet?",
                     correctAnswer: false,
                   },
-                ]
+                ],
               },
               {
                 name: "Safe Ecosystem",
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "What are the core components of the Safe ecosystem?",
+                    question:
+                      "What are the core components of the Safe ecosystem?",
                     answers: [
                       "A) Safe Wallets, Safe Transactions, Safe Blocks",
                       "B) Safe Modules, Safe Guards, Safe Protocols",
                       "C) Safe App, Safe Code, Safe Security",
-                      "D) Safe{Core} Protocol, Safe{Core} AA SDK, Safe{Core} API"
+                      "D) Safe{Core} Protocol, Safe{Core} AA SDK, Safe{Core} API",
                     ],
                     correctAnswer: 3,
                   },
                   {
                     type: "multiple-choice",
-                    question: "What is not a core component of the Safe ecosystem?",
+                    question:
+                      "What is not a core component of the Safe ecosystem?",
                     answers: [
                       "A) Safe Blocks",
                       "B) Safe Modules",
                       "D) Safe{Core} Protocol",
-                      "Safe{Core} AA SDK"
+                      "Safe{Core} AA SDK",
                     ],
                     correctAnswer: 1,
                   },
@@ -2461,22 +2574,23 @@ export const availableCourses: Course[] = [
                       "A) Safe{Core} Execution",
                       "B) Safe{Core} Transaction",
                       "C) Safe{Core} Protocol",
-                      "D) Safe{Core} Block"
+                      "D) Safe{Core} Block",
                     ],
                     correctAnswer: 2,
                   },
                   {
                     type: "multiple-choice",
-                    question: "How do Safe Modules and Safe Guards contribute to the ecosystem?",
+                    question:
+                      "How do Safe Modules and Safe Guards contribute to the ecosystem?",
                     answers: [
                       "A) Allow to customize and extend Safe's functionality",
                       "B) Allow to restrict Safe’s functionality",
-                      "C) Allow to implement moonwalking in Safe transactions."
+                      "C) Allow to implement moonwalking in Safe transactions.",
                     ],
                     correctAnswer: 0,
                   },
-                ]
-              }
+                ],
+              },
             ],
           },
           {
@@ -2487,12 +2601,13 @@ export const availableCourses: Course[] = [
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "What is the primary role of Safe {Core} Protocol?",
+                    question:
+                      "What is the primary role of Safe {Core} Protocol?",
                     answers: [
                       "Storing cryptocurrency securely",
                       "Making smart accounts secure, portable, and composable",
                       "Regulating blockchain transactions",
-                      "Enabling multi-signature transactions"
+                      "Enabling multi-signature transactions",
                     ],
                     correctAnswer: 2,
                   },
@@ -2503,20 +2618,21 @@ export const availableCourses: Course[] = [
                       "A) Managing Safe accounts",
                       "B) Enabling transaction execution",
                       "C) Creating Safe accounts",
-                      "D) Providing gasless transactions"
+                      "D) Providing gasless transactions",
                     ],
                     correctAnswer: 3,
                   },
                   {
                     type: "multiple-choice",
-                    question: "In the context of the protocol kit, choose the correct option",
+                    question:
+                      "In the context of the protocol kit, choose the correct option",
                     answers: [
                       "There are two versions of the Safe contracts: Safe.sol that does not trigger events to save gas and SafeL2.sol.",
-                      "There is just one Safe.sol."
+                      "There is just one Safe.sol.",
                     ],
                     correctAnswer: 1,
                   },
-                ]
+                ],
               },
               {
                 name: "About Safe Factory",
@@ -2528,34 +2644,31 @@ export const availableCourses: Course[] = [
                       "The Safe Factory is a smart contract that facilitates the creation of new Safe accounts.",
                       "The Safe Factory is an assembly plant where physical safes or vaults are manufactured for secure storage of valuables.",
                       "The Safe Factory is a smart contract deploying Safe Modules",
-                      "The Safe Factory is a smart contract that manages Safe transactions to transfer tokens"
+                      "The Safe Factory is a smart contract that manages Safe transactions to transfer tokens",
                     ],
                     correctAnswer: 1,
                   },
                   {
                     type: "multiple-choice",
-                    question: "The Safe Factory deploys Proxy smart contracts having the same smart contract logic with different ___?",
-                    answers: [
-                      "Storage",
-                      "Memory",
-                      "Logic",
-                      "Call"
-                    ],
+                    question:
+                      "The Safe Factory deploys Proxy smart contracts having the same smart contract logic with different ___?",
+                    answers: ["Storage", "Memory", "Logic", "Call"],
                     correctAnswer: 1,
                   },
                   {
                     type: "multiple-choice",
-                    question: "Does the proxy pattern affect the Safe{Core} Protocol's performance?",
+                    question:
+                      "Does the proxy pattern affect the Safe{Core} Protocol's performance?",
                     answers: [
                       "No, The proxy pattern improves the contract upgrade process, reducing gas costs.",
                       "No, The proxy pattern allows the Safe{Core} Protocol to adapt to changing requirements easily.",
                       "Yes, The proxy pattern enhances security by separating contract logic from storage.",
-                      "Yes, The proxy pattern may limit the Safe{Core} Protocol's ability to perform complex actions, potentially slowing it down ✅"
+                      "Yes, The proxy pattern may limit the Safe{Core} Protocol's ability to perform complex actions, potentially slowing it down",
                     ],
                     correctAnswer: 3,
-                  }
-                ]
-              }
+                  },
+                ],
+              },
             ],
           },
           {
@@ -2566,23 +2679,25 @@ export const availableCourses: Course[] = [
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "What is the primary purpose of Safe{Core} AA SDK?",
+                    question:
+                      "What is the primary purpose of Safe{Core} AA SDK?",
                     answers: [
                       "Creating social media accounts",
                       "Simplifying the use of smart contract accounts",
                       "Enhancing gaming experiences",
-                      "Regulating cryptocurrency markets"
+                      "Regulating cryptocurrency markets",
                     ],
                     correctAnswer: 1,
                   },
                   {
                     type: "multiple-choice",
-                    question: "What is not a primary purpose of Safe{Core} AA SDK?",
+                    question:
+                      "What is not a primary purpose of Safe{Core} AA SDK?",
                     answers: [
                       "Simplifying the use of smart contract accounts",
                       "Deploying new Safe Accounts",
                       "Creates externally owned accounts",
-                      "Buy cryptocurrencies with fiat money"
+                      "Buy cryptocurrencies with fiat money",
                     ],
                     correctAnswer: 1,
                   },
@@ -2598,37 +2713,40 @@ export const availableCourses: Course[] = [
                       "Protocol Kit",
                       "Relay Kit",
                       "Onramp Kit",
-                      "Smart contracts Kit"
+                      "Smart contracts Kit",
                     ],
                     correctAnswer: 3,
-                  }
-                ]
+                  },
+                ],
               },
               {
                 name: "Safe{Core} AA SDK Kit",
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "Which kit is responsible for creating externally owned accounts?",
+                    question:
+                      "Which kit is responsible for creating externally owned accounts?",
                     answers: [
                       "Protocol Kit",
                       "Relay Kit",
                       "Auth Kit",
-                      "Onramp Kit"
+                      "Onramp Kit",
                     ],
                     correctAnswer: 1,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "The ___ kit is responsible for relaying Safe transactions and enabling third-party sponsorship.",
+                    question:
+                      "The ___ kit is responsible for relaying Safe transactions and enabling third-party sponsorship.",
                     correctAnswer: "Protocol Kit",
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "The ___ kit is responsible for managing on and off ramp.",
+                    question:
+                      "The ___ kit is responsible for managing on and off ramp.",
                     correctAnswer: "Onramp Kit",
-                  }
-                ]
+                  },
+                ],
               },
             ],
           },
@@ -2640,65 +2758,71 @@ export const availableCourses: Course[] = [
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "What is the primary purpose of the Safe{Core} API?",
+                    question:
+                      "What is the primary purpose of the Safe{Core} API?",
                     answers: [
                       "Providing gaming instructions",
                       "Offering information about Safe accounts",
                       "Enabling social media interactions",
-                      "Regulating digital asset ownership"
+                      "Regulating digital asset ownership",
                     ],
                     correctAnswer: 2,
                   },
                   {
                     type: "multiple-choice",
-                    question: "What kind of data can developers access through the Safe{Core} API?",
+                    question:
+                      "What kind of data can developers access through the Safe{Core} API?",
                     answers: [
                       "Weather forecasts",
                       "Social media posts",
                       "Information related to Safe accounts and transactions",
-                      "Cryptocurrency prices"
+                      "Cryptocurrency prices",
                     ],
                     correctAnswer: 3,
                   },
                   {
                     type: "true-false",
-                    question: "Does the Safe{Core} API provide valuable data about Safe accounts and transactions?",
+                    question:
+                      "Does the Safe{Core} API provide valuable data about Safe accounts and transactions?",
                     correctAnswer: true,
-                  }
-                ]
+                  },
+                ],
               },
               {
                 name: "Safe Transaction Service",
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "In which activity the Safe Transaction Service is not involved?",
+                    question:
+                      "In which activity the Safe Transaction Service is not involved?",
                     answers: [
                       "Keeping track of Safe Transactions",
                       "Collecting off-chain signatures",
                       "Informing owners about pending transactions",
-                      "Executing Smart contract transactions"
+                      "Executing Smart contract transactions",
                     ],
                     correctAnswer: 4,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "The Safe Transaction Service is responsible for _______________ of Safe Transactions.",
+                    question:
+                      "The Safe Transaction Service is responsible for _______________ of Safe Transactions.",
                     correctAnswer: "Tracking",
                   },
                   {
                     type: "multiple-choice",
-                    question: "How does the Safe Transaction Service improve user interactions?",
+                    question:
+                      "How does the Safe Transaction Service improve user interactions?",
                     answers: [
                       "The Safe Transaction Service enhances user interactions by allowing users to manage multiple transactions in a single batch, improving efficiency and reducing transaction costs.",
                       "The Safe Transaction Service introduces unnecessary complexity to user interactions by collecting signatures off-chain",
                       "The Safe Transaction Service often results in higher transaction fees, making user interactions costlier compared to traditional methods",
-                      "The Safe Transaction Service offers limited flexibility, hindering users from customizing their interactions with the blockchain"
+                      "The Safe Transaction Service offers limited flexibility, hindering users from customizing their interactions with the blockchain",
                     ],
                     correctAnswer: 1,
-                  }
-                ]
-              }
+                  },
+                ],
+              },
             ],
           },
           {
@@ -2714,45 +2838,49 @@ export const availableCourses: Course[] = [
                       "Extending the Safe's functionality",
                       "Regulating blockchain transactions",
                       "Auditing smart contracts",
-                      "Enhancing social media interactions"
+                      "Enhancing social media interactions",
                     ],
                     correctAnswer: 1,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "Safe Modules can be added or removed by interacting with the ________________.",
+                    question:
+                      "Safe Modules can be added or removed by interacting with the ________________.",
                     correctAnswer: "Module Manager",
                   },
                   {
                     type: "multiple-choice",
-                    question: "What security considerations should be taken into account when using Safe Modules?",
+                    question:
+                      "What security considerations should be taken into account when using Safe Modules?",
                     answers: [
                       "Safe Modules are inherently secure and do not require any specific security measures.",
                       "It is unnecessary to audit or test Safe Modules for vulnerabilities as they are automatically protected against all threats.",
-                      "Security considerations for Safe Modules should focus on factors such as code audits, regular updates, and ensuring that third-party modules are trusted and free from vulnerabilities. ✅",
-                      "Security for Safe Modules primarily involves relying on proprietary security software without the need for external audits or code reviews."
+                      "Security considerations for Safe Modules should focus on factors such as code audits, regular updates, and ensuring that third-party modules are trusted and free from vulnerabilities.",
+                      "Security for Safe Modules primarily involves relying on proprietary security software without the need for external audits or code reviews.",
                     ],
                     correctAnswer: 3,
-                  }
-                ]
+                  },
+                ],
               },
               {
                 name: "Using Safe Modules",
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "Which is the correct method to add a Module interacting with the Module Manager?",
+                    question:
+                      "Which is the correct method to add a Module interacting with the Module Manager?",
                     answers: [
                       "enableModule",
                       "addModule",
                       "insertModule",
-                      "removeModule"
+                      "removeModule",
                     ],
                     correctAnswer: 1,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "How to execute a transaction from a module? ____TransactionFromModule",
+                    question:
+                      "How to execute a transaction from a module? ____TransactionFromModule",
                     correctAnswer: "exec",
                   },
                   {
@@ -2762,12 +2890,12 @@ export const availableCourses: Course[] = [
                       "If you have a Module and you want to use the Module’s logic you have to call execTransactionFromModule on the Module",
                       "If you have a Module and you want to use the Module’s logic you have to call execTransactionFromModule on the Safe",
                       "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Safe",
-                      "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Module"
+                      "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Module",
                     ],
                     correctAnswer: 2,
-                  }
-                ]
-              }
+                  },
+                ],
+              },
             ],
           },
           {
@@ -2778,50 +2906,55 @@ export const availableCourses: Course[] = [
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "Why are Safe Guards introduced in Safe Contracts?",
+                    question:
+                      "Why are Safe Guards introduced in Safe Contracts?",
                     answers: [
                       "To reduce transaction fees",
                       "To restrict the standard `n`-out-of-`m` signature scheme",
                       "To enhance transaction security",
-                      "To promote cryptocurrency mining"
+                      "To promote cryptocurrency mining",
                     ],
                     correctAnswer: 2,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "Safe Guards can be added or removed by interacting with the ________________.",
+                    question:
+                      "Safe Guards can be added or removed by interacting with the ________________.",
                     correctAnswer: "Guard Manager",
                   },
                   {
                     type: "multiple-choice",
-                    question: "What security considerations should be taken when adding a Guard to your Safe?",
+                    question:
+                      "What security considerations should be taken when adding a Guard to your Safe?",
                     answers: [
                       "There are no security considerations when adding a Guard to your Safe, as Guards are always perfectly secure.",
                       "Guards do not have the power to block Safe transaction execution; their role is purely advisory and has no impact on transaction security.",
                       "A broken Guard cannot cause a denial of service for a Safe, as the system automatically bypasses malfunctioning Guards.",
-                      "A Safe Guard does have full power to block Safe transaction execution, and a broken Guard can cause a denial of service for a Safe.✅"
+                      "A Safe Guard does have full power to block Safe transaction execution, and a broken Guard can cause a denial of service for a Safe.✅",
                     ],
                     correctAnswer: 4,
-                  }
-                ]
+                  },
+                ],
               },
               {
                 name: "Using Safe Modules",
                 questions: [
                   {
                     type: "multiple-choice",
-                    question: "Which is the correct method to add a Module interacting with the Module Manager?",
+                    question:
+                      "Which is the correct method to add a Module interacting with the Module Manager?",
                     answers: [
                       "enableModule",
                       "addModule",
                       "insertModule",
-                      "removeModule"
+                      "removeModule",
                     ],
                     correctAnswer: 1,
                   },
                   {
                     type: "fill-in-the-gap",
-                    question: "How to execute a transaction from a module? ____TransactionFromModule",
+                    question:
+                      "How to execute a transaction from a module? ____TransactionFromModule",
                     correctAnswer: "exec",
                   },
                   {
@@ -2831,16 +2964,16 @@ export const availableCourses: Course[] = [
                       "If you have a Module and you want to use the Module’s logic you have to call execTransactionFromModule on the Module",
                       "If you have a Module and you want to use the Module’s logic you have to call execTransactionFromModule on the Safe✅",
                       "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Safe",
-                      "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Module"
+                      "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Module",
                     ],
                     correctAnswer: 2,
-                  }
-                ]
-              }
+                  },
+                ],
+              },
             ],
           },
         ],
-      }
+      },
     ],
   },
 ];

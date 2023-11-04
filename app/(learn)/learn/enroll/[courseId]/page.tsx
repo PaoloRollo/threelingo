@@ -1,4 +1,5 @@
 "use client";
+import { Course } from "@/lib/interfaces";
 import { useCourseStore } from "@/lib/store";
 import { useUserStore } from "@/lib/store/user-store";
 import { Button, CircularProgress, Divider, Image } from "@nextui-org/react";
@@ -10,6 +11,7 @@ export default function Page({ params }: { params: { courseId: string } }) {
   const [loading, setLoading] = useState<boolean>(false);
   const address = useUserStore((state) => state.address);
   const course = useCourseStore((state) => state.course);
+  const [pageCourse, setPageCourse] = useState<Course | undefined>(undefined);
   const router = useRouter();
   const setCourse = useCourseStore((state) => state.setCourse);
   const currentSection = useCourseStore((state) => state.currentSection);
@@ -23,11 +25,10 @@ export default function Page({ params }: { params: { courseId: string } }) {
     currentSection === 0 && currentUnit === 0 && currentStep === 0;
 
   useEffect(() => {
-    console.log(course, address);
-    if (!course && address) {
+    if (address) {
       fetchCourse();
     }
-  }, [course, address]);
+  }, [address]);
 
   const fetchCourse = async () => {
     setLoading(true);
