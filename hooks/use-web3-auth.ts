@@ -68,7 +68,6 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
           rpcTarget: "https://polygon-zkevm.drpc.org",
         },
         uiConfig: {
-          theme: "dark",
           loginMethodsOrder: ["google", "facebook"],
         },
       };
@@ -92,7 +91,7 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
         adapterSettings: {
           uxMode: "popup",
           whiteLabel: {
-            name: "Safe",
+            name: "threelingo",
           },
         },
       });
