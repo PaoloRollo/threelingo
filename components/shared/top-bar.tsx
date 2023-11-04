@@ -14,27 +14,19 @@ import {
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const sections: string[] = [
-  "Section 1: Rookie",
-  "Section 2: Explorer",
-  "Section 3: Builder",
-  "Section 4: God",
-];
-
-const lockedSections: number[] = [2, 3];
-
 export default function TopBar() {
   const course = useCourseStore((state) => state.course);
   const setCourse = useCourseStore((state) => state.setCourse);
   const courses = useUserCoursesStore((state) => state.courses);
   const setCourses = useUserCoursesStore((state) => state.setCourses);
+  const currentSection = useCourseStore((state) => state.currentSection);
+  const setCurrentSection = useCourseStore((state) => state.setCurrentSection);
 
   const address = useUserStore((state) => state.address);
   const pathname = usePathname();
   const router = useRouter();
   const { web3Auth, signIn } = useWeb3Auth();
   const [viewSections, setViewSections] = useState<boolean>(false);
-  const [currentSection, setCurrentSection] = useState<number>(0);
 
   // useEffect(() => {
   //   if (!address) {
@@ -141,7 +133,7 @@ export default function TopBar() {
                   onClick={() => setViewSections(false)}
                 />
               )}
-              <p className="text-center font-bold tracking-widest">
+              <p className="text-center font-bold tracking-widest truncate w-64 md:w-auto ">
                 {course.sections[currentSection].name}
               </p>
             </div>
@@ -150,7 +142,7 @@ export default function TopBar() {
                 {viewSections &&
                   course.sections.map((section, index) => {
                     const isCurrent = index === currentSection;
-                    const isLocked = lockedSections.includes(index);
+                    const isLocked = index > currentSection;
 
                     if (isCurrent) {
                       return (

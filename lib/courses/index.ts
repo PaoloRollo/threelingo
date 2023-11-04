@@ -2,7 +2,7 @@ import { Course } from "../interfaces";
 
 export const availableCourses: Course[] = [
   {
-    id: "intro",
+    id: "1",
     name: "Introduction",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis urna dignissim, pulvinar quam quis, cursus orci. Pellentesque blandit tellus a neque tincidunt placerat. Sed lacinia eleifend neque vitae interdum. Nullam at leo justo. Pellentesque sollicitudin tortor velit, vitae imperdiet lectus malesuada sit amet. Ut ligula ligula, volutpat et tortor ut, aliquet efficitur eros. Sed condimentum fermentum vulputate. Donec eu eros maximus, scelerisque tellus sit amet, vulputate turpis. Fusce mattis odio id blandit maximus. Morbi quis ultricies lacus. Nam ullamcorper nunc erat, in rhoncus lectus scelerisque quis.",
@@ -892,7 +892,7 @@ export const availableCourses: Course[] = [
     ],
   },
   {
-    id: "Smart Account",
+    id: "2",
     name: "EOAs & Smart Accounts",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis urna dignissim, pulvinar quam quis, cursus orci. Pellentesque blandit tellus a neque tincidunt placerat. Sed lacinia eleifend neque vitae interdum. Nullam at leo justo. Pellentesque sollicitudin tortor velit, vitae imperdiet lectus malesuada sit amet. Ut ligula ligula, volutpat et tortor ut, aliquet efficitur eros. Sed condimentum fermentum vulputate. Donec eu eros maximus, scelerisque tellus sit amet, vulputate turpis. Fusce mattis odio id blandit maximus. Morbi quis ultricies lacus. Nam ullamcorper nunc erat, in rhoncus lectus scelerisque quis.",
@@ -1209,7 +1209,6 @@ export const availableCourses: Course[] = [
               {
                 name: "Blockchain Use Cases",
                 questions: [
-                  
                   {
                     type: "true-false",
                     question:
@@ -2742,9 +2741,9 @@ export const availableCourses: Course[] = [
                     type: "multiple-choice",
                     question:
                       "In the context of the Auth Kit, which option is correct?",
-                    answers:[
+                    answers: [
                       "const authKitSignData = await web3AuthModalPack.signIn()",
-                      "const authKitSignData = web3AuthModalPack.signIn()"
+                      "const authKitSignData = web3AuthModalPack.signIn()",
                     ],
                     correctAnswer: 0,
                   },
@@ -2752,14 +2751,11 @@ export const availableCourses: Course[] = [
                     type: "multiple-choice",
                     question:
                       "In the context of the Relay Kit, is 'const propose = await relayKit.proposeRelayedTransaction(signedSafeTransaction, safeSDK)' correct?",
-                      answers:[
-                        "yes",
-                        "no"
-                      ],
+                    answers: ["yes", "no"],
                     correctAnswer: 1,
                   },
                 ],
-              }
+              },
             ],
           },
           {
@@ -2978,7 +2974,7 @@ export const availableCourses: Course[] = [
                       "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Safe",
                       "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Module",
                     ],
-                    correctAnswer:0,
+                    correctAnswer: 0,
                   },
                 ],
               },
