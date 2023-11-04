@@ -1,10 +1,12 @@
-import { availableCourses } from "@/lib/courses";
+import { useUserCoursesStore } from "@/lib/store";
 import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 export default function SelectCoursePage() {
   const router = useRouter();
+  const courses = useUserCoursesStore((state) => state.courses);
+  console.log(courses);
   return (
     <section
       id="select-course-page"
@@ -12,7 +14,7 @@ export default function SelectCoursePage() {
     >
       <h1 className="font-bold text-2xl tracking-wide">Web3 Courses</h1>
       <motion.div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-        {availableCourses.map((course, index) => (
+        {courses.map((course, index) => (
           <motion.div
             key={course.id}
             onClick={() => router.push(`/learn/enroll/${course.id}`)}

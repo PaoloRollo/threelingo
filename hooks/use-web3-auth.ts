@@ -26,11 +26,11 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
     initializeWeb3Auth();
   }, []);
 
-  useEffect(() => {
-    if (user) {
-      router.push("/learn");
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     router.push("/learn");
+  //   }
+  // }, [user]);
 
   useEffect(() => {
     if (web3Auth) {

@@ -34,9 +34,5 @@ export default function LearnPage() {
     return <NoWalletComponent />;
   }
 
-  if (courses.length === 0) {
-    return <SelectCoursePage />;
-  }
-
-  return <main className=""></main>;
+  return <SelectCoursePage />;
 }

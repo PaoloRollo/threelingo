@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Button,
+  Input,
   Modal,
   ModalBody,
   ModalContent,
@@ -10,8 +11,9 @@ import {
   cn,
 } from "@nextui-org/react";
 
-import { useStepModalStore } from "@/lib/store";
+import { useCourseStore, useStepModalStore } from "@/lib/store";
 import { Question } from "@/lib/interfaces";
+import { useUserStore } from "@/lib/store/user-store";
 
 interface StepModalProps {
   isOpen: boolean;
@@ -20,6 +22,14 @@ interface StepModalProps {
 }
 
 export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
+  const address = useUserStore((state) => state.address);
+  const course = useCourseStore((state) => state.course);
+  const currentStep = useCourseStore((state) => state.currentStep);
+  const currentUnit = useCourseStore((state) => state.currentUnit);
+  const currentSection = useCourseStore((state) => state.currentSection);
+  const setCurrentStep = useCourseStore((state) => state.setCurrentStep);
+  const setCurrentUnit = useCourseStore((state) => state.setCurrentUnit);
+  const setCurrentSection = useCourseStore((state) => state.setCurrentSection);
   const step = useStepModalStore((state) => state.step);
   const toggleStepModal = useStepModalStore((state) => state.toggleStepModal);
   const [content, setContent] = useState<string>("");
@@ -30,6 +40,7 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
   const [errors, setErrors] = useState<Question[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [stepFinished, setStepFinished] = useState<boolean>(false);
+  const [gapFill, setGapFill] = useState<string>("");
 
   const reset = () => {
     setErrors([]);
@@ -38,6 +49,35 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
     setLatestCorrect(null);
     setCurrentQuestion(0);
     setCorrectResponses(0);
+    setGapFill("");
+  };
+
+  const onFinish = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(
+        `/api/courses/${course?.id}/${address}/progress`,
+        {
+          method: "PUT",
+          body: JSON.stringify({
+            currentSection,
+            currentUnit,
+            currentStep: currentStep + 1,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const { result } = await res.json();
+      setCurrentUnit(result.current_unit);
+      setCurrentSection(result.current_section);
+      setCurrentStep(result.current_step);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (!step) {
@@ -99,7 +139,10 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                   {!stepFinished && (
                     <>
                       <h2 className="text-2xl text-center">
-                        {step.questions[currentQuestion].question}
+                        {step.questions[currentQuestion].question.replaceAll(
+                          "BLANK",
+                          "_____"
+                        )}
                       </h2>
                       {step.questions[currentQuestion].type ===
                         "multiple-choice" && (
@@ -109,7 +152,7 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                               return (
                                 <div
                                   key={`answer-${index}`}
-                                  onClick={() => {
+                                  onClick={async () => {
                                     if (loading) return;
                                     setLatestAnswer(index);
                                     if (
@@ -120,10 +163,12 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                                       setLatestCorrect(true);
                                     } else {
                                       setLatestCorrect(false);
-                                      setErrors([
-                                        ...errors,
-                                        step.questions[currentQuestion],
-                                      ]);
+                                      setLoading(true);
+                                      setTimeout(() => {
+                                        reset();
+                                        setLoading(false);
+                                      }, 2000);
+                                      return;
                                     }
                                     setLoading(true);
                                     setTimeout(() => {
@@ -132,13 +177,14 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                                         step.questions.length
                                       ) {
                                         setStepFinished(true);
-                                        setTimeout(() => {
+                                        onFinish().then(() => {
                                           reset();
                                           toggleStepModal();
-                                        }, 2000);
+                                        });
                                       } else {
                                         setCurrentQuestion(currentQuestion + 1);
                                       }
+                                      setGapFill("");
                                       setLatestCorrect(null);
                                       setLatestAnswer(null);
                                       setLoading(false);
@@ -151,6 +197,10 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                                       "bg-red-500 border-red-700 text-white font-bold",
                                     latestCorrect === true &&
                                       latestAnswer === index &&
+                                      "bg-success-500 border-success-700 text-white font-bold",
+                                    latestCorrect === false &&
+                                      step.questions[currentQuestion]
+                                        .correctAnswer === index &&
                                       "bg-success-500 border-success-700 text-white font-bold"
                                   )}
                                 >
@@ -159,6 +209,190 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                               );
                             }
                           )}
+                        </div>
+                      )}
+                      {step.questions[currentQuestion].type ===
+                        "true-false" && (
+                        <div className="flex flex-col space-y-4 mt-4">
+                          <div
+                            onClick={() => {
+                              if (loading) return;
+                              setLatestAnswer(0);
+                              if (
+                                step.questions[currentQuestion]
+                                  .correctAnswer === true
+                              ) {
+                                setCorrectResponses(correctResponses + 1);
+                                setLatestCorrect(true);
+                              } else {
+                                setLatestCorrect(false);
+                                setLoading(true);
+                                setTimeout(() => {
+                                  reset();
+                                  setLoading(false);
+                                }, 2000);
+                                return;
+                              }
+                              setLoading(true);
+                              setTimeout(() => {
+                                if (
+                                  currentQuestion + 1 ===
+                                  step.questions.length
+                                ) {
+                                  setStepFinished(true);
+                                  onFinish().then(() => {
+                                    reset();
+                                    toggleStepModal();
+                                  });
+                                } else {
+                                  setCurrentQuestion(currentQuestion + 1);
+                                }
+                                setLatestCorrect(null);
+                                setLatestAnswer(null);
+                                setLoading(false);
+                              }, 2000);
+                            }}
+                            className={cn(
+                              "border-2 border-b-3 border-gray-300 rounded-xl p-4 w-full flex space-x-2 transition-colors",
+                              latestCorrect === false &&
+                                latestAnswer === 0 &&
+                                "bg-red-500 border-red-700 text-white font-bold",
+                              latestCorrect === true &&
+                                latestAnswer === 0 &&
+                                "bg-success-500 border-success-700 text-white font-bold",
+                              latestCorrect === false &&
+                                latestAnswer === 1 &&
+                                "bg-success-500 border-success-700 text-white font-bold"
+                            )}
+                          >
+                            True
+                          </div>
+                          <div
+                            onClick={async () => {
+                              if (loading) return;
+                              setLatestAnswer(1);
+                              if (
+                                step.questions[currentQuestion]
+                                  .correctAnswer === false
+                              ) {
+                                setCorrectResponses(correctResponses + 1);
+                                setLatestCorrect(true);
+                              } else {
+                                setLatestCorrect(false);
+                                setLoading(true);
+                                setTimeout(() => {
+                                  reset();
+                                  setLoading(false);
+                                }, 2000);
+                                return;
+                              }
+                              setLoading(true);
+                              setTimeout(() => {
+                                if (
+                                  currentQuestion + 1 ===
+                                  step.questions.length
+                                ) {
+                                  setStepFinished(true);
+                                  onFinish().then(() => {
+                                    reset();
+                                    toggleStepModal();
+                                  });
+                                } else {
+                                  setCurrentQuestion(currentQuestion + 1);
+                                }
+                                setLatestCorrect(null);
+                                setLatestAnswer(null);
+                                setLoading(false);
+                              }, 2000);
+                            }}
+                            className={cn(
+                              "border-2 border-b-3 border-gray-300 rounded-xl p-4 w-full flex space-x-2 transition-colors",
+                              latestCorrect === false &&
+                                latestAnswer === 1 &&
+                                "bg-red-500 border-red-700 text-white font-bold",
+                              latestCorrect === true &&
+                                latestAnswer === 1 &&
+                                "bg-success-500 border-success-700 text-white font-bold",
+                              latestCorrect === false &&
+                                latestAnswer === 0 &&
+                                "bg-success-500 border-success-700 text-white font-bold"
+                            )}
+                          >
+                            False
+                          </div>
+                        </div>
+                      )}
+                      {step.questions[currentQuestion].type ===
+                        "fill-in-the-gap" && (
+                        <div className="flex flex-col space-y-4 mt-4">
+                          <div
+                            className={cn(
+                              "border-2 border-b-3 border-gray-300 rounded-xl p-4 w-full flex space-x-2 transition-colors"
+                              // latestCorrect === false &&
+                              //   latestAnswer === 0 &&
+                              //   "bg-red-500 border-red-700 text-white font-bold",
+                              // latestCorrect === true &&
+                              //   latestAnswer === 0 &&
+                              //   "bg-success-500 border-success-700 text-white font-bold"
+                            )}
+                          >
+                            <Input
+                              type="text"
+                              value={gapFill}
+                              onValueChange={setGapFill}
+                              isClearable
+                            />
+                          </div>
+                          <Button
+                            isDisabled={!gapFill}
+                            color={
+                              latestCorrect === null
+                                ? "primary"
+                                : latestCorrect
+                                ? "success"
+                                : "warning"
+                            }
+                            onClick={() => {
+                              if (loading) return;
+                              if (
+                                step.questions[currentQuestion].correctAnswer
+                                  .toString()
+                                  .toLowerCase() === gapFill.toString()
+                              ) {
+                                setCorrectResponses(correctResponses + 1);
+                                setLatestCorrect(true);
+                              } else {
+                                setLatestCorrect(false);
+                                setLoading(true);
+                                setTimeout(() => {
+                                  reset();
+                                  setLoading(false);
+                                }, 2000);
+                                return;
+                              }
+                              setLoading(true);
+                              setTimeout(() => {
+                                if (
+                                  currentQuestion + 1 ===
+                                  step.questions.length
+                                ) {
+                                  setStepFinished(true);
+                                  onFinish().then(() => {
+                                    reset();
+                                    toggleStepModal();
+                                  });
+                                } else {
+                                  setCurrentQuestion(currentQuestion + 1);
+                                }
+                                setGapFill("");
+                                setLatestCorrect(null);
+                                setLatestAnswer(null);
+                                setLoading(false);
+                              }, 2000);
+                            }}
+                          >
+                            Check
+                          </Button>
                         </div>
                       )}
                     </>

@@ -11,7 +11,7 @@ export async function GET(
     .eq("id", params.courseId);
   return new Response(
     JSON.stringify({
-      result: data,
+      result: data && data.length > 0 ? data[0] : null,
     }),
     { status: 200 }
   );

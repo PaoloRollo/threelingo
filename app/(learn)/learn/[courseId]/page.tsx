@@ -1,8 +1,8 @@
 "use client";
-import { availableCourses } from "@/lib/courses";
 import { useCourseStore, useStepModalStore } from "@/lib/store";
 import { useGuidebookModalStore } from "@/lib/store/guidebook-modal-store";
-import { cn } from "@nextui-org/react";
+import { useUserStore } from "@/lib/store/user-store";
+import { CircularProgress, cn } from "@nextui-org/react";
 import {
   BookIcon,
   CheckIcon,
@@ -14,12 +14,15 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Page({ params }: { params: { courseId: string } }) {
-  const course = availableCourses.find(
-    (course) => course.id === params.courseId
-  );
+  const [loading, setLoading] = useState<boolean>(false);
+  const address = useUserStore((state) => state.address);
+  const course = useCourseStore((state) => state.course);
   const currentSection = useCourseStore((state) => state.currentSection);
   const currentUnit = useCourseStore((state) => state.currentUnit);
+  const currentStep = useCourseStore((state) => state.currentStep);
+  const setCurrentStep = useCourseStore((state) => state.setCurrentStep);
   const setCurrentUnit = useCourseStore((state) => state.setCurrentUnit);
+  const setCurrentSection = useCourseStore((state) => state.setCurrentSection);
   const router = useRouter();
   const setGuidebookTarget = useGuidebookModalStore((state) => state.setTarget);
   const toggleGuidebook = useGuidebookModalStore(
@@ -29,17 +32,45 @@ export default function Page({ params }: { params: { courseId: string } }) {
   const step = useStepModalStore((state) => state.step);
   const setStep = useStepModalStore((state) => state.setStep);
   const toggleStepModal = useStepModalStore((state) => state.toggleStepModal);
-  const [currentStep, setCurrentStep] = useState<number>(0);
-  const [completedSteps, setCompletedSteps] = useState<string[]>([]);
+  // const [completedSteps, setCompletedSteps] = useState<string[]>([]);
 
   useEffect(() => {
-    if (course) {
-      setCourse(course);
+    console.log(course, address);
+    if (!course && address) {
+      fetchCourse();
     }
-  }, [course]);
+  }, [course, address]);
+
+  const fetchCourse = async () => {
+    setLoading(true);
+    try {
+      const [courseRes, progressRes] = await Promise.all([
+        fetch(`/api/courses/${params.courseId}`),
+        fetch(`/api/courses/${params.courseId}/${address}/progress`),
+      ]);
+      const courseData = await courseRes.json();
+      const progressData = await progressRes.json();
+      setCourse(courseData.result);
+      const { result } = progressData;
+      setCurrentSection(result.current_section);
+      setCurrentUnit(result.current_unit);
+      setCurrentStep(result.current_step);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (!course) {
-    return <div>Course not found</div>;
+    return (
+      <section
+        id="course-page"
+        className="h-screen w-screen flex flex-col items-center justify-center"
+      >
+        <CircularProgress />
+      </section>
+    );
   }
 
   return (
@@ -73,9 +104,9 @@ export default function Page({ params }: { params: { courseId: string } }) {
               {unit.steps.map((step, stepIndex) => {
                 const isActive =
                   currentUnit >= index && stepIndex <= currentStep;
-                const isCompleted = completedSteps.includes(
-                  `${index}-${stepIndex}`
-                );
+                const isCompleted =
+                  currentUnit > index ||
+                  (currentUnit === index && stepIndex < currentStep);
                 const isSkipTo = currentUnit < index && stepIndex === 0;
                 const bgClassname =
                   isCompleted || isSkipTo || isActive
@@ -93,7 +124,7 @@ export default function Page({ params }: { params: { courseId: string } }) {
                       stepIndex === 5 && "translate-x-8"
                     )}
                     onClick={() => {
-                      if (isActive) {
+                      if (isActive && !isCompleted) {
                         setStep(step);
                         toggleStepModal();
                       }
