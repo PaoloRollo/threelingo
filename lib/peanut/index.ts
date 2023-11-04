@@ -1,5 +1,5 @@
 import { Signer } from "ethers";
-import peanut from "@squirrel-labs/peanut-sdk";
+import * as peanut from "@squirrel-labs/peanut-sdk";
 
 const CHAINID = 1442; // Polygon zkEVM Testnet
 

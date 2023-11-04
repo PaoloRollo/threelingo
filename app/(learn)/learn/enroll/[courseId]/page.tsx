@@ -18,6 +18,9 @@ export default function Page({ params }: { params: { courseId: string } }) {
   const setCurrentSection = useCourseStore((state) => state.setCurrentSection);
   const setCurrentUnit = useCourseStore((state) => state.setCurrentUnit);
   const setCurrentStep = useCourseStore((state) => state.setCurrentStep);
+  console.log(currentSection, currentUnit, currentStep);
+  const notEnrolled =
+    currentSection === 0 && currentUnit === 0 && currentStep === 0;
 
   useEffect(() => {
     console.log(course, address);
@@ -78,7 +81,7 @@ export default function Page({ params }: { params: { courseId: string } }) {
           </div>
         </div>
       </div>
-      {currentSection === 0 && currentUnit === 0 && currentStep === 0 && (
+      {notEnrolled && (
         <Button
           variant="solid"
           color="primary"
@@ -91,21 +94,19 @@ export default function Page({ params }: { params: { courseId: string } }) {
           Enroll now!
         </Button>
       )}
-      {currentSection !== 0 ||
-        currentUnit !== 0 ||
-        (currentStep !== 0 && (
-          <Button
-            variant="solid"
-            color="success"
-            className="font-bold uppercase tracking-widest border-b-primary-800 border-b-4"
-            onClick={() => {
-              setCourse(course);
-              router.push(`/learn/${course.id}`);
-            }}
-          >
-            Already enrolled
-          </Button>
-        ))}
+      {!notEnrolled && (
+        <Button
+          variant="solid"
+          color="success"
+          className="font-bold uppercase tracking-widest border-b-primary-800 border-b-4"
+          onClick={() => {
+            setCourse(course);
+            router.push(`/learn/${course.id}`);
+          }}
+        >
+          Already enrolled
+        </Button>
+      )}
       <Divider />
       <h1 className="font-bold text-xl tracking-wide">About the course</h1>
       <p>{course.description}</p>
