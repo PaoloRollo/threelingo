@@ -98,7 +98,9 @@ export default function TopBar() {
             }}
           >
             <GraduationCapIcon />
-            <span className="font-bold tracking-widest">{course.name}</span>
+            <span className="font-bold tracking-widest truncate max-w-[72px]">
+              {course.name}
+            </span>
           </Button>
         )}
         {address ? (

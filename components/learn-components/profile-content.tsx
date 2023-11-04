@@ -1,21 +1,23 @@
 "use client";
-import {availableCourses} from "@/lib/courses";
-import {useUserStore} from "@/lib/store/user-store";
-import {sliceAddress} from "@/lib/utils";
-import {Divider, Image} from "@nextui-org/react";
-import {BookIcon, ClockIcon, CogIcon, FlameIcon, UsersIcon, ZapIcon,} from "lucide-react";
-import {checksumAddress} from "viem";
+import { availableCourses } from "@/lib/courses";
+import { useUserStore } from "@/lib/store/user-store";
+import { sliceAddress } from "@/lib/utils";
+import { Divider, Image } from "@nextui-org/react";
+import { ClockIcon, CogIcon } from "lucide-react";
+import { checksumAddress } from "viem";
 import useContractBalance from "@/hooks/use-contract-balance";
 
 export default function ProfileContent({
-                                         params,
-                                       }: {
+  params,
+}: {
   params: { address: string };
 }) {
-  const {address} = params;
+  const { address } = params;
 
   const loggedAddress = useUserStore((state) => state.address);
-  const balance = useContractBalance(process.env.NEXT_PUBLIC_COURSE_TOKEN_ADDRESS as string)
+  const balance = useContractBalance(
+    process.env.NEXT_PUBLIC_COURSE_TOKEN_ADDRESS as string
+  );
 
   return (
     <section
@@ -39,27 +41,39 @@ export default function ProfileContent({
       <div className="flex space-x-2 mt-4">
         {availableCourses.map((course) => (
           <Image
-              key={course.name}
-              src={course.image}
-              alt={course.name}
-              width={24}
-              height={24}
-              className="rounded-none"
+            key={course.name}
+            src={course.image}
+            alt={course.name}
+            width={24}
+            height={24}
+            className="rounded-none"
           />
         ))}
       </div>
-      <Divider className="my-8"/>
+      <Divider className="my-8" />
       <div className="grid grid-cols-2 gap-4">
-        {balance?.length > 0 && balance.filter(token => token.amount > 0).map((token, index) =>
-            <div key={index} className="border-2 border-b-3 border-gray-300 rounded-xl p-4 w-full h-20 flex space-x-2">
-              <Image src={availableCourses[token.tokenId]?.image} className="h-8" alt={availableCourses[token.tokenId].name} />
-              <div className="flex flex-col">
-                <span className="text-black/30 text-xs">{availableCourses[token.tokenId].name}</span>
+        {balance?.length > 0 &&
+          balance
+            .filter((token) => token.amount > 0)
+            .map((token, index) => (
+              <div
+                key={index}
+                className="border-2 border-b-3 border-gray-300 rounded-xl p-4 w-full h-20 flex space-x-2"
+              >
+                <Image
+                  src={availableCourses[token.tokenId]?.image}
+                  className="h-8"
+                  alt={availableCourses[token.tokenId].name}
+                />
+                <div className="flex flex-col">
+                  <span className="text-black/30 text-xs">
+                    {availableCourses[token.tokenId].name}
+                  </span>
+                </div>
               </div>
-            </div>
-        )}
+            ))}
       </div>
-      { /*<Divider className="my-8"/>
+      {/*<Divider className="my-8"/>
       <div className="grid grid-cols-2 gap-4">
         <div className="border-2 border-b-3 border-gray-300 rounded-xl p-4 w-full h-20 flex space-x-2">
           <FlameIcon className="text-black/30"/>

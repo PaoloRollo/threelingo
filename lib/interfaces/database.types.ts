@@ -16,6 +16,7 @@ export interface Database {
           id: number
           image: string | null
           name: string
+          nft_image: string | null
           sections: Json | null
         }
         Insert: {
@@ -24,6 +25,7 @@ export interface Database {
           id?: number
           image?: string | null
           name: string
+          nft_image?: string | null
           sections?: Json | null
         }
         Update: {
@@ -32,6 +34,7 @@ export interface Database {
           id?: number
           image?: string | null
           name?: string
+          nft_image?: string | null
           sections?: Json | null
         }
         Relationships: []

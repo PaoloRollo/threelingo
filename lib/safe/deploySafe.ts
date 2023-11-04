@@ -24,11 +24,11 @@
 //   try {
 //     // polygon zkevm
 //     const provider = new ethers.providers.JsonRpcProvider(
-//       "https://rpc.public.zkevm-test.net"
+//       NEXT_PUBLIC_POLYGON_ZKEVM_TESTNET_RPC_URL
 //     );
 
 //     const signerOrProvider = new ethers.Wallet(
-//       process.env.PRIVATE_KEY as string,
+//       process.env.WALLET_PRIVATE_KEY as string,
 //       provider
 //     );
 

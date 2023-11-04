@@ -37,7 +37,7 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
       web3Auth.subscribe(ADAPTER_EVENTS.CONNECTED, async (u) => {
         const eoa = await web3Auth.getAddress();
         const safes = await web3Auth.getSafes(
-          "https://safe-transaction-goerli.safe.global"
+          "https://safe-transaction-zkevm.safe.global"
         );
         setAddress(eoa);
         setSafes(safes || []);
@@ -62,8 +62,8 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
         web3AuthNetwork: "testnet",
         chainConfig: {
           chainNamespace: CHAIN_NAMESPACES.EIP155,
-          chainId: "0x5",
-          rpcTarget: "https://rpc.ankr.com/eth_goerli",
+          chainId: "0x44d",
+          rpcTarget: "https://polygon-zkevm.drpc.org",
         },
         uiConfig: {
           theme: "dark",
@@ -96,7 +96,7 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
       });
 
       const web3AuthConfig: Web3AuthConfig = {
-        txServiceUrl: "https://safe-transaction-goerli.safe.global",
+        txServiceUrl: "https://safe-transaction-zkevm.safe.global",
       };
 
       // Instantiate and initialize the pack
