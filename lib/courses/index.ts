@@ -2555,6 +2555,39 @@ export const availableCourses: Course[] = [
                     correctAnswer: 3,
                   }
                 ]
+              },
+              {
+                name: "Using a Safe Smart Account",
+                questions: [
+                  {
+                    type: "interaction-safe-deploy",
+                    question: "Do you want to deploy your firs Safe Smart Account?",
+                    answers: [
+                    ],
+                    correctAnswer: 1,
+                  },
+                  {
+                    type: "interaction-safe-transfer",
+                    question: "Let's make your first transaction with your Safe",
+                    answers: [
+                    ],
+                    correctAnswer: 1,
+                  },
+                  {
+                    type: "interaction-safe-addSigner",
+                    question: "Let's add a new Safe owner",
+                    answers: [
+                    ],
+                    correctAnswer: 1,
+                  },
+                  {
+                    type: "interaction-safe-transfer",
+                    question: "Do you want to try to make a transfer now?",
+                    answers: [
+                    ],
+                    correctAnswer: 1,
+                  }
+                ]
               }
             ],
           },
