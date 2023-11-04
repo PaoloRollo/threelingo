@@ -7,7 +7,7 @@ function useContractBalance(contractAddress: string) {
   const [balance, setBalance] = useState<string | null>(null);
   const address = useUserStore((state) => state.address);
   const provider = new ethers.providers.JsonRpcProvider(
-    process.env.POLYGON_ZKEVM_TESTNET_RPC_URL
+    process.env.NEXT_PUBLIC_POLYGON_ZKEVM_TESTNET_RPC_URL
   );
 
   useEffect(() => {
