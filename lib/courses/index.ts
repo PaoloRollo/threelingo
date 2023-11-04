@@ -917,7 +917,7 @@ export const availableCourses: Course[] = [
                       "Mathematical theories",
                       "Language translation",
                     ],
-                    correctAnswer: 2,
+                    correctAnswer: 1,
                   },
                   {
                     type: "multiple-choice",
@@ -929,7 +929,7 @@ export const availableCourses: Course[] = [
                       "Confidentiality, Integrity, and Authentication",
                       "Rapid data transmission",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "multiple-choice",
@@ -953,7 +953,7 @@ export const availableCourses: Course[] = [
                       "To prevent unauthorized data alteration",
                       "To increase data transmission speed",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "multiple-choice",
@@ -965,7 +965,7 @@ export const availableCourses: Course[] = [
                       "Generating secure encryption keys ",
                       "Increasing the speed of data transmission",
                     ],
-                    correctAnswer: 2,
+                    correctAnswer: 1,
                   },
                   {
                     type: "multiple-choice",
@@ -977,7 +977,7 @@ export const availableCourses: Course[] = [
                       "Data transformation to make it unreadable",
                       "Data optimization for storage",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "multiple-choice",
@@ -1036,7 +1036,7 @@ export const availableCourses: Course[] = [
                       "By ensuring all users are known and verified.",
                       "By allowing unrestricted access to data.",
                     ],
-                    correctAnswer: 2,
+                    correctAnswer: 1,
                   },
                   {
                     type: "true-false",
@@ -1054,7 +1054,7 @@ export const availableCourses: Course[] = [
                       "Verifying the validity of new blocks added to the chain.",
                       "Increasing the speed of block creation.",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                 ],
               },
@@ -1148,7 +1148,7 @@ export const availableCourses: Course[] = [
                       "It protects the confidentiality of transaction data.",
                       "It allows for reversible transactions.",
                     ],
-                    correctAnswer: 2,
+                    correctAnswer: 1,
                   },
                   {
                     type: "true-false",
@@ -1182,7 +1182,7 @@ export const availableCourses: Course[] = [
                       "Proof of Work (PoW)",
                       "Proof of Stake (PoS)",
                       "Proof of Burn (PoB)",
-                      "Proof of Authority (PoA)",
+                      "DPOW",
                     ],
                     correctAnswer: 1,
                   },
@@ -1209,18 +1209,7 @@ export const availableCourses: Course[] = [
               {
                 name: "Blockchain Use Cases",
                 questions: [
-                  {
-                    type: "multiple-choice",
-                    question:
-                      "Beyond cryptocurrencies, what are some common blockchain use cases?",
-                    answers: [
-                      "Centralized email services",
-                      "Secure file storage",
-                      "Voting systems",
-                      "Manual record-keeping",
-                    ],
-                    correctAnswer: 2,
-                  },
+                  
                   {
                     type: "true-false",
                     question:
@@ -1280,18 +1269,6 @@ export const availableCourses: Course[] = [
                     question:
                       "True or False: Blockchain technology has no application in the field of intellectual property and copyright management.",
                     correctAnswer: false,
-                  },
-                  {
-                    type: "multiple-choice",
-                    question:
-                      "What role does blockchain play in the energy sector?",
-                    answers: [
-                      "It is used to increase oil production.",
-                      "It enables peer-to-peer energy trading platforms.",
-                      "It reduces the physical infrastructure needed for energy distribution.",
-                      "It is primarily used for advertising renewable energy sources.",
-                    ],
-                    correctAnswer: 1,
                   },
                 ],
               },
@@ -1455,26 +1432,6 @@ export const availableCourses: Course[] = [
                 ],
               },
               {
-                name: "Download Metamask Wallet",
-                questions: [
-                  {
-                    type: "interactive",
-                    question: "Download your Metamask Wallet",
-                    correctAnswer: "https://metamask.io/",
-                  },
-                ],
-              },
-              {
-                name: "Connect Wallet through WalletConnect",
-                questions: [
-                  {
-                    type: "interactive",
-                    question: "Connect your wallet through WalletConnect",
-                    correctAnswer: "https://metamask.io/",
-                  },
-                ],
-              },
-              {
                 name: "Backup and Recovery",
                 questions: [
                   {
@@ -1563,7 +1520,7 @@ export const availableCourses: Course[] = [
                       "Using a hardware wallet or secure offline storage.",
                       "Memorizing private keys to avoid writing them down.",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "fill-in-the-gap",
@@ -1587,7 +1544,7 @@ export const availableCourses: Course[] = [
                       "Online document.",
                       "Secure vault",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "true-false",
@@ -1611,7 +1568,7 @@ export const availableCourses: Course[] = [
                       "To keep private keys offline and secure from online threats.",
                       "To generate new private keys automatically.",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                 ],
               },
@@ -1630,7 +1587,7 @@ export const availableCourses: Course[] = [
                       "What enables smart contracts to execute transactions without human intervention?",
                     answers: [
                       "Manual approval by blockchain developers",
-                      "Predefined conditions coded within the contract",
+                      "Predefined conditions coded within the contract by a third party",
                       "A consensus vote by all network participants",
                       "Periodic maintenance checks by network administrators",
                     ],
@@ -1765,10 +1722,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is the primary characteristic of an Externally Owned Account (EOA)?",
                     answers: [
-                      "A) It is controlled by a private key",
-                      "B) It is controlled by a public key",
-                      "C) It requires multiple signatures for transactions",
-                      "D) It is managed by a centralized authority",
+                      "It is controlled by a private key",
+                      "It is controlled by a public key",
+                      "It requires multiple signatures for transactions",
+                      "It is managed by a centralized authority",
                     ],
                     correctAnswer: 0,
                   },
@@ -1783,10 +1740,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is the primary role of the private key associated with an EOA?",
                     answers: [
-                      "A) Verifying the balance of the account",
-                      "B) Encrypting transaction data",
-                      "C) Controlling the account and signing transactions",
-                      "D) Acting as the public address of the account",
+                      "Verifying the balance of the account",
+                      "Encrypting transaction data",
+                      "Controlling the account and signing transactions",
+                      "Acting as the public address of the account",
                     ],
                     correctAnswer: 2,
                   },
@@ -1807,10 +1764,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is the primary benefit of using an EOA for managing cryptocurrency funds?",
                     answers: [
-                      "A) Reduced control over account security",
-                      "B) Increased reliance on centralized authorities",
-                      "C) Enhanced control and security through private key ownership",
-                      "D) Faster transaction processing",
+                      "Reduced control over account security",
+                      "Increased reliance on centralized authorities",
+                      "Enhanced control and security through private key ownership",
+                      "Faster transaction processing",
                     ],
                     correctAnswer: 2,
                   },
@@ -1830,10 +1787,10 @@ export const availableCourses: Course[] = [
                     question:
                       "When an EOA initiates a cryptocurrency transfer, which key is used to sign the transaction for verification?",
                     answers: [
-                      "A) Public key",
-                      "B) Password",
-                      "C) Private key",
-                      "D) Assets",
+                      "Public key",
+                      "Password",
+                      "Private key",
+                      "Assets",
                     ],
                     correctAnswer: 2,
                   },
@@ -1854,10 +1811,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What role does the public key associated with an EOA play in transactions?",
                     answers: [
-                      "A) It serves as the recipient's address for cryptocurrency transfers.",
-                      "B) It verifies the transaction by checking the balance.",
-                      "C) It encrypts the transaction data for security.",
-                      "D) It signs the transaction for verification.",
+                      "It serves as the recipient's address for cryptocurrency transfers.",
+                      "It verifies the transaction by checking the balance.",
+                      "It encrypts the transaction data for security.",
+                      "It signs the transaction for verification.",
                     ],
                     correctAnswer: 0,
                   },
@@ -1939,10 +1896,10 @@ export const availableCourses: Course[] = [
                     question:
                       "Smart Accounts enhance the capabilities of traditional EOAs by:",
                     answers: [
-                      "A) Allowing only cryptocurrency transactions.",
-                      "B) Enabling custom logic and programmability.",
-                      "C) Reducing transaction speeds.",
-                      "D) Limiting the types of transactions.",
+                      "Allowing only cryptocurrency transactions.",
+                      "Enabling custom logic and programmability.",
+                      "Reducing transaction speeds.",
+                      "Limiting the types of transactions.",
                     ],
                     correctAnswer: 1,
                   },
@@ -1974,10 +1931,10 @@ export const availableCourses: Course[] = [
                     question:
                       "When an EOA initiates a cryptocurrency transfer, which key is used to sign the transaction for verification?",
                     answers: [
-                      "A) Public key",
-                      "B) Password",
-                      "C) Private key",
-                      "D) Assets",
+                      "Public key",
+                      "Password",
+                      "Private key",
+                      "Assets",
                     ],
                     correctAnswer: 2,
                   },
@@ -2052,17 +2009,6 @@ export const availableCourses: Course[] = [
                       "True or False: EOAs are commonly used for executing smart contracts in blockchain networks.",
                     correctAnswer: false,
                   },
-                  {
-                    type: "multiple-choice",
-                    question: "In which scenario is an EOA primarily used?",
-                    answers: [
-                      "A) For executing smart contracts",
-                      "B) For generating public keys",
-                      "C) For recording transactions and managing account balances",
-                      "D) For managing centralized databases",
-                    ],
-                    correctAnswer: 2,
-                  },
                 ],
               },
             ],
@@ -2112,10 +2058,10 @@ export const availableCourses: Course[] = [
                     question:
                       "Which feature of Smart Accounts could significantly improve user experience and drive Web3 adoption?",
                     answers: [
-                      "A) Fixed gas prices",
-                      "B) Mandatory private key management",
-                      "C) Simplified transaction processes",
-                      "D) Increased complexity of operations",
+                      "Fixed gas prices",
+                      "Mandatory private key management",
+                      "Simplified transaction processes",
+                      "Increased complexity of operations",
                     ],
                     correctAnswer: 2,
                   },
@@ -2233,7 +2179,7 @@ export const availableCourses: Course[] = [
                       "Simplified transaction processes",
                       "Increased complexity of operations",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "true-false",
@@ -2269,7 +2215,7 @@ export const availableCourses: Course[] = [
                       "A new wallet address",
                       "Social Recovery Mechanism",
                     ],
-                    correctAnswer: 4,
+                    correctAnswer: 3,
                   },
                   {
                     type: "true-false",
@@ -2287,7 +2233,7 @@ export const availableCourses: Course[] = [
                       "Blockchain relayers and bundlers",
                       "Physical hardware modules",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "true-false",
@@ -2339,7 +2285,7 @@ export const availableCourses: Course[] = [
                       "They are not customizable.",
                       "They can have social security mechanism.",
                     ],
-                    correctAnswer: 4,
+                    correctAnswer: 3,
                   },
                   {
                     type: "true-false",
@@ -2362,7 +2308,7 @@ export const availableCourses: Course[] = [
                       "The reliance on centralized authentication methods",
                       "The complexity of social recovery mechanisms",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "multiple-choice",
@@ -2374,7 +2320,7 @@ export const availableCourses: Course[] = [
                       "It may create single points of failure and potential vulnerabilities.",
                       "It makes social recovery mechanisms more robust.",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "true-false",
@@ -2414,12 +2360,12 @@ export const availableCourses: Course[] = [
                     question:
                       "What is the difference between an Externally Owned Account (EOA) and a Smart Account?",
                     answers: [
-                      "A) EOAs are always controlled by private keys, while Smart Contracts can be controlled by the logic within the contract itself.",
-                      "B) Smart Contracts can hold and execute complex logic, while EOAs cannot.",
-                      "C) EOAs can directly initiate transactions, while Smart Contracts require a triggering transaction from an EOA or another smart contract.",
-                      "D) Smart Contracts can interact with other contracts and execute complex operations, while EOAs are limited to sending transactions and managing balances.",
+                      "EOAs are always controlled by private keys, while Smart Contracts can be controlled by the logic within the contract itself.",
+                      "Smart Contracts can hold and execute complex logic, while EOAs cannot.",
+                      "EOAs can directly initiate transactions, while Smart Contracts require a triggering transaction from an EOA or another smart contract.",
+                      "Smart Contracts can interact with other contracts and execute complex operations, while EOAs are limited to sending transactions and managing balances.",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 0,
                   },
                   {
                     type: "fill-in-the-gap",
@@ -2526,7 +2472,7 @@ export const availableCourses: Course[] = [
                       "An EOA account",
                       "A Smart Wallet",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 2,
                   },
                   {
                     type: "true-false",
@@ -2548,10 +2494,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What are the core components of the Safe ecosystem?",
                     answers: [
-                      "A) Safe Wallets, Safe Transactions, Safe Blocks",
-                      "B) Safe Modules, Safe Guards, Safe Protocols",
-                      "C) Safe App, Safe Code, Safe Security",
-                      "D) Safe{Core} Protocol, Safe{Core} AA SDK, Safe{Core} API",
+                      "Safe Wallets, Safe Transactions, Safe Blocks",
+                      "Safe Modules, Safe Guards, Safe Protocols",
+                      "Safe App, Safe Code, Safe Security",
+                      "Safe{Core} Protocol, Safe{Core} AA SDK, Safe{Core} API",
                     ],
                     correctAnswer: 3,
                   },
@@ -2560,21 +2506,21 @@ export const availableCourses: Course[] = [
                     question:
                       "What is not a core component of the Safe ecosystem?",
                     answers: [
-                      "A) Safe Blocks",
-                      "B) Safe Modules",
-                      "D) Safe{Core} Protocol",
+                      "Safe Blocks",
+                      "Safe Modules",
+                      "Safe{Core} Protocol",
                       "Safe{Core} AA SDK",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 0,
                   },
                   {
                     type: "multiple-choice",
                     question: "What is a component of the Safe ecosystem?",
                     answers: [
-                      "A) Safe{Core} Execution",
-                      "B) Safe{Core} Transaction",
-                      "C) Safe{Core} Protocol",
-                      "D) Safe{Core} Block",
+                      "Safe{Core} Execution",
+                      "Safe{Core} Transaction",
+                      "Safe{Core} Protocol",
+                      "Safe{Core} Block",
                     ],
                     correctAnswer: 2,
                   },
@@ -2583,9 +2529,9 @@ export const availableCourses: Course[] = [
                     question:
                       "How do Safe Modules and Safe Guards contribute to the ecosystem?",
                     answers: [
-                      "A) Allow to customize and extend Safe's functionality",
-                      "B) Allow to restrict Safe’s functionality",
-                      "C) Allow to implement moonwalking in Safe transactions.",
+                      "Allow to customize and extend Safe's functionality",
+                      "Allow to restrict Safe’s functionality",
+                      "Allow to implement moonwalking in Safe transactions.",
                     ],
                     correctAnswer: 0,
                   },
@@ -2609,16 +2555,16 @@ export const availableCourses: Course[] = [
                       "Regulating blockchain transactions",
                       "Enabling multi-signature transactions",
                     ],
-                    correctAnswer: 2,
+                    correctAnswer: 1,
                   },
                   {
                     type: "multiple-choice",
                     question: "What is not the purpose of the Protocol Kit?",
                     answers: [
-                      "A) Managing Safe accounts",
-                      "B) Enabling transaction execution",
-                      "C) Creating Safe accounts",
-                      "D) Providing gasless transactions",
+                      " Managing Safe accounts",
+                      " Enabling transaction execution",
+                      "Creating Safe accounts",
+                      "Providing gasless transactions",
                     ],
                     correctAnswer: 3,
                   },
@@ -2630,7 +2576,7 @@ export const availableCourses: Course[] = [
                       "There are two versions of the Safe contracts: Safe.sol that does not trigger events to save gas and SafeL2.sol.",
                       "There is just one Safe.sol.",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 0,
                   },
                 ],
               },
@@ -2646,14 +2592,14 @@ export const availableCourses: Course[] = [
                       "The Safe Factory is a smart contract deploying Safe Modules",
                       "The Safe Factory is a smart contract that manages Safe transactions to transfer tokens",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 0,
                   },
                   {
                     type: "multiple-choice",
                     question:
                       "The Safe Factory deploys Proxy smart contracts having the same smart contract logic with different ___?",
                     answers: ["Storage", "Memory", "Logic", "Call"],
-                    correctAnswer: 1,
+                    correctAnswer: 0,
                   },
                   {
                     type: "multiple-choice",
@@ -2665,7 +2611,7 @@ export const availableCourses: Course[] = [
                       "Yes, The proxy pattern enhances security by separating contract logic from storage.",
                       "Yes, The proxy pattern may limit the Safe{Core} Protocol's ability to perform complex actions, potentially slowing it down",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                 ],
               },
@@ -2730,7 +2676,7 @@ export const availableCourses: Course[] = [
                       "Creates externally owned accounts",
                       "Buy cryptocurrencies with fiat money",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 2,
                   },
                   {
                     type: "true-false",
@@ -2763,7 +2709,7 @@ export const availableCourses: Course[] = [
                       "Auth Kit",
                       "Onramp Kit",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 2,
                   },
                   {
                     type: "fill-in-the-gap",
@@ -2779,6 +2725,41 @@ export const availableCourses: Course[] = [
                   },
                 ],
               },
+              {
+                name: "Develop with Safe",
+                questions: [
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "In the context of the ProtocolKit, which is the correct option?",
+                    answers: [
+                      "const response = await safeSdkOwner2.signTransactionHash(safeTxHash) const signature = await safeService.confirmTransaction(safeTxHash, response.data)",
+                      "const signature = await safeService.confirmTransaction(safeTxHash, response.data) const response = await safeSdkOwner2.signTransactionHash(safeTxHash)",
+                    ],
+                    correctAnswer: 0,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "In the context of the Auth Kit, which option is correct?",
+                    answers:[
+                      "const authKitSignData = await web3AuthModalPack.signIn()",
+                      "const authKitSignData = web3AuthModalPack.signIn()"
+                    ],
+                    correctAnswer: 0,
+                  },
+                  {
+                    type: "multiple-choice",
+                    question:
+                      "In the context of the Relay Kit, is 'const propose = await relayKit.proposeRelayedTransaction(signedSafeTransaction, safeSDK)' correct?",
+                      answers:[
+                        "yes",
+                        "no"
+                      ],
+                    correctAnswer: 1,
+                  },
+                ],
+              }
             ],
           },
           {
@@ -2797,7 +2778,7 @@ export const availableCourses: Course[] = [
                       "Enabling social media interactions",
                       "Regulating digital asset ownership",
                     ],
-                    correctAnswer: 2,
+                    correctAnswer: 1,
                   },
                   {
                     type: "multiple-choice",
@@ -2809,7 +2790,7 @@ export const availableCourses: Course[] = [
                       "Information related to Safe accounts and transactions",
                       "Cryptocurrency prices",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                   {
                     type: "true-false",
@@ -2832,7 +2813,7 @@ export const availableCourses: Course[] = [
                       "Informing owners about pending transactions",
                       "Executing Smart contract transactions",
                     ],
-                    correctAnswer: 4,
+                    correctAnswer: 3,
                   },
                   {
                     type: "fill-in-the-gap",
@@ -2850,7 +2831,7 @@ export const availableCourses: Course[] = [
                       "The Safe Transaction Service often results in higher transaction fees, making user interactions costlier compared to traditional methods",
                       "The Safe Transaction Service offers limited flexibility, hindering users from customizing their interactions with the blockchain",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 0,
                   },
                 ],
               },
@@ -2871,7 +2852,7 @@ export const availableCourses: Course[] = [
                       "Auditing smart contracts",
                       "Enhancing social media interactions",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 0,
                   },
                   {
                     type: "fill-in-the-gap",
@@ -2889,7 +2870,7 @@ export const availableCourses: Course[] = [
                       "Security considerations for Safe Modules should focus on factors such as code audits, regular updates, and ensuring that third-party modules are trusted and free from vulnerabilities.",
                       "Security for Safe Modules primarily involves relying on proprietary security software without the need for external audits or code reviews.",
                     ],
-                    correctAnswer: 3,
+                    correctAnswer: 2,
                   },
                 ],
               },
@@ -2906,7 +2887,7 @@ export const availableCourses: Course[] = [
                       "insertModule",
                       "removeModule",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 0,
                   },
                   {
                     type: "fill-in-the-gap",
@@ -2923,7 +2904,7 @@ export const availableCourses: Course[] = [
                       "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Safe",
                       "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Module",
                     ],
-                    correctAnswer: 2,
+                    correctAnswer: 0,
                   },
                 ],
               },
@@ -2945,7 +2926,7 @@ export const availableCourses: Course[] = [
                       "To enhance transaction security",
                       "To promote cryptocurrency mining",
                     ],
-                    correctAnswer: 2,
+                    correctAnswer: 1,
                   },
                   {
                     type: "fill-in-the-gap",
@@ -2963,7 +2944,7 @@ export const availableCourses: Course[] = [
                       "A broken Guard cannot cause a denial of service for a Safe, as the system automatically bypasses malfunctioning Guards.",
                       "A Safe Guard does have full power to block Safe transaction execution, and a broken Guard can cause a denial of service for a Safe.✅",
                     ],
-                    correctAnswer: 4,
+                    correctAnswer: 3,
                   },
                 ],
               },
@@ -2980,7 +2961,7 @@ export const availableCourses: Course[] = [
                       "insertModule",
                       "removeModule",
                     ],
-                    correctAnswer: 1,
+                    correctAnswer: 0,
                   },
                   {
                     type: "fill-in-the-gap",
@@ -2993,11 +2974,11 @@ export const availableCourses: Course[] = [
                     question: "Choose the correct one",
                     answers: [
                       "If you have a Module and you want to use the Module’s logic you have to call execTransactionFromModule on the Module",
-                      "If you have a Module and you want to use the Module’s logic you have to call execTransactionFromModule on the Safe✅",
+                      "If you have a Module and you want to use the Module’s logic you have to call execTransactionFromModule on the Safe",
                       "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Safe",
                       "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Module",
                     ],
-                    correctAnswer: 2,
+                    correctAnswer:0,
                   },
                 ],
               },
