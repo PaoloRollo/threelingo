@@ -23,6 +23,12 @@ export default function Page({ params }: { params: { courseId: string } }) {
   const setCurrentStep = useCourseStore((state) => state.setCurrentStep);
   const setCurrentUnit = useCourseStore((state) => state.setCurrentUnit);
   const setCurrentSection = useCourseStore((state) => state.setCurrentSection);
+  const dbSection = useCourseStore((state) => state.dbSection);
+  const dbUnit = useCourseStore((state) => state.dbUnit);
+  const dbStep = useCourseStore((state) => state.dbStep);
+  const setDbStep = useCourseStore((state) => state.setDbStep);
+  const setDbUnit = useCourseStore((state) => state.setDbUnit);
+  const setDbSection = useCourseStore((state) => state.setDbSection);
   const router = useRouter();
   const setGuidebookTarget = useGuidebookModalStore((state) => state.setTarget);
   const toggleGuidebook = useGuidebookModalStore(
@@ -55,6 +61,9 @@ export default function Page({ params }: { params: { courseId: string } }) {
       setCurrentSection(result.current_section);
       setCurrentUnit(result.current_unit);
       setCurrentStep(result.current_step);
+      setDbSection(result.current_section);
+      setDbUnit(result.current_unit);
+      setDbStep(result.current_step);
     } catch (error) {
       console.error(error);
     } finally {
@@ -105,6 +114,7 @@ export default function Page({ params }: { params: { courseId: string } }) {
                 const isActive =
                   currentUnit >= index && stepIndex <= currentStep;
                 const isCompleted =
+                  dbSection > currentSection ||
                   currentUnit > index ||
                   (currentUnit === index && stepIndex < currentStep);
                 const isSkipTo = currentUnit < index && stepIndex === 0;

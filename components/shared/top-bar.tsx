@@ -19,6 +19,7 @@ export default function TopBar() {
   const setCourse = useCourseStore((state) => state.setCourse);
   const courses = useUserCoursesStore((state) => state.courses);
   const setCourses = useUserCoursesStore((state) => state.setCourses);
+  const dbSection = useCourseStore((state) => state.dbSection);
   const currentSection = useCourseStore((state) => state.currentSection);
   const setCurrentSection = useCourseStore((state) => state.setCurrentSection);
 
@@ -142,7 +143,7 @@ export default function TopBar() {
                 {viewSections &&
                   course.sections.map((section, index) => {
                     const isCurrent = index === currentSection;
-                    const isLocked = index > currentSection;
+                    const isLocked = index > dbSection;
 
                     if (isCurrent) {
                       return (

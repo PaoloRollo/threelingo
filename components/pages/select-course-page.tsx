@@ -18,7 +18,7 @@ export default function SelectCoursePage() {
           <motion.div
             key={course.id}
             onClick={() => router.push(`/learn/enroll/${course.id}`)}
-            className="rounded-xl border-x-2 border-t-2 border-b-4 border-gray-300 dark:border-default aspect-square flex flex-col items-center justify-center space-y-2 hover:bg-gray-200 dark:hover:bg-content1 cursor-pointer"
+            className="rounded-xl border-x-2 border-t-2 border-b-4 border-gray-300 aspect-square flex flex-col items-center justify-center space-y-2 hover:bg-gray-200 cursor-pointer"
           >
             <Image src={course.image} className="h-20" alt={course.name} />
             <p className="opacity-60 font-semibold tracking-wide text-sm text-center">

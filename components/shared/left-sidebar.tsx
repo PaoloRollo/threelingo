@@ -35,7 +35,7 @@ export default function LeftSidebar() {
   const { disconnect } = useDisconnect();
   console.log(pathname);
   return (
-    <div className="hidden md:flex flex-col py-6 px-4 border-r-2 dark:border-default h-screen justify-between fixed z-10">
+    <div className="hidden md:flex flex-col py-6 px-4 border-r-2  h-screen justify-between fixed z-10">
       <div className="flex flex-col space-y-8">
         <h1 className="font-extrabold text-3xl text-primary px-4">
           threelingo

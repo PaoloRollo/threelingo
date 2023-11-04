@@ -10,18 +10,16 @@ const IntegrationCard = ({ img, name }: { img: string; name: string }) => {
   return (
     <figure
       className={cn(
-        "relative w-48 cursor-pointer overflow-hidden rounded-xl border px-4 py-2 md:w-64",
+        "relative w-48 cursor-pointer overflow-hidden rounded-xl border px-4 py-2 md:w-64 text-foreground",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
         "flex flex-col items-start justify-center"
       )}
     >
       <div className="flex flex-row items-center gap-2">
         <img width="32" height="32" alt="" src={img} />
         <div className="flex flex-col">
-          <figcaption className="font-bold dark:text-white">{name}</figcaption>
+          <figcaption className="font-bold ">{name}</figcaption>
           {/* <p className="text-xs font-medium dark:text-white/40">{username}</p> */}
         </div>
       </div>

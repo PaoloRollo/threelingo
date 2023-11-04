@@ -30,6 +30,12 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
   const setCurrentStep = useCourseStore((state) => state.setCurrentStep);
   const setCurrentUnit = useCourseStore((state) => state.setCurrentUnit);
   const setCurrentSection = useCourseStore((state) => state.setCurrentSection);
+  const dbSection = useCourseStore((state) => state.dbSection);
+  const dbUnit = useCourseStore((state) => state.dbUnit);
+  const dbStep = useCourseStore((state) => state.dbStep);
+  const setDbStep = useCourseStore((state) => state.setDbStep);
+  const setDbUnit = useCourseStore((state) => state.setDbUnit);
+  const setDbSection = useCourseStore((state) => state.setDbSection);
   const step = useStepModalStore((state) => state.step);
   const toggleStepModal = useStepModalStore((state) => state.toggleStepModal);
   const [content, setContent] = useState<string>("");
@@ -73,6 +79,9 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
       setCurrentUnit(result.current_unit);
       setCurrentSection(result.current_section);
       setCurrentStep(result.current_step);
+      setDbUnit(result.current_unit);
+      setDbSection(result.current_section);
+      setDbStep(result.current_step);
     } catch (error) {
       console.error(error);
     } finally {

@@ -10,6 +10,12 @@ type CourseStore = {
   setCurrentSection: (currentSection: number) => void;
   setCurrentUnit: (currentUnit: number) => void;
   setCurrentStep: (currentStep: number) => void;
+  dbSection: number;
+  dbUnit: number;
+  dbStep: number;
+  setDbSection: (dbSession: number) => void;
+  setDbUnit: (dbUnit: number) => void;
+  setDbStep: (dbStep: number) => void;
 };
 
 export const useCourseStore = create<CourseStore>((set) => ({
@@ -21,4 +27,10 @@ export const useCourseStore = create<CourseStore>((set) => ({
   setCurrentSection: (currentSection) => set({ currentSection }),
   setCurrentUnit: (currentUnit) => set({ currentUnit }),
   setCurrentStep: (currentStep) => set({ currentStep }),
+  dbSection: 0,
+  dbUnit: 0,
+  dbStep: 0,
+  setDbSection: (dbSection) => set({ dbSection }),
+  setDbUnit: (dbUnit) => set({ dbUnit }),
+  setDbStep: (dbStep) => set({ dbStep }),
 }));
