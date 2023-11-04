@@ -7,18 +7,6 @@ import {MetaTransactionData, OperationType, RelayTransaction,} from "@safe-globa
 import SafeApiKit from "@safe-global/api-kit";
 import {GelatoRelayPack} from "@safe-global/relay-kit";
 
-create
-a
-
-function that
-
-returns
-the
-sum
-of
-two
-numbers
-
 export async function deploySafeAndReturnAddress(): Promise<string> {
     try {
         // polygon zkevm
