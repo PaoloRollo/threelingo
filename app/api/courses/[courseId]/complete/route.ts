@@ -2,8 +2,8 @@ import { NextRequest } from "next/server";
 import { ethers } from "ethers";
 import { getPeanutLink } from "@/lib/peanut";
 
-export const POLYGON_ZKEVM_TESTNET_RPC_URL =
-  "https://rpc.public.zkevm-test.net";
+const POLYGON_ZKEVM_TESTNET_RPC_URL = "https://rpc.public.zkevm-test.net";
+
 export async function POST(
   req: NextRequest,
   { params }: { params: { courseId: string } }
