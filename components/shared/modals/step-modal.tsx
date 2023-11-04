@@ -131,7 +131,7 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                 <Progress
                   aria-label="Step progress"
                   value={(correctResponses / step.questions.length) * 100}
-                  className="max-w-md"
+                  className="w-full"
                   color="success"
                 />
 

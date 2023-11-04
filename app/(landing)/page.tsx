@@ -3,7 +3,7 @@ import Marquee from "@/components/landing-components/marquee";
 import { availableCourses } from "@/lib/courses";
 import { Button, Link, cn } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import {Image} from "@nextui-org/react"
+import { Image } from "@nextui-org/react";
 import { BotIcon, GraduationCapIcon, TabletSmartphoneIcon } from "lucide-react";
 
 const IntegrationCard = ({ img, name }: { img: string; name: string }) => {
@@ -53,7 +53,11 @@ export default function Home() {
       >
         {/* <Globe className="mt-auto -mb-40 md:-mb-72" /> */}
         <div className="flex flex-col z-10 select-none">
-          <Image src="/threelingo-animated.gif" className="mx-auto h-20 items-center text-center justify-center" alt="animated-logo"></Image>
+          <Image
+            src="/threelingo-animated.gif"
+            className="mx-auto h-20 items-center text-center justify-center"
+            alt="animated-logo"
+          ></Image>
           <h1 className="text-5xl md:text-8xl font-extrabold text-center text-primary">
             threelingo
           </h1>
@@ -83,8 +87,8 @@ export default function Home() {
         </div>
         <div className="absolute bottom-0 py-4 w-full flex justify-around border-2 bg-background z-10">
           {/* <div className="flex space-x-8 overflow-hidden w-full"> */}
-          <Marquee pauseOnHover className="[--duration:10s] w-full">
-            {availableCourses.concat(availableCourses).map((course, index) => (
+          <Marquee pauseOnHover className="[--duration:4s] w-full mx-auto">
+            {availableCourses.map((course, index) => (
               <IntegrationCard
                 name={course.name}
                 img={course.image}
