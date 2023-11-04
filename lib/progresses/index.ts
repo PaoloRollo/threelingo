@@ -32,7 +32,7 @@ export const sortAddressesByXP = (progresses: Progress[]): AddressXP[] => {
         xp: xpByAddress[address],
     }));
 
-    sortedAddresses.sort((a, b) => a.xp - b.xp);
+    sortedAddresses.sort((a, b) => b.xp - a.xp);
 
     return sortedAddresses;
 };
