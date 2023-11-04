@@ -82,15 +82,39 @@ export async function PUT(
     ];
 
   if (!step) {
-    await supabase
-      .from("progresses")
-      .update({
-        current_step: 0,
-        current_unit: currentUnit + 1,
-        current_section: currentSection,
-      })
-      .eq("course_id", parseInt(params.courseId))
-      .eq("address", params.address);
+    const newUnit = sectionsJsonArray[currentSection]["units"][currentUnit + 1];
+    if (newUnit) {
+      await supabase
+        .from("progresses")
+        .update({
+          current_step: 0,
+          current_unit: currentUnit + 1,
+          current_section: currentSection,
+        })
+        .eq("course_id", parseInt(params.courseId))
+        .eq("address", params.address);
+    } else {
+      const newSection = sectionsJsonArray[currentSection + 1];
+      if (newSection) {
+        await supabase
+          .from("progresses")
+          .update({
+            current_step: 0,
+            current_unit: 0,
+            current_section: currentSection + 1,
+          })
+          .eq("course_id", parseInt(params.courseId))
+          .eq("address", params.address);
+      } else {
+        await supabase
+          .from("progresses")
+          .update({
+            completed: true,
+          })
+          .eq("course_id", parseInt(params.courseId))
+          .eq("address", params.address);
+      }
+    }
   } else {
     await supabase
       .from("progresses")

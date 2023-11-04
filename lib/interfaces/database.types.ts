@@ -39,6 +39,7 @@ export interface Database {
       progresses: {
         Row: {
           address: string
+          completed: boolean | null
           course_id: number | null
           created_at: string
           current_section: number | null
@@ -48,6 +49,7 @@ export interface Database {
         }
         Insert: {
           address: string
+          completed?: boolean | null
           course_id?: number | null
           created_at?: string
           current_section?: number | null
@@ -57,6 +59,7 @@ export interface Database {
         }
         Update: {
           address?: string
+          completed?: boolean | null
           course_id?: number | null
           created_at?: string
           current_section?: number | null
