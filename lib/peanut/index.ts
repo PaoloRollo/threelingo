@@ -1,10 +1,5 @@
-import { Signer } from "ethers";
-import {
-  createLink,
-  claimLinkGasless,
-  //@ts-ignore
-} from "@squirrel-labs/peanut-sdk/dist/peanut-sdk.node";
-
+import {ethers, Signer} from "ethers";
+import peanut from "@squirrel-labs/peanut-sdk"
 const CHAINID = 1442; // Polygon zkEVM Testnet
 
 export enum CourseTokenID {
@@ -20,7 +15,7 @@ export enum CourseTokenID {
  * @param tokenId - id of the token (0 = Web3 Introduction, 1 = EOA and Smart Accounts)
  */
 export const getPeanutLink = async (signer: Signer, tokenId: CourseTokenID) => {
-  return await createLink({
+  return await peanut.createLink({
     structSigner: {
       signer,
     },
@@ -43,9 +38,45 @@ export const claimPeanutLinkGasless = async (
   link: string,
   recipientAddress: string
 ) => {
-  return await claimLinkGasless({
+  return await peanut.claimLinkGasless({
     link,
     recipientAddress,
     APIKey: process.env.NEXT_PUBLIC_PEANUT_API_KEY as string,
   });
 };
+
+export const claimCompletionNFT = async (address: string, courseId: CourseTokenID) => {
+  const threelingoWallet = new ethers.Wallet(
+      process.env.WALLET_PRIVATE_KEY as string,
+      new ethers.providers.JsonRpcProvider(
+          process.env.NEXT_PUBLIC_POLYGON_ZKEVM_TESTNET_RPC_URL
+      )
+  );
+  const link = await getPeanutLink(threelingoWallet, courseId - 1 as any);
+  await claimPeanutLinkGasless(link.link, address)
+  try {
+    await fetch(
+        "https://notify.walletconnect.com/62066586b5adc509f3304c9312077975/notify",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.WALLETCONNECT_NOTIFY_API_SECRET}`,
+          },
+          body: JSON.stringify({
+            notification: {
+              type: "ae0cbbe9-a59f-4e21-ac28-fbf4fad2e11d", // Notification type ID copied from Cloud
+              title: "Peanut NFT inbound!",
+              body: "You just received an NFT from threelingo via Peanut Protocol!",
+              icon: "https://threelingo.vercel.app/threelingo_logo.png", // optional
+              url: "https://threelingo.vercel.app", // optional
+            },
+            accounts: [
+              `eip155:1:${address}`, // CAIP-10 account ID
+            ],
+          }),
+        }
+    );
+  } catch (error) {
+    console.error(error);
+  }
+}

@@ -1,19 +1,23 @@
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
 import { deploySafeAndReturnAddress } from "@/lib/safe/deploySafe";
+import {Signer} from "ethers";
+import {useWeb3Auth} from "@/hooks/use-web3-auth";
 
 export default function InteractiveButton({
   func,
+    signer,
   onSuccess,
   onFailure,
 }: {
-  func: () => Promise<boolean>;
+  func: (signer?: Signer) => Promise<boolean>;
+  signer?: Signer,
   onSuccess: () => void;
   onFailure: () => string;
 }) {
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean | undefined>(undefined);
-
+  const { web3Auth, provider } = useWeb3Auth();
   return (
     <div className="flex flex-col space-y-4 mt-4">
       <Button
@@ -30,7 +34,7 @@ export default function InteractiveButton({
           if (loading) return;
           setLoading(true);
           try {
-            await func();
+            await func(signer);
           } catch (e) {
             onFailure();
             setSuccess(false);

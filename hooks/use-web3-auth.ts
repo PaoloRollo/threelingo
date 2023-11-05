@@ -10,8 +10,8 @@ import {
   WALLET_ADAPTERS,
 } from "@web3auth/base";
 import { useRouter } from "next/navigation";
-import { useUserStore } from "@/lib/store/user-store";
 import { ethers } from "ethers";
+import {useUserStore} from "@/lib/store/user-store";
 
 export const useWeb3Auth = (automaticSignIn: boolean = false) => {
   const [web3Auth, setWeb3Auth] = useState<Web3AuthModalPack | null>(null);

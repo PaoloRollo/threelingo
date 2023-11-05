@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import { useUserStore } from "@/lib/store/user-store";
-import { CourseTokenID } from "@/lib/peanut";
+import {useUserStore} from "@/lib/store/user-store";
+import {CourseTokenID} from "@/lib/peanut";
 
 function useContractBalance(contractAddress: string) {
   const [balance, setBalance] = useState<string | null>(null);

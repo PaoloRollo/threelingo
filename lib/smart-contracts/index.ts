@@ -1,6 +1,4 @@
 import {getWalletClient} from "wagmi/actions";
-import {useUserStore} from "@/lib/store/user-store";
-import {ContractFactory} from "ethers";
 
 export const deploySmartContract = async (): Promise<string> => {
     const chainId = 1442;

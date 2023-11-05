@@ -1,26 +1,18 @@
-import { useUserStore } from "@/lib/store/user-store";
-import { ethers } from "ethers";
-import Safe, {
-  AddOwnerTxParams,
-  EthersAdapter,
-  SafeFactory,
-} from "@safe-global/protocol-kit";
-import { toEthersWeb3ProviderWithSigner } from "./providers-wtf";
-import { getWalletClient } from "wagmi/actions";
-import {
-  MetaTransactionData,
-  OperationType,
-} from "@safe-global/safe-core-sdk-types";
+import {useUserStore} from "../store/user-store";
+import Safe, {EthersAdapter} from "@safe-global/protocol-kit";
+import {ethers, Signer} from "ethers";
+import {MetaTransactionData, OperationType} from "@safe-global/safe-core-sdk-types";
 import SafeApiKit from "@safe-global/api-kit";
+import {useWeb3Auth} from "@/hooks/use-web3-auth";
 
 export async function deploySafeAndReturnAddress(): Promise<boolean> {
 
-    try {
-      const userAccount = useUserStore.getState();
+  try {
+    const userAccount = useUserStore.getState();
 
-      const response = await fetch("/api/deploy-safe", {
-        method: "POST",
-        body: JSON.stringify({
+    const response = await fetch("/api/deploy-safe", {
+      method: "POST",
+      body: JSON.stringify({
           address: userAccount.address,
           gasLimit: 100000,
         }),
@@ -35,27 +27,19 @@ export async function deploySafeAndReturnAddress(): Promise<boolean> {
     }
 }
 
-export async function makeSafeTransferSingleSign(): Promise<boolean> {
+export async function makeSafeTransferSingleSign(signer: Signer): Promise<boolean> {
   try {
     const amount = ethers.utils.parseUnits("0.001", "ether").toString();
     const chainId = 1442;
-
-    const walletClient = await getWalletClient({ chainId });
 
     const userAccount = useUserStore.getState();
     const safes = userAccount.safes.toString();
     const safe = safes[0];
 
     if (safe) {
-      if (walletClient !== null) {
-        const ethersProvider = new ethers.providers.JsonRpcProvider(process.env.NEXT_PUBLIC_POLYGON_ZKEVM_RPC_URL as string);
-
-        if (ethersProvider) {
-          const newSigner = ethersProvider.getSigner();
-
           const ethAdapter = new EthersAdapter({
             ethers,
-            signerOrProvider: newSigner,
+            signerOrProvider: signer,
           });
 
           const safeSdkOwner2 = await Safe.create({
@@ -93,10 +77,8 @@ export async function makeSafeTransferSingleSign(): Promise<boolean> {
             safeTransaction
           );
           const receipt = await executeTxResponse.transactionResponse?.wait();
-        }
-      }
     }
-    return true;
+    return true
   } catch (error) {
     console.error("Error deploying Safe:", error);
     throw error;

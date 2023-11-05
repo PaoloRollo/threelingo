@@ -1,6 +1,6 @@
-import { supabase } from "@/lib/supabase";
 import { NextRequest, NextResponse } from "next/server";
 import {sortAddressesByXP} from "@/lib/progresses";
+import {supabase} from "@/lib/supabase";
 
 export async function GET(req: NextRequest, res: NextResponse) {
     const { data } = await supabase
