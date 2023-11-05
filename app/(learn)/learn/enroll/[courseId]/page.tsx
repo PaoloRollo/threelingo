@@ -6,6 +6,8 @@ import { Button, CircularProgress, Divider, Image } from "@nextui-org/react";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 export default function Page({ params }: { params: { courseId: string } }) {
   const [loading, setLoading] = useState<boolean>(false);
@@ -119,7 +121,9 @@ export default function Page({ params }: { params: { courseId: string } }) {
       )}
       <Divider />
       <h1 className="font-bold text-xl tracking-wide">About the course</h1>
-      <p>{course.description}</p>
+      <Markdown rehypePlugins={[rehypeRaw]}>
+        {course.description.replaceAll("\\n", "<br/>")}
+      </Markdown>
     </section>
   );
 }

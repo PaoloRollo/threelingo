@@ -103,6 +103,7 @@ export default function Page({ params }: { params: { courseId: string } }) {
                   setGuidebookTarget({
                     ...course,
                     currentSection,
+                    unit: course.sections[currentSection].units[index],
                     currentUnit: index,
                   });
                   toggleGuidebook();

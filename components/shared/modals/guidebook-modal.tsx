@@ -8,6 +8,8 @@ import {
   ModalFooter,
   ModalHeader,
 } from "@nextui-org/react";
+import Markdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 import { useGuidebookModalStore } from "@/lib/store/guidebook-modal-store";
 
@@ -23,6 +25,7 @@ export const GuidebookModal = ({
   onOpenChange,
 }: GuidebookModalProps) => {
   const target = useGuidebookModalStore((state) => state.target);
+  console.log(target);
   const toggleGuidebook = useGuidebookModalStore(
     (state) => state.toggleGuidebookModal
   );
@@ -77,12 +80,12 @@ export const GuidebookModal = ({
                   <Image src={target.image} className="h-12" />
                   <h1 className="text-2xl font-bold">{target.name}</h1>
                 </div>
-                Guidebook Unit {target.currentUnit + 1}
+                Guidebook {target.unit.name}
               </ModalHeader>
               <ModalBody className="flex flex-col overflow-scroll">
-                <p>{target.description}</p>
-                <p>{target.description}</p>
-                <p>{target.description}</p>
+                <Markdown rehypePlugins={[rehypeRaw]}>
+                  {target.unit.description.replaceAll("\\n", "<br/>")}
+                </Markdown>
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onClick={onClose}>
