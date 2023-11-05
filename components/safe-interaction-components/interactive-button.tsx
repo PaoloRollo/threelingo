@@ -1,6 +1,6 @@
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
-import { makeSafeTransferSingleSign } from "@/lib/safe/deploySafe";
+import { deploySafeAndReturnAddress, makeSafeTransferSingleSign, addSignAndChangeThreshold } from "@/lib/safe/deploySafe";
 import { Signer } from "ethers";
 import { useWeb3Auth } from "@/hooks/use-web3-auth";
 import { deployERC20SmartContract } from "@/lib/smart-contracts";
