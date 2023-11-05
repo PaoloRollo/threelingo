@@ -160,6 +160,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "A consensus mechanism is a set of rules that all network participants must follow to validate and agree on new transactions. It ensures that all nodes on the network are in sync and helps maintain the BLANK of the blockchain.",
+                    answers:["consistency and security", "consistency", "security"],
                     correctAnswer: "consistency and security",
                   },
                   {
@@ -178,6 +179,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "In Proof of Work (PoW) consensus, miners compete to solve complex mathematical puzzles, and the first one to find a valid solution gets the right to propose a new block and add it to the blockchain. This process is known as 'mining' and helps secure the network through BLANK of computational work.",
+                    answers:["proof", "reward","mining"],
                     correctAnswer: "proof",
                   },
                   {
@@ -196,6 +198,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "In Delegated Proof of Stake (DPoS), a small number of trusted entities, known as 'delegates,' are chosen to produce blocks and validate transactions. This mechanism aims to improve transaction BLANK and scalability.",
+                    answers:["throughput", "speed","fees"],
                     correctAnswer: "throughput",
                   },
                   {
@@ -502,7 +505,8 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "A ________ wallet is a type of cryptocurrency wallet that is always connected to the internet and allows for more convenient transactions.",
-                    correctAnswer: "hot",
+                    answers:["cold", "hot", "fresh"],
+                    correctAnswer: "cold",
                   },
                   {
                     type: "multiple-choice",
@@ -538,6 +542,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "When using a desktop wallet, it's important to ensure your computer has adequate ________ to prevent unauthorized access and potential malware threats.",
+                    answers:["security", "storage","space"],
                     correctAnswer: "security",
                   },
                   {
@@ -623,6 +628,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "When backing up your wallet, it's crucial to keep multiple copies of your BLANK in different physical locations to prevent loss due to environmental damage or theft.",
+                    answers:["backup seed phrase", "backup","phrase"],
                     correctAnswer: "backup seed phrase",
                   },
                   {
@@ -716,6 +722,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "In a blockchain transaction, the _________ ensures that the transaction is secure and authentic.",
+                    answers:["digital signature", "transaction","wallet"],
                     correctAnswer: "digital signature",
                   },
                   {
@@ -768,6 +775,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "A smart contract is a self-executing contract with the terms of the agreement directly written into code. It automatically enforces, executes, or manages ___________ between parties.",
+                    answers:["contracts or agreements", "transaction","wallet"],
                     correctAnswer: "contracts or agreements",
                   },
                   {
@@ -2868,6 +2876,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Thanks to Smart Account, users can set up ________________ to facilitate account recovery in case of a lost seed phrase",
+                    answers:["Social Recovery Mechanism","login","A Node"],
                     correctAnswer: "Social Recovery Mechanism",
                   },
                   {
@@ -3018,6 +3027,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "One of the key infrastructure requirements for implementing Smart Accounts is the use of blockchain ________________ and bundlers.",
+                    answers:["Blockchain relayers","Blockchain","Managers"],
                     correctAnswer: "Blockchain relayers",
                   },
                 ],
@@ -3182,6 +3192,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Smart Contracts can hold and execute _______________ logic, while EOAs cannot.",
+                    answers:["arbitrary","automomus","free"],
                     correctAnswer: "arbitrary",
                   },
                 ],
@@ -3216,6 +3227,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Smart contracts are suitable for scenarios where you need automated and trustless execution of actions based on predefined rules. They are particularly useful in cases involving multiple parties and where ______________________________ are required.",
+                    answers:["programmable logic or complex conditions","no logic","programmable condition"],
                     correctAnswer: "programmable logic or complex conditions",
                   },
                   {
@@ -3662,6 +3674,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "The Safe Transaction Service is responsible for _______________ of Safe Transactions.",
+                    answers:["Tracking","Managing","Executing"],
                     correctAnswer: "Tracking",
                   },
                   {
@@ -3710,6 +3723,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Safe Modules can be added or removed by interacting with the ________________.",
+                    answers:["Module Manager","Manager","Guard"],
                     correctAnswer: "Module Manager",
                   },
                   {
@@ -3745,6 +3759,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "How to execute a transaction from a module? ____TransactionFromModule",
+                    answers:["exec","send","test"],
                     correctAnswer: "exec",
                   },
                   {
@@ -3825,6 +3840,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "How to execute a transaction from a module? ____TransactionFromModule",
+                    answers:["exec","send","test"],
                     correctAnswer: "exec",
                   },
                   {
@@ -4062,12 +4078,14 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Layer 2 scaling solutions, such as rollups, bundle multiple transactions into a single transaction on Ethereum Layer 1. This helps distribute transaction fees, making it ________________ for each user.",
+                    answers:["cheaper","expensive","bigger"],
                     correctAnswer: "cheaper",
                   },
                   {
                     type: "fill-in-the-gap",
                     question:
                       "Ethereum's Layer 2 solutions inherit the security of Ethereum Layer 1 by submitting transaction data onto Layer 1. If an invalid transaction is suspected, a ________________ is conducted to confirm its validity.",
+                    answers:["fault-proof verification","Proofs","Zero-knowledge"],
                     correctAnswer: "fault-proof verification",
                   },
                 ],
@@ -4285,6 +4303,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "ZK-rollups leverage __________ for transaction verification.",
+                    answers:["Zero-knowledge proofs","Proofs","Zero-knowledge"],
                     correctAnswer: "Zero-knowledge proofs",
                   },
                 ],
@@ -4313,6 +4332,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "ZK-rollups are characterized by their ability to provide __________ while ensuring the validity of transactions.",
+                    answers:["Privacy and security through cryptographic proofs","Privacy through cryptographic proofs","Security through cryptographic proofs"],
                     correctAnswer:
                       "Privacy and security through cryptographic proofs",
                   },
@@ -4385,6 +4405,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM ensures the correctness of off-chain computations by employing _____________ as validity proofs.",
+                    answers:["Zero-knowledge proof","Proofs","Tokens" ],
                     correctAnswer: "Zero-knowledge proofs",
                   },
                   {
@@ -4397,6 +4418,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM offers scalability without compromising ________________.",
+                    answers:["Speed","Security","Storage" ],
                     correctAnswer: "Security",
                   },
                 ],
@@ -4440,6 +4462,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM is designed to offer EVM ________________ for deploying existing Ethereum smart contracts.",
+                    answers:["Equivalence","Compatibility","Coexistence" ],
                     correctAnswer: "Equivalence",
                   },
                 ],
@@ -4518,46 +4541,46 @@ export const availableCourses: Course[] = [
         ]
       },
       {
-        "name": "Fuel Network",
-        "units": [
+        name: "Fuel Network",
+        units: [
           {
-            "name": "Introduction to Fuel Network",
-            "description": "Fuel Network emerges as a groundbreaking modular execution layer, purpose-built to significantly amplify the scalability and operational efficiency of the Ethereum blockchain. As a Layer 2 solution, it directly addresses the core challenges faced by Ethereum, such as network congestion and high transaction fees, which have been barriers to the blockchain's scalability and user adoption. The modularity of Fuel Network is its cornerstone, strategically decoupling the execution of transactions from data availability and consensus mechanisms. This innovative approach allows for specialized optimization of each component, fostering a more agile and robust network capable of handling a higher throughput of transactions with lower latency and cost.\n" +
+            name: "Introduction to Fuel Network",
+            description: "Fuel Network emerges as a groundbreaking modular execution layer, purpose-built to significantly amplify the scalability and operational efficiency of the Ethereum blockchain. As a Layer 2 solution, it directly addresses the core challenges faced by Ethereum, such as network congestion and high transaction fees, which have been barriers to the blockchain's scalability and user adoption. The modularity of Fuel Network is its cornerstone, strategically decoupling the execution of transactions from data availability and consensus mechanisms. This innovative approach allows for specialized optimization of each component, fostering a more agile and robust network capable of handling a higher throughput of transactions with lower latency and cost.\n" +
                 "\n" +
                 "At the heart of Fuel Network's technical prowess is FuelVM, a custom-designed virtual machine that departs from Ethereum's account-based model and instead adopts the UTXO (Unspent Transaction Output) model. This choice is pivotal, as it enables transactions to be processed in parallel, thereby enhancing the network's capacity and speed. Complementing FuelVM is Sway, a Rust-inspired programming language tailored for the Fuel ecosystem, which empowers developers to craft smart contracts with efficiency and security in mind.\n" +
                 "\n" +
                 "Key features of the Fuel Network include its high-performance execution environment, compatibility with Ethereum assets and smart contracts, and a developer-friendly ecosystem. These attributes are designed to attract and support a wide range of decentralized applications and services, from DeFi protocols to NFT marketplaces, without compromising on the decentralization and security principles that are fundamental to blockchain technology.\n" +
                 "\n" +
                 "Fuel Network's main goals are multifaceted: to provide a scalable and efficient platform for the burgeoning world of decentralized applications, to reduce the entry barriers for developers and users alike by lowering costs and improving transaction speeds, and to foster a rich ecosystem where innovation can thrive. By achieving these objectives, Fuel Network aspires to be at the forefront of the next wave of blockchain evolution, where the full potential of decentralized technologies can be realized on a global scale.",
-            "steps": [
+            steps: [
               {
-                "name": "What is Fuel Network?",
-                "questions": [
+                name: "What is Fuel Network?",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "Fuel Network is designed to improve Ethereum's:",
-                    "answers": [
+                    type: "multiple-choice",
+                    question: "Fuel Network is designed to improve Ethereum's:",
+                    answers: [
                       "A) Privacy",
                       "B) Scalability and efficiency",
                       "C) Token value",
                       "D) Smart contract size"
                     ],
-                    "correctAnswer": "B"
+                  correctAnswer: "B"
                   },
                   {
-                    "type": "true-false",
-                    "question": "Fuel Network operates as a Layer 2 scaling solution for Ethereum.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question: "Fuel Network operates as a Layer 2 scaling solution for Ethereum.",
+                    correctAnswer: true
                   }
                 ]
               },
               {
-                "name": "Fuel Network's Modular Design",
-                "questions": [
+                name: "Fuel Network's Modular Design",
+                questions: [
                   {
-                    "type": "fill-in-the-gap",
-                    "question": "Fuel Network's design is __________, separating execution from data availability and consensus.",
-                    "correctAnswer": "modular"
+                    type: "fill-in-the-gap",
+                    question: "Fuel Network's design is __________, separating execution from data availability and consensus.",
+                    correctAnswer: "modular"
                   },
                   {
                     "type": "true-false",
@@ -4569,8 +4592,8 @@ export const availableCourses: Course[] = [
             ]
           },
           {
-            "name": "FuelVM and Sway",
-            "description": "FuelVM is the execution engine at the core of the Fuel Network, renowned for its exceptional efficiency and performance in smart contract execution. It represents a paradigm shift from the traditional Ethereum Virtual Machine (EVM) by implementing a UTXO-based model, which is a departure from Ethereum's account-based system. This UTXO model is instrumental in enabling concurrent transaction processing, which significantly enhances the network's throughput. FuelVM is designed with a focus on simplicity and determinism, which reduces the complexity of transaction execution and minimizes potential attack vectors, thereby bolstering the network's security.\n" +
+            name: "FuelVM and Sway",
+            description: "FuelVM is the execution engine at the core of the Fuel Network, renowned for its exceptional efficiency and performance in smart contract execution. It represents a paradigm shift from the traditional Ethereum Virtual Machine (EVM) by implementing a UTXO-based model, which is a departure from Ethereum's account-based system. This UTXO model is instrumental in enabling concurrent transaction processing, which significantly enhances the network's throughput. FuelVM is designed with a focus on simplicity and determinism, which reduces the complexity of transaction execution and minimizes potential attack vectors, thereby bolstering the network's security.\n" +
                 "\n" +
                 "One of the standout features of FuelVM is its deterministic gas model, which provides developers with predictable transaction costs, a stark contrast to the variable fees on the Ethereum mainnet. This predictability, along with the high-speed execution of smart contracts, positions FuelVM as a powerful engine for developers looking to build scalable decentralized applications without the bottlenecks associated with traditional blockchain platforms.\n" +
                 "\n" +
@@ -4579,48 +4602,48 @@ export const availableCourses: Course[] = [
                 "Programming with Sway on FuelVM offers developers several advantages. It provides a type-safe environment, reducing the likelihood of bugs and vulnerabilities that can be exploited in smart contracts. Sway also introduces a suite of tools and libraries specifically designed for blockchain development, streamlining the process of creating, testing, and deploying smart contracts on the Fuel Network.\n" +
                 "\n" +
                 "In essence, FuelVM and Sway together form a robust foundation for the Fuel Network, enabling it to achieve its vision of a scalable, efficient, and developer-friendly blockchain ecosystem. FuelVM's efficiency in transaction processing and Sway's optimization for smart contract development are key to unlocking the next level of blockchain innovation, where the focus shifts from merely overcoming the limitations of existing technology to pushing the boundaries of what decentralized systems can achieve.",
-            "steps": [
+            steps: [
               {
-                "name": "Exploring FuelVM",
-                "questions": [
+                name: "Exploring FuelVM",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "FuelVM is known for:",
-                    "answers": [
+                    type: "multiple-choice",
+                    question: "FuelVM is known for:",
+                    answers: [
                       "A) High transaction costs",
                       "B) Low scalability",
                       "C) High efficiency in smart contract execution",
                       "D) Incompatibility with Ethereum"
                     ],
-                    "correctAnswer": "C"
+                    correctAnswer: "C"
                   },
                   {
-                    "type": "true-false",
-                    "question": "FuelVM uses the UTXO model for transactions.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question: "FuelVM uses the UTXO model for transactions.",
+                    correctAnswer: true
                   }
                 ]
               },
               {
-                "name": "Programming with Sway",
-                "questions": [
+                name: "Programming with Sway",
+                questions: [
                   {
-                    "type": "fill-in-the-gap",
-                    "question": "Sway is a programming language designed specifically for __________.",
-                    "correctAnswer": "Fuel Network"
+                    type: "fill-in-the-gap",
+                    question: "Sway is a programming language designed specifically for __________.",
+                    correctAnswer: "Fuel Network"
                   },
                   {
-                    "type": "true-false",
-                    "question": "Sway is based on Rust and is used for writing smart contracts on Fuel Network.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question: "Sway is based on Rust and is used for writing smart contracts on Fuel Network.",
+                    correctAnswer: true
                   }
                 ]
               }
             ]
           },
           {
-            "name": "Fuel Network's Ecosystem",
-            "description": "The Fuel Network's ecosystem is a burgeoning landscape of innovation, characterized by a diverse array of projects and decentralized applications (dApps) that leverage its high-performance modular execution layer. This ecosystem is designed to support a wide range of use cases, from DeFi protocols and NFT marketplaces to gaming and social media platforms, all benefiting from the scalability and efficiency that Fuel Network provides.\n" +
+            name: "Fuel Network's Ecosystem",
+            description: "The Fuel Network's ecosystem is a burgeoning landscape of innovation, characterized by a diverse array of projects and decentralized applications (dApps) that leverage its high-performance modular execution layer. This ecosystem is designed to support a wide range of use cases, from DeFi protocols and NFT marketplaces to gaming and social media platforms, all benefiting from the scalability and efficiency that Fuel Network provides.\n" +
                 "\n" +
                 "Central to the Fuel Network's ecosystem is its compatibility with Ethereum, allowing developers to port existing Ethereum dApps to Fuel or create new ones that can interact seamlessly with the Ethereum blockchain. This interoperability is crucial for developers who want to take advantage of Fuel's performance benefits without leaving the Ethereum ecosystem entirely.\n" +
                 "\n" +
@@ -4635,40 +4658,40 @@ export const availableCourses: Course[] = [
                 "\n" +
                 "\n" +
                 "\n",
-            "steps": [
+            steps: [
               {
-                "name": "Projects on Fuel Network",
-                "questions": [
+                name: "Projects on Fuel Network",
+                questions: [
                   {
-                    "type": "multiple-choice",
-                    "question": "Which of the following is a decentralized application on Fuel Network?",
-                    "answers": [
+                    type: "multiple-choice",
+                    question: "Which of the following is a decentralized application on Fuel Network?",
+                    answers: [
                       "A) SwaySwap",
                       "B) EtherDelta",
                       "C) CryptoKitties",
                       "D) MakerDAO"
                     ],
-                    "correctAnswer": "A"
+                    correctAnswer: 0
                   },
                   {
-                    "type": "true-false",
-                    "question": "SwaySwap is similar to Uniswap and runs on the Fuel devnet.",
-                    "correctAnswer": true
+                    type: "true-false",
+                    question: "SwaySwap is similar to Uniswap and runs on the Fuel devnet.",
+                    correctAnswer: true
                   }
                 ]
               },
               {
-                "name": "Using SwaySwap",
-                "questions": [
+                name: "Using SwaySwap",
+                questions: [
                   {
-                    "type": "fill-in-the-gap",
-                    "question": "SwaySwap allows users to swap native assets and pool resources on the __________.",
-                    "correctAnswer": "Fuel devnet"
+                    type: "fill-in-the-gap",
+                    question: "SwaySwap allows users to swap native assets and pool resources on the __________.",
+                    correctAnswer: "Fuel devnet"
                   },
                   {
-                    "type": "true-false",
-                    "question": "SwaySwap is currently deployed on the Ethereum mainnet.",
-                    "correctAnswer": false
+                    type: "true-false",
+                    question: "SwaySwap is currently deployed on the Ethereum mainnet.",
+                    correctAnswer: false
                   }
                 ]
               }
