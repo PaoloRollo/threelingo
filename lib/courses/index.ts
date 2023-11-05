@@ -14,6 +14,23 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "Blockchain Introduction - Core Principles",
+            description: "Blockchain Basics\n" +
+                "Blockchain is a revolutionary technology that has gained widespread attention in recent years. At its core, it is a decentralized and distributed ledger that records transactions in a tamper-resistant and transparent manner. Each transaction is grouped into a \"block\" and linked together in a chronological \"chain,\" hence the name \"blockchain.\"\n" +
+                "\n" +
+                "Blockchain & Decentralization\n" +
+                "Decentralization is one of the fundamental principles of blockchain. Instead of relying on a central authority, like a bank or government, blockchain operates on a network of computers, each with a copy of the ledger. This decentralization ensures that no single entity has full control, making the system more resistant to censorship and corruption.\n" +
+                "\n" +
+                "What is a consensus mechanism?\n" +
+                "Consensus mechanisms are the protocols that enable multiple participants on the blockchain network to agree on the state of the ledger. They ensure that all nodes in the network validate and agree on the same set of transactions. Popular mechanisms include Proof of Work (PoW) and Proof of Stake (PoS), each with its own way of achieving consensus.\n" +
+                "\n" +
+                "Security in Blockchain\n" +
+                "Blockchain offers a high level of security through cryptographic techniques. Transactions are recorded in a way that is extremely difficult to alter or erase, providing transparency and trust. However, it's not immune to all threats, and security practices are essential to safeguard against attacks and vulnerabilities.\n" +
+                "\n" +
+                "Blockchain Use Cases\n" +
+                "Blockchain's uses go beyond cryptocurrencies. It finds applications in various industries and sectors. For example, in supply chain management, blockchain can provide a transparent and immutable record of the movement of goods, reducing fraud and errors. In voting systems, it can enhance security and transparency, ensuring the integrity of elections. Healthcare records can benefit from blockchain by securely and efficiently managing patient data, facilitating access for authorized parties.\n" +
+                "\n" +
+                "Public vs. Private Blockchains\n" +
+                "There are two main types of blockchains: public and private. Public blockchains, like Bitcoin and Ethereum, are open to anyone, and all transactions are visible to all participants. Private blockchains, on the other hand, are restricted to specific participants and often used by businesses for internal purposes, offering more control over the network.\n",
             steps: [
               {
                 name: "Blockchain Basics",
@@ -449,6 +466,17 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Wallets",
+            description: "Types of Wallets\n" +
+                "Wallets are essential tools for managing cryptocurrencies. There are various types of wallets, each with its own features. Hardware wallets, such as Ledger or Trezor, provide maximum security as they store your private keys offline. Software wallets, like mobile or desktop wallets, offer convenience for everyday use. Web wallets, accessible through a web browser, are user-friendly but may be less secure. Paper wallets involve printing your keys for offline storage. The choice depends on your priorities - security, accessibility, or a balance of both.\n" +
+                "\n" +
+                "Download Metamask Wallet\n" +
+                "MetaMask is a popular software wallet for managing Ethereum-based tokens. To download it, visit the official website or the app store on your device. Install the extension or app and follow the setup instructions. Once installed, you'll have a secure and user-friendly interface for managing your Ethereum assets, including sending, receiving, and interacting with decentralized applications (dApps).\n" +
+                "\n" +
+                "Connect Wallet through WalletConnect\n" +
+                "WalletConnect is a protocol that enables you to connect your wallet to various dApps and services securely. To use WalletConnect, open your wallet and select the WalletConnect option. Then, scan the QR code provided by the dApp you wish to use. This establishes a secure connection, allowing you to interact with the dApp using your wallet. WalletConnect enhances the interoperability of wallets and dApps, providing a seamless user experience.\n" +
+                "\n" +
+                "Backup and Recovery\n" +
+                "Backup and recovery are critical aspects of wallet management. Before you start using a wallet, it's crucial to set up a secure backup mechanism. This typically involves storing a backup phrase or private key in a safe and offline location. In case your wallet is lost or compromised, you can use this backup to recover your assets. Never share your backup information with anyone, and ensure it's securely stored to prevent unauthorized access to your funds.\n",
             steps: [
               {
                 name: "Types of Wallets",
@@ -622,6 +650,29 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Transactions, P2P and Smart Contract interactions",
+            description: "Blockchain Transactions\n" +
+                "Blockchain transactions involve the transfer of digital assets between participants. These transactions are recorded on the blockchain, ensuring transparency and security. Transactions typically include sender and recipient addresses, amount, and transaction fees.\n" +
+                "\n" +
+                "Peer-to-Peer (P2P) Transactions\n" +
+                "Peer-to-peer (P2P) transactions refer to direct exchanges of digital assets between individuals, bypassing intermediaries like banks. P2P transactions can occur on blockchain networks, enabling secure and private value transfers.\n" +
+                "\n" +
+                "Smart Contracts Overview\n" +
+                "Smart contracts are self-executing agreements with predefined rules. They automatically execute when specific conditions are met. These contracts run on blockchain platforms and enable trustless interactions between parties, eliminating the need for intermediaries.\n" +
+                "\n" +
+                "Interacting with Smart Contracts\n" +
+                "To interact with smart contracts, users send transactions to the contract's address. These transactions trigger the execution of the contract's code. Interaction can involve reading data or invoking functions to update the contract's state.\n" +
+                "\n" +
+                "Writing to Smart Contracts\n" +
+                "Writing to smart contracts involves sending transactions that change the state of the contract. These transactions are executed by the contract's code, which can update variables, distribute tokens, or perform various tasks as defined in the contract.\n" +
+                "\n" +
+                "Transaction Exploration\n" +
+                "Transaction exploration allows users to view transaction details on the blockchain. It provides information about transaction status, sender and recipient addresses, timestamp, and transaction ID. Users can track the progress of their transactions through exploration tools.\n" +
+                "\n" +
+                "Gas Fees\n" +
+                "Gas fees are transaction fees required to execute operations on a blockchain. They cover the cost of computation and storage on the network. Users pay gas fees to miners for processing their transactions. The fee amount depends on the complexity of the operation.\n" +
+                "\n" +
+                "Gas Optimization\n" +
+                "Gas optimization is the practice of minimizing transaction costs on a blockchain. It involves optimizing the use of computational resources in smart contracts to reduce gas fees. Techniques include code efficiency and reducing unnecessary operations to save on transaction costs.\n",
             steps: [
               {
                 name: "Blockchain Transactions",
@@ -904,6 +955,11 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "Fundamentals of Cryptography",
+            description: "What is Cryptography\n" +
+                "Cryptography is a crucial component of modern digital security. It involves the use of mathematical techniques to protect information from unauthorized access or alteration. Cryptography relies on encryption to transform data into a secure format, making it unreadable without the correct decryption key. This technology ensures the confidentiality, integrity, and authenticity of information.\n" +
+                "\n" +
+                "Cryptography in Blockchain\n" +
+                "Cryptography plays a central role in the security of blockchain technology. In blockchain, cryptographic techniques are used to secure transactions, control access, and maintain the integrity of the distributed ledger. Public and private keys are generated to enable secure ownership and transfer of digital assets. Hash functions ensure data integrity, while digital signatures verify the authenticity of transactions and participants on the network. Cryptography is the foundation of trust and security in blockchain, making it resistant to fraud and tampering.\n",
             steps: [
               {
                 name: "What is Cryptography",
@@ -1346,6 +1402,23 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Public and Private Key Cryptography",
+            description: "The Role of Keys in Blockchain\n" +
+                "Keys play a fundamental role in blockchain technology. They are at the heart of security and authentication. Public and private keys enable the secure ownership and transfer of digital assets. Keys are used to create digital signatures, encrypt and decrypt data, and generate unique addresses for participants on the network.\n" +
+                "\n" +
+                "Generating Keys\n" +
+                "Keys are generated using cryptographic algorithms. Public keys are created from private keys, and they work together as a pair. Private keys must be kept secret, as they grant control over associated digital assets, while public keys are shared openly for others to verify transactions and communicate securely.\n" +
+                "\n" +
+                "Public Key Infrastructure (PKI)\n" +
+                "Public Key Infrastructure (PKI) is a framework for managing public keys, digital certificates, and encryption. In blockchain, PKI ensures the trustworthiness of public keys and enables secure communication. It is a vital component of blockchain security.\n" +
+                "\n" +
+                "Digital Signatures\n" +
+                "Digital signatures are created using a private key to sign a message or transaction. These signatures verify the authenticity and integrity of the sender and the data. Public keys are used to verify these signatures, confirming that they were indeed signed by the private key holder.\n" +
+                "\n" +
+                "Address Generation\n" +
+                "Unique addresses for blockchain participants are generated from public keys. These addresses serve as a pseudonymous identifier for users and are used in transactions. They provide a layer of privacy by not revealing the user's public key directly.\n" +
+                "\n" +
+                "Encryption and Decryption\n" +
+                "Public and private keys also facilitate encryption and decryption. Data can be encrypted with a recipient's public key, ensuring only they can decrypt and access the information using their corresponding private key. This process adds an extra layer of security in blockchain communications and data storage.\n",
             steps: [
               {
                 name: "The Role of Keys in Blockchain",
@@ -1499,6 +1572,14 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Security and Vulnerabilities",
+            description: "Key Security Best Practices\n" +
+                "Key security is paramount in blockchain. Best practices include safeguarding private keys by storing them offline in hardware wallets or secure storage, implementing strong access controls, and using secure password management. Regular backups of keys and keeping software and firmware updated are essential to maintain key security.\n" +
+                "\n" +
+                "Potential Vulnerabilities\n" +
+                "Blockchain systems are not immune to vulnerabilities. Common risks include phishing attacks, where malicious actors trick users into revealing private keys or credentials. Smart contract vulnerabilities can lead to exploitation, and insecure key management can result in asset loss. Understanding and mitigating these potential vulnerabilities is crucial for maintaining a secure blockchain environment.\n" +
+                "\n" +
+                "The Future of Key Management\n" +
+                "The future of key management in blockchain holds promise. Advancements in cryptographic techniques and key management solutions aim to enhance security. Techniques like multi-signature wallets and hardware security modules are becoming more widespread. As blockchain technology evolves, key management solutions will continue to adapt and provide more robust security measures to protect users and their digital assets.\n",
             steps: [
               {
                 name: "Key Security Best Practices",
@@ -1712,6 +1793,14 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "Understanding EOAs",
+            description: "Introduction to EOAs\n" +
+                "Externally Owned Accounts (EOAs) are a fundamental concept in blockchain. They represent user-controlled accounts with a unique address. EOAs are different from smart contracts, as they are externally owned and controlled by individual users, making them a cornerstone for peer-to-peer transactions on the blockchain.\n" +
+                "\n" +
+                "EOA Transactions\n" +
+                "EOAs are used for initiating transactions on the blockchain. Users can send and receive digital assets and interact with smart contracts through their EOAs. Transactions from EOAs are cryptographically signed to verify authenticity and ownership, ensuring secure and tamper-proof operations.\n" +
+                "\n" +
+                "EOA Use Cases\n" +
+                "EOAs serve various use cases in the blockchain ecosystem. They are primarily used for managing and transferring digital assets, making payments, and participating in decentralized applications (dApps). EOAs are essential for users looking to engage in peer-to-peer transactions, secure their digital assets, and exercise control over their blockchain activities.\n",
             steps: [
               {
                 name: "Introduction to EOAs",
@@ -1886,6 +1975,16 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "What Are Smart Accounts?",
+            description: "Smart Accounts are a transformative advancement in blockchain technology, offering a dynamic alternative to the traditional Externally Owned Accounts (EOAs) that have been the standard for Ethereum users. Where EOAs are limited to basic transactions and are entirely controlled by an individual's private keys, Smart Accounts introduce a new level of programmability and security to digital asset management.\n" +
+                "\n" +
+                "At the heart of Smart Accounts is the ability to execute complex logic and automate processes. This programmability opens up a world of possibilities, from setting up recurring payments and executing transactions based on specific conditions, to sophisticated interactions with other smart contracts. The automation capabilities of Smart Accounts stand in stark contrast to the static nature of EOAs, which require manual operation for each action.\n" +
+                "\n" +
+                "Security is another domain where Smart Accounts greatly surpass traditional EOAs. By incorporating advanced features such as multi-signature protocols, Smart Accounts require consensus among multiple authorized users before transactions can be processed. This multi-layered approach to security significantly reduces the risks associated with the single point of failure inherent in the private key model of EOAs.\n" +
+                "\n" +
+                "Furthermore, Smart Accounts are designed with modularity in mind, allowing users to enhance their accounts with additional functionalities. These can include setting transaction limits, creating account recovery mechanisms, and defining permission structures for different users. This level of customization ensures that Smart Accounts can adapt to the diverse needs and security requirements of their users, something EOAs cannot offer.\n" +
+                "The interoperability of Smart Accounts with decentralized applications (dApps) is yet another advantage. They are built to interact directly with the burgeoning ecosystem of dApps on the Ethereum network, facilitating a seamless user experience. This direct interaction capability streamlines the process of engaging with various sectors of the decentralized web, from finance to gaming, without relying on intermediaries.\n" +
+                "\n" +
+                "In essence, Smart Accounts represent a leap forward in the way users interact with the Ethereum blockchain. They not only enhance the capabilities of traditional EOAs but also redefine the potential of digital asset management, providing users with a secure, flexible, and efficient means of navigating the decentralized landscape.\n",
             steps: [
               {
                 name: "Smart Accounts",
@@ -2014,6 +2113,16 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Understanding ERC-4337",
+            description: "Introduction to ERC-4337\n" +
+                "ERC-4337 is a groundbreaking Ethereum Improvement Proposal that introduces the concept of account abstraction to the Ethereum blockchain. This proposal aims to simplify the user experience by abstracting away the complexities of blockchain interactions, making it more accessible to everyday users. Account abstraction blurs the lines between contract accounts and Externally Owned Accounts (EOAs), allowing for more flexible and user-friendly account types.\n" +
+                "\n" +
+                "Account Abstraction Capabilities of ERC-4337\n" +
+                "The account abstraction capabilities of ERC-4337 offer a transformative approach to how users interact with the Ethereum network. By allowing smart contract wallets to act with the same autonomy as EOAs, ERC-4337 enables a new class of accounts that can directly initiate transactions without the need for external triggers. This capability allows for the creation of accounts that can, for example, pay for their own transaction fees with tokens other than ETH, or even perform automatic transactions in response to certain events.\n" +
+                "\n" +
+                "One of the most significant enhancements ERC-4337 brings to the table is the ability for users to own accounts that can incorporate complex logic and operations, similar to smart contracts, while maintaining the ease of use associated with traditional EOAs. This means users can benefit from features like recovery options, batched transactions, and programmable payments without needing to understand the underlying smart contract code.\n" +
+                "Moreover, ERC-4337 facilitates a more secure user experience. By leveraging the abstraction layer, users can implement customized security protocols within their accounts, such as multi-factor authentication or automated fraud detection mechanisms, which were previously difficult or impossible to achieve with standard EOAs.\n" +
+                "\n" +
+                "In conclusion, ERC-4337 represents a significant step forward in Ethereum's evolution, offering a more intuitive and powerful way for users to manage their digital identities and assets. Its account abstraction capabilities not only enhance the functionality and security of user accounts but also pave the way for a more inclusive and user-friendly blockchain ecosystem.\n",
             steps: [
               {
                 name: "Step 1: Introduction to ERC-4337",
@@ -2048,6 +2157,27 @@ export const availableCourses: Course[] = [
           },
           {
             name: "The Impact of Smart Accounts on Web3 Adoption",
+            description: "The impact of smart accounts on Web3 adoption is both substantial and multifaceted, with various factors influencing its specific outcomes. These considerations span several domains:\n" +
+                "\n" +
+                "Enhanced Security: Smart accounts, rooted in blockchain technology, bring robust security to Web3. Leveraging cryptographic principles and decentralized networks, they significantly reduce the risk of unauthorized access and tampering. This heightened security fosters increased user trust in Web3 applications.\n" +
+                "\n" +
+                "Efficient Automation: Smart accounts introduce automation into various processes and transactions. This automation streamlines complex tasks, minimizing the reliance on intermediaries and manual intervention. The result is more efficient and cost-effective operations, making Web3 platforms more attractive to both users and businesses.\n" +
+                "\n" +
+                "Interoperability: Smart accounts often function seamlessly across diverse blockchain networks, promoting interoperability. Users can access and manage assets and data across multiple platforms, broadening the reach of Web3 and encouraging greater adoption.\n" +
+                "\n" +
+                "Decentralized Finance (DeFi): Smart accounts are integral to the DeFi ecosystem, offering essential tools for lending, borrowing, trading, and yield farming. The growth of DeFi has been a major driver of Web3 adoption, as users seek decentralized financial services that provide transparency and control over their finances.\n" +
+                "\n" +
+                "Decentralized Applications (dApps): Many dApps rely on smart accounts for user authentication and facilitating interactions with blockchain networks. The increasing availability of dApps that offer innovative services and experiences attracts users to Web3 platforms.\n" +
+                "\n" +
+                "Tokenization: Smart accounts empower the creation and management of tokens representing a wide range of assets, from cryptocurrencies to real estate. Tokenization can make traditionally illiquid assets more accessible, potentially broadening Web3's audience.\n" +
+                "\n" +
+                "Global Accessibility: Web3 and smart accounts transcend geographic boundaries, providing access to financial and digital services for individuals and communities often excluded from traditional financial systems. This inclusivity can significantly drive adoption, particularly in underserved regions.\n" +
+                "\n" +
+                "Data Privacy and Ownership: Smart accounts place users in control of their data and digital identities, enhancing privacy and ownership of personal information. This autonomy can be a compelling reason for individuals to transition to Web3.\n" +
+                "\n" +
+                "Innovation and Competition: The dynamic nature of the Web3 ecosystem fosters continuous innovation and competition. Developers create new applications and services, resulting in a broader array of options and improved user experiences, further encouraging adoption.\n" +
+                "\n" +
+                "In summary, smart accounts are foundational to Web3 technology, and their impact on adoption is profound. They create a more secure, efficient, and user-centric digital environment, offering a range of advantages that attract a diverse audience to embrace Web3 and its decentralized principles.\n",
             steps: [
               {
                 name: "Enhancing User Experience with Smart Accounts 1/2",
@@ -2111,6 +2241,9 @@ export const availableCourses: Course[] = [
           },
           {
             name: " Building with Smart Accounts",
+            description: "Building with smart accounts offers several compelling reasons for developers and businesses to leverage this technology. The primary motivations for adopting smart accounts include their inherent security, transparency, automation capabilities, decentralization, interoperability, and access to the growing realm of decentralized finance (DeFi) services. Smart accounts are also instrumental in tokenization, which can make traditionally illiquid assets more accessible to a broader audience.\n" +
+                "\n" +
+                "Their global reach transcending geographical boundaries, innovative use cases in fields ranging from supply chain management to gaming, and the emphasis on data ownership and privacy are further reasons to consider using smart accounts. In summary, smart accounts empower developers to create secure, efficient, and innovative blockchain-based applications, making them an attractive choice for a variety of use cases across industries.\n",
             steps: [
               {
                 name: "Smart Accounts Infrastructure Requirements",
@@ -2252,6 +2385,21 @@ export const availableCourses: Course[] = [
           },
           {
             name: " Security Considerations",
+            description: "Security considerations for smart accounts, also known as externally owned accounts (EOAs), are paramount to ensure the safety and integrity of digital assets and transactions. The security of a smart account begins with the protection of the private key, as it represents the linchpin of security. Safeguarding the private key against unauthorized access or theft is essential, and options such as hardware wallets or secure offline storage solutions provide robust protection.\n" +
+                "\n" +
+                "Phishing attacks pose a constant threat, as malicious actors create deceptive websites and emails to trick users into revealing private keys or login credentials. It is imperative to verify the authenticity of websites and emails to prevent falling victim to such schemes.\n" +
+                "\n" +
+                "Additionally, for those interacting with smart contracts through their smart accounts, the thorough auditing of these contracts for vulnerabilities is critical. Unaudited or poorly coded smart contracts can be exploited, potentially leading to the loss of assets.\n" +
+                "\n" +
+                "Enhancing security further involves implementing two-factor authentication (2FA) wherever possible, adding an extra layer of protection. Vigilance in transaction verification to avoid accidental transfers and keeping wallet software and applications up to date is essential to address evolving security vulnerabilities.\n" +
+                "\n" +
+                "Preventing malware and viruses from compromising devices is a foundational security measure, requiring the use of reputable antivirus and anti-malware software. Smart account users are encouraged to opt for well-established and reputable wallets and services for account management while avoiding less-known or unverified providers.\n" +
+                "\n" +
+                "Maintaining secure backups of private keys and wallet recovery information in separate, secure locations ensures recovery options in the event of loss or device damage. For long-term asset storage, cold storage solutions, like hardware wallets or paper wallets, are recommended, as they keep private keys offline and minimize exposure to online threats.\n" +
+                "\n" +
+                "Secure network usage, a familiarity with the latest security practices and threats in the blockchain and cryptocurrency realm, and vigilance against social engineering attacks are integral aspects of smart account security. Additionally, devising an emergency plan in case of account compromise or lost private keys is a prudent precaution.\n" +
+                "\n" +
+                "Security is an ongoing and evolving process, demanding vigilance and regular updates to mitigate potential risks in the ever-changing landscape of blockchain and cryptocurrencies.\n",
             steps: [
               {
                 name: "Security Advantages of Smart Accounts",
@@ -2350,6 +2498,17 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "Differences and Use Cases",
+            description: "In comparing Externally Owned Accounts (EOAs) with smart accounts, several key distinctions emerge. EOAs are typically controlled by individual users, affording them complete ownership of the associated private keys. This stands in contrast to smart accounts, which exhibit greater versatility by being controllable not only by individuals but also by programmable smart contracts.\n" +
+                "\n" +
+                "When it comes to interactions, EOAs primarily serve straightforward purposes, such as sending and receiving cryptocurrencies. Smart accounts, however, offer a broader range of possibilities, allowing for intricate automation and the execution of predefined logic. This difference in interaction capability is particularly noteworthy.\n" +
+                "\n" +
+                "Another significant distinction lies in autonomy. EOAs rely on users to initiate transactions and manual actions, while smart accounts have the capability to operate autonomously based on predefined rules and conditions. This autonomy makes smart accounts particularly well-suited for applications that require automation and decision-making without constant user intervention.\n" +
+                "\n" +
+                "In terms of flexibility, smart accounts shine. They offer extensive customization options, allowing them to be programmed for a wide array of tasks. This adaptability makes them suitable for various applications, ranging from DeFi and governance to supply chain management.\n" +
+                "\n" +
+                "In practical use cases, EOAs are commonly employed in personal transactions, wallet management, and user authentication in various applications and decentralized apps (dApps). On the other hand, smart accounts find relevance in more complex scenarios that require automation, such as recurring payments, subscription services, and smart locks. They are integral in DeFi platforms, supporting lending, yield farming, and other financial operations. Smart accounts also play a key role in governance within decentralized autonomous organizations (DAOs), allowing participants to vote and make decisions. Furthermore, they contribute to supply chain management by facilitating the tracking of goods and assets, ensuring transparency and security.\n" +
+                "\n" +
+                "In summary, while EOAs are well-suited for basic cryptocurrency transactions and wallet management, smart accounts offer enhanced versatility and automation capabilities, making them suitable for a broader range of use cases, including DeFi, governance, and supply chain management.\n",
             steps: [
               {
                 name: "EOA vs. Smart Account",
@@ -2447,6 +2606,19 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "What is Safe",
+            description: "Safe, formerly known as Gnosis Safe, represents a paradigm shift in digital asset management on blockchain networks. It is a platform that transcends the traditional wallet concept, offering a secure and versatile framework for individuals and organizations to manage their cryptocurrencies and interact with decentralized applications (dApps). At its core, Safe is engineered to mitigate the risks associated with single-user accounts by implementing a multi-signature scheme that necessitates multiple confirmations for transaction execution, thereby establishing a robust security protocol.\n" +
+                "The Safe ecosystem is a rich tapestry of interconnected components that together create a robust environment for asset management and interaction with the decentralized web. The cornerstone of this ecosystem is the Safe Smart Accounts, which offer a secure and modular approach to asset management. These accounts are designed to be extensible, allowing for\n" +
+                "the addition of Safe Modules that provide additional functionalities and customization options to meet the diverse needs of users.\n" +
+                "\n" +
+                "Within the ecosystem, transactions take on a new level of sophistication. Users can execute batched transactions, enabling more complex operations and smart contract interactions while maintaining stringent security standards. This is facilitated by the underlying Safe Contracts, which are open-source, audited smart contracts that provide the secure foundation for all operations within the Safe environment.\n" +
+                "\n" +
+                "User experience is a focal point in the Safe ecosystem, with intuitive interfaces available for both web and mobile platforms. These interfaces are crafted to be user-friendly, ensuring that managing digital assets is straightforward and accessible, without compromising on the security that is synonymous with Safe.\n" +
+                "\n" +
+                "Complementing the core functionalities are Safe Apps, which are integrations of third-party decentralized applications within the Safe interface. This allows users to interact with a wide range of services directly through their Safe account, fostering a seamless and integrated user experience.\n" +
+                "\n" +
+                "Lastly, the governance of the Safe ecosystem is designed to be democratic and community-centric. It encourages active participation from its users in the decision-making process, ensuring that the ecosystem evolves in a direction that is aligned with the collective will and best interests of its community.\n" +
+                "In essence, the Safe ecosystem represents a significant advancement in the way digital assets are managed, offering a secure, adaptable, and user-focused platform that stands as a pillar of the decentralized finance landscape.\n" +
+                "\n",
             steps: [
               {
                 name: "Safe Introduction",
@@ -2540,6 +2712,20 @@ export const availableCourses: Course[] = [
           },
           {
             name: "What is Safe {Core} Protocol",
+            description: "Understanding the Safe {Core} Protocol\n" +
+                "\n" +
+                "The Safe {Core} Protocol is the underlying framework that powers the Safe ecosystem, a platform renowned for its robust security features and its flexible management of digital assets on blockchain networks. This protocol is the bedrock upon which the Safe Smart Accounts and the entire suite of Safe tools are built. It defines the fundamental operations, security mechanisms, and the architectural design that enables the creation and management of multi-signature accounts. These accounts are essential for executing transactions that require consensus among multiple parties, thereby ensuring a higher level of security compared to traditional single-owner accounts.\n" +
+                "\n" +
+                "The Role of Safe Factory\n" +
+                "\n" +
+                "The Safe Factory is a critical component of the Safe ecosystem. It is a smart contract that facilitates the creation of new Safe Smart Accounts. By using the Safe Factory, users can deploy new accounts quickly and efficiently, with all the necessary security parameters already in place. The factory ensures that each new account adheres to the strict security standards set by the Safe {Core} Protocol, providing peace of mind for users knowing that their assets are protected by a consistent and reliable security framework.\n" +
+                "\n" +
+                "Utilizing a Safe Smart Account\n" +
+                "\n" +
+                "Using a Safe Smart Account is a straightforward process that offers users a secure way to manage their digital assets. Once an account is created through the Safe Factory, users can add multiple owners to the account and set the required threshold of signatures needed to authorize transactions. This multi-signature feature is at the heart of the account's security, ensuring that no single point of failure can compromise the assets. Users can interact with decentralized applications, execute transactions, and manage their funds with the assurance that each action requires consensus, thereby providing a robust shield against unauthorized access and potential security breaches.\n" +
+                "\n" +
+                "In conclusion, the Safe {Core} Protocol is the foundation of a secure, flexible, and user-centric ecosystem that is revolutionizing the way we interact with digital assets on the blockchain. Through the Safe Factory and the use of Safe Smart Accounts, the protocol offers a secure and efficient framework for asset management that is trusted by users and organizations worldwide.\n" +
+                "\n",
             steps: [
               {
                 name: "Safe {Core} Protocol and Protocol Kit",
@@ -2649,6 +2835,16 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Safe {Core} AA SDK",
+            description: "Introduction to Safe {Core} AA SDK\n" +
+                "The Safe {Core} AA SDK, standing for Account Abstraction Software Development Kit, is a comprehensive toolkit designed for developers looking to integrate the robust features of the Safe {Core} Protocol into their applications. This SDK simplifies the process of interacting with the Safe infrastructure, allowing for the seamless creation, management, and execution of transactions within Safe Smart Accounts. It serves as a bridge between the complex underlying blockchain technology and the developer's interface, ensuring that the robust security and flexibility of the Safe ecosystem are easily accessible.\n" +
+                "\n" +
+                "Features of Safe{Core} AA SDK Kits\n" +
+                "The Safe {Core} AA SDK Kits are modular sets of tools within the SDK that cater to various aspects of the Safe ecosystem. These kits provide developers with pre-built functionalities, such as account creation, transaction management, and signature collection. By utilizing these kits, developers can rapidly deploy Safe features in their applications without needing to build complex infrastructure from scratch. Each kit is designed to be interoperable, ensuring that developers can mix and match components to suit their specific needs while maintaining the integrity and security of the Safe {Core} Protocol.\n" +
+                "\n" +
+                "The Functionality of Safe Factory within the SDK\n" +
+                "The Safe Factory is an integral part of the Safe {Core} AA SDK. It is a component that allows developers to programmatically generate new Safe Smart Accounts for their users. The Safe Factory automates the deployment process, ensuring that each new account is instantiated with the correct configuration and adheres to the security standards of the Safe {Core} Protocol. This automation is crucial for developers who aim to provide a consistent and secure user experience at scale, as it eliminates the potential for human error during the account creation process.\n" +
+                "\n" +
+                "In essence, the Safe {Core} AA SDK is a powerful toolset that empowers developers to harness the security and flexibility of the Safe {Core} Protocol within their own applications. It provides a streamlined approach to account management and transaction execution, all while upholding the high-security standards that the Safe ecosystem is known for. Whether for individual use or enterprise solutions, the Safe {Core} AA SDK is a cornerstone for building secure and efficient blockchain-based applications.\n",
             steps: [
               {
                 name: "What is Safe {Core} AA SDK",
@@ -2760,6 +2956,16 @@ export const availableCourses: Course[] = [
           },
           {
             name: "What is Safe {Core} API",
+            description: "Introduction to Safe {Core} API\n" +
+                "The Safe {Core} API is a pivotal element of the Safe infrastructure, providing a standardized interface for interacting with the Safe {Core} Protocol. It is designed to offer developers and users a set of accessible endpoints for managing Safe Smart Accounts and executing transactions within the Safe ecosystem. The API abstracts the complexity of blockchain interactions, making it easier for services to integrate Safe's functionalities, such as wallet creation, transaction initiation, and multi-signature operations, into their platforms.\n" +
+                "\n" +
+                "Capabilities of the Safe {Core} API\n" +
+                "The Safe {Core} API is a versatile tool that serves as the backbone for various operations within the Safe ecosystem. It allows for the retrieval of crucial data regarding Safe Smart Accounts, including their transaction history, balances, and settings. Additionally, the API facilitates the submission and execution of transactions, providing a reliable way to interact with the blockchain while maintaining the security standards of the Safe {Core} Protocol. This level of accessibility and control is essential for developers who require direct and efficient communication with the Safe infrastructure.\n" +
+                "III. The Safe Transaction Service\n" +
+                "\n" +
+                "The Safe Transaction Service is an integral service that works in tandem with the Safe {Core} API. It is responsible for the coordination and relay of multi-signature transactions within the Safe ecosystem. The service tracks pending transactions, collects signatures from designated signatories, and ensures that transactions are executed once the required threshold of approvals is met. This service is crucial for maintaining the integrity of the multi-signature process, providing a streamlined and secure transaction flow for Safe Smart Accounts.\n" +
+                "\n" +
+                "In summary, the Safe {Core} API, in conjunction with the Safe Transaction Service, forms a comprehensive suite of tools for developers and users to interact with the Safe ecosystem. It simplifies the process of managing digital assets on the blockchain, ensuring that the robust security features of the Safe {Core} Protocol are accessible and easy to integrate into third-party services and applications. Through these tools, the Safe ecosystem continues to provide a secure and user-friendly platform for digital asset management and decentralized application interaction.\n",
             steps: [
               {
                 name: "Safe{Core} API",
@@ -2835,6 +3041,15 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Safe Modules",
+            description: "Introduction to Safe Modules\n" +
+                "Safe Modules are a pivotal innovation within the Safe ecosystem, designed to augment the capabilities of Safe Smart Accounts. These modules are essentially smart contracts that, once attached to a Safe Smart Account, extend its functionality beyond the standard features. They enable users to tailor the security and operational aspects of their accounts to fit specific needs and use cases. The modular architecture not only enhances flexibility but also ensures that the core security framework of the Safe Smart Account remains uncompromised.\n" +
+                "\n" +
+                "Using Safe Modules\n" +
+                "Integrating Safe Modules into a Safe Smart Account is a process that offers users a customizable experience. Users can choose from a variety of modules, each providing different features such as daily transaction limits, whitelisted addresses, or even more complex operations like interaction with other decentralized finance (DeFi) protocols.\n" +
+                "\n" +
+                "To use a Safe Module, a user must first select the appropriate module that suits their requirements. The chosen module is then attached to their Safe Smart Account through a transaction that is confirmed by the account's existing signatories, adhering to the multi-signature protocol. Once attached, the module is ready for use, and the user can benefit from the additional functionalities it provides.\n" +
+                "\n" +
+                "The flexibility of Safe Modules is a testament to the adaptability of the Safe ecosystem, allowing users to create a highly personalized and secure environment for managing their digital assets. Whether for personal use or within an enterprise setting, Safe Modules offer a powerful way to enhance the utility of Safe Smart Accounts without sacrificing the foundational security that the Safe ecosystem is known for.\n",
             steps: [
               {
                 name: "Safe Modules Introduction",
@@ -2908,6 +3123,12 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Safe Guards",
+            description: "Introduction to Safe Guards\n" +
+                "Safe Guards are an integral component of the Safe ecosystem, designed to provide an additional layer of security and control over transactions within Safe Smart Accounts. These are specialized smart contracts that act as checkpoints, enforcing rules and verifying conditions before and after transaction execution. The primary function of Safe Guards is to ensure that all actions taken through a Safe Smart Account adhere to a predefined set of protocols, thereby safeguarding assets against unauthorized or erroneous transactions.\n" +
+                "\n" +
+                "Safe Guards operate on the principle of trust but verify, allowing account owners to set up custom security parameters that align with their risk management strategies. For instance, a Safe Guard could restrict transactions to certain whitelisted addresses, limit the value of transactions over a specific period, or require additional confirmations under certain conditions. These controls help in mitigating risks associated with digital asset management, especially in a decentralized environment where traditional oversight mechanisms may not be present.\n" +
+                "\n" +
+                "The implementation of Safe Guards is a testament to the Safe ecosystem's commitment to providing a secure, flexible, and user-centric platform for digital asset management. By enabling users to define and enforce their security measures, Safe Guards empower users with peace of mind, knowing that their assets are protected by a robust and customizable security infrastructure.\n",
             steps: [
               {
                 name: "Introduction to Safe Guards",
@@ -2997,6 +3218,14 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "Ethereum Scalability",
+            description: "Layer 1 in the Ethereum ecosystem serves as the foundational blockchain layer, responsible for transaction settlement and smart contract execution. It embodies core principles of security, decentralization, and trust within the blockchain.\n" +
+                "\n" +
+                "This base layer employs consensus mechanisms, such as Proof of Work (PoW) or Proof of Stake (PoS), to validate and record transactions in a decentralized and immutable manner. However, processing transactions directly on the mainnet can lead to scalability challenges.\n" +
+                "\n" +
+                "The blockchain trilemma presents the dilemma of balancing security, decentralization, and scalability, where improvements in one aspect may entail trade-offs in the others. For example, enhancing scalability may come at the expense of security or decentralization.\n" +
+                "\n" +
+                "Layer 2 solutions, including sidechains, state channels, and plasma chains, aim to address Layer 1's scalability challenges by offloading some transaction processing from the mainnet. Their key objectives are to increase transaction throughput, reduce transaction fees, enhance the user experience, and alleviate network congestion, all while maintaining the essential attributes of Ethereum's Layer 1.\n" +
+                "\n",
             steps: [
               {
                 name: "Layer 1s and blockchain trilemma",
@@ -3101,6 +3330,9 @@ export const availableCourses: Course[] = [
           },
           {
             name: "How to scale Ethereum",
+            description: "Layer 2 (L2) scaling in Ethereum addresses scalability issues by moving transactions and computations off the Ethereum mainnet (Layer 1). L2 solutions increase transaction throughput, reduce congestion, and maintain security and decentralization. These solutions, including sidechains, state channels, and rollups, process more transactions with lower fees and faster confirmation times.\n" +
+                "\n" +
+                "The \"blockchain trilemma\" involves balancing security, decentralization, and scalability. Improving one often impacts the others. In Ethereum's scalability context, addressing this trilemma means enhancing scalability while preserving security and decentralization. L2 solutions, by offloading transactions to secondary layers, boost scalability without compromising these core principles, helping Ethereum overcome scalability challenges.\n",
             steps: [
               {
                 name: "Understanding Layer 2 Scaling",
@@ -3175,6 +3407,10 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "Type of L2 Rollups",
+            description: "The two primary types of Layer 2 rollups for Ethereum are Optimistic Rollups and Zero-Knowledge Rollups. Both types aim to improve Ethereum's scalability and reduce transaction fees by processing some transactions off the Ethereum mainnet.\n" +
+                "\n" +
+                "The primary difference between Optimistic Rollups and Zero-Knowledge Rollups lies in their approach to transaction verification. In Optimistic Rollups, transactions are initially processed off-chain, and the system assumes they are valid unless proven otherwise (hence, \"optimistic\"). Verification occurs on the Ethereum mainnet only if a dispute is raised. In contrast, Zero-Knowledge Rollups use cryptographic proofs to validate transactions off-chain and then submit a succinct proof of their validity to the Ethereum mainnet. This approach provides higher security and doesn't rely on the assumption of validity, making Zero-Knowledge Rollups more suitable for applications requiring stronger security guarantees.\n" +
+                "\n",
             steps: [
               {
                 name: "Exploring Layer 2 Rollup Types",
@@ -3238,6 +3474,9 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Optimistic Rollups",
+            description: "The key feature of optimistic rollups is their approach to transaction validation. Optimistic rollups process transactions off-chain and assume their validity by default. Instead of immediately executing all transactions on the Ethereum mainnet, they conduct most of the processing and validation off-chain, resulting in faster transaction confirmations.\n" +
+                "\n" +
+                "The primary advantage of optimistic rollups is their efficiency in terms of scaling Ethereum. By allowing most transactions to be processed off-chain without immediate verification on the mainnet, optimistic rollups significantly increase Ethereum's transaction throughput. This leads to reduced congestion, faster confirmation times, and lower transaction fees, providing a more efficient and cost-effective user experience.\n",
             steps: [
               {
                 name: "Comparing Optimistic and Zero-Knowledge Rollups",
@@ -3301,6 +3540,10 @@ export const availableCourses: Course[] = [
           },
           {
             name: "ZK Rollups",
+            description: "Zk-rollups differ from optimistic rollups in their approach to transaction validation. While optimistic rollups initially assume the validity of transactions and rely on the Ethereum mainnet to validate only when a dispute arises, zk-rollups use cryptographic proofs (zero-knowledge proofs) to validate transactions off-chain, providing an inherent and immediate assurance of transaction validity without requiring on-chain verification.\n" +
+                "\n" +
+                "The primary benefit of zk-rollups lies in their enhanced security and privacy features. By using zero-knowledge proofs for transaction validation, zk-rollups offer a higher level of trust and security, as the validity of transactions is cryptographically proven. Additionally, zk-rollups provide improved privacy for users, as sensitive transaction data remains confidential while still benefiting from the scalability and cost-efficiency of Layer 2 solutions.\n" +
+                "\n",
             steps: [
               {
                 name: "Distinguishing zk-Rollups from Optimistic Rollups",
@@ -3369,6 +3612,9 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "EVM equivalence",
+            description: "Polygon zkEVM plays a pivotal role in enhancing Ethereum's scalability. It achieves this by offering a Layer 2 scaling solution that brings significant improvements in transaction throughput, reduces congestion on the Ethereum mainnet, and lowers transaction fees. By offloading a substantial portion of Ethereum transactions to the zkEVM, it contributes to a more efficient and cost-effective network.\n" +
+                "\n" +
+                "Polygon zkEVM is designed to ensure opcode compatibility with the Ethereum Virtual Machine (EVM). This means that it maintains compatibility with the same set of instructions and operations used on the Ethereum mainnet. Developers can migrate their smart contracts from Ethereum to Polygon zkEVM without significant code changes, offering a seamless transition to Layer 2 scalability while preserving existing functionality and features. This compatibility is crucial for the broader adoption of Layer 2 solutions.\n",
             steps: [
               {
                 name: "EVM Equivalence 1/2",
@@ -3438,6 +3684,10 @@ export const availableCourses: Course[] = [
           },
           {
             name: "zkEVM",
+            description: "Polygon zkEVM is a significant component of Polygon's Layer 2 scaling solutions, designed to improve the scalability and efficiency of the Ethereum network. It achieves this by allowing certain transactions to be processed off the Ethereum mainnet, reducing congestion, enhancing transaction throughput, and lowering fees. Polygon zkEVM leverages zero-knowledge proofs to validate transactions off-chain, providing security, privacy, and performance benefits.\n" +
+                "\n" +
+                "One of the key features of Polygon zkEVM is its commitment to maintaining opcode compatibility with the Ethereum Virtual Machine (EVM). This means that smart contracts developed for the Ethereum mainnet can be seamlessly ported to Polygon zkEVM with minimal code changes. It ensures that the same set of instructions and operations used on the Ethereum mainnet are supported in Polygon zkEVM. This EVM equivalence allows for the smooth migration of smart contracts to Layer 2 solutions like ZK-Rollups while retaining the existing functionality and features, fostering broader adoption and improved scalability for the Ethereum ecosystem.\n" +
+                "\n",
             steps: [
               {
                 name: "Polygon zkEVM Overview",
