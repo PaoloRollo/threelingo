@@ -15,9 +15,8 @@ export default function InteractiveButton({
 }) {
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean | undefined>(undefined);
-  const {  provider } = useWeb3Auth();
-  const ethersProvider = new ethers.providers.Web3Provider(provider);
-  const signer = ethersProvider.getSigner();
+  const { web3Auth, provider } = useWeb3Auth();
+  const signer = provider.getSigner()
   return (
     <div className="flex flex-col space-y-4 mt-4">
       <Button
