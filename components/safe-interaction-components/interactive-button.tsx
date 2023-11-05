@@ -1,6 +1,6 @@
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
-import { deploySafeAndReturnAddress, makeSafeTransferSingleSign, addSignAndChangeThreshold } from "@/lib/safe/deploySafe";
+import {addSignAndChangeThreshold, deploySafeAndReturnAddress, makeSafeTransferSingleSign} from "@/lib/safe/deploySafe";
 import { Signer } from "ethers";
 import { useWeb3Auth } from "@/hooks/use-web3-auth";
 import { deployERC20SmartContract, readERC20SmartContract, transferERC20ToSmartContract, receiveFunds } from "@/lib/smart-contracts";
@@ -61,13 +61,13 @@ export const stepToSafeFunction = (
   let prefix = "interaction-safe";
   switch (stepName) {
     case `${prefix}-deploy`:
-      return addSignAndChangeThreshold;
+      return deploySafeAndReturnAddress;
     case `${prefix}-transfer`:
-      return addSignAndChangeThreshold;
+      return makeSafeTransferSingleSign;
     case `${prefix}-addSigner`:
       return addSignAndChangeThreshold;
     default:
-      return makeSafeTransferSingleSign;
+      return () => new Promise(() => false);
   }
 };
 

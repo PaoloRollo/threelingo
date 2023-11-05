@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   Button,
   cn,
-  Input,
+  Input, Link,
   Modal,
   ModalBody,
   ModalContent,
@@ -18,6 +18,7 @@ import InteractiveButton, {
   stepToPolygonFunction,
   stepToSafeFunction,
 } from "@/components/safe-interaction-components/interactive-button";
+import {useSmartContractStore} from "@/lib/store/smart-contract-store";
 import { usePeanutModalStore } from "@/lib/store/peanut-modal-store";
 
 interface StepModalProps {
@@ -102,7 +103,6 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
       setLoading(false);
     }
   };
-
   if (!step) {
     return (
       <>
@@ -451,33 +451,38 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                       {step.questions[currentQuestion].type.includes(
                         "interaction-p-zkevm"
                       ) && (
-                        <InteractiveButton
-                          func={stepToPolygonFunction(
-                            step.questions[currentQuestion].type
-                          )}
-                          onSuccess={() => {
-                            setCorrectResponses(correctResponses + 1);
-                            setTimeout(() => {
-                              if (
-                                currentQuestion + 1 ===
-                                step.questions.length
-                              ) {
-                                setStepFinished(true);
-                                onFinish().then(() => {
-                                  reset();
-                                  toggleStepModal();
-                                });
-                              } else {
-                                setCurrentQuestion(currentQuestion + 1);
-                              }
-                              setGapFill("");
-                              setLatestCorrect(null);
-                              setLatestAnswer(null);
-                              setLoading(false);
-                            }, 2000);
-                          }}
-                          onFailure={() => "ERROR"}
-                        ></InteractiveButton>
+                          <div>
+                            <InteractiveButton
+                                func={stepToPolygonFunction(
+                                    step.questions[currentQuestion].type
+                                )}
+                                onSuccess={() => {
+                                  setCorrectResponses(correctResponses + 1);
+                                  setTimeout(() => {
+                                    if (
+                                        currentQuestion + 1 ===
+                                        step.questions.length
+                                    ) {
+                                      setStepFinished(true);
+                                      onFinish().then(() => {
+                                        reset();
+                                        toggleStepModal();
+                                      });
+                                    } else {
+                                      setCurrentQuestion(currentQuestion + 1);
+                                    }
+                                    setGapFill("");
+                                    setLatestCorrect(null);
+                                    setLatestAnswer(null);
+                                    setLoading(false);
+                                  }, 2000);
+                                }}
+                                onFailure={() => "ERROR"}
+                            ></InteractiveButton>
+                            {useSmartContractStore.getState().contractAddress ? <Button>
+                              <Link href={`https://testnet-zkevm.polygonscan.com/address${useSmartContractStore.getState().contractAddress}`}></Link>
+                            </Button> : ""}
+                          </div>
                       )}
                     </>
                   )}

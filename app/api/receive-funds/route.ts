@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
     const { address } = await req.json();
     // polygon zkevm
     const provider = new ethers.providers.JsonRpcProvider({
-        url: process.env.NEXT_PUBLIC_POLYGON_ZKEVM_RPC_TESTNET_URL as string,
+        url: process.env.NEXT_PUBLIC_POLYGON_ZKEVM_TESTNET_RPC_URL as string,
         skipFetchSetup: true,
     });
     const wallet = new ethers.Wallet(
@@ -23,11 +23,13 @@ export async function POST(req: NextRequest) {
         value: ethers.utils.parseEther(amountInEther)
     }
 
-    const {hash} = await wallet.sendTransaction(tx);
+    const txExec = await wallet.sendTransaction(tx);
+
+    await txExec.wait()
 
     return new Response(
         JSON.stringify({
-            txHash: hash,
+            txHash: txExec.hash,
         }),
         { status: 200 }
     );
