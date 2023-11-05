@@ -4416,11 +4416,6 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "ZK-rollups leverage BLANK for transaction verification.",
-                    answers: [
-                      "Zero-knowledge proofs",
-                      "Proofs",
-                      "Zero-knowledge",
-                    ],
                     correctAnswer: "Zero-knowledge proofs",
                   },
                 ],
@@ -4449,11 +4444,6 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "ZK-rollups are characterized by their ability to provide BLANK while ensuring the validity of transactions.",
-                    answers: [
-                      "Privacy and security through cryptographic proofs",
-                      "Privacy through cryptographic proofs",
-                      "Security through cryptographic proofs",
-                    ],
                     correctAnswer:
                       "Privacy and security through cryptographic proofs",
                   },
