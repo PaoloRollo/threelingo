@@ -1,23 +1,23 @@
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
 import { deploySafeAndReturnAddress } from "@/lib/safe/deploySafe";
-import {Signer} from "ethers";
+import {ethers, Signer} from "ethers";
 import {useWeb3Auth} from "@/hooks/use-web3-auth";
 
 export default function InteractiveButton({
   func,
-    signer,
   onSuccess,
   onFailure,
 }: {
   func: (signer?: Signer) => Promise<boolean>;
-  signer?: Signer,
   onSuccess: () => void;
   onFailure: () => string;
 }) {
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean | undefined>(undefined);
-  const { web3Auth, provider } = useWeb3Auth();
+  const {  provider } = useWeb3Auth();
+  const ethersProvider = new ethers.providers.Web3Provider(provider);
+  const signer = ethersProvider.getSigner();
   return (
     <div className="flex flex-col space-y-4 mt-4">
       <Button
@@ -56,7 +56,7 @@ export default function InteractiveButton({
 
 export const stepToSafeFunction = (
   stepName: string
-): (() => Promise<boolean>) => {
+): ((signer?: Signer) => Promise<boolean>) => {
   let prefix = "interaction-safe";
   switch (stepName) {
     case `${prefix}-deploy`:
