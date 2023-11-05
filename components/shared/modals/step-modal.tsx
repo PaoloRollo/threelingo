@@ -480,7 +480,7 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                                 onFailure={() => "ERROR"}
                             ></InteractiveButton>
                             {useSmartContractStore.getState().contractAddress ? <Button>
-                              <Link href={`https://testnet-zkevm.polygonscan.com/address${useSmartContractStore.getState().contractAddress}`}></Link>
+                              <Link href={`https://testnet-zkevm.polygonscan.com/address${useSmartContractStore.getState().contractAddress}`}>View contract on the Block Explorer</Link>
                             </Button> : ""}
                           </div>
                       )}
