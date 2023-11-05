@@ -110,6 +110,7 @@ export async function PUT(
           .from("progresses")
           .update({
             completed: true,
+            current_step: currentStep,
           })
           .eq("course_id", parseInt(params.courseId))
           .eq("address", params.address);
@@ -163,11 +164,10 @@ export async function PUT(
     const { data: peanutLinkData } = await supabase
       .from("peanut_links")
       .select("*")
-      .eq("course_id", parseInt(params.courseId))
-      .eq("status", "")
-      .order("created_at", { ascending: false })
+      .eq("courseId", parseInt(params.courseId))
       .limit(1);
 
+    console.log("peanutLinkData", peanutLinkData);
     if (peanutLinkData && peanutLinkData.length > 0) {
       return new Response(
         JSON.stringify({

@@ -47,13 +47,16 @@ export const PeanutModal = ({
                 Claim your course NFT using the Peanut Protocol link.
               </ModalHeader>
               <ModalBody className="flex flex-col overflow-scroll">
-                <Input value={peanutLink} onValueChange={setPeanutLink} />
+                <Input
+                  value={defaultLink || peanutLink}
+                  onValueChange={setPeanutLink}
+                />
                 <Button
                   color={success ? "success" : "primary"}
                   variant="solid"
                   onClick={async () => {
                     const { status } = await claimLinkGasless({
-                      link: peanutLink,
+                      link: defaultLink || peanutLink,
                       recipientAddress: address,
                       APIKey: process.env.NEXT_PUBLIC_PEANUT_API_KEY as string,
                     });
