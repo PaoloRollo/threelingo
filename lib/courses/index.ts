@@ -1,4 +1,4 @@
-import { Course } from "../interfaces";
+import {Course} from "../interfaces";
 
 export const availableCourses: Course[] = [
   {
@@ -3790,7 +3790,167 @@ export const availableCourses: Course[] = [
             ]
           },
         ]
+      },
+      {
+        "name": "Fuel Network",
+        "units": [
+          {
+            "name": "Introduction to Fuel Network",
+            "description": "Fuel Network emerges as a groundbreaking modular execution layer, purpose-built to significantly amplify the scalability and operational efficiency of the Ethereum blockchain. As a Layer 2 solution, it directly addresses the core challenges faced by Ethereum, such as network congestion and high transaction fees, which have been barriers to the blockchain's scalability and user adoption. The modularity of Fuel Network is its cornerstone, strategically decoupling the execution of transactions from data availability and consensus mechanisms. This innovative approach allows for specialized optimization of each component, fostering a more agile and robust network capable of handling a higher throughput of transactions with lower latency and cost.\n" +
+                "\n" +
+                "At the heart of Fuel Network's technical prowess is FuelVM, a custom-designed virtual machine that departs from Ethereum's account-based model and instead adopts the UTXO (Unspent Transaction Output) model. This choice is pivotal, as it enables transactions to be processed in parallel, thereby enhancing the network's capacity and speed. Complementing FuelVM is Sway, a Rust-inspired programming language tailored for the Fuel ecosystem, which empowers developers to craft smart contracts with efficiency and security in mind.\n" +
+                "\n" +
+                "Key features of the Fuel Network include its high-performance execution environment, compatibility with Ethereum assets and smart contracts, and a developer-friendly ecosystem. These attributes are designed to attract and support a wide range of decentralized applications and services, from DeFi protocols to NFT marketplaces, without compromising on the decentralization and security principles that are fundamental to blockchain technology.\n" +
+                "\n" +
+                "Fuel Network's main goals are multifaceted: to provide a scalable and efficient platform for the burgeoning world of decentralized applications, to reduce the entry barriers for developers and users alike by lowering costs and improving transaction speeds, and to foster a rich ecosystem where innovation can thrive. By achieving these objectives, Fuel Network aspires to be at the forefront of the next wave of blockchain evolution, where the full potential of decentralized technologies can be realized on a global scale.",
+            "steps": [
+              {
+                "name": "What is Fuel Network?",
+                "questions": [
+                  {
+                    "type": "multiple-choice",
+                    "question": "Fuel Network is designed to improve Ethereum's:",
+                    "answers": [
+                      "A) Privacy",
+                      "B) Scalability and efficiency",
+                      "C) Token value",
+                      "D) Smart contract size"
+                    ],
+                    "correctAnswer": "B"
+                  },
+                  {
+                    "type": "true-false",
+                    "question": "Fuel Network operates as a Layer 2 scaling solution for Ethereum.",
+                    "correctAnswer": true
+                  }
+                ]
+              },
+              {
+                "name": "Fuel Network's Modular Design",
+                "questions": [
+                  {
+                    "type": "fill-in-the-blank",
+                    "question": "Fuel Network's design is __________, separating execution from data availability and consensus.",
+                    "correctAnswer": "modular"
+                  },
+                  {
+                    "type": "true-false",
+                    "question": "Fuel Network's modular design leads to increased transaction costs.",
+                    "correctAnswer": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "FuelVM and Sway",
+            "description": "FuelVM is the execution engine at the core of the Fuel Network, renowned for its exceptional efficiency and performance in smart contract execution. It represents a paradigm shift from the traditional Ethereum Virtual Machine (EVM) by implementing a UTXO-based model, which is a departure from Ethereum's account-based system. This UTXO model is instrumental in enabling concurrent transaction processing, which significantly enhances the network's throughput. FuelVM is designed with a focus on simplicity and determinism, which reduces the complexity of transaction execution and minimizes potential attack vectors, thereby bolstering the network's security.\n" +
+                "\n" +
+                "One of the standout features of FuelVM is its deterministic gas model, which provides developers with predictable transaction costs, a stark contrast to the variable fees on the Ethereum mainnet. This predictability, along with the high-speed execution of smart contracts, positions FuelVM as a powerful engine for developers looking to build scalable decentralized applications without the bottlenecks associated with traditional blockchain platforms.\n" +
+                "\n" +
+                "Complementing the capabilities of FuelVM is Sway, a domain-specific language crafted for the Fuel ecosystem. Drawing inspiration from the Rust programming language, Sway is designed to be inherently secure and conducive to writing high-performance code. It is tailored to leverage the unique features of FuelVM, allowing developers to write smart contracts and decentralized applications that are both efficient and optimized for the modular architecture of the Fuel Network.\n" +
+                "\n" +
+                "Programming with Sway on FuelVM offers developers several advantages. It provides a type-safe environment, reducing the likelihood of bugs and vulnerabilities that can be exploited in smart contracts. Sway also introduces a suite of tools and libraries specifically designed for blockchain development, streamlining the process of creating, testing, and deploying smart contracts on the Fuel Network.\n" +
+                "\n" +
+                "In essence, FuelVM and Sway together form a robust foundation for the Fuel Network, enabling it to achieve its vision of a scalable, efficient, and developer-friendly blockchain ecosystem. FuelVM's efficiency in transaction processing and Sway's optimization for smart contract development are key to unlocking the next level of blockchain innovation, where the focus shifts from merely overcoming the limitations of existing technology to pushing the boundaries of what decentralized systems can achieve.",
+            "steps": [
+              {
+                "name": "Exploring FuelVM",
+                "questions": [
+                  {
+                    "type": "multiple-choice",
+                    "question": "FuelVM is known for:",
+                    "answers": [
+                      "A) High transaction costs",
+                      "B) Low scalability",
+                      "C) High efficiency in smart contract execution",
+                      "D) Incompatibility with Ethereum"
+                    ],
+                    "correctAnswer": "C"
+                  },
+                  {
+                    "type": "true-false",
+                    "question": "FuelVM uses the UTXO model for transactions.",
+                    "correctAnswer": true
+                  }
+                ]
+              },
+              {
+                "name": "Programming with Sway",
+                "questions": [
+                  {
+                    "type": "fill-in-the-blank",
+                    "question": "Sway is a programming language designed specifically for __________.",
+                    "correctAnswer": "Fuel Network"
+                  },
+                  {
+                    "type": "true-false",
+                    "question": "Sway is based on Rust and is used for writing smart contracts on Fuel Network.",
+                    "correctAnswer": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Fuel Network's Ecosystem",
+            "description": "The Fuel Network's ecosystem is a burgeoning landscape of innovation, characterized by a diverse array of projects and decentralized applications (dApps) that leverage its high-performance modular execution layer. This ecosystem is designed to support a wide range of use cases, from DeFi protocols and NFT marketplaces to gaming and social media platforms, all benefiting from the scalability and efficiency that Fuel Network provides.\n" +
+                "\n" +
+                "Central to the Fuel Network's ecosystem is its compatibility with Ethereum, allowing developers to port existing Ethereum dApps to Fuel or create new ones that can interact seamlessly with the Ethereum blockchain. This interoperability is crucial for developers who want to take advantage of Fuel's performance benefits without leaving the Ethereum ecosystem entirely.\n" +
+                "\n" +
+                "One of the flagship projects within the Fuel ecosystem is SwaySwap, a decentralized exchange (DEX) that exemplifies the capabilities of the network. SwaySwap is akin to Uniswap but operates with the enhanced performance and lower transaction costs afforded by the Fuel Network. It serves as a proof of concept for the kind of complex, resource-intensive applications that can run more efficiently on Fuel's modular execution layer.\n" +
+                "\n" +
+                "Using Sway within the Fuel ecosystem offers developers a specialized toolset for creating dApps that are not only performant but also secure and maintainable. Sway's syntax and semantics are designed to prevent common programming errors that can lead to security vulnerabilities, making it an attractive choice for developers who prioritize the safety of their smart contracts. Additionally, Sway's tooling ecosystem includes features like integrated testing frameworks and package managers, which streamline the development workflow from inception to deployment.\n" +
+                "\n" +
+                "Moreover, Sway is designed to be modular, much like the Fuel Network itself. This modularity in the programming language allows developers to create reusable components, which can significantly speed up the development process and foster a collaborative environment where developers can share and leverage each other's code.\n" +
+                "\n" +
+                "In summary, the Fuel Network's ecosystem is a fertile ground for dApp development, offering a high-performance alternative to Ethereum's mainnet. With projects like SwaySwap leading the charge, it demonstrates the practical benefits of the network's modular design. Programming with Sway within this ecosystem not only enhances the efficiency and scalability of dApps but also brings a new level of security and developer ergonomics to the blockchain space. As more developers and projects flock to the Fuel Network, it is poised to become a hub of blockchain innovation, where the limitations of the past give way to the possibilities of the future.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n",
+            "steps": [
+              {
+                "name": "Projects on Fuel Network",
+                "questions": [
+                  {
+                    "type": "multiple-choice",
+                    "question": "Which of the following is a decentralized application on Fuel Network?",
+                    "answers": [
+                      "A) SwaySwap",
+                      "B) EtherDelta",
+                      "C) CryptoKitties",
+                      "D) MakerDAO"
+                    ],
+                    "correctAnswer": "A"
+                  },
+                  {
+                    "type": "true-false",
+                    "question": "SwaySwap is similar to Uniswap and runs on the Fuel devnet.",
+                    "correctAnswer": true
+                  }
+                ]
+              },
+              {
+                "name": "Using SwaySwap",
+                "questions": [
+                  {
+                    "type": "fill-in-the-blank",
+                    "question": "SwaySwap allows users to swap native assets and pool resources on the __________.",
+                    "correctAnswer": "Fuel devnet"
+                  },
+                  {
+                    "type": "true-false",
+                    "question": "SwaySwap is currently deployed on the Ethereum mainnet.",
+                    "correctAnswer": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
+
     ]
   }
 ];
