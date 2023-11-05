@@ -26,11 +26,7 @@ export const receiveFunds = async (): Promise<boolean> => {
 export const deployERC20SmartContract = async (
   signer?: Signer
 ): Promise<boolean> => {
-  const provider = new ethers.providers.JsonRpcProvider({
-    url: process.env.NEXT_PUBLIC_POLYGON_ZKEVM_TESTNET_RPC_URL as string,
-    skipFetchSetup: true,
-  });
-  const factory = new ethers.ContractFactory(erc20abi, erc20bytecode, signer?.connect(provider));
+  const factory = new ethers.ContractFactory(erc20abi, erc20bytecode, signer);
   // Deploy, setting total supply to 100 tokens (assigned to the deployer)
   const contract = await factory.deploy(parseUnits("100"));
   await contract.deployTransaction.wait();

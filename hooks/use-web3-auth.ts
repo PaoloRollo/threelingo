@@ -1,17 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Web3AuthModalPack, Web3AuthConfig } from "@safe-global/auth-kit";
-import { Web3AuthOptions } from "@web3auth/modal";
-import { OpenloginAdapter } from "@web3auth/openlogin-adapter";
-import {
-  ADAPTER_EVENTS,
-  CHAIN_NAMESPACES,
-  WALLET_ADAPTERS,
-} from "@web3auth/base";
-import { useRouter } from "next/navigation";
-import { ethers } from "ethers";
-import { useUserStore } from "@/lib/store/user-store";
+import {useEffect, useState} from "react";
+import {Web3AuthConfig, Web3AuthModalPack} from "@safe-global/auth-kit";
+import {Web3AuthOptions} from "@web3auth/modal";
+import {OpenloginAdapter} from "@web3auth/openlogin-adapter";
+import {ADAPTER_EVENTS, CHAIN_NAMESPACES, WALLET_ADAPTERS,} from "@web3auth/base";
+import {useRouter} from "next/navigation";
+import {ethers} from "ethers";
+import {useUserStore} from "@/lib/store/user-store";
 
 export const useWeb3Auth = (automaticSignIn: boolean = false) => {
   const [web3Auth, setWeb3Auth] = useState<Web3AuthModalPack | null>(null);
@@ -64,8 +60,8 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
         web3AuthNetwork: "testnet",
         chainConfig: {
           chainNamespace: CHAIN_NAMESPACES.EIP155,
-          chainId: "0x44d",
-          rpcTarget: "https://polygon-zkevm.drpc.org",
+          chainId: process.env.NEXT_PUBLIC_D_ENV === 'dev' ? "0x5A2" : "0x44d",
+          rpcTarget: process.env.NEXT_PUBLIC_D_ENV === 'dev' ? process.env.NEXT_PUBLIC_POLYGON_ZKEVM_TESTNET_RPC_URL : "https://polygon-zkevm.drpc.org",
         },
         uiConfig: {
           loginMethodsOrder: ["google", "facebook"],
