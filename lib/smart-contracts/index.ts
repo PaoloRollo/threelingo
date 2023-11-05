@@ -1,6 +1,27 @@
 import { ethers, Signer } from "ethers";
 import { erc20abi, erc20bytecode } from "@/lib/smart-contracts/erc20";
 import { formatUnits, parseUnits } from "@ethersproject/units";
+import {useUserStore} from "@/lib/store/user-store";
+
+export const receiveFunds = async (): Promise<boolean> => {
+  try {
+    const userAccount = useUserStore.getState();
+
+    const response = await fetch("/api/receive-funds", {
+      method: "POST",
+      body: JSON.stringify({
+        address: userAccount.address,
+        gasLimit: 100000,
+      }),
+    })
+    const { txHash } = await response.json()
+    return true
+
+  } catch (error) {
+    console.error("Error deploying Safe:", error);
+    throw error;
+  }
+}
 
 export const deployERC20SmartContract = async (
   signer?: Signer

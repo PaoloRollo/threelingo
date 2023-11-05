@@ -5,7 +5,7 @@ export const availableCourses: Course[] = [
     id: "1",
     name: "Introduction",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis urna dignissim, pulvinar quam quis, cursus orci. Pellentesque blandit tellus a neque tincidunt placerat. Sed lacinia eleifend neque vitae interdum. Nullam at leo justo. Pellentesque sollicitudin tortor velit, vitae imperdiet lectus malesuada sit amet. Ut ligula ligula, volutpat et tortor ut, aliquet efficitur eros. Sed condimentum fermentum vulputate. Donec eu eros maximus, scelerisque tellus sit amet, vulputate turpis. Fusce mattis odio id blandit maximus. Morbi quis ultricies lacus. Nam ullamcorper nunc erat, in rhoncus lectus scelerisque quis.",
+      "Dive into the revolutionary world of decentralized technology with our comprehensive course that demystifies the intricate workings of blockchain and Web3. This curriculum is meticulously crafted to guide you through the core principles of blockchain technology, including the architecture of various wallets, the mechanics of transactions, and the transformative potential of smart contracts. You'll gain a robust understanding of how these elements come together to create a secure and transparent ecosystem that's reshaping the digital landscape. The course also delves into the philosophy underpinning Web3, exploring the pivotal concepts of privacy, security, trust, and transparency. We'll discuss the profound social impact of decentralized systems, examining how they empower individuals and foster a new paradigm of internet usage that prioritizes user control and equitable access. Whether you're a budding entrepreneur, a tech enthusiast, or simply curious about the future of the internet, this course will equip you with the knowledge to navigate and contribute to the burgeoning world of blockchain and Web3.",
     image: "/metamask.png",
     nftImage: "/course-1-nft.png",
     sections: [
@@ -162,6 +162,11 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "A consensus mechanism is a set of rules that all network participants must follow to validate and agree on new transactions. It ensures that all nodes on the network are in sync and helps maintain the BLANK of the blockchain.",
+                    answers: [
+                      "consistency and security",
+                      "consistency",
+                      "security",
+                    ],
                     correctAnswer: "consistency and security",
                   },
                   {
@@ -180,6 +185,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "In Proof of Work (PoW) consensus, miners compete to solve complex mathematical puzzles, and the first one to find a valid solution gets the right to propose a new block and add it to the blockchain. This process is known as 'mining' and helps secure the network through BLANK of computational work.",
+                    answers: ["proof", "reward", "mining"],
                     correctAnswer: "proof",
                   },
                   {
@@ -198,6 +204,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "In Delegated Proof of Stake (DPoS), a small number of trusted entities, known as 'delegates,' are chosen to produce blocks and validate transactions. This mechanism aims to improve transaction BLANK and scalability.",
+                    answers: ["throughput", "speed", "fees"],
                     correctAnswer: "throughput",
                   },
                   {
@@ -505,7 +512,8 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "A BLANK wallet is a type of cryptocurrency wallet that is always connected to the internet and allows for more convenient transactions.",
-                    correctAnswer: "hot",
+                    answers: ["cold", "hot", "fresh"],
+                    correctAnswer: "cold",
                   },
                   {
                     type: "multiple-choice",
@@ -541,6 +549,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "When using a desktop wallet, it's important to ensure your computer has adequate BLANK to prevent unauthorized access and potential malware threats.",
+                    answers: ["security", "storage", "space"],
                     correctAnswer: "security",
                   },
                   {
@@ -626,6 +635,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "When backing up your wallet, it's crucial to keep multiple copies of your BLANK in different physical locations to prevent loss due to environmental damage or theft.",
+                    answers: ["backup seed phrase", "backup", "phrase"],
                     correctAnswer: "backup seed phrase",
                   },
                   {
@@ -720,6 +730,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "In a blockchain transaction, the BLANK ensures that the transaction is secure and authentic.",
+                    answers: ["digital signature", "transaction", "wallet"],
                     correctAnswer: "digital signature",
                   },
                   {
@@ -772,6 +783,11 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "A smart contract is a self-executing contract with the terms of the agreement directly written into code. It automatically enforces, executes, or manages BLANK between parties.",
+                    answers: [
+                      "contracts or agreements",
+                      "transaction",
+                      "wallet",
+                    ],
                     correctAnswer: "contracts or agreements",
                   },
                   {
@@ -2951,6 +2967,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Thanks to Smart Account, users can set up BLANK to facilitate account recovery in case of a lost seed phrase",
+                    answers: ["Social Recovery Mechanism", "login", "A Node"],
                     correctAnswer: "Social Recovery Mechanism",
                   },
                   {
@@ -3102,6 +3119,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "One of the key infrastructure requirements for implementing Smart Accounts is the use of blockchain BLANK and bundlers.",
+                    answers: ["Blockchain relayers", "Blockchain", "Managers"],
                     correctAnswer: "Blockchain relayers",
                   },
                 ],
@@ -3268,6 +3286,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Smart Contracts can hold and execute BLANK logic, while EOAs cannot.",
+                    answers: ["arbitrary", "automomus", "free"],
                     correctAnswer: "arbitrary",
                   },
                 ],
@@ -3302,6 +3321,11 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Smart contracts are suitable for scenarios where you need automated and trustless execution of actions based on predefined rules. They are particularly useful in cases involving multiple parties and where BLANK are required.",
+                    answers: [
+                      "programmable logic or complex conditions",
+                      "no logic",
+                      "programmable condition",
+                    ],
                     correctAnswer: "programmable logic or complex conditions",
                   },
                   {
@@ -3752,6 +3776,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "The Safe Transaction Service is responsible for BLANK of Safe Transactions.",
+                    answers: ["Tracking", "Managing", "Executing"],
                     correctAnswer: "Tracking",
                   },
                   {
@@ -3801,6 +3826,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Safe Modules can be added or removed by interacting with the BLANK.",
+                    answers: ["Module Manager", "Manager", "Guard"],
                     correctAnswer: "Module Manager",
                   },
                   {
@@ -3836,6 +3862,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "How to execute a transaction from a module? BLANKTransactionFromModule",
+                    answers: ["exec", "send", "test"],
                     correctAnswer: "exec",
                   },
                   {
@@ -3917,6 +3944,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "How to execute a transaction from a module? BLANKTransactionFromModule",
+                    answers: ["exec", "send", "test"],
                     correctAnswer: "exec",
                   },
                   {
@@ -4156,12 +4184,18 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Layer 2 scaling solutions, such as rollups, bundle multiple transactions into a single transaction on Ethereum Layer 1. This helps distribute transaction fees, making it BLANK for each user.",
+                    answers: ["cheaper", "expensive", "bigger"],
                     correctAnswer: "cheaper",
                   },
                   {
                     type: "fill-in-the-gap",
                     question:
                       "Ethereum's Layer 2 solutions inherit the security of Ethereum Layer 1 by submitting transaction data onto Layer 1. If an invalid transaction is suspected, a BLANK is conducted to confirm its validity.",
+                    answers: [
+                      "fault-proof verification",
+                      "Proofs",
+                      "Zero-knowledge",
+                    ],
                     correctAnswer: "fault-proof verification",
                   },
                 ],
@@ -4382,6 +4416,11 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "ZK-rollups leverage BLANK for transaction verification.",
+                    answers: [
+                      "Zero-knowledge proofs",
+                      "Proofs",
+                      "Zero-knowledge",
+                    ],
                     correctAnswer: "Zero-knowledge proofs",
                   },
                 ],
@@ -4410,6 +4449,11 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "ZK-rollups are characterized by their ability to provide BLANK while ensuring the validity of transactions.",
+                    answers: [
+                      "Privacy and security through cryptographic proofs",
+                      "Privacy through cryptographic proofs",
+                      "Security through cryptographic proofs",
+                    ],
                     correctAnswer:
                       "Privacy and security through cryptographic proofs",
                   },
@@ -4483,6 +4527,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM ensures the correctness of off-chain computations by employing BLANK as validity proofs.",
+                    answers: ["Zero-knowledge proof", "Proofs", "Tokens"],
                     correctAnswer: "Zero-knowledge proofs",
                   },
                   {
@@ -4495,6 +4540,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM offers scalability without compromising BLANK.",
+                    answers: ["Speed", "Security", "Storage"],
                     correctAnswer: "Security",
                   },
                 ],
@@ -4539,6 +4585,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM is designed to offer EVM BLANK for deploying existing Ethereum smart contracts.",
+                    answers: ["Equivalence", "Compatibility", "Coexistence"],
                     correctAnswer: "Equivalence",
                   },
                 ],
@@ -4662,7 +4709,7 @@ export const availableCourses: Course[] = [
                   {
                     type: "fill-in-the-gap",
                     question:
-                      "Fuel Network's design is BLANK, separating execution from data availability and consensus.",
+                      "Fuel Network's design is __________, separating execution from data availability and consensus.",
                     correctAnswer: "modular",
                   },
                   {
@@ -4760,7 +4807,7 @@ export const availableCourses: Course[] = [
                       "C) CryptoKitties",
                       "D) MakerDAO",
                     ],
-                    correctAnswer: "A",
+                    correctAnswer: 0,
                   },
                   {
                     type: "true-false",
@@ -4776,7 +4823,7 @@ export const availableCourses: Course[] = [
                   {
                     type: "fill-in-the-gap",
                     question:
-                      "SwaySwap allows users to swap native assets and pool resources on the BLANK.",
+                      "SwaySwap allows users to swap native assets and pool resources on the __________.",
                     correctAnswer: "Fuel devnet",
                   },
                   {
