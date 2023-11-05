@@ -4060,13 +4060,13 @@ export const availableCourses: Course[] = [
                     correctAnswer: 2,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Layer 2 scaling solutions, such as rollups, bundle multiple transactions into a single transaction on Ethereum Layer 1. This helps distribute transaction fees, making it ________________ for each user.",
                     correctAnswer: "cheaper",
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Ethereum's Layer 2 solutions inherit the security of Ethereum Layer 1 by submitting transaction data onto Layer 1. If an invalid transaction is suspected, a ________________ is conducted to confirm its validity.",
                     correctAnswer: "fault-proof verification",
@@ -4118,7 +4118,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: false,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Zero-knowledge rollups use __________ proofs where transactions are computed off-chain and then compressed data is supplied to Ethereum Mainnet as a proof of their validity.",
                     correctAnswer: "zero-knowledge",
@@ -4147,7 +4147,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: true,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Optimistic rollups are called 'optimistic' because transactions are __________ to be valid and can be challenged if necessary.",
                     correctAnswer: "assumed",
@@ -4202,7 +4202,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: true,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Optimistic rollups are called 'optimistic' because transactions are __________ to be valid and can be challenged if necessary.",
                     correctAnswer: "assumed",
@@ -4231,7 +4231,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: true,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Optimistic rollups rely on a __________ system to dispute transactions that may be invalid.",
                     correctAnswer: "challenge-based",
@@ -4283,7 +4283,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: true,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "ZK-rollups leverage __________ for transaction verification.",
                     correctAnswer: "Zero-knowledge proofs",
@@ -4311,7 +4311,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: false,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "ZK-rollups are characterized by their ability to provide __________ while ensuring the validity of transactions.",
                     correctAnswer:
@@ -4354,7 +4354,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: 2,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM offers scalability without compromising ________________.",
                     correctAnswer: "Security",
@@ -4383,7 +4383,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: true,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM ensures the correctness of off-chain computations by employing _____________ as validity proofs.",
                     correctAnswer: "Zero-knowledge proofs",
@@ -4395,7 +4395,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: false,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM offers scalability without compromising ________________.",
                     correctAnswer: "Security",
@@ -4438,7 +4438,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: true,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "Polygon zkEVM is designed to offer EVM ________________ for deploying existing Ethereum smart contracts.",
                     correctAnswer: "Equivalence",
@@ -4467,7 +4467,7 @@ export const availableCourses: Course[] = [
                     correctAnswer: true,
                   },
                   {
-                    type: "fill-in-the-blank",
+                    type: "fill-in-the-gap",
                     question:
                       "With Polygon zkEVM, users can deposit assets from Ethereum and transact off-chain while ensuring the operators of zkEVM can't steal user funds, thus inheriting the ________________ of Ethereum.",
                     correctAnswer: "Security",
@@ -4556,7 +4556,7 @@ export const availableCourses: Course[] = [
                 "name": "Fuel Network's Modular Design",
                 "questions": [
                   {
-                    "type": "fill-in-the-blank",
+                    "type": "fill-in-the-gap",
                     "question": "Fuel Network's design is __________, separating execution from data availability and consensus.",
                     "correctAnswer": "modular"
                   },
@@ -4606,7 +4606,7 @@ export const availableCourses: Course[] = [
                 "name": "Programming with Sway",
                 "questions": [
                   {
-                    "type": "fill-in-the-blank",
+                    "type": "fill-in-the-gap",
                     "question": "Sway is a programming language designed specifically for __________.",
                     "correctAnswer": "Fuel Network"
                   },
@@ -4662,7 +4662,7 @@ export const availableCourses: Course[] = [
                 "name": "Using SwaySwap",
                 "questions": [
                   {
-                    "type": "fill-in-the-blank",
+                    "type": "fill-in-the-gap",
                     "question": "SwaySwap allows users to swap native assets and pool resources on the __________.",
                     "correctAnswer": "Fuel devnet"
                   },
