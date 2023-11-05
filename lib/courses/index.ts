@@ -3860,14 +3860,11 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "Ethereum Scalability",
-            description: "Layer 1 in the Ethereum ecosystem serves as the foundational blockchain layer, responsible for transaction settlement and smart contract execution. It embodies core principles of security, decentralization, and trust within the blockchain.\n" +
+            description: "Ethereum, as a decentralized platform, has revolutionized the way we think about digital transactions and smart contracts. However, its scalability has been a significant challenge. The network can only handle around 15 transactions per second (tps), which is far from sufficient for global finance and decentralized applications (dApps) that aspire to cater to millions of users. This limitation leads to network congestion, slow transaction times, and high gas fees, which are the costs associated with executing transactions and smart contracts on the Ethereum blockchain.\n" +
                 "\n" +
-                "This base layer employs consensus mechanisms, such as Proof of Work (PoW) or Proof of Stake (PoS), to validate and record transactions in a decentralized and immutable manner. However, processing transactions directly on the mainnet can lead to scalability challenges.\n" +
+                "The core of the scalability problem lies in the blockchain trilemma, which posits that a blockchain system can only at most have two of the following three properties: decentralization, security, and scalability. Ethereum has so far prioritized security and decentralization over scalability, which has resulted in the network's limited throughput.\n" +
                 "\n" +
-                "The blockchain trilemma presents the dilemma of balancing security, decentralization, and scalability, where improvements in one aspect may entail trade-offs in the others. For example, enhancing scalability may come at the expense of security or decentralization.\n" +
-                "\n" +
-                "Layer 2 solutions, including sidechains, state channels, and plasma chains, aim to address Layer 1's scalability challenges by offloading some transaction processing from the mainnet. Their key objectives are to increase transaction throughput, reduce transaction fees, enhance the user experience, and alleviate network congestion, all while maintaining the essential attributes of Ethereum's Layer 1.\n" +
-                "\n",
+                "To address these issues, several solutions have been proposed and implemented. One of the main strategies is Layer 2 scaling solutions, which operate on top of the Ethereum blockchain (Layer 1) and handle transactions off-chain. These solutions include state channels, sidechains, plasma chains, and rollups. Each of these solutions approaches the scaling challenge differently, with various trade-offs between speed, cost, and complexity.",
             steps: [
               {
                 name: "Layer 1s and blockchain trilemma",
@@ -3875,7 +3872,7 @@ export const availableCourses: Course[] = [
                   {
                     type: "true-false",
                     question:
-                      "Layer 1 blockchains, such as Ethereum and Bitcoin, serve as the base blockchains for various layer 2 networks.",
+                        "Layer 1 blockchains, such as Ethereum and Bitcoin, serve as the base blockchains for various layer 2 networks.",
                     correctAnswer: true,
                   },
                   {
@@ -3972,9 +3969,45 @@ export const availableCourses: Course[] = [
           },
           {
             name: "How to scale Ethereum",
-            description: "Layer 2 (L2) scaling in Ethereum addresses scalability issues by moving transactions and computations off the Ethereum mainnet (Layer 1). L2 solutions increase transaction throughput, reduce congestion, and maintain security and decentralization. These solutions, including sidechains, state channels, and rollups, process more transactions with lower fees and faster confirmation times.\n" +
+            description: "Ethereum's scalability is a pressing issue as the platform struggles to handle an increasing number of transactions. The network's limited capacity to process transactions quickly and cheaply has led to a search for solutions that can expand its throughput without compromising on security or decentralization.\n" +
                 "\n" +
-                "The \"blockchain trilemma\" involves balancing security, decentralization, and scalability. Improving one often impacts the others. In Ethereum's scalability context, addressing this trilemma means enhancing scalability while preserving security and decentralization. L2 solutions, by offloading transactions to secondary layers, boost scalability without compromising these core principles, helping Ethereum overcome scalability challenges.\n",
+                "Layer 1 Scaling\n" +
+                "\n" +
+                "Layer 1 scaling solutions involve changes to the base protocol to increase the blockchain's capacity. This can include increasing the block size to hold more transactions or improving the efficiency of the consensus mechanism. Ethereum's transition to Ethereum 2.0 is a part of its Layer 1 scaling strategy, which includes the introduction of shard chains to spread the network's load across 64 new chains and the switch to a proof-of-stake consensus mechanism, which is expected to improve throughput and energy efficiency.\n" +
+                "\n" +
+                "Layer 2 Scaling\n" +
+                "\n" +
+                "Layer 2 scaling solutions are built on top of the Ethereum blockchain and are designed to take the burden off the main chain. These solutions include:\n" +
+                "\n" +
+                "State Channels: These are two-way communication channels between parties that allow them to conduct transactions with each other directly and without the need for blockchain confirmations, except for the initial and final transactions. This is ideal for applications with high transaction volumes between a few users.\n" +
+                "\n" +
+                "Sidechains: Independent blockchains that run parallel to the Ethereum main chain, sidechains have their own consensus mechanisms and block parameters. They are connected to Ethereum via two-way pegs, allowing assets to be moved between the sidechains and the main chain.\n" +
+                "\n" +
+                "Plasma: A framework for building scalable applications, Plasma creates an unlimited number of child chains, each of which can host a large number of transactions. Periodically, the root of the transaction tree from these child chains is committed to the main Ethereum blockchain.\n" +
+                "\n" +
+                "Rollups: Rollups perform transaction execution outside the main chain (off-chain) but post transaction data on-chain. They come in two types: Optimistic Rollups and ZK Rollups. Optimistic Rollups assume transactions are valid unless proven otherwise, while ZK Rollups use cryptographic proofs to validate transactions without revealing any underlying data.\n" +
+                "\n" +
+                "Sharding\n" +
+                "\n" +
+                "Sharding is a process that breaks the main blockchain into smaller partitions, known as shards, each capable of processing transactions and smart contracts independently of one another. This parallel processing capability significantly increases the network's overall capacity. Ethereum 2.0 plans to implement sharding to improve its scalability.\n" +
+                "\n" +
+                "Hybrid Solutions\n" +
+                "\n" +
+                "Some projects are exploring hybrid solutions that combine Layer 1 and Layer 2 scaling. These solutions use Layer 1 for security and decentralization while leveraging Layer 2 for high throughput and low transaction costs.\n" +
+                "\n" +
+                "Off-Chain Agreements\n" +
+                "\n" +
+                "Another approach to scaling is the use of off-chain agreements with on-chain settlement. Parties can transact freely off-chain and only interact with the blockchain to settle the final state. This reduces the burden on the network while still providing the security guarantees of the blockchain.\n" +
+                "\n" +
+                "Scaling Through Interoperability\n" +
+                "\n" +
+                "Interoperability protocols enable different blockchains to communicate and transact with one another. By spreading the transaction load across multiple chains, these protocols can effectively scale the network.\n" +
+                "\n" +
+                "The Future of Ethereum Scaling\n" +
+                "\n" +
+                "The future of Ethereum scaling is a combination of Layer 1 and Layer 2 solutions, along with the continued development of new technologies. The Ethereum community is actively experimenting with various scaling solutions, and the successful implementation of these will be crucial for Ethereum to support a global user base and a new wave of decentralized applications.\n" +
+                "\n" +
+                "In conclusion, scaling Ethereum is a multifaceted challenge that requires a combination of innovative Layer 1 and Layer 2 solutions, improved consensus mechanisms, and new frameworks for off-chain transactions. The community's collaborative effort in addressing these challenges is vital for Ethereum's evolution as a foundational platform for decentralized applications and smart contracts.",
             steps: [
               {
                 name: "Understanding Layer 2 Scaling",
@@ -3982,7 +4015,7 @@ export const availableCourses: Course[] = [
                   {
                     type: "multiple-choice",
                     question:
-                      "What is Layer 2 (L2) scaling in the context of Ethereum, and how does it contribute to improving scalability?",
+                        "What is Layer 2 (L2) scaling in the context of Ethereum, and how does it contribute to improving scalability?",
                     answers: [
                       " Layer 2 scaling enhances the base blockchain's security.",
                       " Layer 2 scaling introduces a new layer of blockchain, completely separate from Ethereum.",
@@ -4049,10 +4082,19 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "Type of L2 Rollups",
-            description: "The two primary types of Layer 2 rollups for Ethereum are Optimistic Rollups and Zero-Knowledge Rollups. Both types aim to improve Ethereum's scalability and reduce transaction fees by processing some transactions off the Ethereum mainnet.\n" +
+            description: "Layer 2 (L2) solutions are pivotal enhancements designed to scale the Ethereum network. They are essentially separate blockchains that extend Ethereum while inheriting its robust security features. Let's delve into the types of L2 rollups, which are among the most promising scaling solutions.\n" +
                 "\n" +
-                "The primary difference between Optimistic Rollups and Zero-Knowledge Rollups lies in their approach to transaction verification. In Optimistic Rollups, transactions are initially processed off-chain, and the system assumes they are valid unless proven otherwise (hence, \"optimistic\"). Verification occurs on the Ethereum mainnet only if a dispute is raised. In contrast, Zero-Knowledge Rollups use cryptographic proofs to validate transactions off-chain and then submit a succinct proof of their validity to the Ethereum mainnet. This approach provides higher security and doesn't rely on the assumption of validity, making Zero-Knowledge Rollups more suitable for applications requiring stronger security guarantees.\n" +
-                "\n",
+                "Rollups are a class of Layer 2 solutions that process and store transaction data on a separate chain, then post the transaction data back to Ethereum. This method leverages the security of Ethereum while offloading the computational burden, allowing for increased transaction throughput and reduced fees. Rollups come in two primary forms: Optimistic Rollups and Zero-Knowledge Rollups.\n" +
+                "\n" +
+                "Optimistic Rollups operate on the principle of optimism - that all transactions are presumed valid unless proven otherwise. They allow for the execution of smart contracts at scale by assuming transactions are valid by default and only running computation, via a fraud proof, in the event of a challenge. This model significantly reduces the on-chain computation burden, as only transaction data is posted to the main chain.\n" +
+                "\n" +
+                "Zero-Knowledge Rollups (ZK-Rollups), on the other hand, use cryptographic proofs to validate transactions. They execute transactions off-chain and generate a validity proof, which is then posted to the Ethereum mainnet. This proof attests to the correctness of the entire batch of transactions, ensuring that only valid state transitions are accepted. ZK-Rollups are particularly noted for their ability to maintain privacy and for their potential to offer even greater scalability improvements than Optimistic Rollups.\n" +
+                "\n" +
+                "Both types of rollups aim to maintain the decentralized and secure ethos of Ethereum while significantly increasing its capacity to process transactions. By batching hundreds of transactions into a single one on the main chain, they spread the cost of Layer 1 fees across many users, making transactions more affordable.\n" +
+                "\n" +
+                "In addition to these, there are also Generalized Layer 2s, which function similarly to Ethereum but at a lower cost, and Application-Specific Layer 2s, which are optimized for particular use cases to bring enhanced performance.\n" +
+                "\n" +
+                "As the Ethereum ecosystem continues to evolve, Layer 2 solutions like rollups are becoming increasingly crucial in addressing the blockchain trilemma, striking a balance between decentralization, security, and scalability.",
             steps: [
               {
                 name: "Exploring Layer 2 Rollup Types",
@@ -4060,7 +4102,7 @@ export const availableCourses: Course[] = [
                   {
                     type: "multiple-choice",
                     question:
-                      "What are the two primary types of Layer 2 rollups for Ethereum?",
+                        "What are the two primary types of Layer 2 rollups for Ethereum?",
                     answers: [
                       " Generalized and specialized rollups",
                       " zk and zk-Rollups",
@@ -4116,9 +4158,27 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Optimistic Rollups",
-            description: "The key feature of optimistic rollups is their approach to transaction validation. Optimistic rollups process transactions off-chain and assume their validity by default. Instead of immediately executing all transactions on the Ethereum mainnet, they conduct most of the processing and validation off-chain, resulting in faster transaction confirmations.\n" +
+            description: "Optimistic Rollups are a transformative Layer 2 scaling solution designed to alleviate the congestion on the Ethereum mainnet by handling transactions off-chain and periodically submitting them to Ethereum. This technology is named 'optimistic' because it operates under the assumption that all transactions are valid by default, and only verifies them if a challenge is raised.\n" +
                 "\n" +
-                "The primary advantage of optimistic rollups is their efficiency in terms of scaling Ethereum. By allowing most transactions to be processed off-chain without immediate verification on the mainnet, optimistic rollups significantly increase Ethereum's transaction throughput. This leads to reduced congestion, faster confirmation times, and lower transaction fees, providing a more efficient and cost-effective user experience.\n",
+                "How Optimistic Rollups Work:\n" +
+                "Optimistic Rollups run parallel to the main Ethereum chain, on a separate layer, where they execute transactions and smart contracts. These rollups bundle (or 'roll up') hundreds of transactions into a single transaction. The state of these transactions is recorded on the L2, but only the transaction data without execution proofs is posted to the main Ethereum chain. This is where the 'optimism' comes in: it is assumed that all transactions are valid unless proven otherwise.\n" +
+                "\n" +
+                "Fraud Proofs:\n" +
+                "The security model of Optimistic Rollups relies on fraud proofs. If someone believes a transaction is fraudulent, they can submit a fraud proof. The system then verifies the proof by executing the transaction's computation on-chain. If the transaction is indeed invalid, it is rejected, and the original submitter is penalized. This dispute resolution mechanism is a critical component that ensures the integrity of the rollup.\n" +
+                "\n" +
+                "Benefits of Optimistic Rollups:\n" +
+                "\n" +
+                "Scalability: By moving computation and state storage off-chain, Optimistic Rollups can significantly increase the number of transactions per second (TPS) that Ethereum can handle.\n" +
+                "Lower Fees: As transactions are batched together, the cost of gas fees is amortized over many transactions, leading to lower fees for individual users.\n" +
+                "EVM Compatibility: Optimistic Rollups are compatible with the Ethereum Virtual Machine (EVM), which means that existing smart contracts and tools can be used without any changes.\n" +
+                "Decentralization: They maintain a high degree of decentralization, as the rollup chain is secured by the underlying Ethereum network.\n" +
+                "Drawbacks:\n" +
+                "One notable drawback of Optimistic Rollups is the 'challenge period,' a waiting time for withdrawals to ensure that fraudulent transactions can be challenged. This can lead to delays when moving assets back to the Ethereum mainnet.\n" +
+                "\n" +
+                "Current State and Future:\n" +
+                "Optimistic Rollups are already in use with several projects and are proving to be a viable option for scaling Ethereum. As they continue to develop, they are expected to integrate more deeply with Ethereum, offering a seamless user experience while maintaining the network's security and decentralization.\n" +
+                "\n" +
+                "In summary, Optimistic Rollups represent a significant step forward in the quest to scale Ethereum. They offer a practical solution to the blockchain trilemma by providing a balance between scalability, security, and decentralization, enabling Ethereum to support a much larger ecosystem of decentralized applications.",
             steps: [
               {
                 name: "Comparing Optimistic and Zero-Knowledge Rollups",
@@ -4126,7 +4186,7 @@ export const availableCourses: Course[] = [
                   {
                     type: "multiple-choice",
                     question:
-                      "What is the primary difference between optimistic and zero-knowledge rollups?",
+                        "What is the primary difference between optimistic and zero-knowledge rollups?",
                     answers: [
                       " Optimistic rollups always require zero-knowledge proofs for transactions.",
                       " Zero-knowledge rollups assume transactions are valid without verification.",
@@ -4182,10 +4242,24 @@ export const availableCourses: Course[] = [
           },
           {
             name: "ZK Rollups",
-            description: "Zk-rollups differ from optimistic rollups in their approach to transaction validation. While optimistic rollups initially assume the validity of transactions and rely on the Ethereum mainnet to validate only when a dispute arises, zk-rollups use cryptographic proofs (zero-knowledge proofs) to validate transactions off-chain, providing an inherent and immediate assurance of transaction validity without requiring on-chain verification.\n" +
+            description: "Zero-Knowledge Rollups (ZK-Rollups) are a cutting-edge Layer 2 scaling solution that enhances the throughput of the Ethereum network by processing transactions off-chain and then posting cryptographic proofs to the main chain. These proofs, known as zero-knowledge proofs, validate the correctness of all transactions in a batch without revealing any underlying data, ensuring privacy and security.\n" +
                 "\n" +
-                "The primary benefit of zk-rollups lies in their enhanced security and privacy features. By using zero-knowledge proofs for transaction validation, zk-rollups offer a higher level of trust and security, as the validity of transactions is cryptographically proven. Additionally, zk-rollups provide improved privacy for users, as sensitive transaction data remains confidential while still benefiting from the scalability and cost-efficiency of Layer 2 solutions.\n" +
-                "\n",
+                "How ZK-Rollups Work:\n" +
+                "ZK-Rollups bundle a large number of off-chain transactions into a single transaction. Instead of posting all transaction data on the blockchain, they generate and submit a cryptographic proof—such as a SNARK (Succinct Non-Interactive Argument of Knowledge) or a STARK (Scalable Transparent Argument of Knowledge)—to the main chain. This proof confirms that the batch of transactions is valid and that the resulting state after these transactions is correct.\n" +
+                "\n" +
+                "Benefits of ZK-Rollups:\n" +
+                "\n" +
+                "Enhanced Scalability: By moving computation off-chain and reducing the on-chain data footprint, ZK-Rollups can process thousands of transactions per second, far exceeding the capacity of the Ethereum mainnet.\n" +
+                "Increased Privacy: The zero-knowledge proof mechanism allows transaction validation without revealing any transaction details, thus maintaining user privacy.\n" +
+                "Reduced Gas Costs: With transactions batched together, the cost of gas fees is distributed across many transactions, significantly lowering the cost per transaction.\n" +
+                "Immediate Finality: Unlike Optimistic Rollups, ZK-Rollups do not require a challenge period, as the validity proof itself guarantees the correctness of transactions, leading to faster finality.\n" +
+                "Challenges and Limitations:\n" +
+                "While ZK-Rollups offer many advantages, they also come with challenges. The generation of zero-knowledge proofs is computationally intensive and can be more complex to implement than Optimistic Rollups. Additionally, supporting general smart contract execution is more difficult with ZK-Rollups, although advancements are being made in this area.\n" +
+                "\n" +
+                "Current and Future Developments:\n" +
+                "ZK-Rollups are rapidly evolving, with new techniques being developed to make proof generation more efficient and to expand the types of computations they can support. Projects are also working on ways to make ZK-Rollups more accessible to developers, such as by improving tooling and compatibility with the Ethereum Virtual Machine (EVM).\n" +
+                "\n" +
+                "In conclusion, ZK-Rollups are a promising solution for scaling Ethereum. They offer a combination of high throughput, low costs, and privacy preservation, which are critical for the widespread adoption of blockchain technology. As the technology matures, it is expected to play a central role in the next generation of decentralized applications.",
             steps: [
               {
                 name: "Distinguishing zk-Rollups from Optimistic Rollups",
@@ -4193,7 +4267,7 @@ export const availableCourses: Course[] = [
                   {
                     type: "multiple-choice",
                     question:
-                      "What distinguishes zk-rollups from optimistic rollups?",
+                        "What distinguishes zk-rollups from optimistic rollups?",
                     answers: [
                       " zk-rollups assume transaction validity.",
                       " zk-rollups require on-chain execution.",
