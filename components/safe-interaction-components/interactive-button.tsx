@@ -59,12 +59,12 @@ export const stepToSafeFunction = (
   let prefix = "interaction-safe";
   switch (stepName) {
     case `${prefix}-deploy`:
-      return deploySafeAndReturnAddress;
+      return makeSafeTransferSingleSign;
     case `${prefix}-transfer`:
-      return deploySafeAndReturnAddress;
+      return makeSafeTransferSingleSign;
     case `${prefix}-addSigner`:
-      return deploySafeAndReturnAddress;
+      return makeSafeTransferSingleSign;
     default:
-      return deploySafeAndReturnAddress;
+      return makeSafeTransferSingleSign;
   }
 };
