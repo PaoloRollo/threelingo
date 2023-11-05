@@ -17,6 +17,7 @@
     "@safe-global/safe-core-sdk-types": "^2.3.0",
     "@squirrel-labs/peanut-sdk": "^0.3.4",
     "@supabase/supabase-js": "^2.38.4",
+    "@vercel/analytics": "^1.1.1",
     "@walletconnect/notify-client": "^0.14.4",
     "@walletconnect/types": "^2.10.4",
     "@web3auth/base": "^4.3.0",
