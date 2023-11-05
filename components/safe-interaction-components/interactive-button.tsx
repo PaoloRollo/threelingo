@@ -3,7 +3,7 @@ import { useState } from "react";
 import { deploySafeAndReturnAddress, makeSafeTransferSingleSign, addSignAndChangeThreshold } from "@/lib/safe/deploySafe";
 import { Signer } from "ethers";
 import { useWeb3Auth } from "@/hooks/use-web3-auth";
-import { deployERC20SmartContract } from "@/lib/smart-contracts";
+import { deployERC20SmartContract, readERC20SmartContract, transferERC20ToSmartContract, receiveFunds } from "@/lib/smart-contracts";
 
 export default function InteractiveButton({
   func,
@@ -61,11 +61,11 @@ export const stepToSafeFunction = (
   let prefix = "interaction-safe";
   switch (stepName) {
     case `${prefix}-deploy`:
-      return makeSafeTransferSingleSign;
+      return addSignAndChangeThreshold;
     case `${prefix}-transfer`:
-      return makeSafeTransferSingleSign;
+      return addSignAndChangeThreshold;
     case `${prefix}-addSigner`:
-      return makeSafeTransferSingleSign;
+      return addSignAndChangeThreshold;
     default:
       return makeSafeTransferSingleSign;
   }
@@ -77,16 +77,16 @@ export const stepToPolygonFunction = (
   let prefix = "interaction-p-zkevm";
   switch (stepName) {
     case `${prefix}-receive`:
-      return deployERC20SmartContract;
+      return receiveFunds;
     case `${prefix}-deploy`:
       return deployERC20SmartContract;
     case `${prefix}-read`:
-      return deployERC20SmartContract;
+      return readERC20SmartContract;
     case `${prefix}-write`:
-      return deployERC20SmartContract;
+      return transferERC20ToSmartContract;
     case `${prefix}-view`:
-      return deployERC20SmartContract;
+      return readERC20SmartContract;
     default:
-      return deployERC20SmartContract;
+      return readERC20SmartContract;
   }
 };

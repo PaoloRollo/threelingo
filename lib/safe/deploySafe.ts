@@ -29,7 +29,7 @@ export async function deploySafeAndReturnAddress(): Promise<boolean> {
 
 export async function makeSafeTransferSingleSign(signer?: Signer): Promise<boolean> {
   try {
-    const amount = ethers.utils.parseUnits("0.001", "ether").toString();
+    const amount = ethers.utils.parseUnits("0.00001", "ether").toString();
 
     const userAccount = useUserStore.getState();
     const safes = userAccount.safes;
@@ -46,6 +46,7 @@ export async function makeSafeTransferSingleSign(signer?: Signer): Promise<boole
             safeAddress: safe
           })
           //const safeSdk = await safeSdkOwner2.connect({ ethAdapter, safeAddress: safe })
+          console.log(safe, "here")
 
           // for relayer purpose
           const safeTransactionData: MetaTransactionData[] = [];
@@ -60,6 +61,7 @@ export async function makeSafeTransferSingleSign(signer?: Signer): Promise<boole
           const safeTransaction = await safeSdk.createTransaction({
             safeTransactionData,
           });
+          console.log("here")
 
           const signedSafeTx = await safeSdk.signTransaction(safeTransaction);
 
@@ -69,6 +71,7 @@ export async function makeSafeTransferSingleSign(signer?: Signer): Promise<boole
             txServiceUrl,
             ethAdapter: ethAdapter,
           });
+          console.log("here")
 
           const safeTxHash = await safeSdk.getTransactionHash(safeTransaction);
           const executeTxResponse = await safeSdk.executeTransaction(
@@ -103,7 +106,7 @@ export async function addSignAndChangeThreshold(signer?: Signer): Promise<boolea
           });
 
           const params: AddOwnerTxParams = {
-            ownerAddress: "0xD5E31DB94a4d638e70c0D2B4f875316712Ae7C06",
+            ownerAddress: "0xce15bb3758550e2feee57eb99a241d3762d9a34c",
             threshold: 2,
           };
 
