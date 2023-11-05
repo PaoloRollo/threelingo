@@ -15,6 +15,7 @@ import { useCourseStore, useStepModalStore } from "@/lib/store";
 import { Question } from "@/lib/interfaces";
 import { useUserStore } from "@/lib/store/user-store";
 import InteractiveButton, {
+  stepToPolygonFunction,
   stepToSafeFunction,
 } from "@/components/safe-interaction-components/interactive-button";
 
@@ -411,6 +412,37 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
                       ) && (
                         <InteractiveButton
                           func={stepToSafeFunction(
+                            step.questions[currentQuestion].type
+                          )}
+                          onSuccess={() => {
+                            setCorrectResponses(correctResponses + 1);
+                            setTimeout(() => {
+                              if (
+                                currentQuestion + 1 ===
+                                step.questions.length
+                              ) {
+                                setStepFinished(true);
+                                onFinish().then(() => {
+                                  reset();
+                                  toggleStepModal();
+                                });
+                              } else {
+                                setCurrentQuestion(currentQuestion + 1);
+                              }
+                              setGapFill("");
+                              setLatestCorrect(null);
+                              setLatestAnswer(null);
+                              setLoading(false);
+                            }, 2000);
+                          }}
+                          onFailure={() => "ERROR"}
+                        ></InteractiveButton>
+                      )}
+                      {step.questions[currentQuestion].type.includes(
+                        "interaction-p-zkevm"
+                      ) && (
+                        <InteractiveButton
+                          func={stepToPolygonFunction(
                             step.questions[currentQuestion].type
                           )}
                           onSuccess={() => {
