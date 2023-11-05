@@ -71,6 +71,13 @@ export default function ProfileContent({
 
   const { subscription } = useSubscription();
   const { messages } = useMessages();
+  console.log(
+    "SUBSCRIPTION",
+    isSubscribing,
+    isSubscribed,
+    subscription,
+    messages
+  );
 
   return (
     <section
