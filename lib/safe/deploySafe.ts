@@ -1,5 +1,5 @@
 import {useUserStore} from "../store/user-store";
-import Safe, {EthersAdapter} from "@safe-global/protocol-kit";
+import Safe, {EthersAdapter, AddOwnerTxParams} from "@safe-global/protocol-kit";
 import {ethers, Signer} from "ethers";
 import {MetaTransactionData, OperationType} from "@safe-global/safe-core-sdk-types";
 import SafeApiKit from "@safe-global/api-kit";
@@ -27,27 +27,25 @@ export async function deploySafeAndReturnAddress(): Promise<boolean> {
     }
 }
 
-export async function makeSafeTransferSingleSign(signer: Signer): Promise<boolean> {
+export async function makeSafeTransferSingleSign(signer?: Signer): Promise<boolean> {
   try {
     const amount = ethers.utils.parseUnits("0.001", "ether").toString();
-    const chainId = 1442;
 
     const userAccount = useUserStore.getState();
-    const safes = userAccount.safes.toString();
+    const safes = userAccount.safes;
     const safe = safes[0];
 
     if (safe) {
           const ethAdapter = new EthersAdapter({
             ethers,
-            signerOrProvider: signer,
+            signerOrProvider: signer as Signer,
           });
 
-          const safeSdkOwner2 = await Safe.create({
+          const safeSdk = await Safe.create({
             ethAdapter: ethAdapter,
             safeAddress: safe
           })
-
-          const safeSdk = await safeSdkOwner2.connect({ ethAdapter, safeAddress: safe })
+          //const safeSdk = await safeSdkOwner2.connect({ ethAdapter, safeAddress: safe })
 
           // for relayer purpose
           const safeTransactionData: MetaTransactionData[] = [];
@@ -84,30 +82,22 @@ export async function makeSafeTransferSingleSign(signer: Signer): Promise<boolea
     throw error;
   }
 }
-/*
-export async function addSignAndChangeThreshold(): Promise<boolean> {
-  try {
-    const chainId = 1442;
 
-    const walletClient = await getWalletClient({ chainId });
+export async function addSignAndChangeThreshold(signer?: Signer): Promise<boolean> {
+  try {
 
     const userAccount = useUserStore.getState();
-    const safes = userAccount.safes.toString();
+    const safes = userAccount.safes;
     const safe = safes[0];
 
     if (safe) {
-      if (walletClient !== null) {
-        const ethersProvider = toEthersWeb3ProviderWithSigner(walletClient);
-
-        if (ethersProvider) {
-          const newSigner = ethersProvider.getSigner();
 
           const ethAdapter = new EthersAdapter({
             ethers,
-            signerOrProvider: newSigner,
+            signerOrProvider: signer as Signer,
           });
 
-          const safeSDK = await Safe.create({
+          const safeSdk = await Safe.create({
             ethAdapter,
             safeAddress: safe,
           });
@@ -117,11 +107,11 @@ export async function addSignAndChangeThreshold(): Promise<boolean> {
             threshold: 2,
           };
 
-          const safeTransaction = await safeSDK.createAddOwnerTx(params);
+          const safeTransaction = await safeSdk.createAddOwnerTx(params);
 
           // Create a Safe transaction with the provided parameters
 
-          const signedSafeTx = await safeSDK.signTransaction(safeTransaction);
+          const signedSafeTx = await safeSdk.signTransaction(safeTransaction);
 
           const txServiceUrl =
             "https://safe-transaction-gnosis-chain.safe.global/";
@@ -130,60 +120,16 @@ export async function addSignAndChangeThreshold(): Promise<boolean> {
             ethAdapter: ethAdapter,
           });
 
-          const safeTxHash = await safeSDK.getTransactionHash(safeTransaction);
-          const executeTxResponse = await safeSDK.executeTransaction(
+          const safeTxHash = await safeSdk.getTransactionHash(safeTransaction);
+          const executeTxResponse = await safeSdk.executeTransaction(
             safeTransaction
           );
           const receipt = await executeTxResponse.transactionResponse?.wait();
-        }
-      }
     }
-
     return true;
-  } catch (error) {
+  }
+  catch (error) {
     console.error("Error deploying Safe:", error);
     throw error;
   }
 }
-*/
-/*
-if (relayer) {
-                        const safeSingletonContract = await getSafeContract({
-                            ethAdapter,
-                            safeVersion: await safeSDK.getContractVersion(),
-                        });
-
-                        const encodedTransaction = safeSingletonContract.encode(
-                            "execTransaction",
-                            [
-                                signedSafeTx.data.to,
-                                signedSafeTx.data.value,
-                                signedSafeTx.data.data,
-                                signedSafeTx.data.operation,
-                                signedSafeTx.data.safeTxGas,
-                                signedSafeTx.data.baseGas,
-                                signedSafeTx.data.gasPrice,
-                                signedSafeTx.data.gasToken,
-                                signedSafeTx.data.refundReceiver,
-                                signedSafeTx.encodedSignatures(),
-                            ]
-                        );
-                        const relayKit = new GelatoRelayPack(
-                            process.env.GELATO_RELAY_API_KEY!
-                        );
-
-                        const relayTransaction: RelayTransaction = {
-                            target: safe.address,
-                            encodedTransaction,
-                            chainId,
-                            options: {
-                                gasLimit: "100000",
-                                isSponsored: true,
-                            },
-                        };
-
-                        const response = await relayKit.relayTransaction(relayTransaction);
-
-                        return response.taskId;
-                    }
-*/
