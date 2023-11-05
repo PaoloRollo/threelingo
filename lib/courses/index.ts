@@ -4,8 +4,7 @@ export const availableCourses: Course[] = [
   {
     id: "1",
     name: "Introduction",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis urna dignissim, pulvinar quam quis, cursus orci. Pellentesque blandit tellus a neque tincidunt placerat. Sed lacinia eleifend neque vitae interdum. Nullam at leo justo. Pellentesque sollicitudin tortor velit, vitae imperdiet lectus malesuada sit amet. Ut ligula ligula, volutpat et tortor ut, aliquet efficitur eros. Sed condimentum fermentum vulputate. Donec eu eros maximus, scelerisque tellus sit amet, vulputate turpis. Fusce mattis odio id blandit maximus. Morbi quis ultricies lacus. Nam ullamcorper nunc erat, in rhoncus lectus scelerisque quis.",
+    description: "Dive into the revolutionary world of decentralized technology with our comprehensive course that demystifies the intricate workings of blockchain and Web3. This curriculum is meticulously crafted to guide you through the core principles of blockchain technology, including the architecture of various wallets, the mechanics of transactions, and the transformative potential of smart contracts. You'll gain a robust understanding of how these elements come together to create a secure and transparent ecosystem that's reshaping the digital landscape. The course also delves into the philosophy underpinning Web3, exploring the pivotal concepts of privacy, security, trust, and transparency. We'll discuss the profound social impact of decentralized systems, examining how they empower individuals and foster a new paradigm of internet usage that prioritizes user control and equitable access. Whether you're a budding entrepreneur, a tech enthusiast, or simply curious about the future of the internet, this course will equip you with the knowledge to navigate and contribute to the burgeoning world of blockchain and Web3.",
     image: "/metamask.png",
     nftImage: "/course-1-nft.png",
     sections: [
