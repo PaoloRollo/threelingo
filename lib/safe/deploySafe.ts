@@ -33,7 +33,7 @@ export async function makeSafeTransferSingleSign(signer?: Signer): Promise<boole
 
     const userAccount = useUserStore.getState();
     const safes = userAccount.safes;
-    const safe = safes[0];
+    const safe = safes[safes.length-1];
 
     if (safe) {
           const ethAdapter = new EthersAdapter({
@@ -91,7 +91,7 @@ export async function addSignAndChangeThreshold(signer?: Signer): Promise<boolea
 
     const userAccount = useUserStore.getState();
     const safes = userAccount.safes;
-    const safe = safes[0];
+    const safe = safes[safes.length-1];
 
     if (safe) {
 
