@@ -49,9 +49,7 @@ export default function TopBar() {
       const res = await fetch(`/api/courses`);
       const data = await res.json();
       setCourses(data.result);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (

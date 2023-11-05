@@ -11,7 +11,7 @@ export default function LearnPage() {
   // const { address } = useAccount();
   const [loading, setLoading] = useState(true);
   const address = useUserStore((state) => state.address);
-  console.log(address);
+
   const courses = useUserCoursesStore((state) => state.courses);
   const setCourses = useUserCoursesStore((state) => state.setCourses);
 
@@ -28,7 +28,6 @@ export default function LearnPage() {
       const data = await res.json();
       setCourses(data.result);
     } catch (error) {
-      console.log(error);
     } finally {
       setLoading(false);
     }

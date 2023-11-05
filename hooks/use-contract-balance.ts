@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import {useUserStore} from "@/lib/store/user-store";
-import {CourseTokenID} from "@/lib/peanut";
+import { useUserStore } from "@/lib/store/user-store";
+import { CourseTokenID } from "@/lib/peanut";
 
 function useContractBalance(contractAddress: string) {
   const [balance, setBalance] = useState<string | null>(null);
@@ -26,7 +26,6 @@ function useContractBalance(contractAddress: string) {
             [CourseTokenID.WEB3_INTRODUCTION, CourseTokenID.EOA_SMART_ACCOUNTS]
           );
           setBalance(balance.toString());
-          console.log(balance.toString());
         } catch (error) {
           console.error("Error fetching balance:", error);
           setBalance(null);

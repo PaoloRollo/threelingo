@@ -41,7 +41,6 @@ export default function Page({ params }: { params: { courseId: string } }) {
   // const [completedSteps, setCompletedSteps] = useState<string[]>([]);
 
   useEffect(() => {
-    console.log(course, address);
     if (!course && address) {
       fetchCourse();
     }

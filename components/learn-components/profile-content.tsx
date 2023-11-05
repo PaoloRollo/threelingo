@@ -3,7 +3,7 @@ import { availableCourses } from "@/lib/courses";
 import { useUserStore } from "@/lib/store/user-store";
 import { sliceAddress } from "@/lib/utils";
 import { Divider, Image } from "@nextui-org/react";
-import { BellIcon, BellOffIcon, ClockIcon } from "lucide-react";
+import { BellIcon, BellOffIcon, ClockIcon, Link2Icon } from "lucide-react";
 import { checksumAddress } from "viem";
 import useContractBalance from "@/hooks/use-contract-balance";
 import {
@@ -15,6 +15,7 @@ import {
 } from "@web3inbox/widget-react";
 import { useCallback, useEffect } from "react";
 import { useWeb3Auth } from "@/hooks/use-web3-auth";
+import { usePeanutModalStore } from "@/lib/store/peanut-modal-store";
 
 export default function ProfileContent({
   params,
@@ -31,7 +32,9 @@ export default function ProfileContent({
   const { web3Auth, provider } = useWeb3Auth();
   const { account, setAccount, isRegistered, isRegistering, register } =
     useW3iAccount();
-
+  const togglePeanutModal = usePeanutModalStore(
+    (state) => state.togglePeanutModal
+  );
   const loggedAddress = useUserStore((state) => state.address);
   const balance = useContractBalance(
     process.env.NEXT_PUBLIC_COURSE_TOKEN_ADDRESS as string
@@ -60,8 +63,6 @@ export default function ProfileContent({
   const { isSubscribed, isSubscribing, subscribe, unsubscribe } =
     useManageSubscription();
 
-  console.log(isSubscribed);
-
   const performSubscribe = useCallback(async () => {
     // Register again just in case
     await performRegistration();
@@ -82,26 +83,35 @@ export default function ProfileContent({
             {address && sliceAddress(checksumAddress(address as `0x${string}`))}
           </h1>
         </div>
-        {address.toLowerCase() === loggedAddress?.toLowerCase() &&
-          !isSubscribed && (
-            <BellIcon
+        <div className="flex items-center space-x-2">
+          {address.toLowerCase() === loggedAddress?.toLowerCase() && (
+            <Link2Icon
               size={24}
               className="text-black/40"
-              onClick={() => {
-                performSubscribe();
-              }}
+              onClick={() => togglePeanutModal()}
             />
           )}
-        {address.toLowerCase() === loggedAddress?.toLowerCase() &&
-          isSubscribed && (
-            <BellOffIcon
-              size={24}
-              className="text-black/40"
-              onClick={() => {
-                unsubscribe();
-              }}
-            />
-          )}
+          {address.toLowerCase() === loggedAddress?.toLowerCase() &&
+            !isSubscribed && (
+              <BellIcon
+                size={24}
+                className="text-black/40"
+                onClick={() => {
+                  performSubscribe();
+                }}
+              />
+            )}
+          {address.toLowerCase() === loggedAddress?.toLowerCase() &&
+            isSubscribed && (
+              <BellOffIcon
+                size={24}
+                className="text-black/40"
+                onClick={() => {
+                  unsubscribe();
+                }}
+              />
+            )}
+        </div>
       </div>
       <div className="flex space-x-2 mt-4 text-black/40">
         <ClockIcon size={24} />

@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
     safeAccountConfig,
     saltNonce: customNonce,
   });
-  console.log("deploy");
+
   const safeAddress = await safe.getAddress();
   const transferAmount = ethers.utils.parseEther("0.0002");
   const tx = await signerOrProvider.sendTransaction({

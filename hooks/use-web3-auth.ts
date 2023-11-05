@@ -11,7 +11,7 @@ import {
 } from "@web3auth/base";
 import { useRouter } from "next/navigation";
 import { ethers } from "ethers";
-import {useUserStore} from "@/lib/store/user-store";
+import { useUserStore } from "@/lib/store/user-store";
 
 export const useWeb3Auth = (automaticSignIn: boolean = false) => {
   const [web3Auth, setWeb3Auth] = useState<Web3AuthModalPack | null>(null);
@@ -46,7 +46,6 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
         const userInfo = await web3Auth.getUserInfo();
         setUser(userInfo);
         router.push("/learn");
-        console.log(eoa, safes, userInfo);
       });
 
       web3Auth.subscribe(ADAPTER_EVENTS.DISCONNECTED, () => {
@@ -134,7 +133,7 @@ export const useWeb3Auth = (automaticSignIn: boolean = false) => {
     setSafes(safes || []);
     const userInfo = await web3Auth.getUserInfo();
     setUser(userInfo);
-    console.log("hereeeee");
+
     return { eoa, safes };
   };
 

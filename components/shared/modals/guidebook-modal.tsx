@@ -25,7 +25,7 @@ export const GuidebookModal = ({
   onOpenChange,
 }: GuidebookModalProps) => {
   const target = useGuidebookModalStore((state) => state.target);
-  console.log(target);
+
   const toggleGuidebook = useGuidebookModalStore(
     (state) => state.toggleGuidebookModal
   );

@@ -28,7 +28,7 @@ export default function Page({ params }: { params: { courseId: string } }) {
   const setDbStep = useCourseStore((state) => state.setDbStep);
   const setDbUnit = useCourseStore((state) => state.setDbUnit);
   const setDbSection = useCourseStore((state) => state.setDbSection);
-  console.log(currentSection, currentUnit, currentStep);
+
   const notEnrolled =
     currentSection === 0 && currentUnit === 0 && currentStep === 0;
 

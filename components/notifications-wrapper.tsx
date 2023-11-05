@@ -30,7 +30,7 @@
 //         } else {
 //           // New subscription was successfully created.
 //           // Inform the user and/or update app state to reflect the new subscription.
-//           console.log(`Subscribed successfully.`);
+//
 //         }
 //       });
 
@@ -52,7 +52,7 @@
 //         } else {
 //           // Subscription's scope was updated successfully.
 //           // Inform the user and/or update app state to reflect the updated subscription.
-//           console.log(`Successfully updated subscription scope.`);
+//
 //         }
 //       });
 //     }
