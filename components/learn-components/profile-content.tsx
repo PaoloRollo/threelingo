@@ -43,7 +43,7 @@ export default function ProfileContent({
   useEffect(() => {
     if (!address) return;
     // Convert the address into a CAIP-10 blockchain-agnostic account ID and update the Web3Inbox SDK with it
-    setAccount(`eip155:1:${address}`);
+    setAccount(`eip155:1101:${address}`);
   }, [address, setAccount]);
 
   const performRegistration = useCallback(async () => {

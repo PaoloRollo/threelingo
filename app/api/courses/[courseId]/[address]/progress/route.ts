@@ -131,7 +131,7 @@ export async function PUT(
                   icon: "https://threelingo.vercel.app/threelingo_logo.png",
                   url: "https://threelingo.vercel.app",
                 },
-                accounts: [`eip155:1:${params.address}`],
+                accounts: [`eip155:1101:${params.address}`],
               }),
             }
           );
