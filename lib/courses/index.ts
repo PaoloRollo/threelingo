@@ -940,6 +940,612 @@ export const availableCourses: Course[] = [
           },
         ],
       },
+      {
+        name: "Web3 Principles and Values",
+        units: [
+          {
+            name: "The Philosophy of Web3",
+            steps: [
+              {
+                name: "Using Safe Modules",
+                questions: [
+                  {
+                    type: "multiple-choice",
+                    question: "Which is the correct method to add a Module interacting with the Module Manager?",
+                    answers: [
+                      "enableModule",
+                      "addModule",
+                      "insertModule",
+                      "removeModule"
+                    ],
+                    correctAnswer: 0
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "How to execute a transaction from a module? ____TransactionFromModule",
+                    correctAnswer: "exec"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "Choose the correct one",
+                    answers: [
+                      "If you have a Module and you want to use the Module’s logic you have to call execTransactionFromModule on the Module",
+                      "If you have a Module and you want to use the Module’s logic you have to call execTransactionFromModule on the Safe",
+                      "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Safe",
+                      "If you have a Module and you want to use the Module’s logic you have to call execTransaction on the Module"
+                    ],
+                    correctAnswer: 1
+                  }
+                ]
+              },
+              {
+                name: "Ownership and Control",
+                questions: [
+                  {
+                    type: "true-false",
+                    question: "Web3 empowers individuals to have full ownership and control over their digital assets and data.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "How does Web3 technology ensure users maintain control over their digital identities?",
+                    answers: [
+                      " Through centralized databases.",
+                      " By using non-fungible tokens (NFTs).",
+                      " Through self-sovereign identity systems",
+                      " By requiring government-issued IDs for verification."
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "true-false",
+                    question: "In Web3, users can transfer ownership of digital assets without the need for intermediaries.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "The concept of self-sovereignty in Web3 refers to the user's ability to control access to their digital assets and personal data.",
+                    correctAnswer: "self-sovereignty"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What is the significance of private keys in the context of ownership in Web3?",
+                    answers: [
+                      " They are shared publicly to prove ownership.",
+                      " They are used by central authorities to manage user accounts.",
+                      " They are cryptographic keys that users must keep private to secure their assets.",
+                      " They are irrelevant to the concept of ownership."
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "true-false",
+                    question: "Smart contracts on Web3 platforms can be used to automate ownership transfer without intermediaries.",
+                    correctAnswer: true
+                  }
+                ]
+              },
+              {
+                name: "Open Source and Collaboration",
+                questions: [
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Collaboration and innovation in Web3 are fueled by the use of open-source development and sharing of knowledge.",
+                    correctAnswer: "open-source"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What is the advantage of open-source software in Web3?",
+                    answers: [
+                      " It allows for proprietary control over the software.",
+                      " It encourages community involvement and collective problem-solving",
+                      " It restricts access to the code to a select few developers.",
+                      " It ensures that only paid users can access the technology."
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "Collaboration in Web3 often leads to the development of standards and protocols that benefit the entire ecosystem.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Open-source development in Web3 is crucial because it allows for peer review and improvement by a diverse group of contributors.",
+                    correctAnswer: "peer review"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "How does open-source contribute to the security of Web3 projects?",
+                    answers: [
+                      " By keeping the code secret and secure.",
+                      " By allowing a broad community to audit and improve the code.",
+                      " By restricting access to the code to increase security.",
+                      " By requiring payment for access to the source code."
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "The collaborative nature of Web3 development hinders innovation due to too many conflicting ideas.",
+                    correctAnswer: false
+                  }
+                ]
+              },
+              {
+                name: "The Importance of Privacy",
+                questions: [
+                  {
+                    type: "multiple-choice",
+                    question: "What is one of the core principles of Web3 regarding user privacy?",
+                    answers: [
+                      " Data monetization",
+                      " Complete transparency",
+                      " User control over personal data",
+                      " Centralized data storage"
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What role does privacy play in the value proposition of Web3?",
+                    answers: [
+                      " It is incidental and not a primary concern.",
+                      " It is central, as Web3 seeks to give users control over their data.",
+                      " It is discouraged to maintain transparency.",
+                      " It is only considered important for certain applications, not all."
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "Privacy in Web3 is achieved through public ledgers that make all transaction details visible to everyone.",
+                    correctAnswer: false
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Privacy-enhancing technologies like zero-knowledge proofs are integral to Web3, allowing users to engage in transactions without revealing sensitive information.",
+                    correctAnswer: "zero-knowledge proofs"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "Which of the following is a privacy-focused feature commonly found in Web3 applications?",
+                    answers: [
+                      " Mandatory data sharing with third parties.",
+                      " Public display of all user activities.",
+                      " Use of zero-knowledge proofs to facilitate private transactions.",
+                      " Centralized control over user data."
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "true-false",
+                    question: "Anonymity and privacy are the same in the context of Web3.",
+                    correctAnswer: false
+                  }
+                ]
+              }
+            ],
+          },
+          {
+            name: "Privacy and Security",
+            steps: [
+              {
+                name: "Privacy in Web3",
+                questions: [
+                  {
+                    type: "true-false",
+                    question: "True or False: Web3 technologies enhance user privacy through advanced cryptographic techniques.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "Which feature of blockchain technology is most crucial for privacy in Web3?",
+                    answers: [
+                      " Public transaction ledgers.",
+                      " The ability to create anonymous transactions.",
+                      " Centralized user databases.",
+                      " Transparent smart contracts."
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "Zero-knowledge proofs are a method that can be used in Web3 to enhance privacy.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Privacy in Web3 is often enhanced by ___________, which allows users to prove the validity of information without revealing the information itself.",
+                    correctAnswer: "zero-knowledge proofs"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What is the role of encryption in Web3 privacy?",
+                    answers: [
+                      " It makes transactions slower and more expensive.",
+                      " It provides a way to secure data and communications.",
+                      " It is used to publicly display sensitive information.",
+                      " It is not relevant to privacy in Web3."
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "In Web3, privacy is optional and can be waived by users if they prefer transparency.",
+                    correctAnswer: true
+                  }
+                ]
+              },
+              {
+                name: "Security and Auditing",
+                questions: [
+                  {
+                    type: "multiple-choice",
+                    question: "Why is smart contract auditing essential in Web3 development?",
+                    answers: [
+                      " To increase transaction speed",
+                      " To reduce gas fees",
+                      " To ensure the safety and security of smart contracts",
+                      " To centralize control over contracts"
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What is the purpose of a smart contract audit in Web3?",
+                    answers: [
+                      " To ensure compliance with centralized regulations.",
+                      " To identify and fix security vulnerabilities.",
+                      " To assess the contract's performance and efficiency.",
+                      " To determine the profitability of the smart contract."
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "Regular security audits are unnecessary for smart contracts once they are deployed on the blockchain.",
+                    correctAnswer: false
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Smart contract audits are a critical part of Web3 security, aiming to detect ___________ before they are exploited.",
+                    correctAnswer: "Vulnerabilities"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "Who typically performs smart contract audits in the Web3 space?",
+                    answers: [
+                      " Government regulators.",
+                      " Independent security researchers and audit firms.",
+                      " The developers who wrote the smart contracts.",
+                      " All network participants collectively."
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "The immutability of smart contracts means that once they are deployed, their code cannot be altered, making audits prior to deployment crucial.",
+                    correctAnswer: true
+                  }
+                ]
+              },
+              {
+                name: "Cybersecurity and Hacking",
+                questions: [
+                  {
+                    type: "multiple-choice",
+                    question: "What is a common method used by hackers to compromise Web3 applications?",
+                    answers: [
+                      " Social engineering",
+                      " Physical security breaches",
+                      " Hardware malfunctions",
+                      " Outdated encryption standards"
+                    ],
+                    correctAnswer: 0
+                  },
+                  {
+                    type: "true-false",
+                    question: "Smart contracts are inherently secure and cannot be hacked.",
+                    correctAnswer: false
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "To safeguard Web3 applications, developers must stay updated on the latest security practices and ___________.",
+                    correctAnswer: "vulnerabilities"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "Which of the following is an essential practice for Web3 security?",
+                    answers: [
+                      " Using the same password for all accounts for consistency",
+                      " Regularly updating and auditing smart contract code",
+                      " Keeping all software versions outdated to confuse hackers",
+                      " Sharing private keys with trusted third parties for safekeeping"
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "Decentralization in Web3 makes it impossible for any cyber attacks to occur.",
+                    correctAnswer: false
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "In the context of Web3, ___________ are crucial for developers to understand and mitigate to prevent exploitation and loss of funds.",
+                    correctAnswer: "vulnerabilities"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What role do bug bounties play in the security of Web3 platforms?",
+                    answers: [
+                      " They provide financial rewards for the best marketing strategies.",
+                      " They offer incentives for finding and reporting security vulnerabilities.",
+                      " They are used to pay hackers for successful breaches.",
+                      " They fund the development of new hacking tools."
+                    ],
+                    correctAnswer: 1
+                  }
+                ]
+              }
+            ],
+          },
+          {
+            name: "Trust and Transparency",
+            steps: [
+              {
+                name: "Trust in Code",
+                questions: [
+                  {
+                    type: "multiple-choice",
+                    question: "In Web3, what is the primary source of trust for users?",
+                    answers: [
+                      " Central authorities",
+                      " Code and algorithms",
+                      " User testimonials",
+                      " Legal contracts"
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "In Web3, trust in code and algorithms is emphasized. Which of the following best reflects this emphasis?",
+                    answers: [
+                      " Code is written by centralized authorities.",
+                      " Code and algorithms are audited by legal experts.",
+                      " Trust is primarily based on user testimonials.",
+                      " Trust is anchored in the reliability of code and algorithms"
+                    ],
+                    correctAnswer: 3
+                  },
+                  {
+                    type: "true-false",
+                    question: "In Web3, user testimonials are often used as the primary source of trust in a decentralized network.",
+                    correctAnswer: false
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "In Web3, the ___________ of smart contracts and code execution ensures trust among network participants.",
+                    correctAnswer: "transparency"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What distinguishes Web3 trust from traditional centralized trust models?",
+                    answers: [
+                      " Web3 trusts legal contracts for enforcement.",
+                      " Centralized authorities dictate trust in Web3.",
+                      " Trust in Web3 is rooted in code and decentralized consensus.",
+                      " User testimonials determine trust in Web3."
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "true-false",
+                    question: "Trust in code and algorithms implies that users do not need to verify the behavior of smart contracts.",
+                    correctAnswer: false
+                  }
+                ]
+              },
+              {
+                name: "Transparency and Immutable Records",
+                questions: [
+                  {
+                    type: "true-false",
+                    question: "True or False: Blockchain's immutability ensures transparent, tamper-proof records.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "true-false",
+                    question: "True or False: Web3 platforms are built on transparent and immutable ledgers, allowing for records that cannot be tampered with.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Blockchain's immutability ensures that once data is recorded, it becomes ___________ to any alterations or deletions.",
+                    correctAnswer: "resistant"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What is the primary advantage of immutable records in the context of Web3 and blockchain?",
+                    answers: [
+                      " It allows for frequent data modifications.",
+                      " It makes data transparency unnecessary.",
+                      " It ensures that data is tamper-proof and cannot be altered.",
+                      " It requires centralized authorities to manage data integrity."
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "true-false",
+                    question: "Transparency in blockchain refers to the public accessibility of all transaction details.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "In Web3, the immutability of records leads to a ___________ system where historical data is preserved.",
+                    correctAnswer: "historical"
+                  }
+                ]
+              },
+              {
+                name: "Governance and Decision-Making",
+                questions: [
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Decentralized autonomous organizations (DAOs) and on-chain governance mechanisms promote democratic ___________ in Web3.",
+                    correctAnswer: "governance"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "DAOs in Web3 are known for enabling:",
+                    answers: [
+                      " Centralized decision-making.",
+                      " Hierarchical management structures.",
+                      " Community-driven consensus.",
+                      " Exclusive control by a select few."
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "true-false",
+                    question: "True or False: On-chain governance allows for real-time voting without the need for intermediaries.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "The governance process in many Web3 projects is transparent and ___________, allowing stakeholders to participate directly in decision-making.",
+                    correctAnswer: "inclusive"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What is the role of tokenomics in DAO governance?",
+                    answers: [
+                      " To provide a means for financial speculation only.",
+                      " To incentivize participation and align interests within the ecosystem.",
+                      " To restrict voting rights to a small group of developers.",
+                      " To complicate the governance process and discourage participation."
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "True or False: In Web3, governance decisions are typically made by a centralized group of developers.",
+                    correctAnswer: false
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Smart contracts enable automated execution of decisions made through DAOs, ensuring that outcomes are ___________ with the collective will of the participants.",
+                    correctAnswer: "aligned"
+                  }
+                ]
+              }
+            ],
+          },
+          {
+            name: "Web3 and Social Impact",
+            steps: [
+              {
+                name: "Financial Inclusion",
+                questions: [
+                  {
+                    type: "multiple-choice",
+                    question: "How does Web3 contribute to financial inclusion?",
+                    answers: [
+                      " By restricting access to financial services",
+                      " By promoting exclusivity",
+                      " By providing access to global financial services, especially in underserved communities."
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "What feature of Web3 platforms can help reduce the costs of remittances for migrant workers?",
+                    answers: [
+                      " High transaction fees",
+                      " Decentralized finance (DeFi) solutions",
+                      " Traditional banking systems",
+                      " Currency exchange restrictions"
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "True or False: Web3 initiatives can bypass traditional banking systems, providing financial services to the unbanked population.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Microloans facilitated through Web3 platforms can empower small entrepreneurs in ___________ economies.",
+                    correctAnswer: "emerging"
+                  }
+                ]
+              },
+              {
+                name: "Human Rights and Censorship Resistance",
+                questions: [
+                  {
+                    type: "true-false",
+                    question: "True or False: Web3 technologies can play a role in protecting human rights and resisting censorship.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "How can Web3 technology support freedom of speech?",
+                    answers: [
+                      " By allowing governments to control content",
+                      " Through censorship-resistant platforms",
+                      " By centralizing content management",
+                      " Through exclusive access to information"
+                    ],
+                    correctAnswer: 1
+                  },
+                  {
+                    type: "true-false",
+                    question: "True or False: Decentralized identity solutions in Web3 can enhance privacy and protect against identity theft.",
+                    correctAnswer: true
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "In oppressive regimes, Web3 can be a tool for ___________, enabling citizens to communicate and organize without fear of censorship.",
+                    correctAnswer: "dissent"
+                  }
+                ]
+              },
+              {
+                name: "Environmental Sustainability",
+                questions: [
+                  {
+                    type: "fill-in-the-gap",
+                    question: "Addressing ___________ is a concern in the blockchain and Web3 industry, with ongoing efforts to achieve sustainability.",
+                    correctAnswer: "environmental impact"
+                  },
+                  {
+                    type: "multiple-choice",
+                    question: "Which of the following is a sustainable practice being explored in the Web3 space?",
+                    answers: [
+                      " Proof of Work consensus mechanisms",
+                      " Energy-intensive mining operations",
+                      " Proof of Stake and other energy-efficient consensus algorithms",
+                      " Use of non-renewable energy sources"
+                    ],
+                    correctAnswer: 2
+                  },
+                  {
+                    type: "true-false",
+                    question: "True or False: NFTs and digital collectibles have no environmental impact.",
+                    correctAnswer: false
+                  },
+                  {
+                    type: "fill-in-the-gap",
+                    question: "The transition to ___________ is a step towards reducing the carbon footprint of blockchain networks.",
+                    correctAnswer: "green energy sources"
+                  }
+                ]
+              }
+            ],
+          },   
+        ],
+      },
     ],
   },
   {
@@ -1957,10 +2563,10 @@ export const availableCourses: Course[] = [
                     type: "multiple-choice",
                     question: "In which scenario is an EOA primarily used?",
                     answers: [
-                      "A) For executing smart contracts",
-                      "B) For generating public keys",
-                      "C) For recording transactions and managing account balances",
-                      "D) For managing centralized databases",
+                      " For executing smart contracts",
+                      " For generating public keys",
+                      " For recording transactions and managing account balances",
+                      " For managing centralized databases",
                     ],
                     correctAnswer: 2,
                   },
@@ -2053,10 +2659,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What role does the public key associated with an EOA play in transactions?",
                     answers: [
-                      "A) It serves as the recipient's address for cryptocurrency transfers.",
-                      "B) It verifies the transaction by checking the balance.",
-                      "C) It encrypts the transaction data for security.",
-                      "D) It signs the transaction for verification.",
+                      " It serves as the recipient's address for cryptocurrency transfers.",
+                      " It verifies the transaction by checking the balance.",
+                      " It encrypts the transaction data for security.",
+                      " It signs the transaction for verification.",
                     ],
                     correctAnswer: 0,
                   },
@@ -3159,7 +3765,7 @@ export const availableCourses: Course[] = [
                       "There are no security considerations when adding a Guard to your Safe, as Guards are always perfectly secure.",
                       "Guards do not have the power to block Safe transaction execution; their role is purely advisory and has no impact on transaction security.",
                       "A broken Guard cannot cause a denial of service for a Safe, as the system automatically bypasses malfunctioning Guards.",
-                      "A Safe Guard does have full power to block Safe transaction execution, and a broken Guard can cause a denial of service for a Safe.✅",
+                      "A Safe Guard does have full power to block Safe transaction execution, and a broken Guard can cause a denial of service for a Safe.",
                     ],
                     correctAnswer: 3,
                   },
@@ -3241,10 +3847,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What desirable properties does the blockchain trilemma address, and how does it relate to the concept of layer 2 networks?",
                     answers: [
-                      "A) Scalability, security, and decentralization; the blockchain trilemma suggests that a blockchain can achieve all three properties without trade-offs.",
-                      "B) Decentralization, security, and scalability; the blockchain trilemma suggests that a simple blockchain architecture can only achieve two out of these three properties, and layer 2 networks aim to improve scalability without sacrificing security or decentralization.",
-                      "C) Speed, centralization, and accessibility; the blockchain trilemma emphasizes the need for increased speed and accessibility at the cost of decentralization.",
-                      "D) Efficiency, simplicity, and complexity; layer 2 networks aim to add complexity to blockchain systems.",
+                      " Scalability, security, and decentralization; the blockchain trilemma suggests that a blockchain can achieve all three properties without trade-offs.",
+                      " Decentralization, security, and scalability; the blockchain trilemma suggests that a simple blockchain architecture can only achieve two out of these three properties, and layer 2 networks aim to improve scalability without sacrificing security or decentralization.",
+                      " Speed, centralization, and accessibility; the blockchain trilemma emphasizes the need for increased speed and accessibility at the cost of decentralization.",
+                      " Efficiency, simplicity, and complexity; layer 2 networks aim to add complexity to blockchain systems.",
                     ],
                     correctAnswer: 1,
                   },
@@ -3253,10 +3859,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is the primary goal of layer 2 solutions in the context of Ethereum scalability?",
                     answers: [
-                      "A) To replace layer 1 blockchains like Ethereum.",
-                      "B) To make the blockchain more complex.",
-                      "C) To reduce transaction throughput.",
-                      "D) To increase transaction throughput (higher transactions per second) without sacrificing decentralization or security.",
+                      " To replace layer 1 blockchains like Ethereum.",
+                      " To make the blockchain more complex.",
+                      " To reduce transaction throughput.",
+                      " To increase transaction throughput (higher transactions per second) without sacrificing decentralization or security.",
                     ],
                     correctAnswer: 3,
                   },
@@ -3270,10 +3876,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is Layer 1 (L1) in the context of Ethereum, and what role does it play in the Ethereum ecosystem?",
                     answers: [
-                      "A) Layer 1 is a layer of smart contracts built on top of Ethereum.",
-                      "B) Layer 1 is the base blockchain and the foundation for Layer 2 solutions.",
-                      "C) Layer 1 refers to off-chain scaling solutions for Ethereum.",
-                      "D) Layer 1 is a separate blockchain entirely unrelated to Ethereum.",
+                      " Layer 1 is a layer of smart contracts built on top of Ethereum.",
+                      " Layer 1 is the base blockchain and the foundation for Layer 2 solutions.",
+                      " Layer 1 refers to off-chain scaling solutions for Ethereum.",
+                      " Layer 1 is a separate blockchain entirely unrelated to Ethereum.",
                     ],
                     correctAnswer: 1,
                   },
@@ -3288,10 +3894,10 @@ export const availableCourses: Course[] = [
                     question:
                       "How many transactions per second (TPS) can Ethereum Mainnet (Layer 1) process, and why can this limitation lead to congestion and higher transaction fees?",
                     answers: [
-                      "A) Ethereum Mainnet can process thousands of TPS, preventing congestion.",
-                      "B) Ethereum Mainnet can process hundreds of TPS, leading to lower transaction fees.",
-                      "C) Ethereum Mainnet can process less than hundreds TPS, which can cause congestion and high fees.",
-                      "D) Ethereum Mainnet can process an unlimited number of TPS, ensuring low fees at all times.",
+                      " Ethereum Mainnet can process thousands of TPS, preventing congestion.",
+                      " Ethereum Mainnet can process hundreds of TPS, leading to lower transaction fees.",
+                      " Ethereum Mainnet can process less than hundreds TPS, which can cause congestion and high fees.",
+                      " Ethereum Mainnet can process an unlimited number of TPS, ensuring low fees at all times.",
                     ],
                     correctAnswer: 2,
                   },
@@ -3306,9 +3912,9 @@ export const availableCourses: Course[] = [
                     question:
                       "How do Layer 2 projects rely on Ethereum for data availability?",
                     answers: [
-                      "A) Layer 2 projects store the transaction data on Layer 1.",
-                      "B) Layer 2 projects operate entirely independently of Ethereum.",
-                      "C) Layer 2 projects ignore data availability, focusing on speed.",
+                      " Layer 2 projects store the transaction data on Layer 1.",
+                      " Layer 2 projects operate entirely independently of Ethereum.",
+                      " Layer 2 projects ignore data availability, focusing on speed.",
                     ],
                     correctAnswer: 0,
                   },
@@ -3317,10 +3923,10 @@ export const availableCourses: Course[] = [
                     question:
                       "Can you explain the difference between Layer 1 and Layer 2 in the context of Ethereum, and provide examples of Layer 2 solutions?",
                     answers: [
-                      "A) Layer 1 is a faster version of Ethereum, and Layer 2 includes all Ethereum smart contracts.",
-                      "B) Layer 1 is a term used in Ethereum but doesn't have real-world applications, while Layer 2 is where all transactions occur.",
-                      "C) Layer 1 is the foundational Ethereum blockchain, and Layer 2 is a separate blockchain extending Ethereum. Examples of Layer 2 include 'rollups.'",
-                      "D) Layer 1 and Layer 2 are interchangeable terms in the Ethereum ecosystem, describing the same concept.",
+                      " Layer 1 is a faster version of Ethereum, and Layer 2 includes all Ethereum smart contracts.",
+                      " Layer 1 is a term used in Ethereum but doesn't have real-world applications, while Layer 2 is where all transactions occur.",
+                      " Layer 1 is the foundational Ethereum blockchain, and Layer 2 is a separate blockchain extending Ethereum. Examples of Layer 2 include 'rollups.'",
+                      " Layer 1 and Layer 2 are interchangeable terms in the Ethereum ecosystem, describing the same concept.",
                     ],
                     correctAnswer: 2,
                   },
@@ -3342,10 +3948,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is Layer 2 (L2) scaling in the context of Ethereum, and how does it contribute to improving scalability?",
                     answers: [
-                      "A) Layer 2 scaling enhances the base blockchain's security.",
-                      "B) Layer 2 scaling introduces a new layer of blockchain, completely separate from Ethereum.",
-                      "C) Layer 2 scaling solutions handle transactions off Ethereum Layer 1, increasing transaction throughput while maintaining Ethereum's security.",
-                      "D) Layer 2 scaling primarily focuses on reducing transaction fees.",
+                      " Layer 2 scaling enhances the base blockchain's security.",
+                      " Layer 2 scaling introduces a new layer of blockchain, completely separate from Ethereum.",
+                      " Layer 2 scaling solutions handle transactions off Ethereum Layer 1, increasing transaction throughput while maintaining Ethereum's security.",
+                      " Layer 2 scaling primarily focuses on reducing transaction fees.",
                     ],
                     correctAnswer: 2,
                   },
@@ -3360,10 +3966,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What does the 'blockchain trilemma' state, and how does it relate to Ethereum's scalability?",
                     answers: [
-                      "A) The blockchain trilemma suggests that Ethereum can achieve all three aspects: decentralization, security, and scalability without any trade-offs.",
-                      "B) The blockchain trilemma is unrelated to Ethereum's scalability.",
-                      "C) The blockchain trilemma states that a blockchain can achieve two out of three aspects, and achieving all three is challenging. Scalability often requires sacrificing decentralization or security.",
-                      "D) The blockchain trilemma emphasizes the need for specialized hardware to enhance Ethereum's scalability.",
+                      " The blockchain trilemma suggests that Ethereum can achieve all three aspects: decentralization, security, and scalability without any trade-offs.",
+                      " The blockchain trilemma is unrelated to Ethereum's scalability.",
+                      " The blockchain trilemma states that a blockchain can achieve two out of three aspects, and achieving all three is challenging. Scalability often requires sacrificing decentralization or security.",
+                      " The blockchain trilemma emphasizes the need for specialized hardware to enhance Ethereum's scalability.",
                     ],
                     correctAnswer: 2,
                   },
@@ -3377,10 +3983,10 @@ export const availableCourses: Course[] = [
                     question:
                       "How do Layer 2 solutions, such as rollups, contribute to Ethereum's scalability, and what are the key types of rollups?",
                     answers: [
-                      "A) Layer 2 solutions introduce parallel blockchains that function independently, reducing congestion on Ethereum.",
-                      "B) Layer 2 solutions ignore Ethereum's Layer 1, creating a separate ecosystem.",
-                      "C) Layer 2 solutions bundle multiple transactions into a single Layer 1 transaction, reducing fees and relying on Ethereum's security. The main types of rollups are optimistic and zero-knowledge.",
-                      "D) Layer 2 solutions process all transactions on Ethereum Layer 1 without making any changes to the network.",
+                      " Layer 2 solutions introduce parallel blockchains that function independently, reducing congestion on Ethereum.",
+                      " Layer 2 solutions ignore Ethereum's Layer 1, creating a separate ecosystem.",
+                      " Layer 2 solutions bundle multiple transactions into a single Layer 1 transaction, reducing fees and relying on Ethereum's security. The main types of rollups are optimistic and zero-knowledge.",
+                      " Layer 2 solutions process all transactions on Ethereum Layer 1 without making any changes to the network.",
                     ],
                     correctAnswer: 2,
                   },
@@ -3420,10 +4026,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What are the two primary types of Layer 2 rollups for Ethereum?",
                     answers: [
-                      "A) Generalized and specialized rollups",
-                      "B) zk and zk-Rollups",
-                      "C) Optimistic and zk-Rollups",
-                      "D) Plasma and state channels",
+                      " Generalized and specialized rollups",
+                      " zk and zk-Rollups",
+                      " Optimistic and zk-Rollups",
+                      " Plasma and state channels",
                     ],
                     correctAnswer: 2,
                   },
@@ -3449,10 +4055,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is the primary difference between optimistic and zero-knowledge rollups?",
                     answers: [
-                      "A) Optimistic rollups always require zero-knowledge proofs for transactions.",
-                      "B) Zero-knowledge rollups assume transactions are valid without verification.",
-                      "C) Optimistic rollups use validity proofs and allow for challenges if transactions are suspected to be invalid",
-                      "D) Zero-knowledge rollups rely on central authorities to validate transactions.",
+                      " Optimistic rollups always require zero-knowledge proofs for transactions.",
+                      " Zero-knowledge rollups assume transactions are valid without verification.",
+                      " Optimistic rollups use validity proofs and allow for challenges if transactions are suspected to be invalid",
+                      " Zero-knowledge rollups rely on central authorities to validate transactions.",
                     ],
                     correctAnswer: 2,
                   },
@@ -3486,10 +4092,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is the primary difference between optimistic and zero-knowledge rollups?",
                     answers: [
-                      "A) Optimistic rollups always require zero-knowledge proofs for transactions.",
-                      "B) Zero-knowledge rollups assume transactions are valid without verification.",
-                      "C) Optimistic rollups use validity proofs and allow for challenges if transactions are suspected to be invalid",
-                      "D) Zero-knowledge rollups rely on central authorities to validate transactions.",
+                      " Optimistic rollups always require zero-knowledge proofs for transactions.",
+                      " Zero-knowledge rollups assume transactions are valid without verification.",
+                      " Optimistic rollups use validity proofs and allow for challenges if transactions are suspected to be invalid",
+                      " Zero-knowledge rollups rely on central authorities to validate transactions.",
                     ],
                     correctAnswer: 2,
                   },
@@ -3515,10 +4121,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is the primary advantage of optimistic rollups?",
                     answers: [
-                      "A) Reduced transaction fees",
-                      "B) Enhanced security through cryptographic proofs",
-                      "C) High scalability",
-                      "D) Efficiently processing a large number of transactions while allowing challenges to ensure validity",
+                      " Reduced transaction fees",
+                      " Enhanced security through cryptographic proofs",
+                      " High scalability",
+                      " Efficiently processing a large number of transactions while allowing challenges to ensure validity",
                     ],
                     correctAnswer: 3,
                   },
@@ -3553,10 +4159,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What distinguishes zk-rollups from optimistic rollups?",
                     answers: [
-                      "A) zk-rollups assume transaction validity.",
-                      "B) zk-rollups require on-chain execution.",
-                      "C) zk-rollups rely on cryptographic proofs to validate transactions✅.",
-                      "D) zk-rollups process transactions off-chain.",
+                      " zk-rollups assume transaction validity.",
+                      " zk-rollups require on-chain execution.",
+                      " zk-rollups rely on cryptographic proofs to validate transactions.",
+                      " zk-rollups process transactions off-chain.",
                     ],
                     correctAnswer: 2,
                   },
@@ -3570,7 +4176,7 @@ export const availableCourses: Course[] = [
                     type: "fill-in-the-blank",
                     question:
                       "ZK-rollups leverage __________ for transaction verification.",
-                    correctAnswer: "Zero-knowledge proofs✅",
+                    correctAnswer: "Zero-knowledge proofs",
                   },
                 ],
               },
@@ -3581,10 +4187,10 @@ export const availableCourses: Course[] = [
                     type: "multiple-choice",
                     question: "What is the primary benefit of zk-rollups?",
                     answers: [
-                      "A) Reduced transaction fees",
-                      "B) Speedy on-chain execution",
-                      "C) High scalability",
-                      "D) Enhanced privacy and security through cryptographic proofs✅",
+                      " Reduced transaction fees",
+                      " Speedy on-chain execution",
+                      " High scalability",
+                      " Enhanced privacy and security through cryptographic proofs",
                     ],
                     correctAnswer: 3,
                   },
@@ -3599,7 +4205,7 @@ export const availableCourses: Course[] = [
                     question:
                       "ZK-rollups are characterized by their ability to provide __________ while ensuring the validity of transactions.",
                     correctAnswer:
-                      "Privacy and security through cryptographic proofs✅",
+                      "Privacy and security through cryptographic proofs",
                   },
                 ],
               },
@@ -3624,10 +4230,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What role does Polygon zkEVM play in the context of Ethereum scalability?",
                     answers: [
-                      "A) Enforcing centralized computing solutions",
-                      "B) Offering enhanced data storage for Ethereum",
-                      "C) Leveraging cryptographic zero-knowledge proofs for off-chain transactions' validity",
-                      "D) Expanding Ethereum's decentralized network",
+                      " Enforcing centralized computing solutions",
+                      " Offering enhanced data storage for Ethereum",
+                      " Leveraging cryptographic zero-knowledge proofs for off-chain transactions' validity",
+                      " Expanding Ethereum's decentralized network",
                     ],
                     correctAnswer: 2,
                   },
@@ -3642,10 +4248,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is one of the benefits of using Polygon zkEVM for developers?",
                     answers: [
-                      "A) Reduced security compared to Ethereum",
-                      "B) Reduced compatibility with existing smart contracts",
-                      "C) EVM-equivalence, allowing the deployment of existing smart contracts",
-                      "D) Complete control over user funds",
+                      " Reduced security compared to Ethereum",
+                      " Reduced compatibility with existing smart contracts",
+                      " EVM-equivalence, allowing the deployment of existing smart contracts",
+                      " Complete control over user funds",
                     ],
                     correctAnswer: 2,
                   },
@@ -3697,10 +4303,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What does zkEVM stand for in the context of Polygon's Layer 2 solution?",
                     answers: [
-                      "A) Zero-Knowledge Encryption Validation Model",
-                      "B) Zipped Kernel Execution Virtual Machine",
-                      "C) Zero-Knowledge Ethereum Virtual Machine",
-                      "D) Zigzag Kite-Edge Velocity Model",
+                      " Zero-Knowledge Encryption Validation Model",
+                      " Zipped Kernel Execution Virtual Machine",
+                      " Zero-Knowledge Ethereum Virtual Machine",
+                      " Zigzag Kite-Edge Velocity Model",
                     ],
                     correctAnswer: 2,
                   },
@@ -3726,10 +4332,10 @@ export const availableCourses: Course[] = [
                     question:
                       "What is the main goal of Zero-Knowledge Rollups (ZK-Rollups) in the context of Polygon zkEVM?",
                     answers: [
-                      "A) To replace Ethereum's base layer",
-                      "B) To achieve zero-fee transactions",
-                      "C) To improve the scalability and transactions per second (TPS) of Ethereum",
-                      "D) To implement a centralized security model",
+                      " To replace Ethereum's base layer",
+                      " To achieve zero-fee transactions",
+                      " To improve the scalability and transactions per second (TPS) of Ethereum",
+                      " To implement a centralized security model",
                     ],
                     correctAnswer: 2,
                   },
