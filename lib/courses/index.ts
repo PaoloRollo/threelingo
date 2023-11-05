@@ -945,6 +945,17 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "The Philosophy of Web3",
+            description: "Decentralization and Trustlessness\n" +
+                "Web3's philosophy revolves around decentralization and trustlessness. It seeks to reduce reliance on central authorities and intermediaries, fostering a distributed network of nodes. Trustlessness implies that users can interact directly with the system without needing to trust a third party. This decentralization and trustlessness are core principles of Web3.\n" +
+                "\n" +
+                "Ownership and Control\n" +
+                "Web3 places a strong emphasis on ownership and control. Users have more ownership of their digital assets, data, and identities. Through cryptographic keys and blockchain technology, individuals can assert control over their online presence, ensuring that they have a say in how their data is used and shared.\n" +
+                "\n" +
+                "Open Source and Collaboration\n" +
+                "Open source and collaboration are fundamental to Web3's philosophy. Many Web3 projects are open source, allowing anyone to view and contribute to the code. Collaboration fosters innovation, transparency, and community-driven development, empowering users and developers to shape the future of the web.\n" +
+                "\n" +
+                "The Importance of Privacy\n" +
+                "Privacy is a cornerstone of Web3. Users have greater control over their personal data and can choose what information to share. Privacy-focused technologies like zero-knowledge proofs and encryption are utilized to protect user data. Web3 aims to counter the invasive data practices of the traditional web and provide users with a more private online experience.\n",
             steps: [
               {
                 name: "Using Safe Modules",
@@ -1129,6 +1140,14 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Privacy and Security",
+            description: "Privacy in Web3\n" +
+                "Privacy is a central concern in Web3. It aims to provide users with enhanced control over their personal data and online activities. With cryptographic techniques and decentralized systems, Web3 offers greater privacy, reducing the exposure of sensitive information to third parties.\n" +
+                "\n" +
+                "Security and Auditing\n" +
+                "Security is paramount in Web3. The technology's design is intended to be highly secure, but vulnerabilities can still emerge. To mitigate risks, auditing is a common practice. Independent experts review smart contracts and blockchain code to identify and rectify potential security issues, ensuring the safety of decentralized systems.\n" +
+                "\n" +
+                "Cybersecurity and Hacking\n" +
+                "Cybersecurity is an ongoing battle in the Web3 ecosystem. While Web3 offers increased security, it also presents new challenges for hackers. Secure practices, robust encryption, and vigilant monitoring are essential to safeguard against hacking attempts, protecting users and their assets in the decentralized landscape.\n",
             steps: [
               {
                 name: "Privacy in Web3",
@@ -1292,6 +1311,15 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Trust and Transparency",
+            description: "Trust in Code\n" +
+                "Web3 places a significant emphasis on trust in code. Trust is established through the cryptographic and transparent nature of blockchain technology. Users can trust that the code governing decentralized systems will execute as intended, reducing the reliance on traditional trust in centralized institutions.\n" +
+                "\n" +
+                "Transparency and Immutable Records\n" +
+                "Transparency is a fundamental principle of Web3. All transactions and data stored on the blockchain are visible to anyone, fostering a high degree of transparency. The immutability of records ensures that once data is added to the blockchain, it cannot be altered or erased, further enhancing transparency and trust in the system.\n" +
+                "\n" +
+                "Governance and Decision-Making\n" +
+                "Web3 introduces new forms of governance and decision-making. Decentralized autonomous organizations (DAOs) enable community-driven decision-making, where token holders have a say in the network's direction. This fosters transparency in governance and reduces the concentration of power, reinforcing trust among participants in the Web3 ecosystem.\n" +
+                "\n",
             steps: [
               {
                 name: "Trust in Code",
@@ -1443,6 +1471,14 @@ export const availableCourses: Course[] = [
           },
           {
             name: "Web3 and Social Impact",
+            description: "Financial Inclusion\n" +
+                "Web3 holds the promise of greater financial inclusion. By removing barriers and intermediaries, it offers individuals in underserved regions access to financial services. With a smartphone and an internet connection, people can participate in global financial systems, potentially reducing the wealth gap and fostering economic empowerment.\n" +
+                "\n" +
+                "Human Rights and Censorship Resistance\n" +
+                "Web3 is a champion of human rights and censorship resistance. It enables individuals to exercise their freedom of expression without fear of censorship. In oppressive regimes, Web3 technologies can provide a lifeline for activists and dissidents to communicate securely and maintain their rights to privacy and free speech.\n" +
+                "\n" +
+                "Environmental Sustainability\n" +
+                "Web3 also addresses concerns about environmental sustainability. Some blockchain networks are designed to be more energy-efficient, offering greener alternatives to traditional systems. By promoting sustainable practices, Web3 aligns with the growing global interest in mitigating the environmental impact of technology and energy consumption.\n",
             steps: [
               {
                 name: "Financial Inclusion",
@@ -4218,9 +4254,15 @@ export const availableCourses: Course[] = [
         units: [
           {
             name: "EVM equivalence",
-            description: "Polygon zkEVM plays a pivotal role in enhancing Ethereum's scalability. It achieves this by offering a Layer 2 scaling solution that brings significant improvements in transaction throughput, reduces congestion on the Ethereum mainnet, and lowers transaction fees. By offloading a substantial portion of Ethereum transactions to the zkEVM, it contributes to a more efficient and cost-effective network.\n" +
+            description: "Polygon zkEVM represents a groundbreaking step in the evolution of blockchain scalability solutions. It is a Layer 2 protocol that operates on top of the Ethereum blockchain, aiming to alleviate the network's limitations regarding transaction speed and cost. The zkEVM, or Zero-Knowledge Ethereum Virtual Machine, is Polygon's approach to implementing a ZK-Rollup. This technology allows for the bundling of multiple transactions into a single transaction on the Ethereum main chain, significantly reducing the load and increasing the throughput.\n" +
                 "\n" +
-                "Polygon zkEVM is designed to ensure opcode compatibility with the Ethereum Virtual Machine (EVM). This means that it maintains compatibility with the same set of instructions and operations used on the Ethereum mainnet. Developers can migrate their smart contracts from Ethereum to Polygon zkEVM without significant code changes, offering a seamless transition to Layer 2 scalability while preserving existing functionality and features. This compatibility is crucial for the broader adoption of Layer 2 solutions.\n",
+                "The core concept of zkEVM revolves around zero-knowledge proofs, a form of cryptographic proof that allows one party to prove to another that a statement is true without revealing any information beyond the validity of the statement itself. In the context of Polygon zkEVM, these proofs are used to validate the correctness of transactions processed off-chain, ensuring that only legitimate transaction data is recorded on the Ethereum main chain.\n" +
+                "\n" +
+                "The role of Polygon zkEVM is multifaceted. It not only enhances the scalability of Ethereum by offloading transaction processing to a secondary layer but also maintains a high degree of security and decentralization. By doing so, it addresses the blockchain trilemma, which posits that a blockchain system can only at most have two of the following three properties: decentralization, security, and scalability. Polygon zkEVM aims to achieve all three by leveraging zero-knowledge proofs.\n" +
+                "\n" +
+                "One of the main advantages of Polygon zkEVM is its compatibility with the Ethereum Virtual Machine. This means that developers can deploy their existing Ethereum smart contracts on Polygon zkEVM without any modifications. This EVM compatibility is a significant boon, as it lowers the barrier to entry for developers and encourages the migration of decentralized applications (dApps) to this more scalable layer.\n" +
+                "\n" +
+                "Furthermore, Polygon zkEVM provides immediate transaction finality. Unlike other scaling solutions that may require a waiting period for transaction confirmation, the use of zero-knowledge proofs allows for the quick verification of transaction batches. This immediate finality is crucial for user experience, as it enables seamless interactions with dApps without the typical delays associated with blockchain transactions.",
             steps: [
               {
                 name: "EVM Equivalence 1/2",
@@ -4290,10 +4332,15 @@ export const availableCourses: Course[] = [
           },
           {
             name: "zkEVM",
-            description: "Polygon zkEVM is a significant component of Polygon's Layer 2 scaling solutions, designed to improve the scalability and efficiency of the Ethereum network. It achieves this by allowing certain transactions to be processed off the Ethereum mainnet, reducing congestion, enhancing transaction throughput, and lowering fees. Polygon zkEVM leverages zero-knowledge proofs to validate transactions off-chain, providing security, privacy, and performance benefits.\n" +
+            description: "Scalability is at the heart of the Polygon zkEVM's value proposition. Ethereum, as a Layer 1 blockchain, has been plagued by network congestion, leading to high transaction fees and slower processing times. Polygon zkEVM tackles these issues head-on by processing transactions off-chain and then committing them to the Ethereum main chain in batches. This process significantly reduces the computational burden on the main chain, allowing for a higher volume of transactions to be processed in a shorter amount of time.\n" +
                 "\n" +
-                "One of the key features of Polygon zkEVM is its commitment to maintaining opcode compatibility with the Ethereum Virtual Machine (EVM). This means that smart contracts developed for the Ethereum mainnet can be seamlessly ported to Polygon zkEVM with minimal code changes. It ensures that the same set of instructions and operations used on the Ethereum mainnet are supported in Polygon zkEVM. This EVM equivalence allows for the smooth migration of smart contracts to Layer 2 solutions like ZK-Rollups while retaining the existing functionality and features, fostering broader adoption and improved scalability for the Ethereum ecosystem.\n" +
-                "\n",
+                "The zero-knowledge aspect of Polygon zkEVM is critical to its operation. Zero-knowledge proofs, particularly zk-SNARKs (Zero-Knowledge Succinct Non-Interactive Arguments of Knowledge), are used to attest to the validity of transactions without revealing the actual transaction data. This not only ensures privacy but also reduces the data footprint on the Ethereum main chain, further contributing to scalability.\n" +
+                "\n" +
+                "In terms of actual scaling potential, Polygon zkEVM can significantly increase Ethereum's transaction throughput. While Ethereum's main chain processes roughly 15 transactions per second, Layer 2 solutions like Polygon zkEVM can handle several thousand transactions per second. This represents a substantial improvement in performance, making Ethereum a more viable platform for large-scale dApp deployment and high-frequency trading platforms.\n" +
+                "\n" +
+                "Moreover, the scalability provided by Polygon zkEVM does not come at the cost of security. The cryptographic underpinnings of zero-knowledge proofs provide a robust security model, ensuring that even as transactions are processed more efficiently, the integrity of the network remains intact. This balance of scalability and security is what sets Polygon zkEVM apart from other scaling solutions and makes it a promising avenue for Ethereum's growth.\n" +
+                "\n" +
+                "In conclusion, Polygon zkEVM is a sophisticated technological innovation that offers a practical solution to Ethereum's scalability challenges. By leveraging zero-knowledge proofs, it ensures that the Ethereum network can handle a much larger volume of transactions, paving the way for broader adoption and more complex blockchain applications. With its EVM compatibility and focus on maintaining the decentralized ethos of blockchain, Polygon zkEVM stands as a pivotal development in the quest for a scalable, secure, and user-friendly blockchain ecosystem.",
             steps: [
               {
                 name: "Polygon zkEVM Overview",
@@ -4301,7 +4348,7 @@ export const availableCourses: Course[] = [
                   {
                     type: "multiple-choice",
                     question:
-                      "What does zkEVM stand for in the context of Polygon's Layer 2 solution?",
+                        "What does zkEVM stand for in the context of Polygon's Layer 2 solution?",
                     answers: [
                       " Zero-Knowledge Encryption Validation Model",
                       " Zipped Kernel Execution Virtual Machine",
@@ -4556,7 +4603,6 @@ export const availableCourses: Course[] = [
           }
         ]
       }
-
     ]
   }
 ];
