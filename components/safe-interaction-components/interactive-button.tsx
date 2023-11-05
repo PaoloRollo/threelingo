@@ -3,6 +3,7 @@ import { useState } from "react";
 import { makeSafeTransferSingleSign } from "@/lib/safe/deploySafe";
 import { Signer } from "ethers";
 import { useWeb3Auth } from "@/hooks/use-web3-auth";
+import { deployERC20SmartContract } from "@/lib/smart-contracts";
 
 export default function InteractiveButton({
   func,
@@ -67,5 +68,25 @@ export const stepToSafeFunction = (
       return makeSafeTransferSingleSign;
     default:
       return makeSafeTransferSingleSign;
+  }
+};
+
+export const stepToPolygonFunction = (
+  stepName: string
+): ((signer?: Signer) => Promise<boolean>) => {
+  let prefix = "interaction-p-zkevm";
+  switch (stepName) {
+    case `${prefix}-receive`:
+      return deployERC20SmartContract;
+    case `${prefix}-deploy`:
+      return deployERC20SmartContract;
+    case `${prefix}-read`:
+      return deployERC20SmartContract;
+    case `${prefix}-write`:
+      return deployERC20SmartContract;
+    case `${prefix}-view`:
+      return deployERC20SmartContract;
+    default:
+      return deployERC20SmartContract;
   }
 };
