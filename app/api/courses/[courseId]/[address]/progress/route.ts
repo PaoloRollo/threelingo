@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import {supabase} from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export async function GET(
   req: NextRequest,
@@ -113,6 +113,30 @@ export async function PUT(
           })
           .eq("course_id", parseInt(params.courseId))
           .eq("address", params.address);
+
+        try {
+          await fetch(
+            "https://notify.walletconnect.com/62066586b5adc509f3304c9312077975/notify",
+            {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${process.env.WALLETCONNECT_NOTIFY_API_SECRET}`,
+              },
+              body: JSON.stringify({
+                notification: {
+                  type: "ae0cbbe9-a59f-4e21-ac28-fbf4fad2e11d",
+                  title: "NFT inbound!",
+                  body: "You just received an NFT from threelingo via Peanut Protocol!",
+                  icon: "https://threelingo.vercel.app/threelingo_logo.png",
+                  url: "https://threelingo.vercel.app",
+                },
+                accounts: [`eip155:1:${params.address}`],
+              }),
+            }
+          );
+        } catch (e) {
+          console.error(`error while sending peanut link via web3inbox.`);
+        }
       }
     }
   } else {
@@ -133,6 +157,26 @@ export async function PUT(
     .eq("course_id", parseInt(params.courseId))
     .eq("address", params.address)
     .limit(1);
+
+  if (data && data?.length > 0 && data[0] && data[0].completed) {
+    // get the latest link
+    const { data: peanutLinkData } = await supabase
+      .from("peanut_links")
+      .select("*")
+      .eq("course_id", parseInt(params.courseId))
+      .eq("status", "")
+      .order("created_at", { ascending: false })
+      .limit(1);
+
+    if (peanutLinkData && peanutLinkData.length > 0) {
+      return new Response(
+        JSON.stringify({
+          result: { ...data[0], peanutLink: peanutLinkData[0].link },
+        }),
+        { status: 200 }
+      );
+    }
+  }
 
   return new Response(
     JSON.stringify({

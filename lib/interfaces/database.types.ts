@@ -39,11 +39,43 @@ export interface Database {
         }
         Relationships: []
       }
+      peanut_links: {
+        Row: {
+          courseId: number | null
+          created_at: string
+          id: number
+          link: string | null
+          status: string | null
+        }
+        Insert: {
+          courseId?: number | null
+          created_at?: string
+          id?: number
+          link?: string | null
+          status?: string | null
+        }
+        Update: {
+          courseId?: number | null
+          created_at?: string
+          id?: number
+          link?: string | null
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "peanut_links_courseId_fkey"
+            columns: ["courseId"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       progresses: {
         Row: {
           address: string
           completed: boolean | null
-          course_id: number | null
+          course_id: number
           created_at: string
           current_section: number | null
           current_step: number | null
@@ -53,7 +85,7 @@ export interface Database {
         Insert: {
           address: string
           completed?: boolean | null
-          course_id?: number | null
+          course_id: number
           created_at?: string
           current_section?: number | null
           current_step?: number | null
@@ -63,7 +95,7 @@ export interface Database {
         Update: {
           address?: string
           completed?: boolean | null
-          course_id?: number | null
+          course_id?: number
           created_at?: string
           current_section?: number | null
           current_step?: number | null

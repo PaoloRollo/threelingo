@@ -18,6 +18,7 @@ import InteractiveButton, {
   stepToPolygonFunction,
   stepToSafeFunction,
 } from "@/components/safe-interaction-components/interactive-button";
+import { usePeanutModalStore } from "@/lib/store/peanut-modal-store";
 
 interface StepModalProps {
   isOpen: boolean;
@@ -51,6 +52,10 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [stepFinished, setStepFinished] = useState<boolean>(false);
   const [gapFill, setGapFill] = useState<string>("");
+  const setDefaultLink = usePeanutModalStore((state) => state.setDefaultLink);
+  const togglePeanutModal = usePeanutModalStore(
+    (state) => state.togglePeanutModal
+  );
 
   const reset = () => {
     setErrors([]);
@@ -86,6 +91,11 @@ export const StepModal = ({ isOpen, onOpen, onOpenChange }: StepModalProps) => {
       setDbUnit(result.current_unit);
       setDbSection(result.current_section);
       setDbStep(result.current_step);
+
+      if (result.peanutLink) {
+        setDefaultLink(result.peanutLink);
+        togglePeanutModal();
+      }
     } catch (error) {
       console.error(error);
     } finally {

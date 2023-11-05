@@ -10,6 +10,7 @@ import {
 } from "@nextui-org/react";
 import { claimLinkGasless } from "@squirrel-labs/peanut-sdk";
 import { useUserStore } from "@/lib/store/user-store";
+import { usePeanutModalStore } from "@/lib/store/peanut-modal-store";
 
 interface PeanutModalProps {
   isOpen: boolean;
@@ -22,7 +23,8 @@ export const PeanutModal = ({
   onOpen,
   onOpenChange,
 }: PeanutModalProps) => {
-  const [peanutLink, setPeanutLink] = useState<string>("");
+  const defaultLink = usePeanutModalStore((state) => state.defaultLink);
+  const [peanutLink, setPeanutLink] = useState<string>(defaultLink);
   const address = useUserStore((state) => state.address);
   const [success, setSuccess] = useState<boolean>(false);
 

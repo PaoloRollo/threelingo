@@ -1,6 +1,7 @@
 "use client";
 import { useCourseStore, useStepModalStore } from "@/lib/store";
 import { useGuidebookModalStore } from "@/lib/store/guidebook-modal-store";
+import { usePeanutModalStore } from "@/lib/store/peanut-modal-store";
 import { useUserStore } from "@/lib/store/user-store";
 import { CircularProgress, cn } from "@nextui-org/react";
 import {
